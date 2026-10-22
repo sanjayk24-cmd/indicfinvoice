@@ -1,0 +1,14 @@
+transformers
+datasets
+accelerate
+gradio
+soundfile
+librosa
+jiwer
+fastapi
+uvicorn
+httpx
+pyyaml
+pandas
+scikit-learn
+pytest

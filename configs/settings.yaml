@@ -1,0 +1,6 @@
+asr_model: openai/whisper-medium
+nlu_base_model: ai4bharat/indic-bert
+confidence_threshold: 0.6
+sample_rate: 16000
+seed: 42
+mockbank_url: http://127.0.0.1:8000

@@ -1,0 +1,10 @@
+venv/
+data/raw/
+data/wav16k/
+models/
+logs/
+__pycache__/
+*.wav
+*.m4a
+*.mp3
+.env
