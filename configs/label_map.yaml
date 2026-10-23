@@ -1,0 +1,39 @@
+case: "B"
+description: "Mapping rules to derive project intents from unlabelled audio transcripts"
+
+intent_rules:
+  crop_insurance_status:
+    keywords:
+      - "insurance"
+      - "bima"
+      - "बीमा"
+      - "காப்பீடு"
+  loan_due_date:
+    keywords:
+      - "due"
+      - "repayment"
+      - "repaid"
+      - "late"
+      - "scheduled"
+      - "repay"
+      - "किस्त"
+      - "तारीख"
+      - "நிலுவை"
+      - "தவணை"
+  balance_check:
+    keywords:
+      - "surplus"
+      - "balance"
+      - "बैलेंस"
+      - "शेष"
+      - "மீதி"
+      - "இருப்பு"
+  transaction_dispute:
+    keywords:
+      - "dispute"
+      - "data issues"
+      - "discarded due"
+      - "विवाद"
+      - "சிக்கல்"
+
+default_intent: "out_of_scope"
