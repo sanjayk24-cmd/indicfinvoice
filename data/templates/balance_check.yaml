@@ -1,0 +1,44 @@
+intent: balance_check
+languages:
+  en:
+    templates:
+      - "what is the balance in my {account_type} account"
+      - "check balance for {account_type} account"
+      - "how much money is in my {account_type} account"
+      - "show me the balance of my {account_type} account"
+      - "can you tell me my {account_type} account balance"
+      - "balance of {account_type} account please"
+      - "tell me the available amount in my {account_type} account"
+      - "check my {account_type} balance"
+      - "i want to know my {account_type} balance"
+      - "what is my current {account_type} account balance"
+  hi:
+    templates:
+      - "मेरे {account_type} खाते का बैलेंस बताइए"
+      - "{account_type} खाते में कितने पैसे हैं"
+      - "मुझे {account_type} खाते का बैलेंस देखना है"
+      - "मेरे {account_type} खाते में कुल कितना पैसा है"
+      - "{account_type} खाते की शेष राशि क्या है"
+      - "{account_type} खाते का बैलेंस चेक करें"
+      - "कृपया मेरे {account_type} खाते का बैलेंस बताएं"
+      - "क्या आप मेरे {account_type} खाते का बैलेंस बता सकते हैं"
+      - "{account_type} खाते का पैसा बताओ"
+      - "मेरे {account_type} खाते की बकाया राशि कितनी है"
+  ta:
+    verified: false
+    templates:
+      - "என் {account_type} கணக்கின் இருப்பு என்ன"
+      - "{account_type} கணக்கில் எவ்வளவு பணம் உள்ளது"
+      - "என் {account_type} கணக்கு இருப்பை சரிபார்க்கவும்"
+      - "{account_type} கணக்கில் உள்ள மீதி தொகையை சொல்லுங்கள்"
+      - "தயவுசெய்து என் {account_type} கணக்கு இருப்பைக் காட்டுங்கள்"
+      - "{account_type} கணக்கு இருப்பு விவரம் வேண்டும்"
+      - "என் {account_type} கணக்கில் பணம் எவ்வளவு இருக்கிறது"
+      - "{account_type} கணக்கின் நிலுவை தொகை என்ன"
+      - "என் {account_type} கணக்கின் பேலன்ஸ் தெரிந்து கொள்ள வேண்டும்"
+      - "{account_type} கணக்கு இருப்பை எனக்கு சொல்லவும்"
+slots:
+  account_type:
+    en: ["savings", "current", "KCC"]
+    hi: ["बचत", "चालू", "केसीसी"]
+    ta: ["சேமிப்பு", "நடப்பு", "கேசிசி"]

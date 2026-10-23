@@ -1,0 +1,52 @@
+intent: transaction_dispute
+languages:
+  en:
+    templates:
+      - "i want to dispute transaction {transaction_ref} of {amount} on {date}"
+      - "wrong deduction of {amount} on {date} with reference {transaction_ref}"
+      - "dispute transaction {transaction_ref} for {amount} rupees dated {date}"
+      - "unauthorized charge of {amount} on {date} reference {transaction_ref}"
+      - "there is an error in transaction {transaction_ref} of {amount} on {date}"
+      - "i did not do this transaction {transaction_ref} of {amount} on {date}"
+      - "raise a dispute for transaction {transaction_ref} on {date} for {amount}"
+      - "complaint about transaction {transaction_ref} of amount {amount} on {date}"
+      - "money deducted twice for {transaction_ref} amount {amount} on {date}"
+      - "fraudulent transaction {transaction_ref} of {amount} occurred on {date}"
+  hi:
+    templates:
+      - "{date} को ट्रांजैक्शन {transaction_ref} से {amount} रुपये का गलत लेन-देन हुआ है"
+      - "मेरे खाते से {date} को {transaction_ref} के लिए {amount} रुपये कट गए"
+      - "ट्रांजैक्शन {transaction_ref} की शिकायत करनी है {amount} रुपये {date} को कटे थे"
+      - "{date} को {transaction_ref} पर {amount} रुपये की गलत कटौती हुई है"
+      - "मैंने यह ट्रांजैक्शन {transaction_ref} नहीं किया {amount} रुपये {date} को कट गए"
+      - "ट्रांजैक्शन {transaction_ref} के लिए {amount} रुपये का विवाद दर्ज करें {date}"
+      - "{date} को हुए लेन-देन {transaction_ref} में {amount} रुपये का फ्रॉड हुआ है"
+      - "बिना मेरी अनुमति के {date} को {transaction_ref} से {amount} कट गए"
+      - "{date} की ट्रांजैक्शन {transaction_ref} जिसमें {amount} रुपये कटे उसकी शिकायत दर्ज करें"
+      - "गलत लेन-देन {transaction_ref} पर {amount} रुपये कटने की शिकायत {date} को हुई"
+  ta:
+    verified: false
+    templates:
+      - "{date} அன்று பரிவர்த்தனை {transaction_ref} மூலம் {amount} ரூபாய் தவறாக கழிக்கப்பட்டது"
+      - "என் கணக்கிலிருந்து {date} அன்று {transaction_ref} க்கு {amount} ரூபாய் எடுக்கப்பட்டது"
+      - "பரிவர்த்தனை {transaction_ref} மீது புகார் அளிக்க வேண்டும் {date} அன்று {amount} ரூபாய் பிடித்தம் செய்யப்பட்டது"
+      - "{date} தேதியில் {transaction_ref} வழியாக {amount} ரூபாய் தவறுதலாக எடுக்கப்பட்டுள்ளது"
+      - "நான் இந்த பரிவர்த்தனை {transaction_ref} செய்யவில்லை {date} அன்று {amount} ரூபாய் காணவில்லை"
+      - "பரிவர்த்தனை {transaction_ref} தொகை {amount} மீது {date} தேதிக்கான புகார் பதிவு செய்க"
+      - "{date} அன்று நடந்த பரிவர்த்தனை {transaction_ref} தொகை {amount} மோசடி சார்ந்தது"
+      - "என் அனுமதியின்றி {date} அன்று {transaction_ref} மூலம் {amount} ரூபாய் கழிக்கப்பட்டது"
+      - "பரிவர்த்தனை {transaction_ref} க்கான {amount} ரூபாய் தவறை எதிர்க்கிறேன் தேதி {date}"
+      - "{date} அன்று {transaction_ref} பரிவர்த்தனையில் {amount} ரூபாய் இருமுறை கழிக்கப்பட்டுள்ளது"
+slots:
+  transaction_ref:
+    en: ["TXN-9001", "TXN-9002"]
+    hi: ["TXN-9001", "TXN-9002"]
+    ta: ["TXN-9001", "TXN-9002"]
+  amount:
+    en: ["500", "1500", "22000", "75000"]
+    hi: ["500", "1500", "22000", "75000"]
+    ta: ["500", "1500", "22000", "75000"]
+  date:
+    en: ["today", "yesterday", "12 October", "5 November"]
+    hi: ["आज", "कल", "12 अक्टूबर", "5 नवंबर"]
+    ta: ["இன்று", "நேற்று", "12 அக்டோபர்", "5 நவம்பர்"]

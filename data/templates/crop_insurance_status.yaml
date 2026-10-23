@@ -1,0 +1,44 @@
+intent: crop_insurance_status
+languages:
+  en:
+    templates:
+      - "what is the status of my claim {claim_id}"
+      - "check insurance claim status for {claim_id}"
+      - "has my crop insurance claim {claim_id} been approved"
+      - "track status of claim number {claim_id}"
+      - "tell me the progress on my claim {claim_id}"
+      - "is my claim {claim_id} processed yet"
+      - "what is happening with crop claim {claim_id}"
+      - "give me update on insurance claim {claim_id}"
+      - "check claim {claim_id} status please"
+      - "has the money been credited for claim {claim_id}"
+  hi:
+    templates:
+      - "मेरे क्लेम {claim_id} का स्टेटस क्या है"
+      - "फसल बीमा क्लेम {claim_id} की स्थिति बताइए"
+      - "क्या मेरा बीमा क्लेम {claim_id} पास हो गया है"
+      - "क्लेम नंबर {claim_id} का क्या अपडेट है"
+      - "मेरे फसल बीमा क्लेम {claim_id} का स्टेटस चेक करें"
+      - "क्या क्लेम {claim_id} का पैसा खाते में आ गया"
+      - "कृपया क्लेम संख्या {claim_id} की प्रगति बताएं"
+      - "बीमा क्लेम {claim_id} कब तक मंजूर होगा"
+      - "मेरे क्लेम {claim_id} की वर्तमान स्थिति क्या है"
+      - "फसल क्षति बीमा क्लेम {claim_id} की जानकारी दीजिए"
+  ta:
+    verified: false
+    templates:
+      - "என் காப்பீட்டு கோரிக்கை {claim_id} நிலை என்ன"
+      - "பயிர் காப்பீட்டு கோரிக்கை {claim_id} நிலவரத்தை சொல்லுங்கள்"
+      - "என் கிளைம் {claim_id} ஏற்றுக்கொள்ளப்பட்டதா"
+      - "கோரிக்கை எண் {claim_id} என்ன நிலையில் உள்ளது"
+      - "பயிர் இழப்பீட்டு கோரிக்கை {claim_id} நிலையை சரிபார்க்கவும்"
+      - "என் கிளைம் {claim_id} பணம் வந்துவிட்டதா"
+      - "தயவுசெய்து காப்பீட்டு கோரிக்கை {claim_id} விவரம் சொல்லவும்"
+      - "கிளைம் எண் {claim_id} ஒப்புதல் அளிக்கப்பட்டுவிட்டதா"
+      - "என் பயிர் காப்பீடு {claim_id} முன்னேற்றம் என்ன"
+      - "கிளைம் {claim_id} நிலவரத்தை தெரிந்து கொள்ள வேண்டும்"
+slots:
+  claim_id:
+    en: ["CLM-771", "CLM-402", "CLM-930"]
+    hi: ["CLM-771", "CLM-402", "CLM-930"]
+    ta: ["CLM-771", "CLM-402", "CLM-930"]

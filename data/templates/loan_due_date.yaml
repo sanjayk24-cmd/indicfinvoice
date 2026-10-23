@@ -1,0 +1,44 @@
+intent: loan_due_date
+languages:
+  en:
+    templates:
+      - "when is my {loan_type} loan due"
+      - "what is the due date for my {loan_type} loan"
+      - "tell me the last date to pay my {loan_type} loan"
+      - "check payment due date for {loan_type} loan"
+      - "when do i need to pay my {loan_type} loan installment"
+      - "what is the deadline for my {loan_type} loan"
+      - "how many days left for my {loan_type} loan payment"
+      - "can you tell me the {loan_type} loan repayment date"
+      - "next EMI date for my {loan_type} loan"
+      - "when is the next installment of my {loan_type} loan"
+  hi:
+    templates:
+      - "मेरे {loan_type} लोन की आखिरी तारीख क्या है"
+      - "{loan_type} लोन की अगली किस्त कब भरनी है"
+      - "{loan_type} लोन का भुगतान कब तक करना है"
+      - "मेरे {loan_type} ऋण की देय तिथि बताइए"
+      - "{loan_type} लोन की अंतिम तिथि क्या है"
+      - "{loan_type} लोन की ईएमआई कब कटेगी"
+      - "कृपया {loan_type} लोन की देय तारीख बताएं"
+      - "मुझे {loan_type} लोन कब तक चुकाना है"
+      - "{loan_type} ऋण की अगली भुगतान तिथि क्या है"
+      - "मेरे {loan_type} लोन का पेमेंट कब भरना है"
+  ta:
+    verified: false
+    templates:
+      - "என் {loan_type} கடனின் கடைசி தேதி என்ன"
+      - "{loan_type} கடன் தவணை எப்போது செலுத்த வேண்டும்"
+      - "என் {loan_type} கடன் செலுத்த வேண்டிய இறுதி நாள் எப்போது"
+      - "{loan_type} கடனின் அடுத்த தவணை தேதி என்ன"
+      - "என் {loan_type} கடன் நிலுவை தேதி விவரம் சொல்லுங்கள்"
+      - "{loan_type} கடனுக்கான தவணை எப்போது முடிவடைகிறது"
+      - "தயவுசெய்து {loan_type} கடன் செலுத்தும் தேதியை சொல்லவும்"
+      - "என் {loan_type} கடனை எப்போது திருப்பிச் செலுத்த வேண்டும்"
+      - "{loan_type} கடனின் அடுத்த EMI தேதி என்ன"
+      - "{loan_type} கடன் நிலுவை தேதியை சரிபார்க்கவும்"
+slots:
+  loan_type:
+    en: ["home", "crop", "personal"]
+    hi: ["होम", "फसल", "पर्सनल"]
+    ta: ["வீடு", "பயிர்", "தனிநபர்"]
