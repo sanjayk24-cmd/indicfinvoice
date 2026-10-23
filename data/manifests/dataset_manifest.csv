@@ -19,7 +19,7 @@ en_017,data/wav16k/en/en_voicedata/17.wav,Your loan is awaiting disbursal. Funds
 en_018,data/wav16k/en/en_voicedata/18.wav,Your loan has been approved. Congratulations!,en,out_of_scope,{},unknown,unknown,dataset
 en_019,data/wav16k/en/en_voicedata/19.wav,Disbursal of your loan is delayed. Please contact support for details.,en,out_of_scope,{},unknown,unknown,dataset
 en_020,data/wav16k/en/en_voicedata/20.wav,Your loan application has been rejected.,en,out_of_scope,{},unknown,unknown,dataset
-en_021,data/wav16k/en/en_voicedata/21.wav,Your loan was discarded due to data issues.,en,loan_due_date,{},unknown,unknown,dataset
+en_021,data/wav16k/en/en_voicedata/21.wav,Your loan was discarded due to data issues.,en,out_of_scope,{},unknown,unknown,dataset
 en_022,data/wav16k/en/en_voicedata/22.wav,Group approval is pending for your loan.,en,out_of_scope,{},unknown,unknown,dataset
 en_023,data/wav16k/en/en_voicedata/23.wav,Automatic disbursal has been initiated for your loan.,en,out_of_scope,{},unknown,unknown,dataset
 en_024,data/wav16k/en/en_voicedata/24.wav,Automatic insurance disbursal has been initiated.,en,crop_insurance_status,{},unknown,unknown,dataset
@@ -40,7 +40,7 @@ en_038,data/wav16k/en/en_voicedata/38.wav,Your account has surplus two repayment
 en_039,data/wav16k/en/en_voicedata/39.wav,Your account has surplus three repayments.,en,loan_due_date,{},unknown,unknown,dataset
 en_040,data/wav16k/en/en_voicedata/40.wav,Your account has surplus three plus repayments.,en,loan_due_date,{},unknown,unknown,dataset
 en_041,data/wav16k/en/en_voicedata/41.wav,Any loan status can be checked in your dashboard.,en,out_of_scope,{},unknown,unknown,dataset
-en_042,data/wav16k/en/en_voicedata/42.wav,Your loan has been written off due to non-payment.,en,loan_due_date,{},unknown,unknown,dataset
+en_042,data/wav16k/en/en_voicedata/42.wav,Your loan has been written off due to non-payment.,en,out_of_scope,{},unknown,unknown,dataset
 en_043,data/wav16k/en/en_voicedata/43.wav,Your loan has been fully repaid. Thank you!,en,loan_due_date,{},unknown,unknown,dataset
 en_044,data/wav16k/en/en_voicedata/44.wav,Surplus repaid status has been achieved for your account.,en,loan_due_date,{},unknown,unknown,dataset
 en_045,data/wav16k/en/en_voicedata/45.wav,Restructure user verification is pending for your loan.,en,out_of_scope,{},unknown,unknown,dataset
@@ -61,8 +61,8 @@ en_059,data/wav16k/en/en_voicedata/59.wav,Partner has approved your loan. Phone 
 en_060,data/wav16k/en/en_voicedata/60.wav,Phone verification successful. Awaiting Avanti approval.,en,out_of_scope,{},unknown,unknown,dataset
 en_061,data/wav16k/en/en_voicedata/61.wav,Avanti lender has approved your loan. Awaiting disbursal.,en,out_of_scope,{},unknown,unknown,dataset
 en_062,data/wav16k/en/en_voicedata/62.wav,Your loan disbursal is scheduled for tomorrow.,en,loan_due_date,{},unknown,unknown,dataset
-en_063,data/wav16k/en/en_voicedata/63.wav,Your loan application was rejected due to incomplete documents.,en,loan_due_date,{},unknown,unknown,dataset
-en_064,data/wav16k/en/en_voicedata/64.wav,Data issues detected. Please update your information.,en,transaction_dispute,{},unknown,unknown,dataset
+en_063,data/wav16k/en/en_voicedata/63.wav,Your loan application was rejected due to incomplete documents.,en,out_of_scope,{},unknown,unknown,dataset
+en_064,data/wav16k/en/en_voicedata/64.wav,Data issues detected. Please update your information.,en,out_of_scope,{},unknown,unknown,dataset
 en_065,data/wav16k/en/en_voicedata/65.wav,Group approval granted. Automatic disbursal initiated.,en,out_of_scope,{},unknown,unknown,dataset
 en_066,data/wav16k/en/en_voicedata/66.wav,Insurance disbursal completed. Check your account for details.,en,crop_insurance_status,{},unknown,unknown,dataset
 en_067,data/wav16k/en/en_voicedata/67.wav,User profile check completed. Moratorium period started.,en,out_of_scope,{},unknown,unknown,dataset
@@ -98,7 +98,7 @@ en_096,data/wav16k/en/en_voicedata/96.wav,Your loan is under review for restruct
 en_097,data/wav16k/en/en_voicedata/97.wav,Please update your documents to avoid rejection.,en,out_of_scope,{},unknown,unknown,dataset
 en_098,data/wav16k/en/en_voicedata/98.wav,Your loan is in late status. Penalties may apply.,en,loan_due_date,{},unknown,unknown,dataset
 en_099,data/wav16k/en/en_voicedata/99.wav,Your loan is in NPA status. Please resolve immediately.,en,out_of_scope,{},unknown,unknown,dataset
-en_100,data/wav16k/en/en_voicedata/100.wav,these sentences are related to banks & loans. Thanks nagmani for creating this dataset.,en,loan_due_date,{},unknown,unknown,dataset
+en_100,data/wav16k/en/en_voicedata/100.wav,these sentences are related to banks & loans. Thanks nagmani for creating this dataset.,en,out_of_scope,{},unknown,unknown,dataset
 hi_001,data/wav16k/hi/hi_voicedata/1.wav,आप ऋण के लिए पात्र हैं।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_002,data/wav16k/hi/hi_voicedata/2.wav,आपने ऋण का अपना पहला पुनर्भुगतान पूरा कर लिया है।,hi,loan_due_date,{},unknown,unknown,dataset
 hi_003,data/wav16k/hi/hi_voicedata/3.wav,आपका ऋण आवेदन सफलतापूर्वक शुरू किया गया है।,hi,out_of_scope,{},unknown,unknown,dataset
@@ -119,7 +119,7 @@ hi_017,data/wav16k/hi/hi_voicedata/17.wav,आपके ऋण को डिस�
 hi_018,data/wav16k/hi/hi_voicedata/18.wav,आपके ऋण को मंजूरी दे दी गई है। बधाई हो!,hi,out_of_scope,{},unknown,unknown,dataset
 hi_019,data/wav16k/hi/hi_voicedata/19.wav,आपके ऋण के डिस्बर्सल में देरी हो रही है। कृपया विवरण के लिए समर्थन से संपर्क करें।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_020,data/wav16k/hi/hi_voicedata/20.wav,आपके ऋण आवेदन को अस्वीकार कर दिया गया है।,hi,out_of_scope,{},unknown,unknown,dataset
-hi_021,data/wav16k/hi/hi_voicedata/21.wav,डेटा मुद्दों के कारण आपका ऋण छोड़ दिया गया था।,hi,loan_due_date,{},unknown,unknown,dataset
+hi_021,data/wav16k/hi/hi_voicedata/21.wav,डेटा मुद्दों के कारण आपका ऋण छोड़ दिया गया था।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_022,data/wav16k/hi/hi_voicedata/22.wav,समूह की मंजूरी आपके ऋण के लिए लंबित है।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_023,data/wav16k/hi/hi_voicedata/23.wav,आपके ऋण के लिए स्वचालित डिस्बर्सल शुरू किया गया है।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_024,data/wav16k/hi/hi_voicedata/24.wav,स्वचालित बीमा डिस्बर्सल शुरू किया गया है।,hi,crop_insurance_status,{},unknown,unknown,dataset
@@ -140,7 +140,7 @@ hi_038,data/wav16k/hi/hi_voicedata/38.wav,आपके खाते में �
 hi_039,data/wav16k/hi/hi_voicedata/39.wav,आपके खाते में अधिशेष तीन पुनर्भुगतान हैं।,hi,loan_due_date,{},unknown,unknown,dataset
 hi_040,data/wav16k/hi/hi_voicedata/40.wav,आपके खाते में अधिशेष तीन प्लस चुकौती है।,hi,loan_due_date,{},unknown,unknown,dataset
 hi_041,data/wav16k/hi/hi_voicedata/41.wav,किसी भी ऋण की स्थिति को आपके डैशबोर्ड में जांचा जा सकता है।,hi,out_of_scope,{},unknown,unknown,dataset
-hi_042,data/wav16k/hi/hi_voicedata/42.wav,आपका ऋण गैर-भुगतान के कारण लिखा गया है।,hi,loan_due_date,{},unknown,unknown,dataset
+hi_042,data/wav16k/hi/hi_voicedata/42.wav,आपका ऋण गैर-भुगतान के कारण लिखा गया है।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_043,data/wav16k/hi/hi_voicedata/43.wav,आपका ऋण पूरी तरह से चुका दिया गया है। धन्यवाद!,hi,loan_due_date,{},unknown,unknown,dataset
 hi_044,data/wav16k/hi/hi_voicedata/44.wav,आपके खाते के लिए अधिशेष भुगतान की स्थिति प्राप्त की गई है।,hi,loan_due_date,{},unknown,unknown,dataset
 hi_045,data/wav16k/hi/hi_voicedata/45.wav,पुनर्गठन उपयोगकर्ता सत्यापन आपके ऋण के लिए लंबित है।,hi,out_of_scope,{},unknown,unknown,dataset
@@ -161,8 +161,8 @@ hi_059,data/wav16k/hi/hi_voicedata/59.wav,साथी ने आपके ऋ�
 hi_060,data/wav16k/hi/hi_voicedata/60.wav,फोन सत्यापन सफल। अवंती अनुमोदन का इंतजार।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_061,data/wav16k/hi/hi_voicedata/61.wav,अवंती ऋणदाता ने आपके ऋण को मंजूरी दे दी है। डिस्बर्सल का इंतजार करना।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_062,data/wav16k/hi/hi_voicedata/62.wav,आपका ऋण डिस्बर्सल कल के लिए निर्धारित है।,hi,loan_due_date,{},unknown,unknown,dataset
-hi_063,data/wav16k/hi/hi_voicedata/63.wav,अपूर्ण दस्तावेजों के कारण आपका ऋण आवेदन खारिज कर दिया गया था।,hi,loan_due_date,{},unknown,unknown,dataset
-hi_064,data/wav16k/hi/hi_voicedata/64.wav,डेटा मुद्दों का पता चला। कृपया अपनी जानकारी अपडेट करें।,hi,transaction_dispute,{},unknown,unknown,dataset
+hi_063,data/wav16k/hi/hi_voicedata/63.wav,अपूर्ण दस्तावेजों के कारण आपका ऋण आवेदन खारिज कर दिया गया था।,hi,out_of_scope,{},unknown,unknown,dataset
+hi_064,data/wav16k/hi/hi_voicedata/64.wav,डेटा मुद्दों का पता चला। कृपया अपनी जानकारी अपडेट करें।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_065,data/wav16k/hi/hi_voicedata/65.wav,समूह की मंजूरी दी गई। स्वचालित डिस्बर्सल शुरू किया।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_066,data/wav16k/hi/hi_voicedata/66.wav,बीमा डिस्बर्सल पूरा हुआ। विवरण के लिए अपने खाते की जाँच करें।,hi,crop_insurance_status,{},unknown,unknown,dataset
 hi_067,data/wav16k/hi/hi_voicedata/67.wav,उपयोगकर्ता प्रोफ़ाइल चेक पूरा हुआ। अधिस्थगन की अवधि शुरू हुई।,hi,out_of_scope,{},unknown,unknown,dataset
@@ -198,19 +198,19 @@ hi_096,data/wav16k/hi/hi_voicedata/96.wav,पुनर्गठन के लि
 hi_097,data/wav16k/hi/hi_voicedata/97.wav,अस्वीकृति से बचने के लिए कृपया अपने दस्तावेज़ अपडेट करें।,hi,out_of_scope,{},unknown,unknown,dataset
 hi_098,data/wav16k/hi/hi_voicedata/98.wav,आपका ऋण देर से स्थिति में है। दंड लागू हो सकता है।,hi,loan_due_date,{},unknown,unknown,dataset
 hi_099,data/wav16k/hi/hi_voicedata/99.wav,आपका ऋण NPA स्थिति में है। कृपया तुरंत हल करें।,hi,out_of_scope,{},unknown,unknown,dataset
-hi_100,data/wav16k/hi/hi_voicedata/100.wav,ये वाक्य बैंकों और ऋणों से संबंधित हैं। इस डेटासेट को बनाने के लिए धन्यवाद नागमनी।,hi,loan_due_date,{},unknown,unknown,dataset
+hi_100,data/wav16k/hi/hi_voicedata/100.wav,ये वाक्य बैंकों और ऋणों से संबंधित हैं। इस डेटासेट को बनाने के लिए धन्यवाद नागमनी।,hi,out_of_scope,{},unknown,unknown,dataset
 ta_001,data/wav16k/ta/ta_voicedata/1.wav,நீங்கள் கடனுக்கு தகுதியானவர்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_002,data/wav16k/ta/ta_voicedata/2.wav,கடனை உங்கள் முதல் திருப்பிச் செலுத்துவதை முடித்துள்ளீர்கள்.,ta,loan_due_date,{},unknown,unknown,dataset
 ta_003,data/wav16k/ta/ta_voicedata/3.wav,உங்கள் கடன் விண்ணப்பம் வெற்றிகரமாக தொடங்கப்பட்டுள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_004,data/wav16k/ta/ta_voicedata/4.wav,உங்கள் கடன் ஒப்பந்தத்திற்கு OTP ESIGN நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_004,data/wav16k/ta/ta_voicedata/4.wav,உங்கள் கடன் ஒப்பந்தத்திற்கு OTP ESIGN நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_005,data/wav16k/ta/ta_voicedata/5.wav,நாங்கள் தற்போது உங்கள் கடன் PDF ஆவணத்தை உருவாக்குகிறோம்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_006,data/wav16k/ta/ta_voicedata/6.wav,கடன் விதிமுறைகள் ஏற்றுக்கொள்ளப்பட்டுள்ளன. தயவுசெய்து அடுத்த கட்டத்திற்குச் செல்லவும்.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_007,data/wav16k/ta/ta_voicedata/7.wav,உங்கள் எனாக் பதிவு நிலுவையில் உள்ளது. தொடர தயவுசெய்து அதை முடிக்கவும்.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_008,data/wav16k/ta/ta_voicedata/8.wav,உங்கள் கடன் விண்ணப்பத்திற்கு உத்தரவாத கையொப்பம் நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_009,data/wav16k/ta/ta_voicedata/9.wav,உங்கள் ஆவணங்களின் கையேடு சரிபார்ப்பு நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_010,data/wav16k/ta/ta_voicedata/10.wav,உங்கள் கடன் கோரிக்கைக்கு கூட்டாளர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_011,data/wav16k/ta/ta_voicedata/11.wav,தொலைபேசி சரிபார்ப்பு நிலுவையில் உள்ளது. உங்கள் தொலைபேசி எண்ணை சரிபார்க்கவும்.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_012,data/wav16k/ta/ta_voicedata/12.wav,உங்கள் கடனுக்காக அவந்தி கடன் வழங்குபவர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_007,data/wav16k/ta/ta_voicedata/7.wav,உங்கள் எனாக் பதிவு நிலுவையில் உள்ளது. தொடர தயவுசெய்து அதை முடிக்கவும்.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_008,data/wav16k/ta/ta_voicedata/8.wav,உங்கள் கடன் விண்ணப்பத்திற்கு உத்தரவாத கையொப்பம் நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_009,data/wav16k/ta/ta_voicedata/9.wav,உங்கள் ஆவணங்களின் கையேடு சரிபார்ப்பு நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_010,data/wav16k/ta/ta_voicedata/10.wav,உங்கள் கடன் கோரிக்கைக்கு கூட்டாளர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_011,data/wav16k/ta/ta_voicedata/11.wav,தொலைபேசி சரிபார்ப்பு நிலுவையில் உள்ளது. உங்கள் தொலைபேசி எண்ணை சரிபார்க்கவும்.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_012,data/wav16k/ta/ta_voicedata/12.wav,உங்கள் கடனுக்காக அவந்தி கடன் வழங்குபவர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_013,data/wav16k/ta/ta_voicedata/13.wav,கடன் வழங்குநர் ஒப்புதல் எதிர்பார்க்கப்படும் திருப்புமுனை நேரத்தைக் கடந்தது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_014,data/wav16k/ta/ta_voicedata/14.wav,கூட்டாளர் ஒப்புதல் எதிர்பார்க்கப்படும் திருப்புமுனை நேரத்தைக் கடந்தது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_015,data/wav16k/ta/ta_voicedata/15.wav,கூட்டாளர் கடன் திருத்தம் செயல்பாட்டில் உள்ளது. புதுப்பிப்புகளுக்காக காத்திருங்கள்.,ta,out_of_scope,{},unknown,unknown,dataset
@@ -219,8 +219,8 @@ ta_017,data/wav16k/ta/ta_voicedata/17.wav,உங்கள் கடன் வி
 ta_018,data/wav16k/ta/ta_voicedata/18.wav,உங்கள் கடன் அங்கீகரிக்கப்பட்டுள்ளது. வாழ்த்துக்கள்!,ta,out_of_scope,{},unknown,unknown,dataset
 ta_019,data/wav16k/ta/ta_voicedata/19.wav,உங்கள் கடனை வழங்குவது தாமதமானது. விவரங்களுக்கு ஆதரவைத் தொடர்பு கொள்ளவும்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_020,data/wav16k/ta/ta_voicedata/20.wav,உங்கள் கடன் விண்ணப்பம் நிராகரிக்கப்பட்டுள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_021,data/wav16k/ta/ta_voicedata/21.wav,தரவு சிக்கல்கள் காரணமாக உங்கள் கடன் நிராகரிக்கப்பட்டது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_022,data/wav16k/ta/ta_voicedata/22.wav,உங்கள் கடனுக்கு குழு ஒப்புதல் நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_021,data/wav16k/ta/ta_voicedata/21.wav,தரவு சிக்கல்கள் காரணமாக உங்கள் கடன் நிராகரிக்கப்பட்டது.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_022,data/wav16k/ta/ta_voicedata/22.wav,உங்கள் கடனுக்கு குழு ஒப்புதல் நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_023,data/wav16k/ta/ta_voicedata/23.wav,உங்கள் கடனுக்காக தானியங்கி வழங்கல் தொடங்கப்பட்டுள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_024,data/wav16k/ta/ta_voicedata/24.wav,தானியங்கி காப்பீட்டு நீக்குதல் தொடங்கப்பட்டுள்ளது.,ta,crop_insurance_status,{},unknown,unknown,dataset
 ta_025,data/wav16k/ta/ta_voicedata/25.wav,காப்பீட்டு நீக்குதல் உங்கள் கடனுக்கான செயல்பாட்டில் உள்ளது.,ta,crop_insurance_status,{},unknown,unknown,dataset
@@ -240,13 +240,13 @@ ta_038,data/wav16k/ta/ta_voicedata/38.wav,உங்கள் கணக்கி�
 ta_039,data/wav16k/ta/ta_voicedata/39.wav,உங்கள் கணக்கில் உபரி மூன்று திருப்பிச் செலுத்துகிறது.,ta,loan_due_date,{},unknown,unknown,dataset
 ta_040,data/wav16k/ta/ta_voicedata/40.wav,உங்கள் கணக்கில் உபரி மூன்று பிளஸ் திருப்பிச் செலுத்துகிறது.,ta,loan_due_date,{},unknown,unknown,dataset
 ta_041,data/wav16k/ta/ta_voicedata/41.wav,உங்கள் டாஷ்போர்டில் எந்த கடன் நிலையையும் சரிபார்க்கலாம்.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_042,data/wav16k/ta/ta_voicedata/42.wav,பணம் செலுத்தாததால் உங்கள் கடன் எழுதப்பட்டுள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_042,data/wav16k/ta/ta_voicedata/42.wav,பணம் செலுத்தாததால் உங்கள் கடன் எழுதப்பட்டுள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_043,data/wav16k/ta/ta_voicedata/43.wav,உங்கள் கடன் முழுமையாக திருப்பிச் செலுத்தப்பட்டுள்ளது. நன்றி!,ta,loan_due_date,{},unknown,unknown,dataset
 ta_044,data/wav16k/ta/ta_voicedata/44.wav,உங்கள் கணக்கிற்கு உபரி திருப்பிச் செலுத்தப்பட்ட நிலை அடையப்பட்டுள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_045,data/wav16k/ta/ta_voicedata/45.wav,மறுசீரமைப்பு பயனர் சரிபார்ப்பு உங்கள் கடனுக்கு நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_045,data/wav16k/ta/ta_voicedata/45.wav,மறுசீரமைப்பு பயனர் சரிபார்ப்பு உங்கள் கடனுக்கு நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_046,data/wav16k/ta/ta_voicedata/46.wav,உங்கள் கடனை மறுசீரமைக்க கடன் வழங்குபவர் ஒப்புதல் அளித்துள்ளார்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_047,data/wav16k/ta/ta_voicedata/47.wav,டிரான்ச் விநியோக கையேடு தலையீடு தேவை.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_048,data/wav16k/ta/ta_voicedata/48.wav,உங்கள் கடனுக்கு கோலெண்டர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_048,data/wav16k/ta/ta_voicedata/48.wav,உங்கள் கடனுக்கு கோலெண்டர் ஒப்புதல் நிலுவையில் உள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_049,data/wav16k/ta/ta_voicedata/49.wav,கோலெண்டர் டெபர்சல் தொடங்கப்பட்டுள்ளது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_050,data/wav16k/ta/ta_voicedata/50.wav,உங்கள் கடன் ஒப்பந்தத்திற்காக கோலெண்டர் கையொப்பமிட காத்திருக்கிறார்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_051,data/wav16k/ta/ta_voicedata/51.wav,வாழ்த்துக்கள்! உங்கள் கடன் பயணம் இப்போது தொடங்குகிறது.,ta,out_of_scope,{},unknown,unknown,dataset
@@ -261,8 +261,8 @@ ta_059,data/wav16k/ta/ta_voicedata/59.wav,உங்கள் கடனுக்�
 ta_060,data/wav16k/ta/ta_voicedata/60.wav,தொலைபேசி சரிபார்ப்பு வெற்றிகரமாக. அவந்தி ஒப்புதலுக்காக காத்திருக்கிறது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_061,data/wav16k/ta/ta_voicedata/61.wav,அவந்தி கடன் வழங்குபவர் உங்கள் கடனுக்கு ஒப்புதல் அளித்துள்ளார். விநியோகத்திற்காக காத்திருக்கிறது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_062,data/wav16k/ta/ta_voicedata/62.wav,உங்கள் கடன் வழங்கல் நாளை திட்டமிடப்பட்டுள்ளது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_063,data/wav16k/ta/ta_voicedata/63.wav,முழுமையற்ற ஆவணங்கள் காரணமாக உங்கள் கடன் விண்ணப்பம் நிராகரிக்கப்பட்டது.,ta,loan_due_date,{},unknown,unknown,dataset
-ta_064,data/wav16k/ta/ta_voicedata/64.wav,தரவு சிக்கல்கள் கண்டறியப்பட்டன. உங்கள் தகவலைப் புதுப்பிக்கவும்.,ta,transaction_dispute,{},unknown,unknown,dataset
+ta_063,data/wav16k/ta/ta_voicedata/63.wav,முழுமையற்ற ஆவணங்கள் காரணமாக உங்கள் கடன் விண்ணப்பம் நிராகரிக்கப்பட்டது.,ta,out_of_scope,{},unknown,unknown,dataset
+ta_064,data/wav16k/ta/ta_voicedata/64.wav,தரவு சிக்கல்கள் கண்டறியப்பட்டன. உங்கள் தகவலைப் புதுப்பிக்கவும்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_065,data/wav16k/ta/ta_voicedata/65.wav,குழு ஒப்புதல் வழங்கப்பட்டது. தானியங்கி வழங்கல் தொடங்கப்பட்டது.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_066,data/wav16k/ta/ta_voicedata/66.wav,காப்பீட்டு விநியோகித்தல் முடிந்தது. விவரங்களுக்கு உங்கள் கணக்கைச் சரிபார்க்கவும்.,ta,crop_insurance_status,{},unknown,unknown,dataset
 ta_067,data/wav16k/ta/ta_voicedata/67.wav,பயனர் சுயவிவர சோதனை முடிந்தது. தடை காலம் தொடங்கியது.,ta,out_of_scope,{},unknown,unknown,dataset
@@ -298,4 +298,4 @@ ta_096,data/wav16k/ta/ta_voicedata/96.wav,மறுசீரமைப்பி�
 ta_097,data/wav16k/ta/ta_voicedata/97.wav,நிராகரிப்பைத் தவிர்க்க உங்கள் ஆவணங்களைப் புதுப்பிக்கவும்.,ta,out_of_scope,{},unknown,unknown,dataset
 ta_098,data/wav16k/ta/ta_voicedata/98.wav,உங்கள் கடன் தாமதமான நிலையில் உள்ளது. அபராதங்கள் பொருந்தக்கூடும்.,ta,loan_due_date,{},unknown,unknown,dataset
 ta_099,data/wav16k/ta/ta_voicedata/99.wav,உங்கள் கடன் NPA நிலையில் உள்ளது. உடனடியாக தீர்க்கவும்.,ta,out_of_scope,{},unknown,unknown,dataset
-ta_100,data/wav16k/ta/ta_voicedata/100.wav,இந்த வாக்கியங்கள் வங்கிகள் மற்றும் கடன்களுடன் தொடர்புடையவை. இந்த தரவுத்தொகுப்பை உருவாக்கியதற்கு நன்றி நக்மானி.,ta,loan_due_date,{},unknown,unknown,dataset
+ta_100,data/wav16k/ta/ta_voicedata/100.wav,இந்த வாக்கியங்கள் வங்கிகள் மற்றும் கடன்களுடன் தொடர்புடையவை. இந்த தரவுத்தொகுப்பை உருவாக்கியதற்கு நன்றி நக்மானி.,ta,out_of_scope,{},unknown,unknown,dataset

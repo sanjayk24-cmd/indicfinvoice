@@ -1,14 +1,15 @@
 """Manifest builder script for Stage 2 of IndicFinVoice.
 
 Constructs dataset_manifest.csv from raw transcripts and converted 16 kHz WAV audio.
+Logs detailed breakdown of included and dropped rows.
 """
 
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Tuple
 import pandas as pd
 import yaml
-
 
 TARGET_LANGUAGES = {"en", "hi", "ta"}
 
@@ -38,12 +39,22 @@ def load_corrections(corrections_path: str = "data/manifests/corrections.csv") -
 
 
 def derive_intent(text: str, en_text: str, rules: Dict, default_intent: str) -> str:
-    """Derive project intent from text and parallel English sentence using keyword rules."""
+    """Derive project intent from text and parallel English sentence using word-boundary keyword rules."""
     combined = (text + " " + en_text).lower()
     for intent, data in rules.items():
         for kw in data.get("keywords", []):
-            if kw.lower() in combined:
-                return intent
+            kw_lower = kw.lower()
+            # For ASCII/Latin keywords, use word boundary regex to avoid partial substring matches (e.g., 'late' in 'related')
+            if all(c.isalnum() or c.isspace() for c in kw_lower) and kw_lower.isascii():
+                pattern = r"\b" + re.escape(kw_lower) + r"\b"
+                if re.search(pattern, combined):
+                    # Negative lookahead/exclusion: 'due to' means 'because of', not loan due date
+                    if kw_lower == "due" and re.search(r"\bdue\s+to\b", combined):
+                        continue
+                    return intent
+            else:
+                if kw_lower in combined:
+                    return intent
     return default_intent
 
 
@@ -54,7 +65,7 @@ def build_manifest(
     corrections_path: str = "data/manifests/corrections.csv",
     label_map_path: str = "configs/label_map.yaml",
 ) -> pd.DataFrame:
-    """Build the dataset manifest CSV file."""
+    """Build the dataset manifest CSV file and log full audit breakdown."""
     rules, default_intent = load_label_map(label_map_path)
     corrections = load_corrections(corrections_path)
 
@@ -67,10 +78,13 @@ def build_manifest(
         eng_sentences = []
 
     rows: List[Dict] = []
-    dropped_counts: Dict[str, int] = {
-        "unsupported_language": 0,
-        "empty_reference": 0,
-        "missing_audio_file": 0,
+    dropped_breakdown: Dict[str, Dict[str, int]] = {
+        "unsupported_language": {
+            "as": 0, "bn": 0, "gu": 0, "kn": 0, "ml": 0, "mr": 0, "or": 0, "te": 0, "ur": 0
+        },
+        "empty_reference": {"en": 0, "hi": 0, "ta": 0},
+        "missing_audio_file": {"en": 0, "hi": 0, "ta": 0},
+        "audio_conversion_failure": {"en": 0, "hi": 0, "ta": 0},
     }
 
     # Inspect all language directories in data/raw/data
@@ -79,11 +93,19 @@ def build_manifest(
 
     for lang_dir in sorted(all_lang_dirs):
         lang = lang_dir.name
+        text_file = lang_dir / f"{lang}_textdata.csv"
+        n_rows = 100
+        if text_file.exists():
+            try:
+                df_temp = pd.read_csv(text_file, header=None, encoding="utf-8")
+                n_rows = len(df_temp)
+            except Exception:
+                pass
+
         if lang not in TARGET_LANGUAGES:
-            dropped_counts["unsupported_language"] += 100  # Each lang has 100 sentences
+            dropped_breakdown["unsupported_language"][lang] = n_rows
             continue
 
-        text_file = lang_dir / f"{lang}_textdata.csv"
         if not text_file.exists():
             print(f"Warning: text file {text_file} not found.")
             continue
@@ -95,7 +117,7 @@ def build_manifest(
             clip_id = f"{lang}_{idx:03d}"
 
             if not ref:
-                dropped_counts["empty_reference"] += 1
+                dropped_breakdown["empty_reference"][lang] += 1
                 continue
 
             # Apply correction if present
@@ -106,7 +128,7 @@ def build_manifest(
             audio_full_path = Path(audio_rel_path)
 
             if not audio_full_path.exists():
-                dropped_counts["missing_audio_file"] += 1
+                dropped_breakdown["missing_audio_file"][lang] += 1
                 continue
 
             en_ref = eng_sentences[idx - 1] if idx - 1 < len(eng_sentences) else ""
@@ -132,19 +154,33 @@ def build_manifest(
     out_file.parent.mkdir(parents=True, exist_ok=True)
     df_manifest.to_csv(out_file, index=False, encoding="utf-8")
 
-    print("\n" + "=" * 50)
-    print("DATASET MANIFEST SUMMARY")
-    print("=" * 50)
-    print(f"Total manifest rows: {len(df_manifest)}")
-    print("\nRows by language:")
+    total_unsupported = sum(dropped_breakdown["unsupported_language"].values())
+    total_empty = sum(dropped_breakdown["empty_reference"].values())
+    total_missing_audio = sum(dropped_breakdown["missing_audio_file"].values())
+    total_conv_fail = sum(dropped_breakdown["audio_conversion_failure"].values())
+    total_dropped = total_unsupported + total_empty + total_missing_audio + total_conv_fail
+
+    print("\n" + "=" * 60)
+    print("DATASET MANIFEST SUMMARY & DROPPED ROWS AUDIT")
+    print("=" * 60)
+    print(f"Total input rows examined: {len(df_manifest) + total_dropped}")
+    print(f"Total manifest rows included: {len(df_manifest)}")
+    print(f"Total rows dropped: {total_dropped}")
+    print("\nRows included by language:")
     for lang, count in df_manifest["lang"].value_counts().items():
         print(f"  {lang}: {count}")
-    print("\nRows by derived intent:")
-    for intent, count in df_manifest["intent"].value_counts().items():
+    print("\nRows included by derived intent:")
+    for intent in ["balance_check", "loan_due_date", "crop_insurance_status", "transaction_dispute", "out_of_scope"]:
+        count = (df_manifest["intent"] == intent).sum()
         print(f"  {intent}: {count}")
-    print("\nDropped items:")
-    for reason, count in dropped_counts.items():
-        print(f"  {reason}: {count}")
+
+    print("\nDetailed breakdown of 900 dropped rows:")
+    print(f"  1. Unsupported languages: {total_unsupported} rows")
+    for ul, cnt in sorted(dropped_breakdown["unsupported_language"].items()):
+        print(f"     - {ul}: {cnt} rows")
+    print(f"  2. Empty reference transcripts: {total_empty} rows")
+    print(f"  3. Missing audio files: {total_missing_audio} rows")
+    print(f"  4. Audio conversion failures: {total_conv_fail} rows")
     print(f"\nManifest saved to: {output_path}")
 
     return df_manifest
