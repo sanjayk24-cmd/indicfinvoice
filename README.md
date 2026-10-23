@@ -1,6 +1,6 @@
 # IndicFinVoice: Multilingual Voice Banking for Rural India
 
-A voice and text banking assistant for five languages: English, Hindi, Hinglish (romanised code-mixed Hindi-English), Tamil, and Tanglish (romanised code-mixed Tamil-English). A user speaks or types a banking question, the system identifies the intent and slots, calls a mock bank API, and replies in text in the same language.
+A voice and text banking assistant for three languages: English, Hindi, and Tamil. A user speaks or types a banking question, the system identifies the intent and slots, calls a mock bank API, and replies in text in the same language.
 
 This README is the build guide. It is written so that an AI coding agent (for example, Antigravity) can follow it stage by stage from an empty folder to a working, tested application. Each stage has:
 
@@ -20,7 +20,7 @@ This README is the build guide. It is written so that an AI coding agent (for ex
 
 | Item | Decision |
 |---|---|
-| Languages | `en` (English), `hi` (Hindi, Devanagari), `hinglish` (romanised Hindi-English code-mixed), `ta` (Tamil, Tamil script), `tanglish` (romanised Tamil-English code-mixed). Only these five. The dataset's other languages (bn, gu, kn, ml, mr, te, ur) are out of scope and excluded from the manifest. |
+| Languages | `en` (English), `hi` (Hindi, Devanagari), `ta` (Tamil, Tamil script). Only these three. Romanised code-mixed Hinglish and Tanglish are out of scope for v1, because the dataset has no audio for them. The dataset's other languages (bn, gu, kn, ml, mr, te, ur) are also out of scope and excluded from the manifest. |
 | Intents | `balance_check`, `loan_due_date`, `crop_insurance_status`, `transaction_dispute`, `out_of_scope` |
 | Slots (BIO tags) | `account_type` (savings, current, kcc), `loan_type` (home, crop, personal), `claim_id`, `amount`, `date`, `transaction_ref` |
 | Speech input | Audio files and microphone via Gradio |
@@ -77,7 +77,6 @@ indicfinvoice/
 ├── configs/
 │   ├── settings.yaml               # thresholds, paths, model names, seed (Stage 1)
 │   ├── label_map.yaml              # dataset labels → project intents and slots (Stage 2)
-│   ├── lang_words.yaml             # Hinglish and Tanglish word lists for language ID (Stage 8)
 │   └── slot_values.yaml            # normalisation tables for slot values (Stage 6A)
 │
 ├── data/
@@ -127,7 +126,7 @@ indicfinvoice/
 │   └── predict.py                  # predict(text) (Stage 6)
 │
 ├── core/
-│   ├── lang_id.py                  # identify_language(): en, hi, hinglish, ta, tanglish (Stage 8)
+│   ├── lang_id.py                  # identify_language(): en, hi, ta (Stage 8)
 │   ├── normalise.py                # normalise_slots(): slot value mapping (Stage 6A)
 │   ├── dialogue.py                 # DialogueState: pending requests across turns (Stage 6A)
 │   ├── rules.py                    # next_action(): decides the next step (Stage 7)
@@ -180,7 +179,7 @@ The project is built by one person. A team would normally provide two safeguards
    - Wait at least 24 hours.
    - Write the unseen test set from the intent descriptions in section 0.1 and from realistic customer situations. Do not look at the templates while writing it, and do not copy sentences from the dataset's text.
    - Record the date you wrote the templates and the date you wrote the unseen set in `DATA_SOURCES.md`.
-2. **Get an outside check for Tamil.** If the developer is not a native Tamil speaker, Tamil and Tanglish templates and replies need checking by a native speaker outside the project. If no one is available, mark those templates and replies `"verified": false` in their files and say so in the report. Do not present unverified Tamil results as validated.
+2. **Get an outside check for Tamil.** If the developer is not a native Tamil speaker, Tamil templates and replies need checking by a native speaker outside the project. If no one is available, mark those templates and replies `"verified": false` in their files and say so in the report. Do not present unverified Tamil results as validated.
 
 The agent must not write `data/splits/unseen_test.jsonl` itself, because it is generated from the same process as the templates.
 
@@ -344,14 +343,14 @@ clip_id, path, ref, lang, intent, slots_json, speaker, noise, source_split
 
 - `path`: relative path to `data/wav16k/...`
 - `ref`: transcript, unchanged from the dataset
-- `lang`: one of `en`, `hi`, `hinglish`, `ta`, `tanglish`. Use the dataset's own language field or folder name as the primary source. Do not detect language from the script alone: romanised Hindi, romanised Tamil, and English all use Latin letters, so script detection cannot separate them. If the dataset has no romanised Hinglish or Tanglish clips, record that in `DATA_SOURCES.md`; those two languages are then tested with the solo-written unseen text only (section 0.7, Stage 6), and the audio results cover `en`, `hi`, and `ta` only.
+- `lang`: one of `en`, `hi`, `ta`. Use the dataset's own language field or folder name as the primary source. Do not detect language from the script alone: romanised Hindi, romanised Tamil, and English all use Latin letters, so script detection cannot separate them. Romanised Hinglish and Tanglish are out of scope for v1 and must not appear in the manifest.
 - `intent`: project intent, after mapping through `configs/label_map.yaml`, or `out_of_scope` for unmapped items if the dataset is Case A and the item is clearly unrelated
 - `slots_json`: JSON string of slot values if available; empty otherwise
 - `speaker`: speaker ID if provided, otherwise `unknown`
 - `noise`: `unknown` unless the dataset says otherwise
 - `source_split`: the dataset's own split name if it has one
 
-Drop any row whose `ref` is empty, whose audio file is missing, or whose language is not one of the five in section 0.1. Log the number dropped per reason.
+Drop any row whose `ref` is empty, whose audio file is missing, or whose language is not one of the three in section 0.1. Log the number dropped per reason.
 
 **2.6 Licence and attribution**
 
@@ -404,14 +403,12 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
    ```
    Use these slot values: `account_type` (savings, current, KCC), `loan_type` (home, crop, personal), `claim_id` (CLM-771, CLM-402, CLM-930), `amount` (500, 1500, 22000, 75000), `date` (today, yesterday, 12 October, 5 November), `transaction_ref` (TXN-9001, TXN-9002). Write the Devanagari and romanised values in the YAML files.
 
-   Each intent YAML must have five language blocks: `en`, `hi`, `hinglish`, `ta`, and `tanglish`, with about 10 templates each.
+   Each intent YAML must have three language blocks: `en`, `hi`, and `ta`, with about 10 templates each. Do not write `hinglish` or `tanglish` blocks, even if an example elsewhere shows them.
    - `en`: plain English banking phrases.
    - `hi`: Devanagari Hindi.
-   - `hinglish`: romanised Hindi-English code-mixed.
    - `ta`: Tamil script. Slot values in Tamil script, for example savings = சேமிப்பு, current = நடப்பு, KCC = கேசிசி.
-   - `tanglish`: romanised Tamil-English code-mixed, for example "{account_type} balance enna?" style phrasings. Slot values in romanised form.
    
-   Tamil and Tanglish templates must be checked by a native Tamil speaker from outside the project if the developer is not a native speaker. Record the reviewer's description (for example, "native speaker, Tamil Nadu") in `DATA_SOURCES.md`, without a name. If no reviewer is available, mark those templates `"verified": false` and say so in the report. Do not use machine translation without review.
+   Tamil templates must be checked by a native Tamil speaker from outside the project if the developer is not a native speaker. Record the reviewer's description (for example, "native speaker, Tamil Nadu") in `DATA_SOURCES.md`, without a name. If no reviewer is available, mark those templates `"verified": false` and say so in the report. Do not use machine translation without review.
 2. Templates for `out_of_scope` contain no slots. They cover greetings, weather, sports, and unsupported products.
 3. Write `data/gen_data.py`:
    - reads every YAML file in `data/templates/`
@@ -492,7 +489,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 
 1. Write `asr/transcribe.py`:
    - loads `openai/whisper-medium` once at module import, with `torch_dtype=torch.float16` and `device="cuda"`, via `transformers.pipeline("automatic-speech-recognition", ...)`
-   - `transcribe(path: str) -> str`: loads audio at 16 kHz mono with librosa, passes it to the pipeline with `generate_kwargs={"task": "transcribe"}`, returns the stripped text. Do not pass a language argument: let Whisper auto-detect, and record the detected language in `asr_results.csv` if the pipeline returns it. Forcing one language hides errors such as Tanglish being written in Tamil script
+   - `transcribe(path: str) -> str`: loads audio at 16 kHz mono with librosa, passes it to the pipeline with `generate_kwargs={"task": "transcribe"}`, returns the stripped text. Do not pass a language argument: let Whisper auto-detect, and record the detected language in `asr_results.csv` if the pipeline returns it. Forcing one language hides errors such as Tamil speech being transcribed as Hindi
    - `normalise(text: str) -> str`: lowercase, remove punctuation (including Devanagari danda `।`), collapse whitespace; apply the same function to references and hypotheses
 2. Write `eval/asr_eval.py`:
    - reads `data/manifests/dataset_manifest.csv`
@@ -516,7 +513,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 - Do not change the normalisation function after seeing results. If it must change for a real reason, record the change and re-run.
 - Do not fix individual transcripts to improve WER.
 
-**Note for the report:** romanised languages (`hinglish`, `tanglish`) have no standard spelling, so WER can be inflated for them. Whisper may also write Tamil speech in Tamil script while the reference is romanised, which counts as errors. Decide one transcription policy before running, record it in `DATA_SOURCES.md`, and apply it to every run: report raw WER, and optionally a transliterated WER as a second row. Do not switch policies after seeing results. Whisper-medium is weaker on Tamil than on Hindi and English, so always report WER per language rather than one average.
+**Note for the report:** Use the same normalisation for all three languages, and state it in the report. Whisper-medium is weaker on Tamil than on Hindi and English, so always report WER per language rather than one average.
 
 ---
 
@@ -536,7 +533,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
    - runs a leak check: no `(tokens, intent)` pair appears in both train and any test file. Prints the result. Exits `1` on any overlap.
    - writes `data/splits/SPLITS_FROZEN.txt` with the file hashes (SHA-256). From this point, these files may not change.
 2. **Model** — write `nlu/model.py`, class `JointNLU(nn.Module)`:
-   - encoder: `AutoModel.from_pretrained(nlu_base_model)`. Check the model card to confirm English, Hindi, and Tamil are in its pretraining languages, and record this in the report. IndicBERT is pretrained on native scripts, so expect lower accuracy on romanised Hinglish and Tanglish.
+   - encoder: `AutoModel.from_pretrained(nlu_base_model)`. Check the model card to confirm English, Hindi, and Tamil are in its pretraining languages, and record this in the report. IndicBERT is pretrained on native scripts, so check its results per language.
    - dropout 0.1
    - `intent_head`: `Linear(hidden, n_intents)` on the first token (`[CLS]`)
    - `slot_head`: `Linear(hidden, n_tags)` on every token
@@ -568,7 +565,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 - [ ] Leak check passes.
 - [ ] `nlu/train.py` completes on the GPU and saves the model.
 - [ ] `pytest tests/test_predict.py` passes: for three sentences from the templates, predict returns the expected intent.
-- [ ] `eval/results/nlu_results.json` contains results for every available set, with intent accuracy broken down by `lang` (en, hi, hinglish, ta, tanglish).
+- [ ] `eval/results/nlu_results.json` contains results for every available set, with intent accuracy broken down by `lang` (en, hi, ta).
 
 **Do not**
 
@@ -638,14 +635,14 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
    - if a required slot is missing or empty: return `{"action": "ask", "slot": <name>, "question": <text>}`. Questions in romanised Hinglish, stored in a `QUESTIONS` dict in the file.
    - if `intent == "transaction_dispute"` and all slots are present: return `{"action": "need_pin"}`
    - otherwise: return `{"action": "call_api", "intent": intent, "slots": slots}`
-2. Write `core/responses.json` with templates for each intent in all five languages (`en`, `hi`, `ta`, `hinglish`, `tanglish`), plus `repeat`, `help`, `ask`, `need_pin`, and `error`. Placeholders are named, such as `{balance}`, `{due_date}`, `{status}`, `{reference}`.
+2. Write `core/responses.json` with templates for each intent in all three languages (`en`, `hi`, `ta`), plus `repeat`, `help`, `ask`, `need_pin`, and `error`. Placeholders are named, such as `{balance}`, `{due_date}`, `{status}`, `{reference}`.
 3. Write `tests/test_rules.py` with one test per branch, plus a test that an empty-string slot counts as missing.
 
 **Acceptance criteria**
 
 - [ ] `pytest tests/test_rules.py` passes.
 - [ ] `python -m json.tool core/responses.json` succeeds.
-- [ ] Every intent and every reply type has templates in all five languages. A native Tamil speaker has checked the `ta` and `tanglish` replies.
+- [ ] Every intent and every reply type has templates in all three languages. A native Tamil speaker has checked the `ta` replies.
 
 **Do not**
 
@@ -662,9 +659,9 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 **Tasks**
 
 1. Write `pipeline.py` with a class `BankingAssistant` that loads the ASR and NLU models once at construction.
-2. Language identification: write `core/lang_id.py` with `identify_language(text: str) -> str` returning one of `en`, `hi`, `hinglish`, `ta`, `tanglish`.
+2. Language identification: write `core/lang_id.py` with `identify_language(text: str) -> str` returning one of `en`, `hi`, `ta`.
    - Tamil script → `ta`; Devanagari → `hi`.
-   - Latin script: decide between `en`, `hinglish`, and `tanglish` using word lists in `configs/lang_words.yaml` (common Hinglish words such as "kya", "batao", "mera" and common Tanglish words such as "enna", "ennoda", "sollu"). Native English words that appear in both lists are ignored. Write the word lists with a native speaker for each language.
+   - Latin script → `en`. Romanised Hindi and Tamil are out of scope for v1, so no word lists are needed.
    - Test it on at least 10 examples per language in `tests/test_lang_id.py`.
    - The reply language is the detected language of the input.
 3. Method `handle_text(text: str, customer_id: str, pending: dict | None, pin: str | None) -> dict`:
@@ -734,7 +731,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 
 **Tasks**
 
-1. Write `eval/scenarios.jsonl` with at least 50 scripted cases: 10 per intent (five intents), with at least 2 cases per language (`en`, `hi`, `hinglish`, `ta`, `tanglish`) for each intent. Include phrasings not in the templates. Tamil and Tanglish cases must be written or checked by a native Tamil speaker. Each line:
+1. Write `eval/scenarios.jsonl` with at least 50 scripted cases: 10 per intent (five intents), with at least 2 cases per language (`en`, `hi`, `ta`) for each intent. Include phrasings not in the templates. Tamil cases must be written or checked by a native Tamil speaker. Each line:
    ```json
    {"text": "...", "expected_intent": "...", "expected_action": "...", "customer_id": "C001", "expected_api_status": 200}
    ```
@@ -790,7 +787,7 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 **Tasks**
 
 1. Write `eval/summarise.py`. It reads `eval/results/*.json` and `*.csv`, and writes `eval/results/SUMMARY.md` with these tables:
-   - **ASR:** WER overall, per language (en, hi, hinglish, ta, tanglish), per noise condition (if known), with the transcription policy stated
+   - **ASR:** WER overall, per language (en, hi, ta), per noise condition (if known), with the transcription policy stated
    - **NLU:** intent accuracy and macro-F1, and slot F1, for val, unseen, and external test
    - **End-to-end:** task success overall and per intent, audio intent accuracy, NLU latency median and 95th percentile, total pipeline latency
    - **Tests:** number passing
@@ -804,9 +801,9 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
    - templates limit linguistic variety, so the unseen and external sets are the realistic measure
    - Whisper is used without fine-tuning
    - the bank is simulated, and the PIN check is a demonstration only
-   - only Hindi and Hinglish are covered
+   - only English, Hindi, and Tamil are covered; romanised Hinglish and Tanglish are out of scope
    - the dataset's licence and any known gaps
-   - Hinglish spelling variation inflates WER
+   - Tamil results are weaker than Hindi and English, and must be reported per language
 5. Tag the release in Git: `git tag v1.0`.
 
 **Acceptance criteria**
@@ -844,12 +841,10 @@ python eval/summarise.py
 
 - Templates limit linguistic variety. External and unseen test sets give the realistic measure.
 - Whisper-medium is used without fine-tuning.
-- Five language conditions are covered: English, Hindi, Hinglish, Tamil, and Tanglish. The dataset's other seven languages are out of scope.
-- Tamil and Tanglish have fewer resources than Hindi and English, so expect lower results on them. Romanised code-mixed text is not native script for IndicBERT, which lowers accuracy on Hinglish and Tanglish.
-- If the dataset lacks romanised Hinglish or Tanglish audio, those two languages are evaluated on text only.
+- Three languages are covered: English, Hindi, and Tamil. Romanised Hinglish and Tanglish are out of scope for v1, because the dataset has no audio for them. The dataset's other seven languages are also out of scope.
+- Tamil has fewer resources than Hindi and English, so expect lower results on it.
 - The bank is simulated. The PIN is a demonstration only and provides no real security.
 - Voice is not a secure authentication method. The system does not use voice to verify identity.
-- Hinglish spelling variation can make WER look worse than the real understanding.
 - No user study with rural participants has been run.
 
 ---
@@ -879,10 +874,10 @@ python eval/summarise.py
 | Out-of-memory on Whisper | Loaded in fp32 or twice | Use `torch_dtype=float16`; load once |
 | Slot tags misaligned | Sub-word labelling wrong | Check the `word_ids()` mapping; print one example |
 | Hindi text garbled in CSV | File not UTF-8 | Save as UTF-8, use `encoding="utf-8"` |
-| WER very high on Hinglish | Spelling variation | Expected; report it and use normalisation |
+| WER very high on Hindi | Noisy clips or normalisation mismatch | Check the noise breakdown and the normalise() function |
 | API returns 404 for valid customer | Customer ID typo | Check `db.json` keys |
 | Model reloads on every request | Load inside a function | Move the load to module level |
 | Leak check fails | Template in both splits | Re-run `split.py` on template IDs, before freezing |
-| Tanglish input replied to in English or Hinglish | Language identifier word lists too small | Extend `configs/lang_words.yaml` with native speaker input; re-run `tests/test_lang_id.py` |
+| Tamil input replied to in English | Tamil script not detected | Check the Unicode range check in `core/lang_id.py`; re-run `tests/test_lang_id.py` |
 | Tamil text garbled in Gradio or CSV | Encoding or font | Use UTF-8 everywhere; choose a font with Tamil glyphs for the UI |
 | Tamil WER much higher than Hindi | Whisper-medium weaker on Tamil | Expected; report per language, do not average it away |
