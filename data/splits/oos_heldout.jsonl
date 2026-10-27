@@ -1,0 +1,45 @@
+{"tokens": ["चुना", "हुआ", "गाना", "जोड़ें"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "6045"}
+{"tokens": ["मुंबई", "में", "अभी", "मौसम", "कैसा", "है"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "951"}
+{"tokens": ["मैं", "अभी", "भक्ति", "की", "तरह", "महसूस", "कर", "रहा", "हूँ", "आप", "कैसे", "हैं"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "250"}
+{"tokens": ["वर्तमान", "का", "मौसम", "बताओ"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "2890"}
+{"tokens": ["मेरा", "spotify", "डांस", "प्ले", "लिस्ट"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "2573"}
+{"tokens": ["इस", "शुक्रवार", "को", "मौसम", "कैसा", "है"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "2320"}
+{"tokens": ["आठ", "बजे", "का", "एक", "अलार्म", "सेट", "करो"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "884"}
+{"tokens": ["तुम", "ही", "हो", "गाना", "चालू", "करो"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "9457"}
+{"tokens": ["बीस", "मार्च", "दो", "हजार", "सत्रह", "को", "मौसम", "कैसा", "रहने", "वाला", "है"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "5301"}
+{"tokens": ["आज", "बाहर", "सर्दी", "कितनी", "है"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "738"}
+{"tokens": ["सुनिश्चित", "करें", "कि", "मुझे", "सुबह", "छह", "बजे", "उठना", "है"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "5635"}
+{"tokens": ["अरिजीत", "सिंह", "के", "गानों", "का", "फेरबदल", "करो"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "297"}
+{"tokens": ["निर्वाणा", "की", "प्लेलिस्ट", "चलाओ"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "296"}
+{"tokens": ["अरिजीत", "सिंह", "द्वारा", "तुम", "ही", "हो", "प्ले", "करो"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "782"}
+{"tokens": ["मुंबई", "में", "आज", "मौसम", "की", "स्थिति", "क्या", "है"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "hi", "template_id": "heldout", "massive_id": "2423"}
+{"tokens": ["பிற்பகல்", "இரண்டு", "மணிக்கு", "எச்சரிக்கையை", "அமைக்கவும்"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "8741"}
+{"tokens": ["சில", "நாட்டுப்புற", "இசையைக்", "கேட்க", "வேண்டும்", "என்பது", "என்", "ஆசை"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "1108"}
+{"tokens": ["நான்", "இப்போது", "ஜாஸ்", "போல்", "உணர்கிறேன்"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "250"}
+{"tokens": ["சென்ற", "வருடத்தில்", "எனக்குப்", "பிடித்த", "பாடலைப்", "போடுங்கள்"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "3116"}
+{"tokens": ["வெப்பநிலை", "ஒரே", "மாதிரியாக", "இருக்குமா", "அல்லது", "குளிர்ச்சியாக", "இருக்குமா"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "2679"}
+{"tokens": ["ஏ.", "ஆர்.", "ரஹ்மான்", "இசைக்குழுவிலிருந்து", "நிறைய", "பாடல்களைத்", "தேடு"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "2408"}
+{"tokens": ["சிம்லாவில்", "நாளை", "வானிலை", "இருக்க", "முடியுமா"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "1404"}
+{"tokens": ["காலை", "ஏழு", "மணிக்கு", "என்", "அலாரத்தை", "அமைத்தேன்"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "939"}
+{"tokens": ["மாலையில்", "புயல்", "அதிகமாக", "இருந்தால்", "எனக்கு", "முழு", "கவர்", "ஜாக்கெட்", "தேவைப்படும்"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "5577"}
+{"tokens": ["டி.", "இமானின்", "என்னோடு", "நீ", "இருந்தால்", "பாடலைப்", "போடவும்"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "782"}
+{"tokens": ["சட்டம்", "ஒழுங்கு", "தொடர்பாக", "நகரம்", "எவ்வளவு", "பாதுகாப்பானது"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "5955"}
+{"tokens": ["நான்", "இருக்கும்", "இடத்தில்", "வானிலை", "எப்படி", "இருக்கிறது"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "4355"}
+{"tokens": ["ஜெய்ப்பூரின்", "வானிலையை", "இன்னும்", "இரண்டு", "நாட்களுக்கு", "சொல்லுங்கள்"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "319"}
+{"tokens": ["ஏ.", "ஆர்.", "ரஹ்மான்", "பாடல்களை", "கலந்து", "போடவும்"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "297"}
+{"tokens": ["யுவன்", "ஷங்கர்", "ராஜா", "இசைப்பட்டியல்", "போடு"], "tags": ["O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "ta", "template_id": "heldout", "massive_id": "827"}
+{"tokens": ["should", "i", "open", "the", "sun", "roof"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "6093"}
+{"tokens": ["play", "creed", "from", "my", "rock", "playlist"], "tags": ["O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "1007"}
+{"tokens": ["i", "feel", "like", "jazz", "right", "now", "how", "about", "you"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "250"}
+{"tokens": ["play", "songs", "by", "the", "band", "the", "beatles"], "tags": ["O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "3002"}
+{"tokens": ["will", "i", "need", "to", "wear", "a", "jacket", "next", "wednesday"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "2615"}
+{"tokens": ["start", "celine", "dion", "songs"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "2396"}
+{"tokens": ["can", "i", "please", "have", "the", "weather", "for", "tomorrow", "here", "in", "costa", "mesa"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "1404"}
+{"tokens": ["play", "some", "christian", "music"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "891"}
+{"tokens": ["could", "you", "please", "play", "the", "classical", "music", "for", "me"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "9738"}
+{"tokens": ["set", "alarm", "six", "am"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "5365"}
+{"tokens": ["i", "want", "to", "hear", "snow", "by", "red", "hot", "chili", "peppers"], "tags": ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "779"}
+{"tokens": ["listen", "to", "my", "favorites"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "5707"}
+{"tokens": ["what", "is", "todays", "weather"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "4266"}
+{"tokens": ["shuffle", "songs", "by", "coldplay"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "297"}
+{"tokens": ["play", "a", "nirvana", "playlist"], "tags": ["O", "O", "O", "O"], "intent": "out_of_scope", "lang": "en", "template_id": "heldout", "massive_id": "296"}

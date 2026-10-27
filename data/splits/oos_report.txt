@@ -1,0 +1,166 @@
+================================================================================
+AMAZON MASSIVE OUT-OF-SCOPE CANDIDATE SELECTION REPORT
+================================================================================
+
+Configuration: hi-IN (Language: hi)
+Source split: 'test'
+Total rows in config test split: 2974
+Target intents count: 374
+  - weather_query: 156
+  - play_music: 176
+  - alarm_set: 41
+  - general_greet: 1
+
+Exclusion Rule 3a (containing digit): 0 rows removed
+
+Exclusion Rule 3b (<3 or >15 words): 17 rows removed
+  [3b ID 781 | words=2 | play_music]: bilando खेलें
+  [3b ID 783 | words=2 | play_music]: प्रेमगीत चलाओ
+  [3b ID 1047 | words=17 | play_music]: मुझे अच्छे से रोने की ज़रूरत है क्या आप मेरे लिए उदास शास्त्रीय गाने बजा सकते हैं
+  [3b ID 1238 | words=1 | play_music]: wynk
+  [3b ID 1777 | words=2 | play_music]: अगला गाना
+  [3b ID 2134 | words=2 | alarm_set]: मुझे जगाओ
+  [3b ID 3034 | words=2 | weather_query]: तापमान बताओ
+  [3b ID 3967 | words=1 | play_music]: भक्ति
+  [3b ID 4081 | words=27 | alarm_set]: जब मैं कल घर जा रहा होता हूँ तो मैं अलार्म सेट करना चाहता हूँ ताकि याद रहे कि दुकान पर रुकना और भोजन प्राप्त करना है
+  [3b ID 4960 | words=2 | play_music]: संगीत सनम
+  [3b ID 5118 | words=2 | play_music]: आजा रे
+  [3b ID 5292 | words=2 | alarm_set]: फिक्स अलार्म
+  [3b ID 5321 | words=2 | weather_query]: मौसम दिखाओ
+  [3b ID 5378 | words=1 | play_music]: एस
+  [3b ID 5401 | words=1 | play_music]: संगीत
+  [3b ID 5590 | words=2 | weather_query]: तापमान खोलें
+  [3b ID 8731 | words=16 | alarm_set]: फेसबुक इवेंट के लिए रिपीटिंग रिमाइंडर अलार्म सेट करें मुझे सात अप्रैल को उपस्थित होना है
+
+Exclusion Rule 3c (banking/money words): 3 rows removed
+  [3c ID 319 | matched='लोन' | weather_query]: मुझे अब से दो दिनों में बार्सिलोना में मौसम बताओ
+  [3c ID 2271 | matched='खरीद' | play_music]: कृपया मेरे द्वारा खरीदे और पसंद किए गए गाने चलाएं
+  [3c ID 4081 | matched='दुकान' | alarm_set]: जब मैं कल घर जा रहा होता हूँ तो मैं अलार्म सेट करना चाहता हूँ ताकि याद रहे कि दुकान पर रुकना और भोजन प्राप्त करना है
+
+Remaining candidate rows: 355
+  - weather_query: 152
+  - play_music: 165
+  - alarm_set: 37
+  - general_greet: 1
+
+Sampled 30 rows (15 primary, 15 reserve, seed=42):
+draw_order | massive_id | intent | role | text
+1 | 6045 | play_music | primary | चुना हुआ गाना जोड़ें
+2 | 951 | weather_query | primary | मुंबई में अभी मौसम कैसा है
+3 | 250 | play_music | primary | मैं अभी भक्ति की तरह महसूस कर रहा हूँ आप कैसे हैं
+4 | 2890 | weather_query | primary | वर्तमान का मौसम बताओ
+5 | 2573 | play_music | primary | मेरा spotify डांस प्ले लिस्ट
+6 | 2320 | weather_query | primary | इस शुक्रवार को मौसम कैसा है
+7 | 1400 | weather_query | primary | मैं ज्यादातर ध्यान देता हूँ
+8 | 884 | alarm_set | primary | आठ बजे का एक अलार्म सेट करो
+9 | 9457 | play_music | primary | तुम ही हो गाना चालू करो
+10 | 5301 | weather_query | primary | बीस मार्च दो हजार सत्रह को मौसम कैसा रहने वाला है
+11 | 738 | weather_query | primary | आज बाहर सर्दी कितनी है
+12 | 5635 | alarm_set | primary | सुनिश्चित करें कि मुझे सुबह छह बजे उठना है
+13 | 4212 | weather_query | primary | क्या मई आज शाम घास काटने में समर्थ हूँ
+14 | 297 | play_music | primary | अरिजीत सिंह के गानों का फेरबदल करो
+15 | 296 | play_music | primary | निर्वाणा की प्लेलिस्ट चलाओ
+16 | 782 | play_music | reserve | अरिजीत सिंह द्वारा तुम ही हो प्ले करो
+17 | 2225 | play_music | reserve | अरिजीत सिंह का तुम ही हो चालू करें
+18 | 2423 | weather_query | reserve | मुंबई में आज मौसम की स्थिति क्या है
+19 | 4930 | alarm_set | reserve | साढ़े तीन बजे शाम के लिए अलार्म चालू करें आज
+20 | 5721 | weather_query | reserve | मुझे इस जगह में कल का मौसम दिखाओ
+21 | 254 | play_music | reserve | olly मेरे पसंदीदा भक्ति प्लेयर से एक अच्छा गाना बजाओ
+22 | 5433 | weather_query | reserve | क्या बाद में बारिश होने वाली है
+23 | 1994 | play_music | reserve | मेरे रिकॉर्ड खोलो
+24 | 6093 | weather_query | reserve | क्या मुझे सनरूफ़ खोलनी चाहिए
+25 | 4168 | weather_query | reserve | मुंबई का मौसम चेक करो
+26 | 2258 | weather_query | reserve | क्या मुझे आज स्वेटर चाहिए
+27 | 4377 | weather_query | reserve | वर्तमान मौसम कैसा है
+28 | 5627 | play_music | reserve | सोनू निगम के गाने सुनाओ
+29 | 2931 | play_music | reserve | तुम मिले खेलने का प्यार किया तोह
+30 | 102 | weather_query | reserve | इस सप्ताह का मौसम क्या है
+
+Configuration: ta-IN (Language: ta)
+Source split: 'test'
+Total rows in config test split: 2974
+Target intents count: 374
+  - weather_query: 156
+  - play_music: 176
+  - alarm_set: 41
+  - general_greet: 1
+
+Exclusion Rule 3a (containing digit): 0 rows removed
+
+Exclusion Rule 3b (<3 or >15 words): 32 rows removed
+  [3b ID 296 | words=2 | play_music]: நிர்வாணஇசைப்பட்டியல் போடு
+  [3b ID 299 | words=2 | weather_query]: வானிலை என்ன
+  [3b ID 400 | words=2 | play_music]: பாட தொடங்கு
+  [3b ID 614 | words=2 | play_music]: பிளேலிஸ்ட்டைத் தொடங்கவும்
+  [3b ID 625 | words=2 | play_music]: இளையராஜா பாடல்கள்
+  [3b ID 783 | words=2 | play_music]: காதல் பாடல்கள்
+  [3b ID 1238 | words=1 | play_music]: பண்டோரா
+  [3b ID 1777 | words=2 | play_music]: அடுத்த பாடல்
+  [3b ID 1833 | words=2 | play_music]: பிளேலிஸ்ட் தீம்ஸ்
+  [3b ID 2134 | words=2 | alarm_set]: என்னை எழுப்பவும்
+  [3b ID 2220 | words=2 | weather_query]: மும்பையில் வானிலை
+  [3b ID 2560 | words=2 | play_music]: சீரற்ற இசை
+  [3b ID 2890 | words=2 | weather_query]: தற்போதைய வானிலை
+  [3b ID 2931 | words=2 | play_music]: அடுத்தது வளிமண்டலம்
+  [3b ID 3034 | words=2 | weather_query]: வெப்பநிலையை சொல்லுங்கள்
+  [3b ID 3936 | words=2 | weather_query]: வெப்பநிலை என்ன
+  [3b ID 3967 | words=1 | play_music]: ராப்
+  [3b ID 4031 | words=2 | play_music]: முஸ்தப்பா முஸ்தப்பா
+  [3b ID 4273 | words=2 | play_music]: ஏஸ்கள் உயர்
+  [3b ID 4452 | words=2 | play_music]: பாடல்களை இசைக்கவும்
+  [3b ID 4477 | words=1 | play_music]: பாடல்
+  [3b ID 4689 | words=2 | weather_query]: வானிலை தெரியுமா
+  [3b ID 4917 | words=2 | weather_query]: வெளியே வெப்பநிலை
+  [3b ID 5118 | words=2 | play_music]: யாருக்கும் தெரியாது
+  [3b ID 5292 | words=2 | alarm_set]: அலாரத்தை சரிசெய்யவும்
+  [3b ID 5321 | words=2 | weather_query]: வானிலை காட்டு
+  [3b ID 5328 | words=1 | play_music]: பாறை
+  [3b ID 5378 | words=1 | play_music]: கள்
+  [3b ID 5401 | words=1 | play_music]: இசை
+  [3b ID 5413 | words=2 | play_music]: இசையை போடவும்
+  [3b ID 5414 | words=2 | play_music]: இசையை போடுவீர்களா
+  [3b ID 5524 | words=2 | weather_query]: தற்போதைய வானிலை
+
+Exclusion Rule 3c (banking/money words): 3 rows removed
+  [3c ID 2271 | matched='வாங்க' | play_music]: நான் வாங்கிய மற்றும் பிடித்த பாடல்களை ப்ளே செய்யுங்கள்
+  [3c ID 3507 | matched='பில்' | weather_query]: முன்னறிவிப்பில் பனி இருக்கிறதா
+  [3c ID 5953 | matched='விலை' | weather_query]: சிட்டி மலிவானது அல்லது வாழ்வதற்கு விலை அதிகம்
+
+Remaining candidate rows: 339
+  - weather_query: 145
+  - play_music: 154
+  - alarm_set: 39
+  - general_greet: 1
+
+Sampled 30 rows (15 primary, 15 reserve, seed=42):
+draw_order | massive_id | intent | role | text
+1 | 8741 | alarm_set | primary | பிற்பகல் இரண்டு மணிக்கு எச்சரிக்கையை அமைக்கவும்
+2 | 1108 | play_music | primary | சில நாட்டுப்புற இசையைக் கேட்க வேண்டும் என்பது என் ஆசை
+3 | 250 | play_music | primary | நான் இப்போது ஜாஸ் போல் உணர்கிறேன்
+4 | 3116 | play_music | primary | சென்ற வருடத்தில் எனக்குப் பிடித்த பாடலைப் போடுங்கள்
+5 | 2679 | weather_query | primary | வெப்பநிலை ஒரே மாதிரியாக இருக்குமா அல்லது குளிர்ச்சியாக இருக்குமா
+6 | 2408 | play_music | primary | ஏ. ஆர். ரஹ்மான் இசைக்குழுவிலிருந்து நிறைய பாடல்களைத் தேடு
+7 | 1404 | weather_query | primary | சிம்லாவில் நாளை வானிலை இருக்க முடியுமா
+8 | 939 | alarm_set | primary | காலை ஏழு மணிக்கு என் அலாரத்தை அமைத்தேன்
+9 | 5577 | weather_query | primary | மாலையில் புயல் அதிகமாக இருந்தால் எனக்கு முழு கவர் ஜாக்கெட் தேவைப்படும்
+10 | 782 | play_music | primary | டி. இமானின் என்னோடு நீ இருந்தால் பாடலைப் போடவும்
+11 | 5955 | weather_query | primary | சட்டம் ஒழுங்கு தொடர்பாக நகரம் எவ்வளவு பாதுகாப்பானது
+12 | 4355 | weather_query | primary | நான் இருக்கும் இடத்தில் வானிலை எப்படி இருக்கிறது
+13 | 319 | weather_query | primary | ஜெய்ப்பூரின் வானிலையை இன்னும் இரண்டு நாட்களுக்கு சொல்லுங்கள்
+14 | 297 | play_music | primary | ஏ. ஆர். ரஹ்மான் பாடல்களை கலந்து போடவும்
+15 | 827 | play_music | primary | யுவன் ஷங்கர் ராஜா இசைப்பட்டியல் போடு
+16 | 2322 | weather_query | reserve | நாளை வானிலை எப்படி இருக்கும்
+17 | 2564 | alarm_set | reserve | அடுத்த வெள்ளிக்கிழமை காலை ஆறு முப்பது மணிக்கு அலாரத்தை அமைக்கவும்
+18 | 5085 | weather_query | reserve | சனிக்கிழமையின் முன்னறிவிப்பு என்ன
+19 | 6027 | play_music | reserve | விருப்பமான பாடல்களைப் போடு
+20 | 254 | play_music | reserve | எனக்குப் பிடித்த பேரிலைச்சலுள்ள நிகழ்ச்சி பிளேயரில் இருந்து ஒல்லி ஒரு நல்ல ட்ராக்கை வாசிக்கிறேன்
+21 | 5650 | weather_query | reserve | இன்று மாலை வானிலை கேளுங்கள்
+22 | 2062 | play_music | reserve | எனக்கு கொஞ்சம் ஜாஸ் இசை கேட்க வேண்டும்
+23 | 9656 | play_music | reserve | உங்கள் பேச்சாளர்கள் மூலம் எனக்கு ஒரு உற்சாகமான பாடலை போடுங்கள்
+24 | 4313 | weather_query | reserve | பெங்களூரில் நாளை மழை பெய்யுமா
+25 | 2334 | alarm_set | reserve | நாளை காலை ஆறு மணிக்கு அலாரத்தைச் வைக்கவும்
+26 | 4524 | weather_query | reserve | ஓலி இன்றைய வானிலை முன்னறிவிப்பு என்ன
+27 | 5948 | play_music | reserve | எனது நாடகப் பட்டியலில் இருந்து சில நல்ல பாடலைப் பாடுங்கள்
+28 | 3124 | play_music | reserve | எனது பட்டியலில் இருந்து ஒரு சீரற்ற பாடலை எனக்கு பிளே செய்
+29 | 102 | weather_query | reserve | இந்த வார வானிலை என்ன
+30 | 1589 | weather_query | reserve | அடுத்த செவ்வாய் வெயிலாக இருக்குமா

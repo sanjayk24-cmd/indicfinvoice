@@ -881,3 +881,95 @@ python eval/summarise.py
 | Tamil input replied to in English | Tamil script not detected | Check the Unicode range check in `core/lang_id.py`; re-run `tests/test_lang_id.py` |
 | Tamil text garbled in Gradio or CSV | Encoding or font | Use UTF-8 everywhere; choose a font with Tamil glyphs for the UI |
 | Tamil WER much higher than Hindi | Whisper-medium weaker on Tamil | Expected; report per language, do not average it away |
+
+---
+
+## Dataset Attribution & Citations
+
+This project uses modified subsets of the following datasets distributed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license:
+
+* **PolyAI Task-Specific Datasets (`Span-ConveRT` / `BANKING77`):**
+  * **Paper:** *Span-ConveRT: Few-shot Span Extraction for Dialog with Pretrained Conversational Representations* (ACL 2020)
+  * **Source:** [PolyAI-LDN GitHub Repository](https://github.com/PolyAI-LDN/task-specific-datasets) | [arXiv:2005.08866](https://arxiv.org/abs/2005.08866) | [DOI: 10.48550/arXiv.2005.08866](https://doi.org/10.48550/arXiv.2005.08866)
+  * **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+  * **Modifications:** Filtered from the original 77 classes and remapped into consolidated mobile banking intent categories (`transaction_dispute`, `balance_check`, `unsupported_banking`, and `unsupported_banking, sensitive`).
+
+* **IndicVoices (AI4Bharat):**
+  * **Paper:** *IndicVoices: Towards building an Inclusive Multilingual Speech Dataset for Indian Languages* (ACL Findings 2024)
+  * **Source:** [Hugging Face (`ai4bharat/IndicVoices`)](https://huggingface.co/datasets/ai4bharat/IndicVoices) | [ACL Anthology](https://aclanthology.org/2024.findings-acl.639/)
+  * **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+* **FLEURS (Google):**
+  * **Paper:** *FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech* (2022)
+  * **Source:** [Hugging Face (`google/fleurs`)](https://huggingface.co/datasets/google/fleurs) | [arXiv:2205.12446](https://arxiv.org/abs/2205.12446)
+  * **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+### BibTeX
+
+When referencing these datasets in your work, please cite the original papers:
+
+```bibtex
+@inproceedings{CoopeFarghly2020,
+  Author    = {Sam Coope and Tyler Farghly and Daniela Gerz and Ivan Vulić and Matthew Henderson},
+  Title     = {Span-ConveRT: Few-shot Span Extraction for Dialog with Pretrained Conversational Representations},
+  Year      = {2020},
+  url       = {https://arxiv.org/abs/2005.08866},
+  doi       = {10.48550/arXiv.2005.08866},
+  publisher = {ACL}
+}
+
+@inproceedings{casanueva-etal-2020-efficient,
+  Title     = {Efficient Intent Detection with Dual Sentence Encoders},
+  Author    = {I{\~n}igo Casanueva and Tadas Tem{\v{c}}inas and Daniela Gerz and Matthew Henderson and Ivan Vuli{\'c}},
+  Booktitle = {Proceedings of the 2nd Workshop on Natural Language Processing for Conversational AI},
+  Year      = {2020},
+  url       = {https://aclanthology.org/2020.nlp4convai-1.5},
+  doi       = {10.18653/v1/2020.nlp4convai-1.5},
+  publisher = {Association for Computational Linguistics}
+}
+
+@inproceedings{DBLP:conf/acl/JavedNGJBMSAFPR24,
+  author    = {Tahir Javed and
+               Janki Nawale and
+               Eldho Ittan George and
+               Sakshi Joshi and
+               Kaushal Santosh Bhogale and
+               Deovrat Mehendale and
+               Ishvinder Virender Sethi and
+               Aparna Ananthanarayanan and
+               Hafsah Faquih and
+               Pratiti Palit and
+               Sneha Ravishankar and
+               Saranya Sukumaran and
+               Tripura Panchagnula and
+               Sunjay Murali and
+               Kunal Sharad Gandhi and
+               Ambujavalli R and
+               Manickam K. M and
+               C. Venkata Vaijayanthi and
+               Krishnan Srinivasa Raghavan Karunganni and
+               Pratyush Kumar and
+               Mitesh M. Khapra},
+  title     = {IndicVoices: Towards building an Inclusive Multilingual Speech Dataset
+               for Indian Languages},
+  booktitle = {{ACL} (Findings)},
+  pages     = {10740--10782},
+  publisher = {Association for Computational Linguistics},
+  year      = {2024}
+}
+
+@article{fleurs2022arxiv,
+  title   = {FLEURS: Few-shot Learning Evaluation of Universal Representations of Speech},
+  author  = {Conneau, Alexis and Ma, Min and Khanuja, Simran and Zhang, Yu and Axelrod, Vera and Dalmia, Siddharth and Riesa, Jason and Rivera, Clara and Bapna, Ankur},
+  journal = {arXiv preprint arXiv:2205.12446},
+  url     = {https://arxiv.org/abs/2205.12446},
+  year    = {2022}
+}
+```
+
+## Contributions
+
+Contributions, issues, and feature requests are welcome. To contribute:
+1. Fork the repository and create a new feature branch (`git checkout -b feature/your-feature`).
+2. Commit your changes with clear messages (`git commit -m "Add your feature"`).
+3. Push to the branch (`git push origin feature/your-feature`) and open a Pull Request.

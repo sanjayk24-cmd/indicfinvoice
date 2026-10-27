@@ -1,0 +1,20 @@
+lang,action,draw_order,massive_id,text,reason,replacement_draw_order,replacement_massive_id,reviewer
+hi,replaced,7,1400,मैं ज्यादातर ध्यान देता हूँ,unclear sentence,16.0,782.0,author review
+hi,replaced,13,4212,क्या मई आज शाम घास काटने में समर्थ हूँ,garbled sentence,18.0,2423.0,author review
+hi,skipped,17,2225,अरिजीत सिंह का तुम ही हो चालू करें,"near-duplicate of draw 16, same song request",,,author review
+hi,excluded_reserve,23,1994,मेरे रिकॉर्ड खोलो,"ambiguous word रिकॉर्ड, author review",,,author review
+en,confirmed,1,6093,should i open the sun roof,"author review, no removals",,,author review
+en,confirmed,2,1007,play creed from my rock playlist,"author review, no removals",,,author review
+en,confirmed,3,250,i feel like jazz right now how about you,"author review, no removals",,,author review
+en,confirmed,4,3002,play songs by the band the beatles,"author review, no removals",,,author review
+en,confirmed,5,2615,will i need to wear a jacket next wednesday,"author review, no removals",,,author review
+en,confirmed,6,2396,start celine dion songs,"author review, no removals",,,author review
+en,confirmed,7,1404,can i please have the weather for tomorrow here in costa mesa,"author review, no removals",,,author review
+en,confirmed,8,891,play some christian music,"author review, no removals",,,author review
+en,confirmed,9,9738,could you please play the classical music for me,"author review, no removals",,,author review
+en,confirmed,10,5365,set alarm six am,"author review, no removals",,,author review
+en,confirmed,11,779,i want to hear snow by red hot chili peppers,"author review, no removals",,,author review
+en,confirmed,12,5707,listen to my favorites,"author review, no removals",,,author review
+en,confirmed,13,4266,what is todays weather,"author review, no removals",,,author review
+en,confirmed,14,297,shuffle songs by coldplay,"author review, no removals",,,author review
+en,confirmed,15,296,play a nirvana playlist,"author review, no removals",,,author review

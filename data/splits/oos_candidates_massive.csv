@@ -1,0 +1,91 @@
+lang,role,draw_order,massive_id,intent,text,source_config,source_split
+hi,primary,1,6045,play_music,चुना हुआ गाना जोड़ें,hi-IN,test
+hi,primary,2,951,weather_query,मुंबई में अभी मौसम कैसा है,hi-IN,test
+hi,primary,3,250,play_music,मैं अभी भक्ति की तरह महसूस कर रहा हूँ आप कैसे हैं,hi-IN,test
+hi,primary,4,2890,weather_query,वर्तमान का मौसम बताओ,hi-IN,test
+hi,primary,5,2573,play_music,मेरा spotify डांस प्ले लिस्ट,hi-IN,test
+hi,primary,6,2320,weather_query,इस शुक्रवार को मौसम कैसा है,hi-IN,test
+hi,primary,7,1400,weather_query,मैं ज्यादातर ध्यान देता हूँ,hi-IN,test
+hi,primary,8,884,alarm_set,आठ बजे का एक अलार्म सेट करो,hi-IN,test
+hi,primary,9,9457,play_music,तुम ही हो गाना चालू करो,hi-IN,test
+hi,primary,10,5301,weather_query,बीस मार्च दो हजार सत्रह को मौसम कैसा रहने वाला है,hi-IN,test
+hi,primary,11,738,weather_query,आज बाहर सर्दी कितनी है,hi-IN,test
+hi,primary,12,5635,alarm_set,सुनिश्चित करें कि मुझे सुबह छह बजे उठना है,hi-IN,test
+hi,primary,13,4212,weather_query,क्या मई आज शाम घास काटने में समर्थ हूँ,hi-IN,test
+hi,primary,14,297,play_music,अरिजीत सिंह के गानों का फेरबदल करो,hi-IN,test
+hi,primary,15,296,play_music,निर्वाणा की प्लेलिस्ट चलाओ,hi-IN,test
+hi,reserve,16,782,play_music,अरिजीत सिंह द्वारा तुम ही हो प्ले करो,hi-IN,test
+hi,reserve,17,2225,play_music,अरिजीत सिंह का तुम ही हो चालू करें,hi-IN,test
+hi,reserve,18,2423,weather_query,मुंबई में आज मौसम की स्थिति क्या है,hi-IN,test
+hi,reserve,19,4930,alarm_set,साढ़े तीन बजे शाम के लिए अलार्म चालू करें आज,hi-IN,test
+hi,reserve,20,5721,weather_query,मुझे इस जगह में कल का मौसम दिखाओ,hi-IN,test
+hi,reserve,21,254,play_music,olly मेरे पसंदीदा भक्ति प्लेयर से एक अच्छा गाना बजाओ,hi-IN,test
+hi,reserve,22,5433,weather_query,क्या बाद में बारिश होने वाली है,hi-IN,test
+hi,reserve,23,1994,play_music,मेरे रिकॉर्ड खोलो,hi-IN,test
+hi,reserve,24,6093,weather_query,क्या मुझे सनरूफ़ खोलनी चाहिए,hi-IN,test
+hi,reserve,25,4168,weather_query,मुंबई का मौसम चेक करो,hi-IN,test
+hi,reserve,26,2258,weather_query,क्या मुझे आज स्वेटर चाहिए,hi-IN,test
+hi,reserve,27,4377,weather_query,वर्तमान मौसम कैसा है,hi-IN,test
+hi,reserve,28,5627,play_music,सोनू निगम के गाने सुनाओ,hi-IN,test
+hi,reserve,29,2931,play_music,तुम मिले खेलने का प्यार किया तोह,hi-IN,test
+hi,reserve,30,102,weather_query,इस सप्ताह का मौसम क्या है,hi-IN,test
+ta,primary,1,8741,alarm_set,பிற்பகல் இரண்டு மணிக்கு எச்சரிக்கையை அமைக்கவும்,ta-IN,test
+ta,primary,2,1108,play_music,சில நாட்டுப்புற இசையைக் கேட்க வேண்டும் என்பது என் ஆசை,ta-IN,test
+ta,primary,3,250,play_music,நான் இப்போது ஜாஸ் போல் உணர்கிறேன்,ta-IN,test
+ta,primary,4,3116,play_music,சென்ற வருடத்தில் எனக்குப் பிடித்த பாடலைப் போடுங்கள்,ta-IN,test
+ta,primary,5,2679,weather_query,வெப்பநிலை ஒரே மாதிரியாக இருக்குமா அல்லது குளிர்ச்சியாக இருக்குமா,ta-IN,test
+ta,primary,6,2408,play_music,ஏ. ஆர். ரஹ்மான் இசைக்குழுவிலிருந்து நிறைய பாடல்களைத் தேடு,ta-IN,test
+ta,primary,7,1404,weather_query,சிம்லாவில் நாளை வானிலை இருக்க முடியுமா,ta-IN,test
+ta,primary,8,939,alarm_set,காலை ஏழு மணிக்கு என் அலாரத்தை அமைத்தேன்,ta-IN,test
+ta,primary,9,5577,weather_query,மாலையில் புயல் அதிகமாக இருந்தால் எனக்கு முழு கவர் ஜாக்கெட் தேவைப்படும்,ta-IN,test
+ta,primary,10,782,play_music,டி. இமானின் என்னோடு நீ இருந்தால் பாடலைப் போடவும்,ta-IN,test
+ta,primary,11,5955,weather_query,சட்டம் ஒழுங்கு தொடர்பாக நகரம் எவ்வளவு பாதுகாப்பானது,ta-IN,test
+ta,primary,12,4355,weather_query,நான் இருக்கும் இடத்தில் வானிலை எப்படி இருக்கிறது,ta-IN,test
+ta,primary,13,319,weather_query,ஜெய்ப்பூரின் வானிலையை இன்னும் இரண்டு நாட்களுக்கு சொல்லுங்கள்,ta-IN,test
+ta,primary,14,297,play_music,ஏ. ஆர். ரஹ்மான் பாடல்களை கலந்து போடவும்,ta-IN,test
+ta,primary,15,827,play_music,யுவன் ஷங்கர் ராஜா இசைப்பட்டியல் போடு,ta-IN,test
+ta,reserve,16,2322,weather_query,நாளை வானிலை எப்படி இருக்கும்,ta-IN,test
+ta,reserve,17,2564,alarm_set,அடுத்த வெள்ளிக்கிழமை காலை ஆறு முப்பது மணிக்கு அலாரத்தை அமைக்கவும்,ta-IN,test
+ta,reserve,18,5085,weather_query,சனிக்கிழமையின் முன்னறிவிப்பு என்ன,ta-IN,test
+ta,reserve,19,6027,play_music,விருப்பமான பாடல்களைப் போடு,ta-IN,test
+ta,reserve,20,254,play_music,எனக்குப் பிடித்த பேரிலைச்சலுள்ள நிகழ்ச்சி பிளேயரில் இருந்து ஒல்லி ஒரு நல்ல ட்ராக்கை வாசிக்கிறேன்,ta-IN,test
+ta,reserve,21,5650,weather_query,இன்று மாலை வானிலை கேளுங்கள்,ta-IN,test
+ta,reserve,22,2062,play_music,எனக்கு கொஞ்சம் ஜாஸ் இசை கேட்க வேண்டும்,ta-IN,test
+ta,reserve,23,9656,play_music,உங்கள் பேச்சாளர்கள் மூலம் எனக்கு ஒரு உற்சாகமான பாடலை போடுங்கள்,ta-IN,test
+ta,reserve,24,4313,weather_query,பெங்களூரில் நாளை மழை பெய்யுமா,ta-IN,test
+ta,reserve,25,2334,alarm_set,நாளை காலை ஆறு மணிக்கு அலாரத்தைச் வைக்கவும்,ta-IN,test
+ta,reserve,26,4524,weather_query,ஓலி இன்றைய வானிலை முன்னறிவிப்பு என்ன,ta-IN,test
+ta,reserve,27,5948,play_music,எனது நாடகப் பட்டியலில் இருந்து சில நல்ல பாடலைப் பாடுங்கள்,ta-IN,test
+ta,reserve,28,3124,play_music,எனது பட்டியலில் இருந்து ஒரு சீரற்ற பாடலை எனக்கு பிளே செய்,ta-IN,test
+ta,reserve,29,102,weather_query,இந்த வார வானிலை என்ன,ta-IN,test
+ta,reserve,30,1589,weather_query,அடுத்த செவ்வாய் வெயிலாக இருக்குமா,ta-IN,test
+en,primary,1,6093,weather_query,should i open the sun roof,en-US,test
+en,primary,2,1007,play_music,play creed from my rock playlist,en-US,test
+en,primary,3,250,play_music,i feel like jazz right now how about you,en-US,test
+en,primary,4,3002,play_music,play songs by the band the beatles,en-US,test
+en,primary,5,2615,weather_query,will i need to wear a jacket next wednesday,en-US,test
+en,primary,6,2396,play_music,start celine dion songs,en-US,test
+en,primary,7,1404,weather_query,can i please have the weather for tomorrow here in costa mesa,en-US,test
+en,primary,8,891,play_music,play some christian music,en-US,test
+en,primary,9,9738,play_music,could you please play the classical music for me,en-US,test
+en,primary,10,5365,alarm_set,set alarm six am,en-US,test
+en,primary,11,779,play_music,i want to hear snow by red hot chili peppers,en-US,test
+en,primary,12,5707,play_music,listen to my favorites,en-US,test
+en,primary,13,4266,weather_query,what is todays weather,en-US,test
+en,primary,14,297,play_music,shuffle songs by coldplay,en-US,test
+en,primary,15,296,play_music,play a nirvana playlist,en-US,test
+en,reserve,16,790,weather_query,mild or heavy weather,en-US,test
+en,reserve,17,2320,weather_query,what is the weather this friday,en-US,test
+en,reserve,18,2545,weather_query,how is the weather,en-US,test
+en,reserve,19,5009,weather_query,will i need an umbrella this week,en-US,test
+en,reserve,20,5813,play_music,play silent song,en-US,test
+en,reserve,21,254,play_music,olly play a good track from my favorite jazz player,en-US,test
+en,reserve,22,5524,weather_query,weather at the moment,en-US,test
+en,reserve,23,2108,play_music,next play summer lovin,en-US,test
+en,reserve,24,6172,weather_query,are sunglasses a good choice for today,en-US,test
+en,reserve,25,4227,weather_query,is there any rain in the forecast for the next week,en-US,test
+en,reserve,26,2322,weather_query,what's the weather like tomorrow,en-US,test
+en,reserve,27,4412,weather_query,what's the weather in portland,en-US,test
+en,reserve,28,5683,play_music,play my playlist party songs,en-US,test
+en,reserve,29,3034,weather_query,tell me the temperature,en-US,test
+en,reserve,30,102,weather_query,what's this week's weather,en-US,test

@@ -1,350 +1,216 @@
 # Data Sources & Inspection Report
 
-## 1. External Dataset Overview
+## 1. Test 1 Speech Sources
 
-- **Dataset Name:** Indilang voice dataset
-- **URL:** https://www.kaggle.com/datasets/nagmanikumar/indilang-voice-dataset
-- **Author / Creator:** Nagmani Kumar (`@nagmanikumar`, Kaggle ID: 14574970)
-- **Download Date:** October 23, 2026
-- **Download Size:** ~49.4 MB (49,387,259 bytes)
-- **Licence (Kaggle Dataset Metadata):** Apache 2.0 (`https://www.apache.org/licenses/LICENSE-2.0`)
-- **Intended Use Statement (from author README):**
-  > "Created by Nagmani. This dataset is intended for research and testing purposes related to banks & loans, but can be adapted for other domains."
-- **Citation:**
-  > Nagmani Kumar. *Indilang voice dataset: Text and Voice datasets with terms related to Banks & Loans*. Kaggle Datasets, 2025. https://www.kaggle.com/datasets/nagmanikumar/indilang-voice-dataset
+Test 1 evaluates zero-shot Automatic Speech Recognition (ASR) Word Error Rate (WER) using real-speaker speech clips.
 
----
+### 1.1 IndicVoices (Hindi & Tamil)
 
-## 2. Dataset Inspection Answers (Stage 2.2)
-
-| Question | Recorded Answer |
-|---|---|
-| **Which languages are present?** | 12 Indian languages: Assamese (`as`), Bengali (`bn`), English (`en`), Gujarati (`gu`), Hindi (`hi`), Kannada (`kn`), Malayalam (`ml`), Marathi (`mr`), Odia (`or`), Tamil (`ta`), Telugu (`te`), Urdu (`ur`). |
-| **Are there audio files? How many, total hours?** | Yes. Exactly 1,200 audio files (`.mp3`), 100 clips per language across 12 languages. Total duration: 6,309.98 seconds (~1.75 hours). Audio duration ranges from min 1.869 s, median 5.040 s, max 15.864 s. |
-| **Are transcripts provided for the audio? Where?** | Yes. Transcripts are provided in `mastersheet.csv` (`<lang>_sentence`) and in individual per-language text CSV files (`data/<lang>/<lang>_textdata.csv`). |
-| **Are there intent or category labels? What are the values?** | No. The raw dataset contains no intent, class, or category labels. Sentences are 100 generic banking and loan workflow notification phrases. |
-| **Are there slot or entity labels?** | No. There are no entity or BIO slot labels in the raw dataset. |
-| **Which of the target languages have audio: en, hi, ta?** | Audio is present for English (`en`), Hindi (`hi` in Devanagari script), and Tamil (`ta` in Tamil script), with 100 clips each (300 audio clips total for target languages). There are no romanised clips. |
-| **Are the text rows and audio rows the same sentences, or separate sets?** | They are the exact same sentences: each row $i$ in `<lang>_textdata.csv` corresponds directly to `<lang>_voicedata/<i>.mp3`. |
-| **How many speakers? Is speaker ID provided?** | Speaker ID is not provided. All 300 clips are recorded as `speaker: unknown`. Because speaker identities are unknown and unlabelled, no speaker-level disaggregation or evaluation can be performed. |
-| **What is the licence?** | Apache 2.0 (from Kaggle dataset metadata). Full legal text is provided in Section 6 below. |
-| **Is there any personal data (names, account numbers, phone numbers)?** | No personal data. All sentences are generic banking notification and status templates without real names, actual account numbers, phone numbers, or government IDs. |
-
-### Critical Finding: Absence of User Banking Queries & Intent Gaps
-1. **Dataset Nature:** The dataset consists entirely of outward bank-to-borrower status notifications and underwriting workflow alerts (e.g., "Phone verification is pending", "Avanti lender approval is pending", "Disbursal initiated"). In a random sample of 30 `out_of_scope` rows, **0 out of 30** were customer queries.
-2. **Intent Coverage Gaps:**
-   - `balance_check`: **0 clips**. The terms "balance", "बैलेंस", "शेष राशि", "மீதி", and "இருப்பு" do not appear anywhere in the dataset.
-   - `transaction_dispute`: **0 clips**. There are no sentences relating to disputed transactions, fraudulent debits, or unauthorized charges.
-   - `crop_insurance_status`: **9 clips** (3 sentences in 3 languages relating to insurance disbursals).
-   - `loan_due_date`: **57 clips** (19 sentences in 3 languages relating to loan repayments, late payment alerts, and schedules).
-   - `out_of_scope`: **234 clips** (78 sentences in 3 languages covering non-query status alerts).
-3. **Implications for Evaluation:** Because `balance_check` and `transaction_dispute` have 0 clips in the external dataset, the dataset cannot be used to evaluate these two intents. Evaluation for `balance_check` and `transaction_dispute` will rely exclusively on the solo developer-written unseen test set (Stage 6, Section 0.7).
+- **Source Name:** IndicVoices
+- **Repository / URL:** [ai4bharat/IndicVoices](https://huggingface.co/datasets/ai4bharat/IndicVoices)
+- **Languages:** Hindi (`hi`) and Tamil (`ta`)
+- **Split:** `valid` (Note: No `test` split exists on Hugging Face for the Hindi and Tamil language configurations).
+- **Source Parquet Files:**
+  - Hindi: `hindi/valid-00000-of-00001.parquet`
+  - Tamil: `tamil/valid-00000-of-00002.parquet` and `tamil/valid-00001-of-00002.parquet`
+- **Clip Count:** Exactly 200 clips total
+  - Hindi (`hi`): 100 WAV clips (`data/raw/speech/indicvoices/hi/hi_000.wav` to `hi_099.wav`)
+  - Tamil (`ta`): 100 WAV clips (`data/raw/speech/indicvoices/ta/ta_000.wav` to `ta_099.wav`)
+- **Download Date:** October 25, 2026
+- **Licence:** Creative Commons Attribution 4.0 International (CC-BY-4.0)
+  - Licence Link: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+  - Licence Text: TODO: paste licence text
+- **Transcript Fields:**
+  - Reference transcript (`ref` column in index): `"normalized"`
+  - Verbatim transcript (`verbatim` column in index): `"verbatim"` (kept as a second column)
+- **Index Files:**
+  - Hindi: `data/raw/speech/indicvoices/hi_index.csv` (100 rows)
+  - Tamil: `data/raw/speech/indicvoices/ta_index.csv` (100 rows)
+- **Audio Specifications:** 16,000 Hz, 1 channel (mono), duration between 1.0 s and 20.0 s.
 
 ---
 
-## 3. Stratified Agreement Sample & Cohen's Kappa Evaluation (Stage 2.3)
+### 1.2 FLEURS (English)
 
-### Sampling Protocol
-To evaluate the reliability of the keyword mapping rules without majority-class bias, a **stratified sample of 50 items** was drawn across all intents present in the manifest:
-- `crop_insurance_status`: **9 items** (100% of all available items in the dataset)
-- `loan_due_date`: **16 items** (stratified across `en`, `hi`, `ta`, seed=42)
-- `out_of_scope`: **25 items** (stratified across `en`, `hi`, `ta`, seed=42)
-- *Total sample size:* **50 items**
-
-### Independent Review Methodology
-- The project developer reviewed each sampled sentence independently against the project conversational intent taxonomy without consulting rule outputs.
-- Developer note: The developer is not a native Tamil speaker. Tamil transcripts were verified by cross-referencing parallel English sentences and audited using word-boundary matching. No external native Tamil speaker checked the dataset transcripts.
-
-### Agreement Results & Cohen's Kappa
-- **Total sample size ($N$):** 50
-- **Observed Agreement ($P_o$):** **0.9200 (46 / 50, 92.0%)**
-- **Hypothetical Chance Agreement ($P_e$):** **0.3992**
-- **Cohen's Kappa ($\kappa$):** **0.8668** (denotes *Near Perfect* agreement under Landis & Koch criteria: 0.81 – 1.00)
-
-#### Per-Intent Agreement (Conditioned on Rule Label)
-| Intent | Rule Count | Human Agreed | Agreement Rate | Disagreement Analysis |
-|---|---|---|---|---|
-| `out_of_scope` | 25 | 25 | **100.0%** | Complete agreement on underwriting/operational notifications. |
-| `loan_due_date` | 16 | 12 | **75.0%** | 4 disagreements: sentence 62 ("disbursal scheduled for tomorrow" mentions a schedule but relates to loan payout rather than repayment) and sentence 95 ("repayment history is excellent" is a promotional marketing alert rather than a due date). |
-| `crop_insurance_status` | 9 | 9 | **100.0%** | Complete agreement on insurance disbursal notifications. |
-
-#### Contingency Matrix (Rows: Rule Labels, Columns: Human Labels)
-| Rule Label \ Human Label | `crop_insurance_status` | `loan_due_date` | `out_of_scope` | Total |
-|---|---|---|---|---|
-| **`crop_insurance_status`** | 9 | 0 | 0 | **9** |
-| **`loan_due_date`** | 0 | 12 | 4 | **16** |
-| **`out_of_scope`** | 0 | 0 | 25 | **25** |
-| **Total** | **9** | **12** | **29** | **50** |
-
-Reproducible via `python scripts/evaluate_agreement.py`.
+- **Source Name:** FLEURS (Few-shot Learning Evaluation of Universal Representations of Speech)
+- **Repository / URL:** [google/fleurs](https://huggingface.co/datasets/google/fleurs)
+- **Language / Config:** English (`en_us`)
+- **Split:** `test`
+- **Source Parquet File:** `parquet-data/en_us/test-00000-of-00001.parquet`
+- **Clip Count:** Exactly 100 clips
+  - English (`en`): 100 WAV clips (`data/raw/speech/fleurs/en/en_000.wav` to `en_099.wav`)
+- **Download Date:** October 25, 2026
+- **Licence:** Creative Commons Attribution 4.0 International (CC-BY-4.0)
+  - Licence Link: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+  - Licence Text: TODO: paste licence text
+- **Transcript Fields:**
+  - Reference transcript (`ref` column in index): `"transcription"`
+  - Verbatim transcript (`verbatim` column in index): `"raw_transcription"`
+- **Metadata Note on Gender:**
+  - Gender is provided as a numeric code in FLEURS metadata; the exact integer-to-gender mapping is recorded as unconfirmed.
+- **Index File:** `data/raw/speech/fleurs/en_index.csv` (100 rows)
+- **Audio Specifications:** 16,000 Hz, 1 channel (mono), duration between 1.0 s and 20.0 s.
 
 ---
 
-## 4. Manifest and Audio Conversion Summary
+### 1.3 Cross-Source Benchmark Note
 
-- **Audio Conversion (`data/prepare_audio.py`):**
-  - 300 audio clips converted to 16 kHz mono WAV (`PCM_16`) in `data/wav16k/`:
-    - `data/wav16k/en/en_voicedata/` (100 WAV files)
-    - `data/wav16k/hi/hi_voicedata/` (100 WAV files)
-    - `data/wav16k/ta/ta_voicedata/` (100 WAV files)
-  - 0 conversion errors (`logs/audio_conversion_errors.txt` is empty).
-- **Manifest (`data/manifests/dataset_manifest.csv`):**
-  - Total included rows: 300
-  - Columns: `clip_id, path, ref, lang, intent, slots_json, speaker, noise, source_split`
-  - Language breakdown: `en`: 100, `hi`: 100, `ta`: 100.
-  - Derived intent breakdown:
-    - `out_of_scope`: 234 (78.0%)
-    - `loan_due_date`: 57 (19.0%)
-    - `crop_insurance_status`: 9 (3.0%)
-    - `balance_check`: 0 (0.0%)
-    - `transaction_dispute`: 0 (0.0%)
+English is not part of the IndicVoices dataset. Consequently:
+- Hindi and Tamil speech recognition accuracy is measured on IndicVoices (`valid` split).
+- English speech recognition accuracy is measured on FLEURS (`en_us`, `test` split).
+- Because English and Hindi/Tamil clips originate from different corpora with varying recording equipment, environments, and speaker pools, English and Indic WER figures represent distinct benchmark distributions and must be interpreted accordingly.
 
-### Detailed Breakdown of 900 Dropped Rows
-| Category | Reason | Dropped Count |
-|---|---|---|
-| **Unsupported Languages** | Out of project scope (Section 0.1) | **900** |
-| &nbsp;&nbsp;&bull; Assamese (`as`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Bengali (`bn`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Gujarati (`gu`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Kannada (`kn`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Malayalam (`ml`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Marathi (`mr`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Odia (`or`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Telugu (`te`) | Non-target language | 100 |
-| &nbsp;&nbsp;&bull; Urdu (`ur`) | Non-target language | 100 |
-| **Empty Reference Transcripts** | Transcripts missing or blank | **0** |
-| **Missing Audio Files** | Source audio file not found on disk | **0** |
-| **Conversion Failures** | Audio failed to resample or decode | **0** |
-| **Total Dropped Rows** | | **900** |
+### 1.4 ASR Language Conditioning Policy (Pre-Run Decision)
+
+To avoid post-hoc bias, the evaluation protocol is determined prior to the full evaluation run:
+- **Primary Result:** Auto-detection with no language argument passed (`generate_kwargs={"task": "transcribe"}`), as specified in the project specification and README. This measures real-world end-to-end performance where the system must identify and transcribe spoken input without prior knowledge of the speaker's language.
+- **Secondary (Diagnostic Only):** Forced Hindi conditioning, reported in a separate, clearly labelled table, to diagnose whether auto-detection misidentification accounts for specific transcription errors, reported if the diagnostic shows it matters.
 
 ---
 
-## 5. Random 20-Clip Verification Sample
+## 2. Test 2 Text Sources
 
-| Clip ID | Lang | Derived Intent | Reference Transcript | Verification Note |
-|---|---|---|---|---|
-| `en_010` | en | `out_of_scope` | Partner approval is pending for your loan request. | Clear English gTTS audio |
-| `en_018` | en | `out_of_scope` | Your loan has been approved. Congratulations! | Clear English audio |
-| `en_024` | en | `crop_insurance_status` | Automatic insurance disbursal has been initiated. | Clear English audio |
-| `en_030` | en | `loan_due_date` | Your loan repayment is late. Please pay as soon as possible. | Clear English audio |
-| `en_043` | en | `loan_due_date` | Your loan has been fully repaid. Thank you! | Clear English audio |
-| `en_058` | en | `out_of_scope` | Manual verification completed. Awaiting partner approval. | Clear English audio |
-| `en_083` | en | `loan_due_date` | Loan repaid. Thank you for your timely payments. | Clear English audio |
-| `hi_010` | hi | `out_of_scope` | आपके ऋण अनुरोध के लिए भागीदार अनुमोदन लंबित है। | Accurate Hindi transcript |
-| `hi_024` | hi | `crop_insurance_status` | आपके ऋण के लिए स्वचालित बीमा डिस्बर्सल शुरू किया गया है। | Clear Devanagari |
-| `hi_030` | hi | `loan_due_date` | आपका ऋण चुकौती देर हो चुकी है। कृपया जल्द से जल्द भुगतान करें। | Accurate Hindi transcript |
-| `hi_049` | hi | `out_of_scope` | कोलेंडर डिस्बर्सल शुरू किया गया है। | Accurate Hindi transcript |
-| `hi_053` | hi | `out_of_scope` | हमारी टीम द्वारा आपके ऋण आवेदन की समीक्षा की जा रही है। | Accurate Hindi text |
-| `hi_066` | hi | `crop_insurance_status` | बीमा डिस्बर्सल पूरा हुआ। विवरण के लिए अपने खाते की जाँच करें। | Insurance status, accurate |
-| `hi_083` | hi | `loan_due_date` | ऋण चुकाया। आपके समय पर भुगतान के लिए धन्यवाद। | Loan repaid, accurate Hindi |
-| `ta_004` | ta | `out_of_scope` | உங்கள் கடன் ஒப்பந்தத்திற்கு OTP ESIGN நிலுவையில் உள்ளது. | Clean Tamil transcript |
-| `ta_024` | ta | `crop_insurance_status` | தானியங்கி காப்பீட்டு விநியோகம் தொடங்கப்பட்டது. | Accurate Tamil text |
-| `ta_027` | ta | `out_of_scope` | உங்கள் கடன் தற்போது தடைக்காலத்தின் கீழ் உள்ளது. | Clean Tamil transcript |
-| `ta_030` | ta | `loan_due_date` | உங்கள் கடன் திருப்பிச் செலுத்துவது தாமதமானது. தயவுசெய்து விரைவில் பணம் செலுத்துங்கள். | Accurate Tamil text |
-| `ta_043` | ta | `loan_due_date` | உங்கள் கடன் முழுமையாக திருப்பிச் செலுத்தப்பட்டது. நன்றி! | Clean Tamil transcript |
-| `ta_066` | ta | `crop_insurance_status` | காப்பீட்டு விநியோகம் முடிந்தது. விவரங்களுக்கு உங்கள் கணக்கைச் சரிபார்க்கவும். | Accurate Tamil text |
+Test 2 measures multilingual natural language understanding (intent classification and slot filling).
 
----
+### 2.1 Banking77
 
-## 6. Dataset Legal Licence: Apache License, Version 2.0
+- **Source Name:** Banking77
+- **Repository / URL:** [PolyAI/banking77](https://huggingface.co/datasets/PolyAI/banking77)
+- **Licence:** Creative Commons Attribution 4.0 International (CC-BY-4.0) (verified from dataset card)
+  - Licence Link: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+  - Licence Text: TODO: paste licence text
+- **Download Date:** TODO
+- **Split / Sample Count:** TODO
+- **Purpose:** Source of real-user English consumer banking queries.
+- **Human Review & Verification Status:** TODO
 
-The dataset is released on Kaggle under the **Apache License, Version 2.0**. The exact legal text is reproduced below:
+### 2.2 Machine Translation: IndicTrans2
 
-```
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
-
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
-
-   1. Definitions.
-
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
-
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
-
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
-
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
-
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
-
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
-
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
-
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
-
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
-
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
-
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
-
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
-
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
-
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
-
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
-
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
-
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
-
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
-
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
-
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
-
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
-
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or exemplary damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
-
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
-
-   END OF TERMS AND CONDITIONS
-```
+- **Tool Name:** IndicTrans2
+- **Model / URL:** [ai4bharat/indictrans2-en-indic-1B](https://huggingface.co/ai4bharat/indictrans2-en-indic-1B)
+- **Revision / Commit Hash:** `89cd0007fd7b9e0693a2fd4404d187e07dac79fd`
+- **Run Date:** October 25, 2026
+- **Licence:** MIT License (copied from model card: `license: mit`)
+  - Licence Link: [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
+- **Translation Settings:**
+  - Source Language Code: `eng_Latn`
+  - Target Language Codes: `hin_Deva` (Hindi), `tam_Taml` (Tamil)
+  - Toolkit: `IndicTransToolkit` (`IndicProcessor`, `inference=True`)
+  - Precision / Device: `fp16`, `CUDA`
+  - Beam Search: `num_beams=5`
+  - Maximum Sequence Length: `max_length=256`
+  - Batch Size: `batch_size=16`
+- **Purpose:** Translating English Banking77 evaluation samples into Hindi and Tamil (`data/external/banking77_hi.csv`, `data/external/banking77_ta.csv`).
+- **Review Status:**
+  - Hindi (`hi`): "machine-translated; automated checks only; no native review yet"
+  - Tamil (`ta`): "machine-translated; automated checks only; no native review yet"
 
 ---
 
-## 7. Stage 3: Template Generation & Protocol Log
+### 2.3 Out-of-Scope Sentences: Amazon MASSIVE
 
-- **Template Authoring Date:** October 23, 2026
-- **Template Files Created:**
-  - `data/templates/balance_check.yaml`
-  - `data/templates/crop_insurance_status.yaml`
-  - `data/templates/loan_due_date.yaml`
-  - `data/templates/out_of_scope.yaml`
-  - `data/templates/transaction_dispute.yaml`
-- **Languages Covered:** `en` (English), `hi` (Hindi, Devanagari script), `ta` (Tamil, Tamil script).
-- **Tamil Verification Status:**
-  - As specified in Section 0.7 and Stage 3 of `README.md`, all Tamil templates are marked `verified: false` in their YAML files pending outside validation by a native Tamil speaker. Unverified Tamil results will not be presented as validated.
-- **Unseen Test Set Plan (Coverage for Dataset Gaps):**
-  - Because the external dataset has 0 `balance_check` and 0 `transaction_dispute` clips, the developer-written unseen set (Stage 6, Section 0.7) will specifically cover all intents with $\ge 20$ items per intent per language, heavily weighting `balance_check` and `transaction_dispute`.
-  - The developer will author `data/splits/unseen_test.jsonl` manually following the 24-hour wait solo protocol.
-- **Template Freezing:**
-  - All template SHA-256 hashes are recorded in `docs/TEMPLATES_FROZEN.txt`.
+- **Source Name:** Amazon MASSIVE
+- **Repository / URL:** [AmazonScience/massive](https://huggingface.co/datasets/AmazonScience/massive)
+- **Licence:** Creative Commons Attribution 4.0 International (CC-BY-4.0)
+  - Licence Link: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+- **Configs & Split:** `hi-IN`, `ta-IN`, and `en-US`, `test` split
+- **Row Counts (Step 1):**
+  - `hi-IN` test split: 2,974 rows
+  - `ta-IN` test split: 2,974 rows
+  - `en-US` test split: 2,974 rows
+- **Target Intents (Step 2):** `weather_query`, `play_music`, `alarm_set`, `general_greet`
+  - `hi-IN` target intent rows: 374 (`weather_query`: 156, `play_music`: 176, `alarm_set`: 41, `general_greet`: 1)
+  - `ta-IN` target intent rows: 374 (`weather_query`: 156, `play_music`: 176, `alarm_set`: 41, `general_greet`: 1)
+  - `en-US` target intent rows: 374 (`weather_query`: 156, `play_music`: 176, `alarm_set`: 41, `general_greet`: 1)
+- **Exclusion Filters (Step 3):**
+  - **Rule 3a (containing digit):**
+    - `hi-IN`: 0 rows removed
+    - `ta-IN`: 0 rows removed
+    - `en-US`: 0 rows removed
+  - **Rule 3b (< 3 or > 15 words, split on spaces):**
+    - `hi-IN`: 17 rows removed
+    - `ta-IN`: 32 rows removed
+    - `en-US`: 22 rows removed
+  - **Rule 3c (whole-word banking/money list match):**
+    - `hi-IN`: 3 rows removed
+    - `ta-IN`: 3 rows removed
+    - `en-US`: 2 rows removed (ID `1400`: "i mostly pay attention", ID `1401`: "i occasionally pay attention")
+  - **Remaining Candidate Pool:**
+    - `hi-IN`: 355 rows (`weather_query`: 152, `play_music`: 165, `alarm_set`: 37, `general_greet`: 1)
+    - `ta-IN`: 339 rows (`weather_query`: 145, `play_music`: 154, `alarm_set`: 39, `general_greet`: 1)
+    - `en-US`: 350 rows (`weather_query`: 149, `play_music`: 162, `alarm_set`: 38, `general_greet`: 1)
+- **Selection Method (Step 4):**
+  - Drawn using `random.Random(42).sample` from the remaining candidates: 30 rows per language.
+  - Draw order 1–15 designated as `primary` (15 rows).
+  - Draw order 16–30 designated as `reserve` (15 rows).
+  - Written to `data/splits/oos_candidates_massive.csv` (90 rows total: 30 `hi`, 30 `ta`, 30 `en`).
+- **Human Review & Final Out-of-Scope Set (Step 5):**
+  - **Final Counts:** 45 rows total (15 `hi`, 15 `ta`, 15 `en`).
+  - **Hindi (hi-IN) Review & Final Draws:**
+    - Primary draw 7 (massive_id 1400) removed (unclear sentence), replaced with reserve draw 16 (massive_id 782).
+    - Primary draw 13 (massive_id 4212) removed (garbled sentence), replaced with reserve draw 18 (massive_id 2423).
+    - Reserve draw 17 (massive_id 2225) skipped (near-duplicate of draw 16).
+    - Reserve draw 23 (massive_id 1994) excluded (ambiguous word "रिकॉर्ड").
+    - Final draw numbers: draws 1–6, 8–12, 14, 15, 16 (replaces 7), 18 (replaces 13) (15 rows).
+  - **Tamil (ta-IN) Final Draws:**
+    - Primary draws 1–15 unchanged (15 rows).
+  - **English (en-US) Review & Final Draws:**
+    - English review decision: "author review, no removals".
+    - Primary draws 1–15 unchanged (15 rows).
+  - **Exclusion from Training:** These 45 held-out out-of-scope rows (`data/splits/oos_final_massive.csv`, `data/splits/oos_heldout.jsonl`) are strictly reserved for held-out evaluation and are excluded from training.
+
+---
+
+## 3. Test 3 Generated Speech
+
+- **Status:** To be filled in later.
+- **Planned Models:** `ai4bharat/indic-parler-tts` for Hindi and Tamil (fallback to `gTTS` if loading fails), and standard TTS for English.
+- **Evaluation Plan:** Audio intelligibility and downstream speech-to-text consistency checks across synthesized banking responses.
+- **Licence & Metadata:** TODO: to be recorded upon generation.
+
+---
+
+## 4. Decisions
+
+### 4.1 Intent Scheme
+The project classifies input utterances into six distinct intents:
+1. `balance_check`: Inquiries regarding account balances (savings, current, KCC).
+2. `transaction_dispute`: Inquiries or complaints regarding unauthorized debits, failed transfers, or incorrect charges.
+3. `loan_due_date`: Inquiries regarding repayment deadlines, installment dates, or overdue schedules.
+4. `crop_insurance_status`: Inquiries regarding PMFBY or agricultural insurance claim progress and disbursals.
+5. `out_of_scope`: General utterances outside banking functionality (e.g., weather inquiries, casual conversation).
+6. `unsupported_banking`: Legitimate banking queries that the system does not support (e.g., credit card rewards, mutual fund investments, forex), triggering an explicit and polite refusal/referral.
+
+### 4.2 Sensitive-Label Handling
+- Financial and personal data must remain strictly isolated. No real names, account numbers, phone numbers, or government IDs (Aadhaar, PAN) are permitted in code, templates, or test suites.
+- Synthetic dummy identifiers (e.g., mock account numbers and claim IDs) are used across all test cases and mock databases.
+- Helpline number is a placeholder [BANK_HELPLINE_NUMBER]. Replace with the real bank helpline before any real use.
+
+### 4.3 PIN Rule
+- **PIN is typed only, never spoken.**
+- Users must never be prompted to speak their PIN, and speech recognition pipelines must never accept or transcribe spoken authentication codes.
+- Sensitive authentication (such as approving a transaction dispute request) requires PIN entry strictly via keypad or text input to mitigate acoustic eavesdropping, voice spoofing, and transcript logging risks.
+
+### 4.4 Data Isolation
+- Training data is generated strictly from templates (`data/templates/`).
+- Real speech evaluation data (Test 1), held-out text evaluation data (Test 2), and synthetic audio (Test 3) are strictly isolated and never used for model training, prompt tuning, or hyperparameter selection.
+- Generated TTS audio is never fed back into model training.
+
+### 4.5 ASR Language Conditioning Policy
+- **Pre-Run Protocol:** Fixed prior to the full speech evaluation run to prevent post-hoc rationalization.
+- **Primary Result:** Auto-detection, no language argument (`task="transcribe"` only), as required by the README specification.
+- **Secondary / Diagnostic Only:** Forced Hindi language conditioning, presented in a separate labelled table solely as a diagnostic comparison if the diagnostic indicates it matters.
+
+---
+
+## 5. Limitations
+
+1. **Absence of Public Indian Banking Speech Data:** There is no publicly available speech dataset dedicated to Indian rural banking or regional language financial dialogues. Real-speaker evaluation must therefore be approximated using generic speech datasets (IndicVoices and FLEURS).
+2. **Use of Validation Splits for Test 1:** IndicVoices does not provide an official `test` split for its Hindi and Tamil configurations on Hugging Face; evaluation uses the `valid` split. In contrast, FLEURS provides an official `test` split.
+3. **Disparate Benchmark Distributions:** English speech (FLEURS) and Indic speech (IndicVoices) come from distinct projects with differing acoustic properties, speaker demographics, recording settings, and reading styles. Direct comparison between English WER and Indic WER must account for these domain shifts.
+4. **Lack of Real-Text Coverage for Rural Financial Intents:** Banking77 is predominantly focused on urban commercial banking (cards, international transfers, ATMs). Key rural and agricultural banking workflows—specifically `loan_due_date` and `crop_insurance_status`—have no representation in Banking77 and must rely on template-based or developer-authored unseen test sets for evaluation.
+Templates frozen: 2026-10-23 15:42:41 (docs/TEMPLATES_FROZEN.txt)
+Last template edit: 2026-10-23 15:39:31 (out_of_scope.yaml)
+Validator: data/validate_bio.py, 9,000 records, 0 errors
+Tamil templates verified: false (50 of 50)
+Held-out set may be written after: 2026-10-24 15:42:41 (24-hour gap)

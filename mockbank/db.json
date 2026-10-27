@@ -1,0 +1,100 @@
+{
+  "C001": {
+    "pin": "1234",
+    "accounts": {
+      "savings": {
+        "balance": 45000
+      },
+      "kcc": {
+        "balance": 25000
+      }
+    },
+    "loans": {
+      "crop": {
+        "due_date": "2026-11-30",
+        "outstanding": 125000
+      },
+      "personal": {
+        "due_date": "2026-12-15",
+        "outstanding": 50000
+      }
+    },
+    "claims": {
+      "CLM-771": {
+        "status": "in_process",
+        "amount": 22000
+      },
+      "CLM-402": {
+        "status": "approved",
+        "amount": 15000
+      }
+    },
+    "transactions": {
+      "TXN-9001": {
+        "amount": 1500,
+        "date": "2026-10-24",
+        "status": "completed"
+      },
+      "TXN-9002": {
+        "amount": 75000,
+        "date": "2026-10-20",
+        "status": "completed"
+      }
+    }
+  },
+  "C002": {
+    "pin": "5678",
+    "accounts": {
+      "savings": {
+        "balance": 12000
+      },
+      "kcc": {
+        "balance": 8000
+      }
+    },
+    "loans": {
+      "home": {
+        "due_date": "2027-01-10",
+        "outstanding": 850000
+      }
+    },
+    "claims": {
+      "CLM-930": {
+        "status": "rejected",
+        "amount": 50000
+      }
+    },
+    "transactions": {
+      "TXN-9003": {
+        "amount": 500,
+        "date": "2026-10-25",
+        "status": "completed"
+      }
+    }
+  },
+  "C003": {
+    "pin": "9012",
+    "accounts": {
+      "savings": {
+        "balance": 80000
+      },
+      "kcc": {
+        "balance": 35000
+      }
+    },
+    "loans": {
+      "crop": {
+        "due_date": "2026-12-05",
+        "outstanding": 60000
+      }
+    },
+    "claims": {},
+    "transactions": {
+      "TXN-9004": {
+        "amount": 22000,
+        "date": "2026-10-15",
+        "status": "completed"
+      }
+    }
+  }
+}

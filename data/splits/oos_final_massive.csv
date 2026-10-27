@@ -1,0 +1,46 @@
+lang,massive_id,intent,text,source_config,source_split,massive_intent
+hi,6045,out_of_scope,चुना हुआ गाना जोड़ें,hi-IN,test,play_music
+hi,951,out_of_scope,मुंबई में अभी मौसम कैसा है,hi-IN,test,weather_query
+hi,250,out_of_scope,मैं अभी भक्ति की तरह महसूस कर रहा हूँ आप कैसे हैं,hi-IN,test,play_music
+hi,2890,out_of_scope,वर्तमान का मौसम बताओ,hi-IN,test,weather_query
+hi,2573,out_of_scope,मेरा spotify डांस प्ले लिस्ट,hi-IN,test,play_music
+hi,2320,out_of_scope,इस शुक्रवार को मौसम कैसा है,hi-IN,test,weather_query
+hi,884,out_of_scope,आठ बजे का एक अलार्म सेट करो,hi-IN,test,alarm_set
+hi,9457,out_of_scope,तुम ही हो गाना चालू करो,hi-IN,test,play_music
+hi,5301,out_of_scope,बीस मार्च दो हजार सत्रह को मौसम कैसा रहने वाला है,hi-IN,test,weather_query
+hi,738,out_of_scope,आज बाहर सर्दी कितनी है,hi-IN,test,weather_query
+hi,5635,out_of_scope,सुनिश्चित करें कि मुझे सुबह छह बजे उठना है,hi-IN,test,alarm_set
+hi,297,out_of_scope,अरिजीत सिंह के गानों का फेरबदल करो,hi-IN,test,play_music
+hi,296,out_of_scope,निर्वाणा की प्लेलिस्ट चलाओ,hi-IN,test,play_music
+hi,782,out_of_scope,अरिजीत सिंह द्वारा तुम ही हो प्ले करो,hi-IN,test,play_music
+hi,2423,out_of_scope,मुंबई में आज मौसम की स्थिति क्या है,hi-IN,test,weather_query
+ta,8741,out_of_scope,பிற்பகல் இரண்டு மணிக்கு எச்சரிக்கையை அமைக்கவும்,ta-IN,test,alarm_set
+ta,1108,out_of_scope,சில நாட்டுப்புற இசையைக் கேட்க வேண்டும் என்பது என் ஆசை,ta-IN,test,play_music
+ta,250,out_of_scope,நான் இப்போது ஜாஸ் போல் உணர்கிறேன்,ta-IN,test,play_music
+ta,3116,out_of_scope,சென்ற வருடத்தில் எனக்குப் பிடித்த பாடலைப் போடுங்கள்,ta-IN,test,play_music
+ta,2679,out_of_scope,வெப்பநிலை ஒரே மாதிரியாக இருக்குமா அல்லது குளிர்ச்சியாக இருக்குமா,ta-IN,test,weather_query
+ta,2408,out_of_scope,ஏ. ஆர். ரஹ்மான் இசைக்குழுவிலிருந்து நிறைய பாடல்களைத் தேடு,ta-IN,test,play_music
+ta,1404,out_of_scope,சிம்லாவில் நாளை வானிலை இருக்க முடியுமா,ta-IN,test,weather_query
+ta,939,out_of_scope,காலை ஏழு மணிக்கு என் அலாரத்தை அமைத்தேன்,ta-IN,test,alarm_set
+ta,5577,out_of_scope,மாலையில் புயல் அதிகமாக இருந்தால் எனக்கு முழு கவர் ஜாக்கெட் தேவைப்படும்,ta-IN,test,weather_query
+ta,782,out_of_scope,டி. இமானின் என்னோடு நீ இருந்தால் பாடலைப் போடவும்,ta-IN,test,play_music
+ta,5955,out_of_scope,சட்டம் ஒழுங்கு தொடர்பாக நகரம் எவ்வளவு பாதுகாப்பானது,ta-IN,test,weather_query
+ta,4355,out_of_scope,நான் இருக்கும் இடத்தில் வானிலை எப்படி இருக்கிறது,ta-IN,test,weather_query
+ta,319,out_of_scope,ஜெய்ப்பூரின் வானிலையை இன்னும் இரண்டு நாட்களுக்கு சொல்லுங்கள்,ta-IN,test,weather_query
+ta,297,out_of_scope,ஏ. ஆர். ரஹ்மான் பாடல்களை கலந்து போடவும்,ta-IN,test,play_music
+ta,827,out_of_scope,யுவன் ஷங்கர் ராஜா இசைப்பட்டியல் போடு,ta-IN,test,play_music
+en,6093,out_of_scope,should i open the sun roof,en-US,test,weather_query
+en,1007,out_of_scope,play creed from my rock playlist,en-US,test,play_music
+en,250,out_of_scope,i feel like jazz right now how about you,en-US,test,play_music
+en,3002,out_of_scope,play songs by the band the beatles,en-US,test,play_music
+en,2615,out_of_scope,will i need to wear a jacket next wednesday,en-US,test,weather_query
+en,2396,out_of_scope,start celine dion songs,en-US,test,play_music
+en,1404,out_of_scope,can i please have the weather for tomorrow here in costa mesa,en-US,test,weather_query
+en,891,out_of_scope,play some christian music,en-US,test,play_music
+en,9738,out_of_scope,could you please play the classical music for me,en-US,test,play_music
+en,5365,out_of_scope,set alarm six am,en-US,test,alarm_set
+en,779,out_of_scope,i want to hear snow by red hot chili peppers,en-US,test,play_music
+en,5707,out_of_scope,listen to my favorites,en-US,test,play_music
+en,4266,out_of_scope,what is todays weather,en-US,test,weather_query
+en,297,out_of_scope,shuffle songs by coldplay,en-US,test,play_music
+en,296,out_of_scope,play a nirvana playlist,en-US,test,play_music

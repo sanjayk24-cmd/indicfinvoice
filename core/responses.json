@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "languages": ["en", "hi", "ta"],
+    "tamil_verified": false,
+    "note": "Tamil replies marked unverified pending native speaker validation"
+  },
+  "intents": {
+    "balance_check": {
+      "en": "Your {account_type} account balance is Rs {balance}.",
+      "hi": "आपके {account_type} खाते की शेष राशि रु {balance} है।",
+      "ta": "உங்கள் {account_type} கணக்கு இருப்பு ரூ {balance} ஆகும்.",
+      "ta_verified": false
+    },
+    "loan_due_date": {
+      "en": "Your {loan_type} loan is due on {due_date}. Outstanding amount is Rs {outstanding}.",
+      "hi": "आपका {loan_type} ऋण {due_date} को देय है। बकाया राशि रु {outstanding} है।",
+      "ta": "உங்கள் {loan_type} கடன் செலுத்தும் தேதி {due_date}. நிலுவைத் தொகை ரூ {outstanding}.",
+      "ta_verified": false
+    },
+    "crop_insurance_status": {
+      "en": "Status for claim {claim_id} is '{status}'. Claimed amount: Rs {amount}.",
+      "hi": "दावा संख्या {claim_id} की स्थिति '{status}' है। दावा राशि: रु {amount}।",
+      "ta": "கிளைம் {claim_id}-ன் நிலை '{status}'. கோரப்பட்ட தொகை: ரூ {amount}.",
+      "ta_verified": false
+    },
+    "transaction_dispute": {
+      "en": "Dispute for transaction {transaction_ref} has been registered successfully. Reference number: {reference}.",
+      "hi": "लेनदेन {transaction_ref} के लिए आपकी आपत्ति सफलतापूर्वक दर्ज कर ली गई है। संदर्भ संख्या: {reference}।",
+      "ta": "பரிவர்த்தனை {transaction_ref} மீதான சர்ச்சை வெற்றிகரமாக பதிவு செய்யப்பட்டது. குறிப்பு எண்: {reference}.",
+      "ta_verified": false
+    }
+  },
+  "actions": {
+    "repeat": {
+      "en": "I did not catch that clearly. Could you please repeat your request?",
+      "hi": "मुझे आपकी बात स्पष्ट समझ नहीं आई। क्या आप कृपया दोबारा कह सकते हैं?",
+      "ta": "தயவுசெய்து மீண்டும் ஒருமுறை தெளிவாக கூறுங்கள்.",
+      "ta_verified": false
+    },
+    "help": {
+      "en": "I can help you check your account balance, loan due dates, crop insurance status, or register a transaction dispute.",
+      "hi": "मैं आपके खाते की शेष राशि, ऋण देय तिथि, फसल बीमा स्थिति देखने या लेनदेन विवाद दर्ज करने में सहायता कर सकता हूँ।",
+      "ta": "கணக்கு இருப்பு, கடன் தவணை தேதி, பயிர் காப்பீட்டு நிலை அல்லது பரிவர்த்தனை தகராறைப் பதிவு செய்ய நான் உதவ முடியும்.",
+      "ta_verified": false
+    },
+    "ask": {
+      "account_type": {
+        "en": "Which account would you like to check? Savings or KCC?",
+        "hi": "आप किस खाते का विवरण जानना चाहते हैं? बचत या केसीसी?",
+        "ta": "எந்த கணக்கை பார்க்க விரும்புகிறீர்கள்? சேமிப்பு அல்லது கேசிசி?",
+        "ta_verified": false
+      },
+      "loan_type": {
+        "en": "Which loan type would you like to check? Home, crop, or personal loan?",
+        "hi": "आप किस प्रकार के ऋण की देय तिथि जानना चाहते हैं? होम, फसल या पर्सनल?",
+        "ta": "எந்தக் கடனைப் பார்க்க விரும்புகிறீர்கள்? வீடு, பயிர் அல்லது தனிநபர் கடன்?",
+        "ta_verified": false
+      },
+      "claim_id": {
+        "en": "Please provide your insurance claim ID (for example CLM-771).",
+        "hi": "कृपया अपनी फसल बीमा दावा संख्या बताएं (जैसे CLM-771)।",
+        "ta": "உங்கள் காப்பீட்டுக் கோரிக்கை எண்ணைக் குறிப்பிடவும் (எ.கா. CLM-771).",
+        "ta_verified": false
+      },
+      "transaction_ref": {
+        "en": "Please provide the transaction reference number (for example TXN-9001).",
+        "hi": "कृपया लेनदेन संदर्भ संख्या बताएं (जैसे TXN-9001)।",
+        "ta": "பரிவர்த்தனை குறிப்பு எண்ணைக் குறிப்பிடவும் (எ.கா. TXN-9001).",
+        "ta_verified": false
+      },
+      "amount": {
+        "en": "What was the amount of the disputed transaction?",
+        "hi": "विवादित लेनदेन की राशि कितनी थी?",
+        "ta": "சர்ச்சைக்குரிய பரிவர்த்தனை தொகை எவ்வளவு?",
+        "ta_verified": false
+      },
+      "date": {
+        "en": "On what date did this transaction take place?",
+        "hi": "यह लेनदेन किस तारीख को हुआ था?",
+        "ta": "இந்த பரிவர்த்தனை எந்த தேதியில் நடந்தது?",
+        "ta_verified": false
+      }
+    },
+    "need_pin": {
+      "en": "To complete your transaction dispute, please enter your 4-digit PIN as text.",
+      "hi": "लेनदेन विवाद दर्ज करने के लिए, कृपया अपना 4 अंकों का पिन दर्ज करें।",
+      "ta": "பரிவர்த்தனை சர்ச்சையை முடிக்க, தயவுசெய்து உங்கள் 4 இலக்க பின்னை உள்ளிடவும்.",
+      "ta_verified": false
+    },
+    "error": {
+      "en": "Sorry, an error occurred while processing your request: {error}.",
+      "hi": "क्षमा करें, आपके अनुरोध पर कार्रवाई करते समय एक त्रुटि हुई: {error}।",
+      "ta": "மன்னிக்கவும், உங்கள் கோரிக்கையைச் செயல்படுத்தும்போது பிழை ஏற்பட்டது: {error}.",
+      "ta_verified": false
+    },
+    "refusal": {
+      "en": "This request cannot be processed via automated assistant. Please call our 24x7 bank helpline at {helpline} immediately.",
+      "hi": "यह अनुरोध स्वचालित सहायक के माध्यम से संसाधित नहीं किया जा सकता है। कृपया हमारे 24x7 बैंक हेल्पलाइन {helpline} पर तुरंत संपर्क करें।",
+      "ta": "இந்த கோரிக்கையை தானியங்கி உதவியாளர் மூலம் செயல்படுத்த முடியாது. உடனடியாக எங்கள் 24x7 வங்கி உதவி எண் {helpline}-ஐ தொடர்பு கொள்ளவும்.",
+      "ta_verified": false
+    },
+    "cancelled": {
+      "en": "Your pending request has been cancelled.",
+      "hi": "आपका लंबित अनुरोध रद्द कर दिया गया है।",
+      "ta": "உங்கள் நிலுவைக் கோரிக்கை ரத்து செய்யப்பட்டது.",
+      "ta_verified": false
+    }
+  }
+}
