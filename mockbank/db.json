@@ -3,10 +3,16 @@
     "pin": "1234",
     "accounts": {
       "savings": {
-        "balance": 45000
+        "balance": 45000,
+        "masked_account": "XXXX 1001",
+        "currency": "INR",
+        "status": "active"
       },
       "kcc": {
-        "balance": 25000
+        "balance": 25000,
+        "masked_account": "XXXX 1001",
+        "currency": "INR",
+        "status": "active"
       }
     },
     "loans": {
@@ -39,17 +45,174 @@
         "amount": 75000,
         "date": "2026-10-20",
         "status": "completed"
+      },
+      "TXN-001000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-001001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-001002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-001003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-001004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-001005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-001006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-001007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-001008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-001009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-001010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-001011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-001012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-001013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-001014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-001015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-001016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-001017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
       }
+    },
+    "profile": {
+      "name": "Aarav Sharma (Demo 1)",
+      "scenario": "salary account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
     }
   },
   "C002": {
     "pin": "5678",
     "accounts": {
       "savings": {
-        "balance": 12000
+        "balance": 12000,
+        "masked_account": "XXXX 1002",
+        "currency": "INR",
+        "status": "active"
       },
       "kcc": {
-        "balance": 8000
+        "balance": 8000,
+        "masked_account": "XXXX 1002",
+        "currency": "INR",
+        "status": "active"
       }
     },
     "loans": {
@@ -69,17 +232,174 @@
         "amount": 500,
         "date": "2026-10-25",
         "status": "completed"
+      },
+      "TXN-002000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-002001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-002002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-002003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-002004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-002005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-002006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-002007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-002008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-002009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-002010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-002011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-002012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-002013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-002014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-002015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-002016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-002017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
       }
+    },
+    "profile": {
+      "name": "Meera Iyer (Demo 2)",
+      "scenario": "zero balance",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
     }
   },
   "C003": {
     "pin": "9012",
     "accounts": {
       "savings": {
-        "balance": 80000
+        "balance": 80000,
+        "masked_account": "XXXX 1003",
+        "currency": "INR",
+        "status": "active"
       },
       "kcc": {
-        "balance": 35000
+        "balance": 35000,
+        "masked_account": "XXXX 1003",
+        "currency": "INR",
+        "status": "active"
       }
     },
     "loans": {
@@ -94,7 +414,3582 @@
         "amount": 22000,
         "date": "2026-10-15",
         "status": "completed"
+      },
+      "TXN-003000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-003001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-003002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-003003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-003004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-003005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-003006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-003007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-003008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-003009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-003010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-003011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-003012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-003013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-003014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-003015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-003016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-003017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
       }
+    },
+    "profile": {
+      "name": "Kavya Raman (Demo 3)",
+      "scenario": "overdraft",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C004": {
+    "pin": "1004",
+    "accounts": {
+      "savings": {
+        "balance": 12500000.99,
+        "masked_account": "XXXX 1004",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1004": {
+        "status": "rejected",
+        "amount": 17000
+      }
+    },
+    "transactions": {
+      "TXN-004000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-004001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-004002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-004003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-004004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-004005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-004006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-004007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-004008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-004009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-004010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-004011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-004012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-004013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-004014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-004015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-004016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-004017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Arjun Patel (Demo 4)",
+      "scenario": "high balance",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C005": {
+    "pin": "1005",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1005",
+        "currency": "INR",
+        "status": "dormant"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1005": {
+        "status": "in_process",
+        "amount": 17500
+      }
+    },
+    "transactions": {
+      "TXN-005000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-005001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-005002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-005003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-005004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-005005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-005006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-005007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-005008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-005009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-005010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-005011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-005012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-005013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-005014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-005015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-005016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-005017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Priya Nair (Demo 5)",
+      "scenario": "dormant account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C006": {
+    "pin": "1006",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1006",
+        "currency": "INR",
+        "status": "frozen"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1006": {
+        "status": "approved",
+        "amount": 18000
+      }
+    },
+    "transactions": {
+      "TXN-006000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-006001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-006002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-006003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-006004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-006005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-006006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-006007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-006008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-006009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-006010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-006011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-006012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-006013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-006014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-006015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-006016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-006017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Ravi Kumar (Demo 6)",
+      "scenario": "frozen account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C007": {
+    "pin": "1007",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1007",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {},
+    "claims": {
+      "CLM-1007": {
+        "status": "rejected",
+        "amount": 18500
+      }
+    },
+    "transactions": {
+      "TXN-007000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-007001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-007002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-007003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-007004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-007005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-007006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-007007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-007008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-007009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-007010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-007011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-007012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-007013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-007014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-007015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-007016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-007017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Aarav Sharma (Demo 7)",
+      "scenario": "no loans",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C008": {
+    "pin": "1008",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1008",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {},
+    "transactions": {
+      "TXN-008000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-008001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-008002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-008003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-008004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-008005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-008006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-008007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-008008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-008009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-008010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-008011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-008012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-008013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-008014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-008015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-008016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-008017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Meera Iyer (Demo 8)",
+      "scenario": "no claims",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C009": {
+    "pin": "1009",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1009",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1009": {
+        "status": "approved",
+        "amount": 19500
+      }
+    },
+    "transactions": {},
+    "profile": {
+      "name": "Kavya Raman (Demo 9)",
+      "scenario": "no transactions",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C010": {
+    "pin": "1010",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1010",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-09-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1010": {
+        "status": "rejected",
+        "amount": 20000
+      }
+    },
+    "transactions": {
+      "TXN-010000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-010001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-010002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-010003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-010004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-010005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-010006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-010007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-010008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-010009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-010010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-010011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-010012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-010013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-010014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-010015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-010016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-010017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Arjun Patel (Demo 10)",
+      "scenario": "overdue loan",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C011": {
+    "pin": "1011",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1011",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 0,
+        "status": "closed",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1011": {
+        "status": "in_process",
+        "amount": 20500
+      }
+    },
+    "transactions": {
+      "TXN-011000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-011001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-011002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-011003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-011004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-011005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-011006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-011007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-011008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-011009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-011010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-011011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-011012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-011013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-011014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-011015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-011016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-011017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Priya Nair (Demo 11)",
+      "scenario": "closed loan",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C012": {
+    "pin": "1012",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1012",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1012": {
+        "status": "approved",
+        "amount": 21000
+      }
+    },
+    "transactions": {
+      "TXN-012000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-012001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-012002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-012003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-012004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-012005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-012006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-012007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-012008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-012009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-012010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-012011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-012012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-012013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-012014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-012015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-012016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-012017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Ravi Kumar (Demo 12)",
+      "scenario": "pending payments",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C013": {
+    "pin": "1013",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1013",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1013": {
+        "status": "rejected",
+        "amount": 21500
+      }
+    },
+    "transactions": {
+      "TXN-013000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-013001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-013002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-013003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-013004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-013005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-013006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-013007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-013008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-013009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-013010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-013011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-013012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-013013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-013014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-013015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-013016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-013017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Aarav Sharma (Demo 13)",
+      "scenario": "salary account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C014": {
+    "pin": "1014",
+    "accounts": {
+      "savings": {
+        "balance": 0,
+        "masked_account": "XXXX 1014",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1014": {
+        "status": "in_process",
+        "amount": 22000
+      }
+    },
+    "transactions": {
+      "TXN-014000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-014001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-014002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-014003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-014004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-014005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-014006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-014007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-014008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-014009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-014010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-014011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-014012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-014013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-014014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-014015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-014016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-014017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Meera Iyer (Demo 14)",
+      "scenario": "zero balance",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C015": {
+    "pin": "1015",
+    "accounts": {
+      "savings": {
+        "balance": -2450.75,
+        "masked_account": "XXXX 1015",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1015": {
+        "status": "approved",
+        "amount": 22500
+      }
+    },
+    "transactions": {
+      "TXN-015000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-015001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-015002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-015003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-015004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-015005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-015006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-015007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-015008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-015009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-015010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-015011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-015012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-015013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-015014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-015015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-015016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-015017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Kavya Raman (Demo 15)",
+      "scenario": "overdraft",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C016": {
+    "pin": "1016",
+    "accounts": {
+      "savings": {
+        "balance": 12500000.99,
+        "masked_account": "XXXX 1016",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1016": {
+        "status": "rejected",
+        "amount": 23000
+      }
+    },
+    "transactions": {
+      "TXN-016000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-016001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-016002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-016003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-016004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-016005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-016006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-016007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-016008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-016009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-016010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-016011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-016012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-016013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-016014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-016015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-016016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-016017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Arjun Patel (Demo 16)",
+      "scenario": "high balance",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C017": {
+    "pin": "1017",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1017",
+        "currency": "INR",
+        "status": "dormant"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1017": {
+        "status": "in_process",
+        "amount": 23500
+      }
+    },
+    "transactions": {
+      "TXN-017000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-017001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-017002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-017003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-017004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-017005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-017006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-017007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-017008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-017009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-017010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-017011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-017012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-017013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-017014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-017015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-017016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-017017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Priya Nair (Demo 17)",
+      "scenario": "dormant account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C018": {
+    "pin": "1018",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1018",
+        "currency": "INR",
+        "status": "frozen"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1018": {
+        "status": "approved",
+        "amount": 24000
+      }
+    },
+    "transactions": {
+      "TXN-018000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-018001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-018002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-018003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-018004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-018005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-018006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-018007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-018008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-018009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-018010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-018011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-018012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-018013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-018014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-018015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-018016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-018017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Ravi Kumar (Demo 18)",
+      "scenario": "frozen account",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C019": {
+    "pin": "1019",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1019",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {},
+    "claims": {
+      "CLM-1019": {
+        "status": "rejected",
+        "amount": 24500
+      }
+    },
+    "transactions": {
+      "TXN-019000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-019001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-019002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-019003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-019004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-019005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-019006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-019007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-019008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-019009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-019010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-019011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-019012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-019013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-019014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-019015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-019016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-019017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Aarav Sharma (Demo 19)",
+      "scenario": "no loans",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C020": {
+    "pin": "1020",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1020",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {},
+    "transactions": {
+      "TXN-020000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-020001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-020002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-020003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-020004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-020005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-020006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-020007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-020008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-020009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-020010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-020011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-020012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-020013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-020014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-020015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-020016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-020017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Meera Iyer (Demo 20)",
+      "scenario": "no claims",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C021": {
+    "pin": "1021",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1021",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1021": {
+        "status": "approved",
+        "amount": 25500
+      }
+    },
+    "transactions": {},
+    "profile": {
+      "name": "Kavya Raman (Demo 21)",
+      "scenario": "no transactions",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
+    }
+  },
+  "C022": {
+    "pin": "1022",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1022",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-09-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1022": {
+        "status": "rejected",
+        "amount": 26000
+      }
+    },
+    "transactions": {
+      "TXN-022000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-022001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-022002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-022003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-022004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-022005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-022006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-022007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-022008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-022009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-022010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-022011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-022012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-022013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-022014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-022015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-022016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-022017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Arjun Patel (Demo 22)",
+      "scenario": "overdue loan",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Pune",
+      "synthetic": true
+    }
+  },
+  "C023": {
+    "pin": "1023",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1023",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 0,
+        "status": "closed",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1023": {
+        "status": "in_process",
+        "amount": 26500
+      }
+    },
+    "transactions": {
+      "TXN-023000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-023001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-023002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-023003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-023004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-023005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-023006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-023007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-023008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-023009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-023010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-023011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-023012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-023013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-023014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-023015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-023016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-023017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Priya Nair (Demo 23)",
+      "scenario": "closed loan",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Lucknow",
+      "synthetic": true
+    }
+  },
+  "C024": {
+    "pin": "1024",
+    "accounts": {
+      "savings": {
+        "balance": 52780.35,
+        "masked_account": "XXXX 1024",
+        "currency": "INR",
+        "status": "active"
+      }
+    },
+    "loans": {
+      "personal": {
+        "due_date": "2026-11-15",
+        "outstanding": 182450.5,
+        "status": "active",
+        "interest_rate": 10.75
+      }
+    },
+    "claims": {
+      "CLM-1024": {
+        "status": "approved",
+        "amount": 27000
+      }
+    },
+    "transactions": {
+      "TXN-024000": {
+        "amount": 1.0,
+        "date": "2026-10-28",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-024001": {
+        "amount": 49.99,
+        "date": "2026-10-27",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-024002": {
+        "amount": 2500.0,
+        "date": "2026-10-26",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-024003": {
+        "amount": 75000.0,
+        "date": "2026-10-25",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-024004": {
+        "amount": 125000.25,
+        "date": "2026-10-24",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-024005": {
+        "amount": 0.5,
+        "date": "2026-10-23",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-024006": {
+        "amount": 1.0,
+        "date": "2026-10-22",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-024007": {
+        "amount": 49.99,
+        "date": "2026-10-21",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-024008": {
+        "amount": 2500.0,
+        "date": "2026-10-20",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-024009": {
+        "amount": 75000.0,
+        "date": "2026-10-19",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-024010": {
+        "amount": 125000.25,
+        "date": "2026-10-18",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-024011": {
+        "amount": 0.5,
+        "date": "2026-10-17",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-024012": {
+        "amount": 1.0,
+        "date": "2026-10-16",
+        "description": "UPI · Groceries",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-024013": {
+        "amount": 49.99,
+        "date": "2026-10-15",
+        "description": "NEFT · Salary",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      },
+      "TXN-024014": {
+        "amount": 2500.0,
+        "date": "2026-10-14",
+        "description": "ATM · Cash withdrawal",
+        "type": "debit",
+        "status": "failed",
+        "currency": "INR"
+      },
+      "TXN-024015": {
+        "amount": 75000.0,
+        "date": "2026-10-13",
+        "description": "IMPS · Rent",
+        "type": "debit",
+        "status": "reversed",
+        "currency": "INR"
+      },
+      "TXN-024016": {
+        "amount": 125000.25,
+        "date": "2026-10-12",
+        "description": "Card · Pharmacy",
+        "type": "debit",
+        "status": "completed",
+        "currency": "INR"
+      },
+      "TXN-024017": {
+        "amount": 0.5,
+        "date": "2026-10-11",
+        "description": "Refund · Online order",
+        "type": "credit",
+        "status": "pending",
+        "currency": "INR"
+      }
+    },
+    "profile": {
+      "name": "Ravi Kumar (Demo 24)",
+      "scenario": "pending payments",
+      "bank_name": "Indic Demo Bank",
+      "branch": "Chennai",
+      "synthetic": true
     }
   }
 }

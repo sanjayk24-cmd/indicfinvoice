@@ -12,3 +12,7 @@ pyyaml
 pandas
 scikit-learn
 pytest
+torch
+torchaudio
+onnxruntime
+python-multipart

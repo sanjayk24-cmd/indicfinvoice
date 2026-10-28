@@ -1,0 +1,3 @@
+lang,whisper_medium_wer,indic_wer,whisper_medium_clean_wer,indic_clean_wer,whisper_medium_loop_rate,indic_loop_rate,whisper_medium_script_error_rate,indic_script_error_rate
+hi,0.9035,0.1378,0.5053,0.1378,0.11,0.0,0.14,0.0
+ta,0.9638,0.3187,0.7665,0.3187,0.06,0.0,0.08,0.0

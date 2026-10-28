@@ -236,6 +236,12 @@ def predict(text: str) -> Dict[str, Any]:
 
     # Normalise all extracted slots
     normalised = normalise_slots(slots)
+    # Explicitly labelled monetary values outrank noisy BIO tags (e.g. a year).
+    explicit_amount = re.search(r'(?:amount|राशि|தொகை|₹|rs\.?|inr)\s*[:=]?\s*(\d[\d,]*(?:\.\d{1,2})?)', cleaned_text, re.IGNORECASE)
+    if explicit_amount:
+        from decimal import Decimal
+        value = Decimal(explicit_amount.group(1).replace(',', ''))
+        normalised['amount'] = int(value) if value == value.to_integral() else float(value)
 
     return {
         "intent": predicted_intent,

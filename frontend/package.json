@@ -1,0 +1,24 @@
+{
+  "name": "indicfinvoice-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node -e \"const fs=require('fs');const p1='node_modules/@rollup/wasm-node';const p2='node_modules/rollup';if(fs.existsSync(p1)&&fs.existsSync(p2)){fs.rmSync(p2,{recursive:true,force:true});fs.cpSync(p1,p2,{recursive:true});console.log('Rollup WASM active');}\"",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.65.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.2"
+  }
+}

@@ -1,0 +1,16 @@
+// Capture on the audio rendering thread, independent of React/main-thread work.
+class PcmCapture extends AudioWorkletProcessor {
+  process(inputs) {
+    const channels = inputs[0];
+    if (channels?.length) {
+      const mono = new Float32Array(channels[0].length);
+      for (const channel of channels) {
+        for (let i = 0; i < mono.length; i++) mono[i] += channel[i] / channels.length;
+      }
+      this.port.postMessage(mono, [mono.buffer]);
+    }
+    // Output remains zero to avoid microphone feedback.
+    return true;
+  }
+}
+registerProcessor('pcm-capture', PcmCapture);

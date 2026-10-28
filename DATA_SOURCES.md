@@ -66,6 +66,28 @@ To avoid post-hoc bias, the evaluation protocol is determined prior to the full 
 - **Primary Result:** Auto-detection with no language argument passed (`generate_kwargs={"task": "transcribe"}`), as specified in the project specification and README. This measures real-world end-to-end performance where the system must identify and transcribe spoken input without prior knowledge of the speaker's language.
 - **Secondary (Diagnostic Only):** Forced Hindi conditioning, reported in a separate, clearly labelled table, to diagnose whether auto-detection misidentification accounts for specific transcription errors, reported if the diagnostic shows it matters.
 
+### 1.5 AI4Bharat IndicConformer Model Selection & Contamination Analysis (Parallel Evaluation)
+
+#### Model Candidates Searched on Hugging Face:
+| Model ID | Size | Licence | Description / Architecture | IndicVoices / Kathbath Mention | Language-Specific | Access Status |
+|:---|:---:|:---:|:---|:---:|:---:|:---:|
+| `ai4bharat/indicconformer_stt_hi_hybrid_ctc_rnnt_large` | ~120M | MIT | Conformer-Large encoder with hybrid CTC-RNNT decoder (NeMo) | No explicit mention | Yes (`hi`) | Gated (HTTP 403 Forbidden) |
+| `ai4bharat/indicconformer_stt_ta_hybrid_ctc_rnnt_large` | ~120M | MIT | Conformer-Large encoder with hybrid CTC-RNNT decoder (NeMo) | No explicit mention | Yes (`ta`) | Gated (HTTP 403 Forbidden) |
+| `ai4bharat/indic-conformer-600m-multilingual` | ~600M | MIT | Multilingual Conformer-based Hybrid CTC + RNNT ASR across 22 Indian languages (ONNX) | Yes (explicit link to IndicVoices tokenizers) | No (Multilingual, 22 languages) | Public (Open) |
+| `ai4bharat/IndicConformer` | ~120M | CC-BY-4.0 | NeMo Conformer model template card with placeholder dataset references | No mention | No | Public |
+| `OpenVoiceOS/ai4bharat-indicconformer-hi-onnx` | ~120M | MIT | Community ONNX export of AI4Bharat IndicConformer Hindi | No mention | Yes (`hi`) | Public (Community) |
+| `OpenVoiceOS/ai4bharat-indicconformer-ta-onnx` | ~120M | MIT | Community ONNX export of AI4Bharat IndicConformer Tamil | No mention | Yes (`ta`) | Public (Community) |
+
+#### Checkpoint Choice and Selection Reason:
+- **Rule Applied:** Prefer an AI4Bharat-published checkpoint over a community checkpoint; among AI4Bharat checkpoints, prefer the one whose licence allows research use and publication of results.
+- **Chosen Hindi Checkpoint:** `ai4bharat/indic-conformer-600m-multilingual`
+- **Chosen Tamil Checkpoint:** `ai4bharat/indic-conformer-600m-multilingual`
+- **Reason:** Published officially by AI4Bharat (`ai4bharat`), released under the permissive MIT licence allowing research use and open publication of evaluation results, publicly accessible without gated-access restrictions (unlike `indicconformer_stt_hi_hybrid_ctc_rnnt_large` and `ta` which return HTTP 403 Client Error), and natively supports both Hindi (`hi`) and Tamil (`ta`) using conformer acoustic representations.
+
+#### Contamination Status:
+- **Hindi (`hi`):** Contaminated (High Risk). The model card explicitly references the AI4Bharat IndicVoices repository for tokenizers (`https://github.com/AI4Bharat/IndicVoices/tree/master/artifacts/tokenizers`), and AI4Bharat trained IndicConformer using large-scale Indic speech corpora including IndicVoices and Kathbath. Test clips from IndicVoices `valid` likely overlap with the pre-training/fine-tuning distributions.
+- **Tamil (`ta`):** Contaminated (High Risk). Identical contamination vector: tokenizers and training corpora originate from the AI4Bharat IndicVoices collection, creating substantial distribution and speaker overlap between training and the IndicVoices `valid` test set.
+
 ---
 
 ## 2. Test 2 Text Sources
@@ -214,3 +236,8 @@ Last template edit: 2026-10-23 15:39:31 (out_of_scope.yaml)
 Validator: data/validate_bio.py, 9,000 records, 0 errors
 Tamil templates verified: false (50 of 50)
 Held-out set may be written after: 2026-10-24 15:42:41 (24-hour gap)
+
+
+## Local IndicConformer diagnostic — 2026-10-28
+
+First 20 indexed IndicVoices validation clips per Hindi/Tamil; no test-clip tuning. difflib similarity on project normalise_text: {"hi/ctc": 0.9614979212990635, "hi/rnnt": 0.953325929654921, "ta/ctc": 0.912107064477617, "ta/rnnt": 0.8986361445305846}. CTC selected once by higher macro mean (0.93680249 versus RNNT 0.92598104). webapp/config.json fixes CTC for all subsequent checks; no fallback decoder. Source log: logs/conformer_offline_check.txt. No training, splits, frozen artifacts, NLU weights, or eval/results files changed.

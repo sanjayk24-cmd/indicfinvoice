@@ -31,7 +31,7 @@ def test_customer_schema_and_pin():
         assert isinstance(pin, str), f"{cid} PIN must be string"
         assert len(pin) == 4 and pin.isdigit(), f"{cid} PIN must be a 4-digit string"
         assert "savings" in data["accounts"]
-        assert "kcc" in data["accounts"]
+        assert set(data["accounts"]).issubset({"savings", "kcc"})  # Some customers have no KCC account.
 
 
 def test_c001_specific_requirements():

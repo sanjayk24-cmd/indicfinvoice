@@ -1,0 +1,25 @@
+{
+  "note": "English is not in this evaluation as IndicConformer is evaluated on Indic languages (Hindi and Tamil).",
+  "per_language": {
+    "hi": {
+      "model_id": "ai4bharat/indic-conformer-600m-multilingual",
+      "clips": 100,
+      "corpus_wer": 0.1378,
+      "clean_transcript_wer": 0.1378,
+      "clips_kept_for_clean_wer": 100,
+      "loop_rate": 0.0,
+      "script_error_rate": 0.0,
+      "median_seconds": 0.3624
+    },
+    "ta": {
+      "model_id": "ai4bharat/indic-conformer-600m-multilingual",
+      "clips": 100,
+      "corpus_wer": 0.3187,
+      "clean_transcript_wer": 0.3187,
+      "clips_kept_for_clean_wer": 100,
+      "loop_rate": 0.0,
+      "script_error_rate": 0.0,
+      "median_seconds": 0.3387
+    }
+  }
+}

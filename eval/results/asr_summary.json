@@ -1,0 +1,96 @@
+{
+  "note": "English is from FLEURS and Hindi/Tamil from IndicVoices, so these are not directly comparable.",
+  "model": "openai/whisper-medium",
+  "device": "cuda",
+  "dtype": "fp16",
+  "language_argument": null,
+  "total_clips": 300,
+  "overall_wer": 0.5853,
+  "overall_median_seconds": 0.7523,
+  "total_repetition_loops": 17,
+  "total_repetition_loop_rate": 0.0567,
+  "total_script_errors": 22,
+  "total_script_error_rate": 0.0733,
+  "per_language": {
+    "en": {
+      "count": 100,
+      "source": "FLEURS en_us test",
+      "wer": 0.0597,
+      "median_seconds": 0.5649,
+      "repetition_loops": {
+        "count": 0,
+        "rate": 0.0
+      },
+      "script_errors": {
+        "count": 0,
+        "rate": 0.0,
+        "breakdown": {}
+      }
+    },
+    "hi": {
+      "count": 100,
+      "source": "IndicVoices valid",
+      "wer": 0.9035,
+      "median_seconds": 1.3475,
+      "repetition_loops": {
+        "count": 11,
+        "rate": 0.11
+      },
+      "script_errors": {
+        "count": 14,
+        "rate": 0.14,
+        "breakdown": {
+          "Urdu/Arabic": 6,
+          "Latin": 5,
+          "non-Devanagari": 3
+        }
+      }
+    },
+    "ta": {
+      "count": 100,
+      "source": "IndicVoices valid",
+      "wer": 0.9638,
+      "median_seconds": 1.1093,
+      "repetition_loops": {
+        "count": 6,
+        "rate": 0.06
+      },
+      "script_errors": {
+        "count": 8,
+        "rate": 0.08,
+        "breakdown": {
+          "Latin": 5,
+          "non-Tamil": 1,
+          "Devanagari": 2
+        }
+      }
+    }
+  },
+  "per_source": {
+    "FLEURS en_us test": {
+      "count": 100,
+      "languages": [
+        "en"
+      ],
+      "wer": 0.0597,
+      "median_seconds": 0.5649,
+      "loop_count": 0,
+      "loop_rate": 0.0,
+      "script_error_count": 0,
+      "script_error_rate": 0.0
+    },
+    "IndicVoices valid": {
+      "count": 200,
+      "languages": [
+        "hi",
+        "ta"
+      ],
+      "wer": 0.9281,
+      "median_seconds": 1.2147,
+      "loop_count": 17,
+      "loop_rate": 0.085,
+      "script_error_count": 22,
+      "script_error_rate": 0.11
+    }
+  }
+}

@@ -12,6 +12,8 @@ Endpoints:
 import json
 import os
 import random
+from decimal import Decimal, InvalidOperation
+from datetime import date as calendar_date
 from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
@@ -187,6 +189,23 @@ def post_dispute(payload: DisputePayload):
                 status_code=404,
                 detail=f"Transaction reference '{txn_ref}' not found for customer '{customer_id}'",
             )
+
+    # Validate against the customer's actual transaction, using decimal money.
+    txn = txns[txn_ref]
+    try:
+        amount = Decimal(str(payload.amount))
+        if not amount.is_finite() or amount <= 0 or amount.as_tuple().exponent < -2:
+            raise ValueError()
+        supplied_date = calendar_date.fromisoformat(str(payload.date))
+    except (InvalidOperation, ValueError, TypeError):
+        raise HTTPException(status_code=400, detail="Provide a positive amount with at most two decimal places and a valid YYYY-MM-DD date")
+    if amount != Decimal(str(txn['amount'])) or supplied_date.isoformat() != txn['date']:
+        raise HTTPException(status_code=400, detail="Dispute amount and date must match the referenced transaction")
+    if txn.get('status') != 'completed':
+        raise HTTPException(status_code=409, detail="Only completed transactions can be disputed in this demo")
+    for existing in DISPUTES:
+        if existing['customer_id'] == customer_id and existing['transaction_ref'] == txn_ref:
+            return {'status': existing['status'], 'reference': existing['reference']}
 
     # In-memory storage for dispute
     ref_digits = f"{random.randint(1000, 9999)}"
