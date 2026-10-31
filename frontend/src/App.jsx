@@ -15,6 +15,11 @@ import {
   checkHealth,
 } from './api/client';
 import {
+  stopAllSpeech,
+  playAudioDataUri,
+  speakBrowserNative,
+} from './utils/speechPlayer';
+import {
   RotateCcw,
   Sparkles,
   CreditCard,
@@ -30,6 +35,10 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [activeNav, setActiveNav] = useState('chat');
+  const [voiceEnabled, setVoiceEnabled] = useState(true);
+  const [voiceGender, setVoiceGender] = useState('female');
+  const [playingMessageId, setPlayingMessageId] = useState(null);
+
   const [accountData, setAccountData] = useState({
     account_type: 'Savings Account',
     masked_account: 'XXXX 1234',
@@ -62,10 +71,39 @@ export default function App() {
     return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
+  const playMessageSpeech = (msg, lang = currentLang, gender = voiceGender) => {
+    stopAllSpeech();
+    setPlayingMessageId(msg.id);
+
+    const onStart = () => setPlayingMessageId(msg.id);
+    const onEnd = () => setPlayingMessageId((cur) => (cur === msg.id ? null : cur));
+
+    if (msg.audio_base64) {
+      playAudioDataUri(msg.audio_base64, onStart, onEnd, (err) => {
+        console.warn('Edge-TTS playback interrupted or blocked, trying browser speech fallback...', err);
+        speakBrowserNative(msg.text, lang, gender, onStart, onEnd);
+      });
+    } else if (msg.text) {
+      speakBrowserNative(msg.text, lang, gender, onStart, onEnd);
+    }
+  };
+
+  const handleTogglePlay = (msg, forceReplay = false) => {
+    if (playingMessageId === msg.id && !forceReplay) {
+      stopAllSpeech();
+      setPlayingMessageId(null);
+    } else {
+      playMessageSpeech(msg);
+    }
+  };
+
   const handleSendMessage = async (text) => {
     if (!text.trim() || isLoading) return;
 
+    stopAllSpeech();
+    setPlayingMessageId(null);
     setError(null);
+
     const userMsg = {
       id: 'msg-' + Date.now(),
       sender: 'user',
@@ -77,7 +115,14 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const res = await sendChatMessage(text, 'auto', sessionId, customerId);
+      const res = await sendChatMessage(
+        text,
+        'auto',
+        sessionId,
+        customerId,
+        voiceGender,
+        voiceEnabled
+      );
 
       if (res.lang) setCurrentLang(res.lang);
       if (res.session_id) {
@@ -92,6 +137,8 @@ export default function App() {
         transactions: res.transactions,
         intent: res.intent,
         action: res.action,
+        audio_base64: res.audio_base64,
+        voice_persona: res.voice_persona,
         timestamp: formatCurrentTime(),
       };
 
@@ -103,6 +150,11 @@ export default function App() {
           ...res.account_data,
         }));
       }
+
+      // Voice replies aloud if enabled
+      if (voiceEnabled) {
+        playMessageSpeech(botMsg, res.lang || currentLang, voiceGender);
+      }
     } catch (err) {
       console.error('Chat error:', err);
       setError(err.message || 'Failed to connect to backend server.');
@@ -112,7 +164,10 @@ export default function App() {
   };
 
   const handleSendVoice = async (audioBlob) => {
+    stopAllSpeech();
+    setPlayingMessageId(null);
     setError(null);
+
     const tempUserMsgId = 'voice-' + Date.now();
     const tempUserMsg = {
       id: tempUserMsgId,
@@ -126,7 +181,15 @@ export default function App() {
 
     try {
       // Default STT architecture: AI4Bharat IndicConformer or Whisper
-      const res = await sendVoiceMessage(audioBlob, 'auto', sessionId, customerId);
+      const res = await sendVoiceMessage(
+        audioBlob,
+        'auto',
+        sessionId,
+        customerId,
+        voiceGender,
+        voiceEnabled
+      );
+
       if (!res.transcript?.trim()) {
         throw new Error(res.reply || 'No speech recognized. Check the microphone and selected language, then try again.');
       }
@@ -157,6 +220,8 @@ export default function App() {
         transactions: res.transactions,
         intent: res.intent,
         action: res.action,
+        audio_base64: res.audio_base64,
+        voice_persona: res.voice_persona,
         asr_model: res.asr_model || 'ai4bharat/indic-conformer-600m-multilingual',
         timestamp: formatCurrentTime(),
       };
@@ -168,6 +233,11 @@ export default function App() {
           ...prev,
           ...res.account_data,
         }));
+      }
+
+      // Voice replies aloud if enabled
+      if (voiceEnabled) {
+        playMessageSpeech(botMsg, res.lang || currentLang, voiceGender);
       }
     } catch (err) {
       console.error('Voice processing error:', err);
@@ -211,6 +281,8 @@ export default function App() {
   };
 
   const handleResetChat = () => {
+    stopAllSpeech();
+    setPlayingMessageId(null);
     setMessages([]);
     setError(null);
     setSessionId('sess-' + Math.random().toString(36).substring(2, 9));
@@ -263,7 +335,7 @@ export default function App() {
                 Banking Workspace
               </span>
               <span className="workspace-subtitle">
-                Multilingual AI · English · हिंदी · தமிழ் (Auto-Detected)
+                Multilingual AI · English · हिंदी · தமிழ் (Two-Way Voice Output Active)
               </span>
             </div>
 
@@ -311,7 +383,7 @@ export default function App() {
             <div className="welcome-panel">
               <div className="welcome-badge-pill">
                 <Sparkles size={13} />
-                <span>MULTILINGUAL VOICE BANKING ASSISTANT</span>
+                <span>MULTILINGUAL TWO-WAY VOICE BANKING ASSISTANT</span>
               </div>
 
               <h1 className="welcome-heading">
@@ -320,7 +392,8 @@ export default function App() {
 
               <p className="welcome-description">
                 Inquire about your live balances, mini statements, loan due dates, or card controls.
-                Speak or type naturally in <strong>English</strong>, <strong>हिंदी</strong>, or <strong>தமிழ்</strong>.
+                Speak or type naturally in <strong>English</strong>, <strong>हिंदी</strong>, or <strong>தமிழ்</strong> —
+                with real-time spoken voice responses in your choice of <strong>Female</strong> or <strong>Male</strong> personas.
               </p>
 
               <div className="welcome-chips-grid">
@@ -353,6 +426,8 @@ export default function App() {
             messages={messages}
             isLoading={isLoading}
             error={error}
+            playingMessageId={playingMessageId}
+            onTogglePlay={handleTogglePlay}
           />
 
           {/* Audio & Text Composer */}
@@ -370,6 +445,16 @@ export default function App() {
           currentLang={currentLang}
           onSelectLang={(lang) => setCurrentLang(lang)}
           onQuickAction={handleQuickAction}
+          voiceEnabled={voiceEnabled}
+          onToggleVoice={() => {
+            if (voiceEnabled) {
+              stopAllSpeech();
+              setPlayingMessageId(null);
+            }
+            setVoiceEnabled(!voiceEnabled);
+          }}
+          voiceGender={voiceGender}
+          onSelectGender={(gender) => setVoiceGender(gender)}
         />
       </main>
     </>

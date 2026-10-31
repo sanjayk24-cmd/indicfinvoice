@@ -6,6 +6,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Mic, Send, Square, Loader2, CheckCircle2, Volume2, Globe } from 'lucide-react';
 import { transcribeAudio } from '../api/client';
 import { AudioRecorder } from '../utils/audioRecorder';
+import { stopAllSpeech } from '../utils/speechPlayer';
 
 export default function MessageInput({
   onSendMessage,
@@ -83,6 +84,7 @@ export default function MessageInput({
   };
 
   const startRecording = async () => {
+    stopAllSpeech();
     if (startingRef.current || isLoading || isProcessingAudio) return;
     startingRef.current = true;
     setIsStarting(true);

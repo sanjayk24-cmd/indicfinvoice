@@ -6,7 +6,13 @@ import React, { useEffect, useRef } from 'react';
 import MessageBubble from './MessageBubble';
 import { Bot } from 'lucide-react';
 
-export default function ChatWindow({ messages, isLoading, error }) {
+export default function ChatWindow({
+  messages,
+  isLoading,
+  error,
+  playingMessageId = null,
+  onTogglePlay,
+}) {
   const bottomRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +22,12 @@ export default function ChatWindow({ messages, isLoading, error }) {
   return (
     <div className="chat-messages-container">
       {messages.map((msg, index) => (
-        <MessageBubble key={msg.id || index} message={msg} />
+        <MessageBubble
+          key={msg.id || index}
+          message={msg}
+          isPlaying={playingMessageId === msg.id}
+          onTogglePlay={onTogglePlay}
+        />
       ))}
 
       {/* Typing Indicator while awaiting backend response */}

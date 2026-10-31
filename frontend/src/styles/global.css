@@ -1332,3 +1332,313 @@ body {
     padding: 10px 16px;
   }
 }
+
+
+/* ==========================================================================
+   Voice Assistant Output & Persona Controls
+   ========================================================================== */
+
+.voice-settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.voice-toggle-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 1px solid #BBF7D0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.voice-toggle-card.muted {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+}
+
+.voice-toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.voice-toggle-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.voice-toggle-card.muted .voice-toggle-title {
+  color: #64748B;
+}
+
+.voice-toggle-sub {
+  font-size: 0.72rem;
+  color: #15803D;
+}
+
+.voice-toggle-card.muted .voice-toggle-sub {
+  color: #94A3B8;
+}
+
+/* iOS-style toggle switch */
+.voice-switch-btn {
+  width: 44px;
+  height: 24px;
+  border-radius: 14px;
+  background-color: #CBD5E1;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.22s ease;
+  flex-shrink: 0;
+  padding: 2px;
+}
+
+.voice-switch-btn.active {
+  background-color: #059669;
+}
+
+.voice-switch-handle {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transform: translateX(0);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.voice-switch-btn.active .voice-switch-handle {
+  transform: translateX(20px);
+}
+
+/* Voice Persona Card */
+.voice-persona-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.voice-persona-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.voice-persona-engine {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #2563EB;
+  background: #EFF6FF;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid #DBEAFE;
+}
+
+.voice-persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.persona-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 9px 10px;
+  border-radius: 10px;
+  border: 1.5px solid #E2E8F0;
+  background-color: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: left;
+}
+
+.persona-option-btn:hover:not(:disabled) {
+  border-color: #93C5FD;
+  background-color: #EFF6FF;
+}
+
+.persona-option-btn.selected {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border-color: #2563EB;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
+}
+
+.persona-option-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.persona-btn-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.persona-emoji {
+  font-size: 1rem;
+}
+
+.persona-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.persona-check {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #2563EB;
+}
+
+.persona-voice-meta {
+  font-size: 0.68rem;
+  color: #64748B;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.persona-option-btn.selected .persona-voice-meta {
+  color: #1E40AF;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Assistant Message Audio Player Pill
+   ========================================================================== */
+
+.assistant-audio-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  width: fit-content;
+  max-width: 100%;
+  transition: all 0.2s ease;
+}
+
+.assistant-audio-pill.playing {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border-color: #93C5FD;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.audio-pill-play-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+
+.audio-pill-play-btn:hover {
+  background: #1D4ED8;
+  transform: scale(1.06);
+}
+
+.assistant-audio-pill.playing .audio-pill-play-btn {
+  background: #DC2626;
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.3);
+}
+
+.audio-pill-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.audio-pill-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.2;
+}
+
+.assistant-audio-pill.playing .audio-pill-label {
+  color: #1D4ED8;
+}
+
+.audio-pill-persona {
+  font-size: 0.65rem;
+  color: #64748B;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.audio-pill-replay-btn {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.15s ease;
+  margin-left: 2px;
+}
+
+.audio-pill-replay-btn:hover {
+  color: #2563EB;
+}
+
+/* Sound Wave Animation */
+.audio-wave-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+  padding: 0 2px;
+}
+
+.wave-bar {
+  display: inline-block;
+  width: 3px;
+  background-color: #2563EB;
+  border-radius: 3px;
+  animation: audioWave 1s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(1) { height: 6px; animation-delay: 0.0s; }
+.wave-bar:nth-child(2) { height: 14px; animation-delay: 0.2s; }
+.wave-bar:nth-child(3) { height: 10px; animation-delay: 0.4s; }
+.wave-bar:nth-child(4) { height: 16px; animation-delay: 0.1s; }
+
+@keyframes audioWave {
+  0%, 100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}

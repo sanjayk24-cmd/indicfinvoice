@@ -12,6 +12,8 @@ import {
   EyeOff,
   Wifi,
   Sparkles,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 
 export default function AccountPanel({
@@ -19,6 +21,10 @@ export default function AccountPanel({
   currentLang = 'auto',
   onSelectLang,
   onQuickAction,
+  voiceEnabled = true,
+  onToggleVoice,
+  voiceGender = 'female',
+  onSelectGender,
 }) {
   const [showBalance, setShowBalance] = useState(true);
 
@@ -107,6 +113,91 @@ export default function AccountPanel({
               </button>
             );
           })}
+        </div>
+      </div>
+
+      {/* Voice Assistant & Output Persona */}
+      <div className="voice-settings-section">
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <h4 className="section-label">Voice Assistant Output</h4>
+          {voiceEnabled ? (
+            <Volume2 size={15} style={{ color: '#2563EB' }} />
+          ) : (
+            <VolumeX size={15} style={{ color: '#94A3B8' }} />
+          )}
+        </div>
+
+        {/* Voice Toggle Switch Card */}
+        <div className={`voice-toggle-card ${!voiceEnabled ? 'muted' : ''}`}>
+          <div className="voice-toggle-info">
+            <span className="voice-toggle-title">
+              {voiceEnabled ? 'Voice Replies Active' : 'Voice Replies Muted'}
+            </span>
+            <span className="voice-toggle-sub">
+              {voiceEnabled ? 'Model speaks answers aloud' : 'Only text output rendered'}
+            </span>
+          </div>
+          <button
+            type="button"
+            className={`voice-switch-btn ${voiceEnabled ? 'active' : ''}`}
+            onClick={onToggleVoice}
+            aria-label="Toggle voice output"
+            title={voiceEnabled ? 'Click to mute spoken responses' : 'Click to enable spoken responses'}
+          >
+            <span className="voice-switch-handle" />
+          </button>
+        </div>
+
+        {/* Persona Selector (Male / Female) */}
+        <div className="voice-persona-card">
+          <div className="voice-persona-header">
+            <span>Voice Persona</span>
+            <span className="voice-persona-engine">Microsoft Neural</span>
+          </div>
+
+          <div className="voice-persona-grid">
+            <button
+              type="button"
+              className={`persona-option-btn ${voiceGender === 'female' ? 'selected' : ''}`}
+              onClick={() => onSelectGender && onSelectGender('female')}
+              disabled={!voiceEnabled}
+              title="Select Female Voice (Neerja / Swara / Pallavi)"
+            >
+              <div className="persona-btn-top">
+                <span className="persona-emoji">👩</span>
+                <span className="persona-name">Female</span>
+                {voiceGender === 'female' && <span className="persona-check">✓</span>}
+              </div>
+              <span className="persona-voice-meta">
+                {currentLang === 'hi'
+                  ? 'Swara · हिंदी'
+                  : currentLang === 'ta'
+                  ? 'Pallavi · தமிழ்'
+                  : 'Neerja · Indian EN'}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              className={`persona-option-btn ${voiceGender === 'male' ? 'selected' : ''}`}
+              onClick={() => onSelectGender && onSelectGender('male')}
+              disabled={!voiceEnabled}
+              title="Select Male Voice (Prabhat / Madhur / Valluvar)"
+            >
+              <div className="persona-btn-top">
+                <span className="persona-emoji">👨</span>
+                <span className="persona-name">Male</span>
+                {voiceGender === 'male' && <span className="persona-check">✓</span>}
+              </div>
+              <span className="persona-voice-meta">
+                {currentLang === 'hi'
+                  ? 'Madhur · हिंदी'
+                  : currentLang === 'ta'
+                  ? 'Valluvar · தமிழ்'
+                  : 'Prabhat · Indian EN'}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 

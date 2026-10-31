@@ -7,7 +7,7 @@ import sys
 from typing import Optional
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from starlette.concurrency import run_in_threadpool
 
 # Ensure project root is in sys.path
@@ -21,9 +21,11 @@ from backend.schemas import (
     ChatResponse,
     HealthResponse,
     TranscribeResponse,
+    TTSRequest,
 )
 from backend.services.asr_service import asr_service
 from backend.services.conversation import conversation_service
+from backend.services.tts_service import synthesize_speech, synthesize_speech_base64
 from mockbank.api import app as mockbank_app
 
 app = FastAPI(
@@ -55,6 +57,7 @@ app.add_middleware(
 
 MAX_AUDIO_SIZE_BYTES = 15 * 1024 * 1024  # 15 MB limit
 
+
 @app.get('/demo/customers')
 def demo_customers():
     from mockbank.api import BANK_DB
@@ -64,9 +67,9 @@ def demo_customers():
 
 
 @app.get("/health", response_model=HealthResponse)
-def health_check():
+def health_endpoint():
     """
-    Health check returning backend status, loaded models, and supported languages.
+    Checks the status of the API and which ASR models are loaded.
     """
     return HealthResponse(
         status="ok",
@@ -77,9 +80,10 @@ def health_check():
 
 
 @app.post("/chat", response_model=ChatResponse)
-def chat_endpoint(payload: ChatRequest):
+async def chat_endpoint(payload: ChatRequest):
     """
-    Processes a multi-turn text banking query across English, Hindi, or Tamil.
+    Processes a multi-turn text banking query across English, Hindi, or Tamil,
+    and optionally synthesizes spoken audio using Microsoft Neural TTS.
     """
     if not payload.message or not payload.message.strip():
         raise HTTPException(
@@ -105,6 +109,17 @@ def chat_endpoint(payload: ChatRequest):
             customer_id=payload.customer_id or "C001",
             pin=payload.pin,
         )
+
+        # Synthesize spoken voice output if enabled
+        if payload.tts_enabled and res.get("reply"):
+            audio_uri, voice_id = await synthesize_speech_base64(
+                res["reply"],
+                lang=res.get("lang", lang),
+                gender=payload.voice_gender or "female",
+            )
+            res["audio_base64"] = audio_uri
+            res["voice_persona"] = voice_id
+
         return ChatResponse(**res)
     except Exception as e:
         raise HTTPException(
@@ -159,10 +174,12 @@ async def voice_endpoint(
     customer_id: str = Form("C001"),
     pin: Optional[str] = Form(None),
     model: str = Form("auto"),
+    gender: str = Form("female"),
+    tts_enabled: bool = Form(True),
 ):
     """
     End-to-end voice endpoint: transcribes audio using AI4Bharat IndicConformer (default),
-    passes through dialogue pipeline, and returns transcript, assistant reply, and ASR model info.
+    passes through dialogue pipeline, synthesizes speech reply, and returns transcript and audio.
     """
     lang = (lang or "hi").lower().strip()
     if lang not in ("auto", "en", "hi", "ta"):
@@ -188,7 +205,7 @@ async def voice_endpoint(
     try:
         asr_res = await run_in_threadpool(asr_service.transcribe_audio_bytes, audio_bytes, lang=lang, model=model)
         transcript = asr_res.get("transcript", "")
-        lang = asr_res.get("lang", "en")
+        effective_lang = asr_res.get("lang", lang)
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
     except Exception as e:
@@ -199,7 +216,15 @@ async def voice_endpoint(
             "en": "I could not detect any clear speech in the audio. Please speak closer to the microphone and try again.",
             "hi": "मुझे कोई स्पष्ट आवाज़ नहीं सुनाई दी। कृपया माइक्रोफ़ोन के पास आकर पुनः बोलें।",
             "ta": "தெளிவான குரல் எதுவும் கேட்கவில்லை. தயவுசெய்து மைக் அருகே வந்து மீண்டும் பேசவும்.",
-        }.get(lang, "मुझे कोई स्पष्ट आवाज़ नहीं सुनाई दी। कृपया माइक्रोफ़ोन के पास आकर पुनः बोलें।")
+        }.get(effective_lang, "मुझे कोई स्पष्ट आवाज़ नहीं सुनाई दी। कृपया माइक्रोफ़ोन के पास आकर पुनः बोलें।")
+
+        silence_audio, silence_voice = None, None
+        if tts_enabled:
+            silence_audio, silence_voice = await synthesize_speech_base64(
+                silence_reply,
+                lang=effective_lang,
+                gender=gender or "female",
+            )
 
         return JSONResponse(
             status_code=status.HTTP_200_OK,
@@ -209,15 +234,17 @@ async def voice_endpoint(
                 "status": asr_res.get("status", "no_speech"),
                 "intent": "repeat",
                 "session_id": session_id,
-                "lang": lang,
+                "lang": effective_lang,
                 "asr_model": asr_res.get("model_id", "ai4bharat/indic-conformer-600m-multilingual"),
+                "audio_base64": silence_audio,
+                "voice_persona": silence_voice,
             }
         )
 
     # 2. Process transcript in dialogue manager
     chat_res = conversation_service.process_message(
         message=transcript,
-        lang=lang,
+        lang=effective_lang,
         session_id=session_id,
         customer_id=customer_id,
         pin=pin,
@@ -225,7 +252,31 @@ async def voice_endpoint(
     chat_res["transcript"] = transcript
     chat_res["asr_model"] = asr_res.get("model_id", "ai4bharat/indic-conformer-600m-multilingual")
 
+    # 3. Synthesize speech for the reply
+    if tts_enabled and chat_res.get("reply"):
+        audio_uri, voice_id = await synthesize_speech_base64(
+            chat_res["reply"],
+            lang=chat_res.get("lang", effective_lang),
+            gender=gender or "female",
+        )
+        chat_res["audio_base64"] = audio_uri
+        chat_res["voice_persona"] = voice_id
+
     return chat_res
+
+
+@app.post("/tts")
+async def tts_endpoint(req: TTSRequest):
+    """
+    Synthesizes arbitrary text into speech using Microsoft Neural TTS (edge-tts).
+    """
+    audio_bytes = await synthesize_speech(req.text, lang=req.lang or "en", gender=req.gender or "female")
+    if not audio_bytes:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Speech synthesis failed."
+        )
+    return Response(content=audio_bytes, media_type="audio/mpeg")
 
 
 @app.get("/account/summary", response_model=AccountSummaryResponse)

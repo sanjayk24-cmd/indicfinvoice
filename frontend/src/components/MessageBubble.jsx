@@ -1,11 +1,11 @@
 /**
- * src/components/MessageBubble.jsx - User and Assistant Message Display
+ * src/components/MessageBubble.jsx - User and Assistant Message Display with Voice Output
  */
 
 import React from 'react';
-import { Bot, User, Landmark, Mic } from 'lucide-react';
+import { Bot, User, Landmark, Mic, Play, Pause, RotateCcw, Volume2 } from 'lucide-react';
 
-export default function MessageBubble({ message }) {
+export default function MessageBubble({ message, isPlaying = false, onTogglePlay }) {
   const isUser = message.sender === 'user';
 
   const formatCurrency = (val) => {
@@ -92,6 +92,48 @@ export default function MessageBubble({ message }) {
           {message.follow_up && (
             <div style={{ marginTop: '10px', color: '#475569', fontSize: '0.875rem' }}>
               {message.follow_up}
+            </div>
+          )}
+
+          {/* Voice Response Audio Player Pill for Assistant */}
+          {!isUser && message.text && (
+            <div className={`assistant-audio-pill ${isPlaying ? 'playing' : ''}`}>
+              <button
+                type="button"
+                className="audio-pill-play-btn"
+                onClick={() => onTogglePlay && onTogglePlay(message)}
+                title={isPlaying ? 'Pause speech' : 'Listen to voice reply'}
+                aria-label={isPlaying ? 'Pause speech' : 'Listen to voice reply'}
+              >
+                {isPlaying ? <Pause size={13} /> : <Play size={13} style={{ marginLeft: '1px' }} />}
+              </button>
+
+              <div className="audio-pill-content">
+                <span className="audio-pill-label">
+                  {isPlaying ? 'Speaking aloud' : 'Spoken Voice'}
+                </span>
+                <span className="audio-pill-persona">
+                  {message.voice_persona ? `🎙️ ${message.voice_persona}` : '🎙️ Microsoft Neural Voice'}
+                </span>
+              </div>
+
+              {isPlaying ? (
+                <div className="audio-wave-bars">
+                  <span className="wave-bar" />
+                  <span className="wave-bar" />
+                  <span className="wave-bar" />
+                  <span className="wave-bar" />
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  className="audio-pill-replay-btn"
+                  onClick={() => onTogglePlay && onTogglePlay(message, true)}
+                  title="Replay from beginning"
+                >
+                  <RotateCcw size={12} />
+                </button>
+              )}
             </div>
           )}
 

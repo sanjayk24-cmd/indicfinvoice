@@ -12,6 +12,8 @@ class ChatRequest(BaseModel):
     session_id: Optional[str] = Field(None, description="Unique session ID for multi-turn state tracking")
     customer_id: Optional[str] = Field("C001", description="Mock bank customer ID")
     pin: Optional[str] = Field(None, description="Customer PIN if required for authentication")
+    voice_gender: Optional[str] = Field("female", description="Voice gender: 'female' or 'male'")
+    tts_enabled: Optional[bool] = Field(True, description="Whether to synthesize speech for the reply")
 
 
 class TransactionItem(BaseModel):
@@ -43,6 +45,8 @@ class ChatResponse(BaseModel):
     pending: Optional[Dict[str, Any]] = None
     account_data: Optional[Dict[str, Any]] = None
     transactions: Optional[List[TransactionItem]] = None
+    audio_base64: Optional[str] = None
+    voice_persona: Optional[str] = None
 
 
 class TranscribeResponse(BaseModel):
@@ -50,6 +54,12 @@ class TranscribeResponse(BaseModel):
     lang: str
     model_id: str
     status: str = "success"
+
+
+class TTSRequest(BaseModel):
+    text: str = Field(..., min_length=1, description="Text to synthesize")
+    lang: Optional[str] = Field("en", description="Language code: 'en', 'hi', or 'ta'")
+    gender: Optional[str] = Field("female", description="Voice gender: 'female' or 'male'")
 
 
 class HealthResponse(BaseModel):

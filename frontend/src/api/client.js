@@ -15,12 +15,21 @@ export async function checkHealth() {
   }
 }
 
-export async function sendChatMessage(message, lang = 'en', sessionId = null, customerId = 'C001') {
+export async function sendChatMessage(
+  message,
+  lang = 'en',
+  sessionId = null,
+  customerId = 'C001',
+  voiceGender = 'female',
+  ttsEnabled = true
+) {
   const payload = {
     message,
     lang,
     session_id: sessionId,
     customer_id: customerId,
+    voice_gender: voiceGender,
+    tts_enabled: ttsEnabled,
   };
 
   const res = await fetch(`${API_BASE_URL}/chat`, {
@@ -63,7 +72,9 @@ export async function sendVoiceMessage(
   lang = 'hi',
   sessionId = null,
   customerId = 'C001',
-  model = 'auto'
+  model = 'auto',
+  voiceGender = 'female',
+  ttsEnabled = true
 ) {
   const formData = new FormData();
   formData.append('file', audioBlob, 'voice_query.wav');
@@ -73,6 +84,8 @@ export async function sendVoiceMessage(
     formData.append('session_id', sessionId);
   }
   formData.append('customer_id', customerId);
+  formData.append('gender', voiceGender);
+  formData.append('tts_enabled', ttsEnabled);
 
   const res = await fetch(`${API_BASE_URL}/voice`, {
     method: 'POST',
@@ -85,6 +98,23 @@ export async function sendVoiceMessage(
   }
 
   return await res.json();
+}
+
+export async function synthesizeSpeech(text, lang = 'en', gender = 'female') {
+  const res = await fetch(`${API_BASE_URL}/tts`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ text, lang, gender }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`TTS synthesis failed with status ${res.status}`);
+  }
+
+  const blob = await res.blob();
+  return URL.createObjectURL(blob);
 }
 
 export async function getAccountSummary(customerId = 'C001') {

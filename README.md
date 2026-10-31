@@ -56,6 +56,15 @@ The system integrates real-time browser audio streaming, hybrid neural speech re
    - **Customer Persona Selector:** Instant switching across 24 realistic customer banking profiles (`C001` to `C024`).
    - **Embedded Financial Widgets:** Rich balance summary cards, interactive transaction feeds, and ASR model provenance tags.
 
+5. **Two-Way Voice Interaction (Neural Text-to-Speech & Speech Synthesis)**
+   - **Microsoft Neural TTS (`edge-tts`):** Generates studio-fidelity, authentic regional Indian voices in real-time (~200–350 ms latency, 0 MB GPU VRAM):
+     - **English (`en`):** Female (`en-IN-NeerjaNeural`), Male (`en-IN-PrabhatNeural`)
+     - **Hindi (`hi`):** Female (`hi-IN-SwaraNeural`), Male (`hi-IN-MadhurNeural`)
+     - **Tamil (`ta`):** Female (`ta-IN-PallaviNeural`), Male (`ta-IN-ValluvarNeural`)
+   - **Zero-Latency Client-Side Fallback:** Implements `window.speechSynthesis` (Web Speech API) as an offline/low-bandwidth failover with custom pitch, cadence, and gender matching.
+   - **Financial Phonetic Normalizer:** Auto-expands currency symbols (`₹ 45,230.50` -> `45,230.50 rupees / रुपये / ரூபாய்`), masked account digits (`XXXX 1234` -> `ending in 1 2 3 4`), and cleans markdown formatting for flawless auditory delivery.
+   - **Interactive UI Controls:** Voice Output toggle switch (`[🔊 Enabled / Muted]`), Persona selector (`👩 Female / 👨 Male`), and assistant audio pills with animated equalizer waveform bars and replay controls.
+
 ---
 
 ## 🏗️ System Architecture & Workflow
@@ -112,6 +121,7 @@ The system integrates real-time browser audio streaming, hybrid neural speech re
 | **NLU / NLP** | IndicBERT / HuggingFace Transformers, PyTorch | Dual-headed JointNLU (sequence classification + token classification). |
 | **Dialogue & Core** | Python State Tracker, Regex Guardrails | Session tracking, slot normalizers, and security guardrail interceptors. |
 | **Mock Database** | Python MockBank Engine | 24 personas with 700+ realistic transactions covering edge cases and disputes. |
+| **Voice Out (TTS)** | Microsoft Neural TTS (edge-tts), Web Speech API | Authentic Indian English, Hindi, and Tamil male & female neural voices with browser fallback. |
 | **Testing** | Pytest, FastAPI TestClient | 174 automated offline regression tests with 100% pass rate. |
 
 ---
@@ -130,7 +140,8 @@ indicfinvoice/
 │   └── services/
 │       ├── asr_service.py              # ASR singleton manager, DC bias elimination, 40x gain normalization
 │       ├── conversation.py             # Multi-turn session manager & state tracking
-│       └── transaction_query.py        # Query engine for transaction filtering, limits, and disputes
+│       ├── transaction_query.py        # Query engine for transaction filtering, limits, and disputes
+│       └── tts_service.py              # Microsoft Neural TTS voice synthesis, phonetic normalizer & audio cache
 │
 ├── configs/                            # Configuration files & taxonomies
 │   ├── banking77_map.yaml              # BANKING77 to IndicFinVoice intent mappings
@@ -489,9 +500,10 @@ Below are 115 test questions (5 per category) across English, Hindi, and Tamil t
 
 | Endpoint | Method | Input Parameters | Description |
 |---|---|---|---|
-| `/chat` | POST | JSON: `{"message": str, "lang": str, "session_id": str, "customer_id": str}` | Core multi-turn dialogue engine. Returns bot reply, identified intent, slots, and embedded transaction/balance objects. |
+| `/chat` | POST | JSON: `{"message": str, "lang": str, "session_id": str, "customer_id": str, "voice_gender": str, "tts_enabled": bool}` | Multi-turn dialogue engine returning text reply, slots, embedded cards, plus `audio_base64` and `voice_persona`. |
 | `/transcribe` | POST | Form-data: `file` (WAV audio), `lang` (`auto`, `en`, `hi`, `ta`), `model` (`auto`) | Standalone speech-to-text. Dispatches to Whisper-medium (English) or IndicConformer-600M (Hindi/Tamil). |
-| `/voice` | POST | Form-data: `file` (WAV audio), `lang`, `session_id`, `customer_id` | End-to-end voice processing: transcribes audio and executes dialogue pipeline in one call. |
+| `/voice` | POST | Form-data: `file` (WAV audio), `lang`, `session_id`, `customer_id`, `gender`, `tts_enabled` | Full two-way voice processing: transcribes speech, executes dialogue, and synthesizes reply audio in one call. |
+| `/tts` | POST | JSON: `{"text": str, "lang": str, "gender": str}` | Standalone TTS synthesis endpoint streaming raw `audio/mpeg` MP3 bytes. |
 | `/account/summary`| GET | Query: `?customer_id=C001` | Returns customer profile metadata, account types, masked numbers, and available balances. |
 | `/demo/customers` | GET | None | Enumerates all 24 mock customer profiles with their testing scenarios. |
 | `/health` | GET | None | Health check endpoint returning backend status, loaded models, and supported languages. |
