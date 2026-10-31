@@ -1,0 +1,68 @@
+intent: cheque_services
+languages:
+  en:
+    templates:
+    - how to order a new cheque book
+    - request a 25 leaf chequebook for savings account
+    - stop payment on cheque number 102
+    - how to cancel a cheque issued to merchant
+    - track clearing status of deposited cheque
+    - why did my cheque bounce with return memo
+    - positive pay confirmation for high value cheque
+    - charges for bounced cheque due to insufficient funds
+    - submit positive pay details for cheque clearing
+    - how to track dispatch of new chequebook
+    - view cheque clearance status online
+    - stop payment request for lost cheque leaves
+    - order personalized chequebook in mobile app
+    - check bounce charges deducted from account
+    - how to register positive pay for cheque above 50000
+    - cheque clearing time for outstation cheques
+    - view list of cleared cheques this month
+    - request return memo for dishonored cheque
+    - how many cheque leaves are remaining in my book
+    - cancel stop payment on cheque
+  hi:
+    templates:
+    - नई चेकबुक कैसे ऑर्डर करें
+    - बचत खाते के लिए 25 पन्नों की चेकबुक मंगवाएं
+    - चेक नंबर 102 का भुगतान रोकें
+    - दुकानदार को दिए गए चेक को कैसे रद्द करें
+    - जमा किए गए चेक का क्लीयरिंग स्टेटस ट्रैक करें
+    - मेरा चेक बाउंस क्यों हो गया रिटर्न मेमो दिखाएं
+    - बड़े चेक के लिए पॉजिटिव पे कन्फर्मेशन कैसे दें
+    - अपर्याप्त बैलेंस के कारण चेक बाउंस का शुल्क क्या है
+    - चेक क्लियरिंग के लिए पॉजिटिव पे डिटेल सबमिट करें
+    - नई चेकबुक का डिस्पैच स्टेटस ट्रैक करें
+    - ऑनलाइन चेक क्लीयरेंस स्टेटस देखें
+    - खोए हुए चेक का भुगतान रोकने का अनुरोध करें
+    - मोबाइल ऐप में चेकबुक ऑर्डर करें
+    - खाते से कटा हुआ चेक बाउंस चार्ज चेक करें
+    - 50000 से ऊपर के चेक के लिए पॉजिटिव पे कैसे भरें
+    - बाहरी चेक क्लियर होने में कितना समय लगता है
+    - इस महीने क्लियर हुए चेकों की सूची दिखाओ
+    - अस्वीकृत चेक के लिए रिटर्न मेमो मंगवाएं
+    - मेरी चेकबुक में कितने चेक बचे हैं
+    - चेक का स्टॉप पेमेंट हटाएं
+  ta:
+    templates:
+    - புதிய காசோலை புத்தகத்தை ஆர்டர் செய்வது எப்படி
+    - சேமிப்புக் கணக்கிற்கு 25 பக்க காசோலை புத்தகத்தை கோருங்கள்
+    - காசோலை எண் 102 க்கான கட்டணத்தை நிறுத்துங்கள்
+    - வழங்கப்பட்ட காசோலையை எவ்வாறு ரத்து செய்வது
+    - டெபாசிட் செய்யப்பட்ட காசோலையின் நிலை என்ன
+    - என் காசோலை ஏன் நிராகரிக்கப்பட்டது
+    - பெரிய காசோலைக்கு பாசிட்டிவ் பே உறுதிப்படுத்தல் சமர்ப்பிக்கவும்
+    - போதுமான பணம் இல்லாததால் காசோலை திரும்பியதற்கான கட்டணம் என்ன
+    - காசோலை அனுமதிக்கான பாசிட்டிவ் பே விவரங்களை சமர்ப்பிக்கவும்
+    - புதிய காசோலை புத்தகத்தின் விநியோக நிலையை கண்காணிக்கவும்
+    - ஆன்லைனில் காசோலை அனுமதி நிலையைப் பார்க்கவும்
+    - தொலைந்த காசோலைக்கான கட்டணத்தை நிறுத்துங்கள்
+    - மொபைல் செயலியில் புதிய காசோலை புத்தகத்தை ஆர்டர் செய்
+    - காசோலை பவுன்ஸ் கட்டணம் எவ்வளவு பிடிக்கப்பட்டது
+    - 50000 க்கு மேல் உள்ள காசோலைக்கு பாசிட்டிவ் பே பதிவு செய்வது எப்படி
+    - வெளியூர் காசோலைகள் வரவு வைக்க எவ்வளவு நேரம் ஆகும்
+    - இந்த மாதம் அனுமதிக்கப்பட்ட காசோலைகளின் பட்டியலைக் காட்டு
+    - நிராகரிக்கப்பட்ட காசோலைக்கான ரிட்டர்ன் மெமோவை கோருங்கள்
+    - என் காசோலை புத்தகத்தில் எத்தனை தாள்கள் மீதமுள்ளன
+    - காசோலை கட்டண நிறுத்தத்தை ரத்து செய்

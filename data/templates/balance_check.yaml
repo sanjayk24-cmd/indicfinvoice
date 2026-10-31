@@ -162,20 +162,6 @@ languages:
     - look up how much money i have in account
     - what is my balance figure
     - balance details for my account
-    - what is my ledger balance
-    - how much uncleared funds are in my account
-    - check balance across all my accounts
-    - total funds available in my bank
-    - is there any money in my dormant account
-    - check balance for my inactive savings account
-    - show balance of my primary account
-    - how much money do i have in total
-    - check my balance right now
-    - what is the total balance across my accounts
-    - tell me the uncleared funds in my savings account
-    - check ledger and available balance
-    - balance in my main account
-    - how much funds do i have in active accounts
   hi:
     templates:
     - मेरे {account_type} खाते का बैलेंस बताइए
@@ -330,20 +316,6 @@ languages:
     - account balance batayein
     - balance kitna hai please
     - mere bank account ka balance batao
-    - मेरे कितने खाते जुड़े हुए हैं
-    - लेजर बैलेंस कितना है
-    - सभी खातों का कुल बैलेंस दिखाओ
-    - निष्क्रिय खाते में कितना पैसा बचा है
-    - अकाउंट में कितना क्लियर बैलेंस है
-    - मेरे प्राइमरी अकाउंट का बैलेंस क्या है
-    - कुल मिलाकर मेरे खाते में कितने पैसे हैं
-    - बचत और चालू दोनों खातों का बैलेंस दिखाओ
-    - बैंक में कितना फंड बचा है
-    - क्या मेरे इनएक्टिव खाते में कोई पैसा है
-    - खाते का लेजर शेष कितना है
-    - मेरे कुल जमा पैसे कितने हैं
-    - उपलब्ध शेष राशि कितनी है
-    - सभी बैंक खातों का बैलेंस बताओ
   ta:
     templates:
     - என் {account_type} கணக்கின் இருப்பு என்ன
@@ -476,16 +448,6 @@ languages:
     - balance evvalavu sollunga
     - en account details paarkanum
     - account-la evvalavu balance irukku
-    - என் கணக்கில் கிடைக்கும் இருப்பு எவ்வளவு
-    - லெட்ஜர் இருப்பு எவ்வளவு
-    - அனைத்து கணக்குகளின் மொத்த இருப்பு என்ன
-    - செயலற்ற கணக்கில் பணம் இருக்கிறதா
-    - என் முதன்மை கணக்கு இருப்பு காட்டு
-    - மொத்தமாக வங்கியில் எவ்வளவு பணம் உள்ளது
-    - சேமிப்பு மற்றும் நடப்பு கணக்கு இருப்பு எவ்வளவு
-    - வங்கி கணக்கில் உள்ள மொத்த நிதி எவ்வளவு
-    - என் செயலில் உள்ள கணக்கின் இருப்பு என்ன
-    - கிடைக்கக்கூடிய தொகை எவ்வளவு
 slots:
   account_type:
     en:

@@ -1,0 +1,68 @@
+intent: legal_and_grievance
+languages:
+  en:
+    templates:
+    - why is there a cybercrime police lien on my account
+    - who placed a freeze on my account funds
+    - how to resolve law enforcement lien on bank balance
+    - dispute incorrect cibil credit score default report
+    - request loan no objection certificate noc after payoff
+    - how to file a formal complaint with banking ombudsman
+    - escalate unresolved customer grievance ticket
+    - what is the turnaround time for rbi ombudsman complaint
+    - my bank account is frozen due to court order
+    - claim regulatory compensation for delayed dispute resolution
+    - cibil report shows active loan that i already closed
+    - how to unfreeze account held by cyber cell notice
+    - get grievance reference number for complaints
+    - dispute negative credit rating entry on cibil
+    - escalate complaint to bank principal nodal officer
+    - tax attachment order placed on my savings account
+    - why was my balance placed on lien hold
+    - legal notice regarding unpaid loan dues
+    - request official closure certificate and noc
+    - ombudsman complaint status tracking
+  hi:
+    templates:
+    - मेरे खाते पर साइबर क्राइम पुलिस का होल्ड क्यों लगा है
+    - मेरे खाते के पैसों पर किसने रोक लगाई है
+    - खाते पर लगे पुलिस होल्ड को कैसे हटाएं
+    - सिबिल स्कोर में गलत डिफॉल्ट एंट्री की शिकायत करें
+    - लोन चुकाने के बाद एनओसी सर्टिफिकेट कैसे लें
+    - बैंकिंग लोकपाल में औपचारिक शिकायत कैसे दर्ज करें
+    - अनसुलझी शिकायत को उच्च अधिकारियों के पास भेजें
+    - आरबीआई लोकपाल शिकायत का निपटारा कितने दिन में होता है
+    - कोर्ट के आदेश के कारण मेरा बैंक खाता फ्रीज हो गया है
+    - देरी से विवाद सुलझाने पर मुआवजे का दावा करें
+    - सिबिल रिपोर्ट में बंद लोन अभी भी एक्टिव दिख रहा है
+    - साइबर सेल द्वारा होल्ड किए गए खाते को कैसे चालू करें
+    - शिकायत के लिए संदर्भ संख्या प्राप्त करें
+    - सिबिल पर गलत नेगेटिव रेटिंग का विरोध करें
+    - नोडल अधिकारी को अपनी शिकायत भेजें
+    - बचत खाते पर टैक्स डिपार्टमेंट का अटैचमेंट क्यों लगा
+    - मेरे बैलेंस पर लियन होल्ड क्यों लगाया गया है
+    - लोन बकाया के संबंध में कानूनी नोटिस
+    - लोन बंद होने का एनओसी प्रमाणपत्र मंगवाएं
+    - लोकपाल शिकायत की स्थिति कैसे चेक करें
+  ta:
+    templates:
+    - என் கணக்கில் சைபர் கிரைம் போலீஸ் பிடி ஏன் போடப்பட்டுள்ளது
+    - என் கணக்கு நிதியை யார் முடக்கியது
+    - கணக்கில் உள்ள போலீஸ் பிடியை எவ்வாறு அகற்றுவது
+    - சிபில் மதிப்பெண்ணில் தவறான கடன் பதிவை நீக்க புகார்
+    - கடன் முடித்த பிறகு தடையில்லா சான்றிதழ் என்ஓசி பெறுவது எப்படி
+    - வங்கி குறைதீர்ப்பாளரிடம் எவ்வாறு புகார் செய்வது
+    - தீர்க்கப்படாத வாடிக்கையாளர் புகாரை மேல்முறையீடு செய்
+    - ஆர்பிஐ குறைதீர்ப்பாளர் புகார் தீர்வு காலம் என்ன
+    - நீதிமன்ற உத்தரவால் என் கணக்கு முடக்கப்பட்டுள்ளது
+    - தாமதமான விசாரணைக்கான இழப்பீட்டை கோருங்கள்
+    - நான் செலுத்திய கடனை சிபில் இன்னும் நிலுவையில் காட்டுகிறது
+    - சைபர் கிரைம் முடக்கிய கணக்கை மீண்டும் இயக்குவது எப்படி
+    - புகாருக்கான குறிப்பு எண்ணைப் பெறுங்கள்
+    - சிபிலில் தவறான மதிப்பீட்டை எதிர்த்து புகார் செய்
+    - முதன்மை நோடல் அதிகாரிக்கு புகாரை அனுப்புங்கள்
+    - சேமிப்புக் கணக்கில் வரித்துறை பிடி ஏன் போடப்பட்டது
+    - என் பணத்தின் மீது லியன் பிடி ஏன் போடப்பட்டது
+    - கடன் நிலுவை தொடர்பான சட்ட அறிவிப்பு
+    - கடன் முடிந்ததற்கான அதிகாரப்பூர்வ சான்றிதழ் கோருங்கள்
+    - குறைதீர்ப்பாளர் புகார் நிலையை கண்காணிக்கவும்

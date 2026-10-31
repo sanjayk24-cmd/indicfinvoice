@@ -1,0 +1,68 @@
+intent: upi_qr_payments
+languages:
+  en:
+    templates:
+    - how to create a new upi id
+    - generate my personal upi qr code
+    - delete secondary upi virtual payment address
+    - approve pending upi collect request
+    - why did my qr code scan fail during payment
+    - how to block spam upi payment requests
+    - approve ipo mandate on upi
+    - what is the transaction limit for upi transfers
+    - how to cancel an active upi autopay subscription
+    - report wrong upi transfer to unintended phone number
+    - view pending upi payment requests
+    - how to change default bank account for upi
+    - fix upi payment timeout error
+    - check upi autopay mandate validity
+    - set up upi lite for small payments
+    - how to recall accidental wrong number upi payment
+    - approve monthly streaming subscription mandate
+    - generate dynamic qr code for payment
+    - deregister upi id linked to my phone
+    - why is my upi payment showing pending status
+  hi:
+    templates:
+    - नई यूपीआई आईडी कैसे बनाएं
+    - मेरा पर्सनल यूपीआई क्यूआर कोड दिखाएं
+    - अतिरिक्त यूपीआई वीपीए डिलीट करें
+    - पेंडिंग यूपीआई कलेक्ट रिक्वेस्ट स्वीकार करें
+    - पेमेंट के समय क्यूआर कोड स्कैन क्यों फेल हो गया
+    - स्पैम यूपीआई पेमेंट रिक्वेस्ट कैसे ब्लॉक करें
+    - यूपीआई पर आईपीओ मैंडेट स्वीकृत करें
+    - यूपीआई ट्रांसफर की दैनिक सीमा क्या है
+    - यूपीआई ऑटोपे सब्सक्रिप्शन कैसे कैंसिल करें
+    - गलत नंबर पर हुए यूपीआई पेमेंट की रिपोर्ट करें
+    - पेंडिंग यूपीआई पेमेंट रिक्वेस्ट दिखाएं
+    - यूपीआई के लिए प्राइमरी बैंक खाता कैसे बदलें
+    - यूपीआई पेमेंट टाइमआउट एरर ठीक करें
+    - यूपीआई ऑटोपे मैंडेट की स्थिति चेक करें
+    - छोटे भुगतानों के लिए यूपीआई लाइट सेट करें
+    - गलत नंबर पर भेजे गए पैसे कैसे वापस पाएं
+    - मासिक सब्सक्रिप्शन का मैंडेट अप्रूव करें
+    - भुगतान के लिए डायनेमिक क्यूआर कोड बनाएं
+    - फोन नंबर से जुड़ी यूपीआई आईडी हटाएं
+    - मेरा यूपीआई पेमेंट पेंडिंग क्यों दिख रहा है
+  ta:
+    templates:
+    - புதிய யுபிஐ ஐடியை உருவாக்குவது எப்படி
+    - என் தனிப்பட்ட யுபிஐ க்யூஆர் குறியீட்டை உருவாக்குங்கள்
+    - கூடுதல் யுபிஐ விபிஏ முகவரியை நீக்கு
+    - நிலுவையில் உள்ள யுபிஐ கோரிக்கையை ஏற்கவும்
+    - பணம் செலுத்தும்போது க்யூஆர் ஸ்கேன் ஏன் தோல்வியடைந்தது
+    - ஸ்பேம் யுபிஐ கட்டணக் கோரிக்கைகளைத் தடுப்பது எப்படி
+    - யுபிஐ இல் ஐபிஓ ஆணையை அங்கீகரிக்கவும்
+    - யுபிஐ பரிவர்த்தனைக்கான வரம்பு என்ன
+    - செயலில் உள்ள யுபிஐ ஆட்டோபே சந்தாவை ரத்து செய்வது எப்படி
+    - தவறான எண்ணுக்கு அனுப்பிய யுபிஐ பணத்தை திரும்பப் பெற புகார் செய்
+    - நிலுவையில் உள்ள யுபிஐ கோரிக்கைகளைக் காட்டு
+    - யுபிஐக்கான முதன்மை வங்கிக் கணக்கை மாற்றுவது எப்படி
+    - யுபிஐ கட்டண காலாவதி பிழையை சரிசெய்வது எப்படி
+    - யுபிஐ ஆட்டோபே ஆணையின் நிலையை சரிபார்க்கவும்
+    - சிறிய கட்டணங்களுக்கு யுபிஐ லைட் அமைக்கவும்
+    - தவறுதலாக மாற்றிய யுபிஐ பணத்தை திரும்பப் பெறுவது எப்படி
+    - மாதாந்திர சந்தா ஆணையை அங்கீகரிக்கவும்
+    - கட்டணத்திற்கான க்யூஆர் குறியீட்டை உருவாக்கு
+    - தொலைபேசியுடன் இணைக்கப்பட்ட யுபிஐ ஐடியை நீக்கு
+    - என் யுபிஐ கட்டணம் ஏன் நிலுவையில் உள்ளது

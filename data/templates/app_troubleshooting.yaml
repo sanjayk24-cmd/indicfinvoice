@@ -1,0 +1,68 @@
+intent: app_troubleshooting
+languages:
+  en:
+    templates:
+    - fingerprint biometrics login is failing in app
+    - face id recognition not working on login
+    - sim binding sms verification failed
+    - app is crashing during payment redirection
+    - how to toggle dark mode in mobile app
+    - where to find export csv statement option
+    - change default app language to hindi or tamil
+    - device binding error after updating phone
+    - why am i not receiving otp sms on my phone
+    - clear app cache to resolve login issue
+    - how to enable voice guided accessibility navigation
+    - screen reader compatibility settings in app
+    - session timed out error during transaction
+    - update mobile banking app to latest version
+    - enable push notifications for transaction alerts
+    - camera permission error during document scan
+    - how to reset app passcode or pattern
+    - payment page blank or loading endlessly
+    - manage registered trusted devices in app
+    - touch id not recognized error message
+  hi:
+    templates:
+    - ऐप में फिंगरप्रिंट बायोमेट्रिक काम नहीं कर रहा है
+    - लॉगिन करते समय फेस आईडी पहचान विफल हो गई
+    - सिम बाइंडिंग एसएमएस वेरिफिकेशन फेल हो गया
+    - पेमेंट के समय ऐप क्रैश हो रहा है
+    - मोबाइल ऐप में डार्क मोड कैसे लगाएं
+    - सीएसवी स्टेटमेंट एक्सपोर्ट का विकल्प कहां है
+    - ऐप की भाषा हिंदी या तमिल में कैसे बदलें
+    - फोन बदलने के बाद डिवाइस बाइंडिंग एरर आ रहा है
+    - मेरे फोन पर ओटीपी एसएमएस क्यों नहीं आ रहा है
+    - लॉगिन समस्या ठीक करने के लिए ऐप कैशे साफ करें
+    - वॉइस गाइडेड नेविगेशन कैसे चालू करें
+    - स्क्रीन रीडर सेटिंग ऐप में कहां है
+    - ट्रांजैक्शन के दौरान सेशन टाइमआउट हो गया
+    - मोबाइल बैंकिंग ऐप को अपडेट कैसे करें
+    - ट्रांजैक्शन अलर्ट के लिए पुश नोटिफिकेशन चालू करें
+    - डॉक्यूमेंट स्कैन करते समय कैमरा परमिशन एरर
+    - ऐप का पासकोड या पैटर्न कैसे रीसेट करें
+    - पेमेंट पेज खाली आ रहा है या लोड हो रहा है
+    - ऐप में रजिस्टर्ड ट्रस्टेड डिवाइस मैनेज करें
+    - टच आईडी काम नहीं कर रही है
+  ta:
+    templates:
+    - செயலியில் கைரேகை பயோமெட்ரிக் உள்நுழைவு வேலை செய்யவில்லை
+    - ஃபேஸ் ஐடி உள்நுழைவு தோல்வியடைந்தது
+    - சிம் பைண்டிங் எஸ்எம்எஸ் சரிபார்ப்பு பிழை
+    - கட்டணத்தின் போது செயலி செயலிழக்கிறது
+    - செயலியில் டார்க் மோடை மாற்றுவது எப்படி
+    - சிஎஸ்வி அறிக்கை பதிவிறக்கும் விருப்பம் எங்கே உள்ளது
+    - செயலி மொழியை தமிழ் அல்லது இந்திக்கு மாற்றவும்
+    - தொலைபேசியை மாற்றிய பின் சாதனப் பிணைப்பு பிழை
+    - என் தொலைபேசிக்கு ஓடிபி எஸ்எம்எஸ் ஏன் வரவில்லை
+    - உள்நுழைவு சிக்கலை சரிசெய்ய கேச் அழிக்கவும்
+    - குரல் வழிசெலுத்தலை எவ்வாறு இயக்குவது
+    - திரை வாசிப்பான் அமைப்புகள் எங்கே உள்ளன
+    - பரிவர்த்தனையின் போது அமர்வு காலாவதியானது
+    - மொபைல் வங்கி செயலியைப் புதுப்பிக்கவும்
+    - பரிவர்த்தனை அறிவிப்புகளை இயக்கவும்
+    - ஆவண ஸ்கேன் செய்யும் போது கேமரா அனுமதிப் பிழை
+    - செயலி கடவுச்சொல்லை எவ்வாறு மீட்டமைப்பது
+    - கட்டணப் பக்கம் தொடர்ந்து ஏற்றப்படுகிறது
+    - நம்பகமான சாதனங்களை நிர்வகிக்கவும்
+    - டச் ஐடி அங்கீகரிக்கப்படவில்லை பிழை

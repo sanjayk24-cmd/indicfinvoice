@@ -127,21 +127,6 @@ languages:
     - check my loan due date
     - give me my loan due date
     - when should i pay my debt
-    - when is my next monthly emi due
-    - upcoming emi date for my loan
-    - when is my next installment payment
-    - tell me the repayment date for my loan
-    - what is the due date for my credit card bill
-    - when do i have to pay my total outstanding emi
-    - monthly loan installment due date
-    - when is the foreclosure settlement date
-    - check upcoming due date for gold loan
-    - check upcoming due date for car loan
-    - check upcoming due date for education loan
-    - when is the next emi deduction date
-    - tell me the last date to pay my loan
-    - what is the cutoff date for my loan payment
-    - loan payment schedule and due date
   hi:
     templates:
     - मेरे {loan_type} लोन की आखिरी तारीख क्या है
@@ -259,21 +244,6 @@ languages:
     - kist ka payment kab hai
     - loan ki aakhri date kya hai
     - EMI kis date ko kategi
-    - मेरी अगली ईएमआई कब कटने वाली है
-    - अगली किस्त भरने की तारीख क्या है
-    - लोन का अगला भुगतान कब करना है
-    - क्रेडिट कार्ड बिल की अंतिम तारीख कब है
-    - कार लोन की ड्यू डेट बताओ
-    - गोल्ड लोन की किस्त कब देनी है
-    - एजुकेशन लोन की देय तिथि क्या है
-    - लोन की आखिरी तारीख क्या है
-    - अगली किस्त कब जमा करनी होगी
-    - ईएमआई भुगतान की तारीख बताओ
-    - लोन चुकाने का अगला दिन कौन सा है
-    - मेरे लोन की किस्त कब कटेगी
-    - आगामी ईएमआई की देय तिथि क्या है
-    - लोन की ड्यू डेट कब आ रही है
-    - अगले महीने की ईएमआई कब भरनी है
   ta:
     templates:
     - என் {loan_type} கடனின் கடைசி தேதி என்ன
@@ -376,15 +346,6 @@ languages:
     - en EMI date enna
     - loan last date enna
     - kadan thavanai eppothu katta vendum
-    - அடுத்த இஎம்ஐ செலுத்தும் தேதி எப்போது
-    - அடுத்த கடன் தவணை எப்போது செலுத்த வேண்டும்
-    - கிரெடிட் கார்டு பில் செலுத்த கடைசி தேதி எப்போது
-    - கார் கடன் தவணை தேதி காட்டு
-    - தங்கக் கடன் தவணை எப்போது செலுத்த வேண்டும்
-    - கல்விக் கடன் தவணை தேதி என்ன
-    - அடுத்த தவணை கட்ட வேண்டிய நாள் எது
-    - கடன் கட்ட கடைசி தேதி எப்போது
-    - வரும் மாதத்திற்கான இஎம்ஐ தேதி என்ன
 slots:
   loan_type:
     en:

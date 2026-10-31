@@ -1,0 +1,68 @@
+intent: user_profile
+languages:
+  en:
+    templates:
+    - what is my registered customer id
+    - show my profile summary
+    - what is my customer information file cif number
+    - show my registered phone number and email
+    - check my kyc verification status
+    - is my pan card linked to my account
+    - who is the registered nominee for my account
+    - is nominee added to my savings account
+    - show my personal details on file
+    - display my registered full name and address
+    - check if my kyc is valid and up to date
+    - is my aadhaar linked with this account
+    - view communication preferences in my profile
+    - what email address is registered on my account
+    - check nominee name and relationship
+    - show my contact details on record
+    - is my tax id linked with the bank
+    - show profile details for customer id
+    - check if re-kyc is pending on my account
+    - what mobile number is registered for sms alerts
+  hi:
+    templates:
+    - मेरी रजिस्टर्ड कस्टमर आईडी क्या है
+    - मेरी प्रोफाइल का विवरण दिखाओ
+    - मेरा सीआईएफ नंबर क्या है
+    - मेरा रजिस्टर्ड मोबाइल नंबर और ईमेल दिखाएं
+    - मेरी केवाईसी स्थिति चेक करें
+    - क्या मेरा पैन कार्ड खाते से लिंक है
+    - मेरे खाते में नॉमिनी का नाम क्या है
+    - क्या मेरे बचत खाते में नॉमिनी जुड़ा है
+    - मेरी व्यक्तिगत जानकारी दिखाओ
+    - मेरा पूरा नाम और पता दिखाएं
+    - चेक करें कि मेरी केवाईसी अपडेट है या नहीं
+    - क्या मेरा आधार इस खाते से लिंक है
+    - मेरी प्रोफाइल में ईमेल एड्रेस क्या दर्ज है
+    - मेरे खाते में कौन सा ईमेल रजिस्टर्ड है
+    - नॉमिनी का नाम और संबंध दिखाओ
+    - रिकॉर्ड में मेरा मोबाइल नंबर क्या है
+    - क्या मेरा टैक्स पैन बैंक में जुड़ा है
+    - कस्टमर आईडी का प्रोफाइल विवरण दिखाओ
+    - क्या मेरे खाते में री-केवाईसी पेंडिंग है
+    - एसएमएस अलर्ट के लिए कौन सा नंबर रजिस्टर्ड है
+  ta:
+    templates:
+    - என் பதிவு செய்யப்பட்ட வாடிக்கையாளர் ஐடி என்ன
+    - என் சுயவிவர சுருக்கத்தைக் காட்டு
+    - என் சிஐஎஃப் எண் என்ன
+    - என் பதிவு செய்யப்பட்ட தொலைபேசி எண் மற்றும் மின்னஞ்சலைக் காட்டு
+    - என் கேஒய்சி சரிபார்ப்பு நிலையை சரிபார்க்கவும்
+    - என் பான் கார்டு கணக்குடன் இணைக்கப்பட்டுள்ளதா
+    - என் கணக்கின் பதிவு செய்யப்பட்ட நாமினி யார்
+    - என் சேமிப்புக் கணக்கில் நாமினி சேர்க்கப்பட்டுள்ளதா
+    - கோப்பில் உள்ள என் தனிப்பட்ட விவரங்களைக் காட்டு
+    - என் பதிவு செய்யப்பட்ட முழுப் பெயர் மற்றும் முகவரியைக் காட்டு
+    - என் கேஒய்சி புதுப்பிக்கப்பட்டுள்ளதா என்று சரிபார்
+    - என் ஆதார் இந்த கணக்குடன் இணைக்கப்பட்டுள்ளதா
+    - என் சுயவிவரத்தில் உள்ள தொடர்பு விவரங்களைப் பார்
+    - என் கணக்கில் என்ன மின்னஞ்சல் முகவரி பதிவு செய்யப்பட்டுள்ளது
+    - நாமினியின் பெயர் மற்றும் உறவை சரிபார்க்கவும்
+    - பதிவேட்டில் உள்ள என் தொடர்பு விவரங்களைக் காட்டு
+    - என் வரி ஐடி வங்கியில் இணைக்கப்பட்டுள்ளதா
+    - வாடிக்கையாளர் ஐடிக்கான சுயவிவர விவரங்களைக் காட்டு
+    - என் கணக்கில் மறு-கேஒய்சி நிலுவையில் உள்ளதா
+    - எஸ்எம்எஸ் விழிப்பூட்டல்களுக்கு எந்த எண் பதிவு செய்யப்பட்டுள்ளது

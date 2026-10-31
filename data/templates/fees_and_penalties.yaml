@@ -1,0 +1,68 @@
+intent: fees_and_penalties
+languages:
+  en:
+    templates:
+    - why did bank deduct minimum balance penalty
+    - how is average monthly balance amb calculated
+    - what are the charges for not maintaining minimum balance
+    - view schedule of charges for savings account
+    - how much is the annual debit card maintenance fee
+    - why was sms alert charge debited from account
+    - what are the fee slabs for imps and neft transfers
+    - why was tds deducted on my fixed deposit interest
+    - how to submit form 15g to avoid tds deduction
+    - submit form 15h for senior citizen tds exemption
+    - how to upgrade savings account to zero balance salary account
+    - charges for atm card replacement
+    - what are the charges for paper account statement
+    - annual locker rent deduction details
+    - how to avoid non maintenance charges on current account
+    - cheque bounce penalty charges details
+    - atm decline fee due to insufficient funds
+    - upgrade to privilege wealth banking tier
+    - tds certificate form 16a download
+    - explanation of service fee debited from account
+  hi:
+    templates:
+    - बैंक ने मिनिमम बैलेंस पेनल्टी क्यों काटी
+    - मासिक औसत बैलेंस एएमबी की गणना कैसे की जाती है
+    - न्यूनतम बैलेंस न रखने पर कितना चार्ज लगता है
+    - बचत खाते के लिए सभी शुल्कों की सूची दिखाओ
+    - डेबिट कार्ड का वार्षिक मेंटेनेंस चार्ज कितना है
+    - एसएमएस अलर्ट चार्ज खाते से क्यों कटा
+    - आईएमपीएस और एनईएफटी ट्रांसफर के चार्ज क्या हैं
+    - मेरी एफडी ब्याज पर टीडीएस क्यों काटा गया
+    - टीडीएस से बचने के लिए फॉर्म 15जी कैसे जमा करें
+    - वरिष्ठ नागरिकों के लिए फॉर्म 15एच कैसे भरें
+    - खाते को जीरो बैलेंस सैलरी खाते में कैसे बदलें
+    - नया एटीएम कार्ड जारी करने का शुल्क क्या है
+    - कागजी बैंक स्टेटमेंट निकालने का चार्ज क्या है
+    - लॉकर किराया कटौती का विवरण दें
+    - चालू खाते पर मिनिमम बैलेंस चार्ज से कैसे बचें
+    - चेक बाउंस होने का पेनल्टी चार्ज कितना है
+    - बैलेंस न होने पर एटीएम ट्रांजैक्शन फेल होने का चार्ज
+    - प्रीमियम वेल्थ बैंकिंग टियर में अपग्रेड कैसे करें
+    - टीडीएस सर्टिफिकेट फॉर्म 16ए डाउनलोड करें
+    - खाते से कटे सर्विस चार्ज का कारण बताएं
+  ta:
+    templates:
+    - குறைந்தபட்ச இருப்பு அபராதம் ஏன் பிடித்தம் செய்யப்பட்டது
+    - மாதாந்திர சராசரி இருப்பு எவ்வாறு கணக்கிடப்படுகிறது
+    - குறைந்தபட்ச இருப்பை பராமரிக்காததற்கான கட்டணம் என்ன
+    - சேமிப்புக் கணக்கிற்கான கட்டணங்களின் பட்டியலைப் பார்க்கவும்
+    - டெபிட் கார்டுக்கான வருடாந்திர பராமரிப்பு கட்டணம் என்ன
+    - எஸ்எம்எஸ் கட்டணம் கணக்கிலிருந்து ஏன் கழிக்கப்பட்டது
+    - ஐஎம்பிஎஸ் மற்றும் என்இஎஃப்டி கட்டண விவரங்கள் என்ன
+    - என் எஃப்டி வட்டிக்கு டிடிஎஸ் வரி ஏன் பிடிக்கப்பட்டது
+    - டிடிஎஸ் விலக்கு பெற படிவம் 15G சமர்ப்பிப்பது எப்படி
+    - மூத்த குடிமக்களுக்கான படிவம் 15H சமர்ப்பிப்பது எப்படி
+    - பூஜ்ஜிய இருப்பு சம்பளக் கணக்காக மாற்றுவது எப்படி
+    - புதிய ஏடிஎம் கார்டு மாற்றுவதற்கான கட்டணம் என்ன
+    - காகித அறிக்கைக்கான கட்டணங்கள் என்ன
+    - வருடாந்திர லாக்கர் வாடகை கழிப்பு விவரங்கள்
+    - நடப்புக் கணக்கில் குறைந்தபட்ச இருப்பு கட்டணத்தைத் தவிர்ப்பது எப்படி
+    - காசோலை பவுன்ஸ் அபராதக் கட்டண விவரங்கள்
+    - போதுமான பணம் இல்லாமல் ஏடிஎம் நிராகரிப்பு கட்டணம்
+    - பிரிவிலேஜ் வங்கி அடுக்குக்கு மேம்படுத்துவது எப்படி
+    - படிவம் 16A டிடிஎஸ் சான்றிதழைப் பதிவிறக்கவும்
+    - கணக்கில் பிடித்தம் செய்யப்பட்ட சேவைக் கட்டண விளக்கம்

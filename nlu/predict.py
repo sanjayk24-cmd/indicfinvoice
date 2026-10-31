@@ -79,7 +79,7 @@ INTENT_KEYWORDS = {
         "dispute", "unauthorized", "unauthorised", "wrong transaction", "money deducted", "stole money",
         "stolen from account", "deducted without", "money cut", "fraudulent", "fraud", "txn-", "dispute transaction",
         "charged twice", "wrong debit", "debited wrongly", "incorrect charge", "stole", "unrecognized", "not recognized",
-        "double debit", "atm cash not dispensed", "atm didn't give", "two times", "chargeback",
+        "double debit", "atm cash not dispensed", "atm didn't give", "two times", "chargeback", "did not dispense", "dispense", "not recognize", "not recognise", "money was cut", "money was debited",
         # Hindi (Devanagari)
         "आपत्ति", "शिकायत", "गलत लेनदेन", "पैसे कट गए", "पैसे कट गए हैं", "बिना अनुमति", "धोखाधड़ी", "फ्रॉड", "गलत कटा",
         "दो बार कट गए", "कैश नहीं निकला", "दो बार पैसे", "अनजान लेनदेन", "गलत डेबिट",

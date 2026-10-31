@@ -1,0 +1,68 @@
+intent: fund_transfers
+languages:
+  en:
+    templates:
+    - how do i transfer money to another bank account
+    - add a new beneficiary for fund transfer
+    - what is the daily limit for imps and neft transfers
+    - how to set up a standing instruction for rent payment
+    - view saved beneficiaries in my account
+    - what is the cooling off period for new payee
+    - transfer limits for rtgs transfer
+    - cancel scheduled autopay mandate
+    - why did my fund transfer fail to credit recipient
+    - how much money can i transfer via imps today
+    - set recurring payment for electricity bill
+    - delete saved beneficiary from my account
+    - transfer money using account number and ifsc
+    - how long does neft transfer take to credit
+    - standing instruction payment status
+    - increase daily fund transfer limit
+    - view all recurring auto debit mandates
+    - send money through net banking transfer
+    - beneficiary cooling off timer check
+    - stop scheduled monthly transfer
+  hi:
+    templates:
+    - दूसरे बैंक खाते में पैसे कैसे ट्रांसफर करें
+    - फंड ट्रांसफर के लिए नया लाभार्थी जोड़ें
+    - आईएमपीएस और एनईएफटी की दैनिक सीमा क्या है
+    - किराया भुगतान के लिए स्टैंडिंग इंस्ट्रक्शन कैसे लगाएं
+    - मेरे खाते में सेव किए गए लाभार्थी दिखाएं
+    - नए लाभार्थी के लिए कूलिंग ऑफ पीरियड क्या है
+    - आरटीजीएस ट्रांसफर की अधिकतम सीमा क्या है
+    - शेड्यूल किया गया ऑटोपे मैंडेट रद्द करें
+    - मेरा फंड ट्रांसफर प्राप्तकर्ता को क्यों नहीं मिला
+    - आज मैं आईएमपीएस से कितने पैसे भेज सकता हूँ
+    - बिजली बिल के लिए आवर्ती भुगतान सेट करें
+    - मेरे खाते से लाभार्थी को हटाएं
+    - खाता नंबर और आईएफएससी से पैसे भेजें
+    - एनईएफटी से पैसे पहुंचने में कितना समय लगता है
+    - स्टैंडिंग इंस्ट्रक्शन का स्टेटस चेक करें
+    - दैनिक फंड ट्रांसफर लिमिट बढ़ाएं
+    - सभी एक्टिव ऑटो-डेबिट मैंडेट दिखाओ
+    - नेट बैंकिंग से पैसे ट्रांसफर करें
+    - नए लाभार्थी का कूलिंग ऑफ समय चेक करें
+    - मासिक ट्रांसफर रोक दें
+  ta:
+    templates:
+    - மற்றொரு வங்கிக் கணக்கிற்கு பணம் அனுப்புவது எப்படி
+    - பணம் மாற்ற புதிய பயனாளி ஒருவரைச் சேர்க்கவும்
+    - ஐஎம்பிஎஸ் மற்றும் என்இஎஃப்டி பரிமாற்றங்களுக்கான தினசரி வரம்பு என்ன
+    - வாடகை செலுத்த நிலையான அறிவுறுத்தலை அமைப்பது எப்படி
+    - என் கணக்கில் சேமிக்கப்பட்ட பயனாளிகளைப் பார்க்கவும்
+    - புதிய பயனாளிகளுக்கான கூலிங் ஆஃப் காலம் என்ன
+    - ஆர்டிஜிஎஸ் பரிமாற்ற வரம்புகள் என்ன
+    - திட்டமிடப்பட்ட தானியங்கி கட்டண ஆணையை ரத்து செய்
+    - என் பணப் பரிமாற்றம் பெறுநருக்கு ஏன் இன்னும் வரவு வைக்கப்படவில்லை
+    - இன்று நான் ஐஎம்பிஎஸ் மூலம் எவ்வளவு பணம் அனுப்ப முடியும்
+    - மின்சார கட்டணத்திற்கு தொடர் கட்டணத்தை அமைக்கவும்
+    - சேமிக்கப்பட்ட பயனாளியை என் கணக்கிலிருந்து நீக்கு
+    - கணக்கு எண் மற்றும் ஐஎஃப்எஸ்சி பயன்படுத்தி பணம் மாற்றவும்
+    - என்இஎஃப்டி பரிமாற்றம் வரவு வைக்க எவ்வளவு நேரம் ஆகும்
+    - நிலையான கட்டண உத்தரவின் நிலை என்ன
+    - தினசரி பணப் பரிமாற்ற வரம்பை அதிகரிக்கவும்
+    - அனைத்து தானியங்கி டெபிட் ஆணைகளையும் காட்டு
+    - நெட் பேங்கிங் மூலம் பணம் மாற்றவும்
+    - பயனாளி கூலிங் ஆஃப் நேரத்தை சரிபார்க்கவும்
+    - மாதாந்திர பணப் பரிமாற்றத்தை நிறுத்துங்கள்

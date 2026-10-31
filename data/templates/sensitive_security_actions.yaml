@@ -1,0 +1,68 @@
+intent: sensitive_security_actions
+languages:
+  en:
+    templates:
+    - what is my 3 digit card cvv number
+    - tell me my debit card cvv code
+    - show my full 16 digit credit card number
+    - what is my atm pin code
+    - tell me my secret netbanking password
+    - show my upi pin on screen
+    - what is my app login passcode
+    - change my debit card pin directly in chat
+    - reset my forgotten atm pin right now
+    - unblock my frozen card pin in chat
+    - show my latest sms otp code
+    - what was the 2fa verification code sent to me
+    - display my unmasked aadhaar number
+    - show my full pan card number in chat
+    - what is the password to open my statement pdf
+    - tell me my statement decryption password
+    - show my saved security questions and answers
+    - what is my mpin number
+    - read out my credit card cvv and expiry date
+    - display my secret banking login password
+  hi:
+    templates:
+    - मेरे कार्ड का 3 अंकों का सीवीवी नंबर क्या है
+    - मेरा डेबिट कार्ड सीवीवी कोड बताओ
+    - मेरा पूरा 16 अंकों का क्रेडिट कार्ड नंबर दिखाओ
+    - मेरा एटीएम पिन कोड क्या है बताओ
+    - मेरा नेटबैंकिंग पासवर्ड क्या है
+    - स्क्रीन पर मेरा यूपीआई पिन दिखाओ
+    - मेरा ऐप लॉगिन पासकोड क्या है
+    - चैट में मेरा डेबिट कार्ड पिन बदलें
+    - मेरा भूला हुआ एटीएम पिन अभी रीसेट करें
+    - चैट में मेरा ब्लॉक पिन अनब्लॉक करें
+    - मुझे आया हुआ ताजा एसएमएस ओटीपी बताओ
+    - मुझे भेजा गया 2एफए वेरिफिकेशन कोड क्या है
+    - मेरा पूरा आधार नंबर दिखाएं
+    - चैट में मेरा पूरा पैन कार्ड नंबर दिखाओ
+    - मेरी पीडीएफ स्टेटमेंट खोलने का पासवर्ड क्या है
+    - स्टेटमेंट का पासवर्ड बताएं
+    - मेरे सुरक्षा प्रश्न और उत्तर दिखाएं
+    - मेरा एमपिन क्या है
+    - क्रेडिट कार्ड का सीवीवी और एक्सपायरी डेट बताएं
+    - मेरा गोपनीय बैंकिंग पासवर्ड स्क्रीन पर दिखाएं
+  ta:
+    templates:
+    - என் கார்டின் 3 இலக்க சிவிவி எண் என்ன
+    - என் டெபிட் கார்டு சிவிவி குறியீட்டைச் சொல்
+    - என் முழு 16 இலக்க கார்டு எண்ணைக் காட்டு
+    - என் ஏடிஎம் பின் எண் என்ன என்று சொல்
+    - என் நெட் பேங்கிங் கடவுச்சொல் என்ன
+    - திரையில் என் யுபிஐ பின்னை காட்டு
+    - என் செயலி கடவுச்சொல் என்ன
+    - அரட்டையிலேயே என் டெபிட் கார்டு பின்னை மாற்றவும்
+    - மறந்துபோன என் ஏடிஎம் பின்னை மீட்டமைக்கவும்
+    - முடக்கப்பட்ட பின்னை அரட்டையில் திறக்கவும்
+    - என் சமீபத்திய எஸ்எம்எஸ் ஓடிபி எண்ணைக் காட்டு
+    - எனக்கு வந்த 2FA சரிபார்ப்புக் குறியீடு என்ன
+    - என் முழு ஆதார் எண்ணைக் காட்டு
+    - என் முழு பான் கார்டு எண்ணைக் காட்டுங்கள்
+    - பிடிஎஃப் அறிக்கையைத் திறக்க கடவுச்சொல் என்ன
+    - அறிக்கையின் கடவுச்சொல்லை சொல்லுங்கள்
+    - என் பாதுகாப்பு கேள்விகள் மற்றும் பதில்களைக் காட்டு
+    - என் எம்பின் எண் என்ன
+    - கார்டின் சிவிவி மற்றும் காலாவதி தேதியை சொல்
+    - என் ரகசிய வங்கி கடவுச்சொல்லை காட்டு

@@ -1,0 +1,68 @@
+intent: account_discovery
+languages:
+  en:
+    templates:
+    - how many accounts do i have with this bank
+    - show all accounts linked to my profile
+    - list my active bank accounts
+    - how many savings and current accounts do i hold
+    - show account summary and ifsc code
+    - what is my branch name and ifsc code
+    - display my linked account details
+    - which branch is my account registered in
+    - show my account ownership type
+    - do i have any joint account linked here
+    - how many deposit accounts are under my name
+    - show masked account numbers for my accounts
+    - what accounts are open under my customer id
+    - list all my bank accounts and branches
+    - tell me how many accounts i own in this bank
+    - show my bank branch details and swift code
+    - which accounts are currently active in my profile
+    - display full list of my linked bank accounts
+    - can you show my registered bank accounts
+    - check how many savings accounts i have open
+  hi:
+    templates:
+    - मेरे इस बैंक में कितने खाते हैं
+    - मेरी प्रोफाइल से जुड़े सभी खाते दिखाओ
+    - मेरे सक्रिय बैंक खातों की सूची दिखाएं
+    - मेरे नाम पर कितने बचत और चालू खाते हैं
+    - खाता विवरण और आईएफएससी कोड दिखाओ
+    - मेरी बैंक शाखा का नाम और कोड क्या है
+    - मेरे जुड़े हुए खातों की जानकारी दें
+    - मेरा खाता किस शाखा में खुला हुआ है
+    - खाते का स्वामित्व प्रकार क्या है
+    - क्या मेरा कोई संयुक्त खाता यहां जुड़ा है
+    - मेरे नाम पर कितने डिपॉजिट खाते हैं
+    - मेरे सभी खातों के नंबर दिखाएं
+    - मेरी कस्टमर आईडी से कितने खाते जुड़े हैं
+    - मेरे सभी बैंक खातों और शाखाओं की सूची दें
+    - बताएं कि इस बैंक में मेरे कुल कितने खाते हैं
+    - मेरी शाखा का नाम और आईएफएससी कोड क्या है
+    - मेरी प्रोफाइल में कौन से खाते एक्टिव हैं
+    - जुड़े हुए बैंक खातों की पूरी लिस्ट दिखाओ
+    - मेरे रजिस्टर्ड खाते देखना चाहता हूँ
+    - मेरे कितने बचत खाते खुले हैं चेक करें
+  ta:
+    templates:
+    - இந்த வங்கியில் எனக்கு எத்தனை கணக்குகள் உள்ளன
+    - என் சுயவிவரத்துடன் இணைக்கப்பட்ட அனைத்து கணக்குகளையும் காட்டு
+    - என் செயலில் உள்ள வங்கிக் கணக்குகளை பட்டியலிடுங்கள்
+    - என்னிடம் எத்தனை சேமிப்பு மற்றும் நடப்பு கணக்குகள் உள்ளன
+    - கணக்கு சுருக்கம் மற்றும் ஐஎஃப்எஸ்சி குறியீட்டைக் காட்டு
+    - என் வங்கிக் கிளையின் பெயர் மற்றும் குறியீடு என்ன
+    - இணைக்கப்பட்ட கணக்கு விவரங்களை காட்டு
+    - என் கணக்கு எந்த கிளையில் பதிவு செய்யப்பட்டுள்ளது
+    - கணக்கின் உரிமையாளர் வகை என்ன
+    - இங்கு ஏதேனும் கூட்டு கணக்கு உள்ளதா
+    - என் பெயரில் எத்தனை டெபாசிட் கணக்குகள் உள்ளன
+    - என் அனைத்து கணக்குகளின் விவரங்களை காட்டு
+    - என் வாடிக்கையாளர் ஐடியின் கீழ் உள்ள கணக்குகள் எவை
+    - என் அனைத்து கணக்குகள் மற்றும் கிளைகளை காட்டுங்கள்
+    - இந்த வங்கியில் எனக்கு எத்தனை கணக்குகள் உள்ளன என்று சொல்
+    - என் வங்கிக் கிளை மற்றும் ஐஎஃப்எஸ்சி விவரங்களை காட்டு
+    - என் சுயவிவரத்தில் எந்த கணக்குகள் செயலில் உள்ளன
+    - இணைக்கப்பட்ட கணக்குகளின் முழு பட்டியலை காட்டு
+    - என் பதிவு செய்யப்பட்ட கணக்குகளை பார்க்க வேண்டும்
+    - என்னிடம் எத்தனை சேமிப்பு கணக்குகள் உள்ளன என்று சரிபார்

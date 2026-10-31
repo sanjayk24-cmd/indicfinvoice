@@ -1,0 +1,68 @@
+intent: open_banking
+languages:
+  en:
+    templates:
+    - why is google pay unable to fetch my bank account
+    - phonepe account linking error with bank
+    - how to manage account aggregator data sharing consents
+    - revoke consent given to third party lending app
+    - why is cred app failing to read bank account balance
+    - how to view active merchant card tokens
+    - delete saved card token from ecommerce merchants
+    - bank account not appearing on paytm or bhim
+    - account aggregator otp verification failed
+    - manage permissions granted to external financial apps
+    - why does upi app say bank servers are down
+    - block third party apps from accessing transaction history
+    - card on file tokenization management
+    - stop data sharing with external credit apps
+    - how to unlink bank account from google pay
+    - third party budgeting app synchronization issue
+    - revoke all active account aggregator approvals
+    - delete saved payment methods across online websites
+    - fix bank account linking error on payment apps
+    - open banking permissions and data privacy settings
+  hi:
+    templates:
+    - गूगल पे मेरे बैंक खाते को क्यों नहीं ढूंढ पा रहा है
+    - फोनपे पर बैंक खाता लिंक करने में एरर आ रहा है
+    - अकाउंट एग्रीगेटर डेटा शेयरिंग की अनुमति कैसे मैनेज करें
+    - लोन ऐप को दी गई बैंक डेटा की अनुमति वापस लें
+    - क्रेड ऐप बैंक बैलेंस फेच क्यों नहीं कर पा रहा है
+    - व्यापारियों के पास सेव किए गए कार्ड टोकन कैसे देखें
+    - शॉपिंग साइट्स से अपने सेव कार्ड टोकन हटाएं
+    - पेटीएम पर बैंक खाता लिंक नहीं हो रहा है
+    - अकाउंट एग्रीगेटर का ओटीपी वेरिफिकेशन फेल हो गया
+    - थर्ड पार्टी ऐप्स को दी गई परमिशन कैसे हटाएं
+    - यूपीआई ऐप में बैंक सर्वर डाउन क्यों बता रहा है
+    - थर्ड पार्टी ऐप को बैंक लेनदेन देखने से रोकें
+    - कार्ड ऑन फाइल टोकनाइजेशन कैसे मैनेज करें
+    - बाहरी लोन ऐप्स के साथ डेटा शेयरिंग बंद करें
+    - गूगल पे से बैंक खाता कैसे हटाएं
+    - बजट ऐप में बैंक डेटा सिंक नहीं हो रहा है
+    - अकाउंट एग्रीगेटर की सभी स्वीकृतियां रद्द करें
+    - ऑनलाइन वेबसाइटों से सेव किए गए पेमेंट विकल्प हटाएं
+    - पेमेंट ऐप पर खाता लिंक करने की समस्या ठीक करें
+    - ओपन बैंकिंग परमिशन और डेटा प्राइवेसी सेटिंग्स
+  ta:
+    templates:
+    - கூகுள் பே என் வங்கிக் கணக்கை ஏன் இணைக்க முடியவில்லை
+    - ஃபோன்பே வங்கிக் கணக்கு இணைப்புப் பிழை
+    - கணக்கு ஒருங்கிணைப்பாளர் தரவு பகிர்வு அனுமதியை நிர்வகிக்கவும்
+    - கடன் பயன்பாட்டிற்கு வழங்கப்பட்ட அனுமதியை ரத்து செய்
+    - கிரெட் செயலி வங்கி இருப்பை ஏன் படிக்க முடியவில்லை
+    - சேமிக்கப்பட்ட கார்டு டோக்கன்களைப் பார்ப்பது எப்படி
+    - ஆன்லைன் தளங்களிலிருந்து சேமித்த கார்டு டோக்கன்களை நீக்கு
+    - பேடிஎம் அல்லது பீம் செயலியில் வங்கிக் கணக்கு வரவில்லை
+    - கணக்கு ஒருங்கிணைப்பாளர் ஓடிபி சரிபார்ப்பு தோல்வி
+    - வெளிப்புற பயன்பாடுகளுக்கு வழங்கப்பட்ட அனுமதிகளை நிர்வகிக்கவும்
+    - வங்கி சர்வர் வேலை செய்யவில்லை என்று யுபிஐ கூறுகிறது
+    - பரிவர்த்தனை வரலாற்றைப் பார்க்க மூன்றாம் தரப்பு பயன்பாடுகளைத் தடு
+    - கார்டு டோக்கனைசேஷன் அமைப்புகளை நிர்வகிக்கவும்
+    - வெளிப்புற பயன்பாடுகளுடன் தரவு பகிர்வை நிறுத்துங்கள்
+    - கூகுள் பேயிலிருந்து வங்கிக் கணக்கை நீக்குவது எப்படி
+    - பட்ஜெட் செயலியில் வங்கி கணக்கு இணையவில்லை
+    - அனைத்து கணக்கு ஒருங்கிணைப்பாளர் ஒப்புதல்களையும் ரத்து செய்
+    - வலைத்தளங்களில் சேமிக்கப்பட்ட கட்டண முறைகளை நீக்கு
+    - கட்டண செயலிகளில் கணக்கு இணைப்பு பிழையை சரிசெய்
+    - வங்கி அனுமதிகள் மற்றும் தரவு தனியுரிமை அமைப்புகள்

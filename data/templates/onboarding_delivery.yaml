@@ -1,0 +1,68 @@
+intent: onboarding_delivery
+languages:
+  en:
+    templates:
+    - how to open a new bank account online
+    - complete video kyc for savings account opening
+    - camera not working during video kyc call
+    - track debit card courier delivery status
+    - when will my welcome kit and chequebook arrive
+    - find nearest bank branch and operating hours
+    - where is the closest working cash deposit machine
+    - nearest atm location with cash available
+    - check speed post tracking number for physical card
+    - documents required to open zero balance account
+    - re-schedule video kyc appointment with bank agent
+    - track dispatched chequebook consignment
+    - physical branch holidays and timings this week
+    - eligibility criteria for opening current account
+    - how long does it take for debit card delivery
+    - find cdm machine near me to deposit cash
+    - what to do if debit card delivery is delayed
+    - open digital savings account using aadhaar
+    - is branch open on second saturday
+    - track status of new account application
+  hi:
+    templates:
+    - ऑनलाइन नया बैंक खाता कैसे खोलें
+    - खाता खोलने के लिए वीडियो केवाईसी कैसे पूरी करें
+    - वीडियो केवाईसी कॉल में कैमरा काम नहीं कर रहा
+    - डेबिट कार्ड की कूरियर डिलीवरी ट्रैक करें
+    - मेरी वेलकम किट और चेकबुक कब पहुंचेगी
+    - निकटतम बैंक शाखा और खुलने का समय बताएं
+    - पास में चालू कैश डिपॉजिट मशीन कहां है
+    - पैसे निकालने के लिए नजदीकी एटीएम कहां है
+    - डेबिट कार्ड का स्पीड पोस्ट ट्रैकिंग नंबर चेक करें
+    - जीरो बैलेंस खाता खोलने के लिए कौन से दस्तावेज चाहिए
+    - बैंक एजेंट के साथ वीडियो केवाईसी दोबारा शेड्यूल करें
+    - भेजी गई चेकबुक का कंसाइनमेंट स्टेटस ट्रैक करें
+    - इस हफ्ते बैंक शाखा की छुट्टियां और समय क्या है
+    - चालू खाता खोलने के लिए क्या पात्रता है
+    - डेबिट कार्ड डिलीवर होने में कितने दिन लगते हैं
+    - कैश जमा करने के लिए पास की सीडीएम मशीन खोजें
+    - यदि डेबिट कार्ड डिलीवरी में देरी हो तो क्या करें
+    - आधार से डिजिटल बचत खाता कैसे खोलें
+    - क्या दूसरे शनिवार को बैंक शाखा खुली है
+    - नए खाते के आवेदन की स्थिति ट्रैक करें
+  ta:
+    templates:
+    - ஆன்லைனில் புதிய வங்கிக் கணக்கைத் தொடங்குவது எப்படி
+    - சேமிப்புக் கணக்குத் தொடங்க வீடியோ கேஒய்சி முடிக்கவும்
+    - வீடியோ கேஒய்சி அழைப்பின் போது கேமரா வேலை செய்யவில்லை
+    - டெபிட் கார்டு கூரியர் விநியோக நிலையை கண்காணிக்கவும்
+    - என் வெல்கம் கிட் மற்றும் காசோலை புத்தகம் எப்போது வரும்
+    - அருகிலுள்ள வங்கிக் கிளை மற்றும் செயல்படும் நேரம் என்ன
+    - அருகில் உள்ள பணம் வைப்பு இயந்திரம் எங்குள்ளது
+    - பணம் எடுக்க அருகிலுள்ள ஏடிஎம் எங்கே உள்ளது
+    - கார்டு ஸ்பீட் போஸ்ட் டிராக்கிங் எண்ணை சரிபார்க்கவும்
+    - பூஜ்ஜிய இருப்பு கணக்கு திறக்க தேவையான ஆவணங்கள்
+    - வீடியோ கேஒய்சி சந்திப்பை மீண்டும் திட்டமிடுங்கள்
+    - அனுப்பப்பட்ட காசோலை புத்தகத்தின் நிலையைக் கண்காணிக்கவும்
+    - இந்த வாரம் வங்கிக் கிளை விடுமுறை நாட்கள் எவை
+    - நடப்பு கணக்கு திறப்பதற்கான தகுதி வரம்புகள்
+    - டெபிட் கார்டு வர எத்தனை நாட்கள் ஆகும்
+    - பணம் டெபாசிட் செய்ய அருகிலுள்ள சிடிஎம் இயந்திரம்
+    - டெபிட் கார்டு வர தாமதமானால் என்ன செய்வது
+    - ஆதார் மூலம் டிஜிட்டல் சேமிப்புக் கணக்கைத் திறக்கவும்
+    - இரண்டாவது சனிக்கிழமை வங்கி இயங்குமா
+    - புதிய கணக்கு விண்ணப்பத்தின் நிலையைக் கண்காணிக்கவும்

@@ -1,0 +1,68 @@
+intent: statement_history
+languages:
+  en:
+    templates:
+    - download my account statement for last month
+    - i need a pdf statement of my savings account
+    - show my recent passbook entries
+    - send me account statement for the last 6 months
+    - download interest certificate for this financial year
+    - show my last 10 transactions in passbook
+    - download annual bank statement in pdf
+    - view pending and uncleared transactions
+    - why is my cheque deposit still uncleared in passbook
+    - get financial year interest summary
+    - download statement from january to march
+    - show passbook statement for this week
+    - i want my previous month bank statement pdf
+    - send interest certificate to my registered email
+    - show all debit and credit entries of this month
+    - export my bank account statement
+    - show uncleared funds and pending deposits
+    - generate account statement for income tax filing
+    - download digital passbook copy
+    - view transaction statement of savings account
+  hi:
+    templates:
+    - पिछले महीने का खाता स्टेटमेंट डाउनलोड करें
+    - मुझे अपने बचत खाते का पीडीएफ स्टेटमेंट चाहिए
+    - मेरी पासबुक की हालिया प्रविष्टियां दिखाओ
+    - पिछले 6 महीने का बैंक स्टेटमेंट भेजें
+    - इस वित्तीय वर्ष का ब्याज प्रमाणपत्र डाउनलोड करें
+    - पासबुक में मेरे पिछले 10 लेनदेन दिखाओ
+    - वार्षिक बैंक स्टेटमेंट पीडीएफ में डाउनलोड करें
+    - लंबित और अनक्लियर लेनदेन दिखाएं
+    - मेरा चेक अभी तक पासबुक में क्लियर क्यों नहीं हुआ
+    - वित्तीय वर्ष का ब्याज विवरण प्राप्त करें
+    - जनवरी से मार्च तक का स्टेटमेंट डाउनलोड करें
+    - इस हफ्ते का पासबुक स्टेटमेंट दिखाओ
+    - मुझे पिछले महीने का बैंक स्टेटमेंट पीडीएफ चाहिए
+    - ब्याज प्रमाण पत्र मेरे रजिस्टर्ड ईमेल पर भेजें
+    - इस महीने के सभी डेबिट और क्रेडिट लेनदेन दिखाओ
+    - मेरा बैंक स्टेटमेंट एक्सपोर्ट करें
+    - अनक्लियर फंड और पेंडिंग डिपॉजिट दिखाओ
+    - आयकर रिटर्न के लिए बैंक स्टेटमेंट निकालें
+    - डिजिटल पासबुक कॉपी डाउनलोड करें
+    - बचत खाते का लेनदेन विवरण देखें
+  ta:
+    templates:
+    - கடந்த மாதத்திற்கான என் கணக்கு அறிக்கையை பதிவிறக்கவும்
+    - என் சேமிப்புக் கணக்கின் பிடிஎஃப் அறிக்கை வேண்டும்
+    - என் சமீபத்திய பாஸ்புக் பதிவுகளைக் காட்டு
+    - கடந்த 6 மாத கணக்கு அறிக்கையை எனக்கு அனுப்புங்கள்
+    - இந்த நிதியாண்டிற்கான வட்டி சான்றிதழை பதிவிறக்கவும்
+    - பாஸ்புக்கில் என் கடைசி 10 பரிவர்த்தனைகளைக் காட்டு
+    - வருடாந்திர வங்கி அறிக்கையை பிடிஎஃப் வடிவில் பதிவிறக்கவும்
+    - நிலுவையில் உள்ள மற்றும் தீர்க்கப்படாத பரிவர்த்தனைகளைப் பார்க்கவும்
+    - என் காசோலை இன்னும் ஏன் பாஸ்புக்கில் வரவு வைக்கப்படவில்லை
+    - நிதியாண்டு வட்டி சுருக்கத்தைப் பெறுங்கள்
+    - ஜனவரி முதல் மார்ச் வரையிலான அறிக்கையைப் பதிவிறக்கவும்
+    - இந்த வாரத்திற்கான பாஸ்புக் அறிக்கையைக் காட்டு
+    - முந்தைய மாத வங்கி அறிக்கை பிடிஎஃப் வேண்டும்
+    - வட்டி சான்றிதழை என் பதிவு செய்யப்பட்ட மின்னஞ்சலுக்கு அனுப்பவும்
+    - இந்த மாதத்தின் அனைத்து வரவு செலவு பதிவுகளையும் காட்டு
+    - என் வங்கிக் கணக்கு அறிக்கையை ஏற்றுமதி செய்
+    - தீர்க்கப்படாத நிதி மற்றும் நிலுவையில் உள்ள வைப்புகளைக் காட்டு
+    - வருமான வரி தாக்கல் செய்ய கணக்கு அறிக்கையை உருவாக்கவும்
+    - டிஜிட்டல் பாஸ்புக் நகலை பதிவிறக்கவும்
+    - சேமிப்புக் கணக்கின் பரிவர்த்தனை அறிக்கையைப் பார்

@@ -288,6 +288,22 @@ class BankingAssistant:
                 "pending": None,
             }
 
+        elif action == "info":
+            info_dict = action_decision.get("message", {})
+            if isinstance(info_dict, dict):
+                reply = info_dict.get(lang, info_dict.get("en", "Request information processed."))
+            else:
+                reply = str(info_dict)
+            state.clear()
+            return {
+                "reply": reply,
+                "intent": intent,
+                "confidence": confidence,
+                "slots": slots,
+                "action": action,
+                "pending": None,
+            }
+
         elif action == "ask":
             missing_slot = action_decision["slot"]
             state.awaiting = missing_slot

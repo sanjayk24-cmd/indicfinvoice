@@ -1,0 +1,68 @@
+intent: credit_card_billing
+languages:
+  en:
+    templates:
+    - what is my total credit card bill amount
+    - when is the due date for my credit card payment
+    - what is the minimum amount due on my credit card
+    - how to convert a credit card purchase into emi
+    - view unbilled transactions on my credit card
+    - what is my remaining available credit limit
+    - how to apply for credit card limit enhancement
+    - how to redeem credit card reward points
+    - request waiver of credit card annual fee
+    - convert full credit card outstanding balance into monthly installments
+    - check interest charges on credit card overdue
+    - how to apply for an add-on credit card for family
+    - what is the billing cycle date for my credit card
+    - view total reward points accumulated on card
+    - split high value card transaction into 6 months emi
+    - explain finance charges on credit card statement
+    - how to pay credit card bill from savings account
+    - check credit limit increase eligibility
+    - unbilled emi dues on credit card
+    - credit card statement breakdown and fees
+  hi:
+    templates:
+    - मेरे क्रेडिट कार्ड का कुल बिल कितना है
+    - क्रेडिट कार्ड बिल भरने की अंतिम तिथि कब है
+    - क्रेडिट कार्ड पर मिनिमम देय राशि कितनी है
+    - क्रेडिट कार्ड की खरीद को ईएमआई में कैसे बदलें
+    - क्रेडिट कार्ड के अनबिल्ड ट्रांजैक्शन दिखाओ
+    - मेरी बची हुई क्रेडिट लिमिट कितनी है
+    - क्रेडिट कार्ड लिमिट बढ़ाने के लिए आवेदन कैसे करें
+    - क्रेडिट कार्ड रिवॉर्ड पॉइंट्स कैसे रिडीम करें
+    - क्रेडिट कार्ड वार्षिक शुल्क माफ करने का अनुरोध
+    - कुल बकाया बिल को मासिक किस्तों में बदलें
+    - क्रेडिट कार्ड लेट फीस और ब्याज चेक करें
+    - परिवार के लिए ऐड-ऑन क्रेडिट कार्ड कैसे लें
+    - मेरे क्रेडिट कार्ड का बिलिंग चक्र क्या है
+    - कार्ड पर कुल रिवॉर्ड पॉइंट कितने हैं
+    - बड़ी खरीदारी को 6 महीने की ईएमआई में बदलें
+    - क्रेडिट कार्ड स्टेटमेंट के चार्ज समझाइए
+    - बचत खाते से क्रेडिट कार्ड बिल का भुगतान कैसे करें
+    - क्रेडिट लिमिट बढ़ाने की पात्रता जांचें
+    - क्रेडिट कार्ड पर अनबिल्ड ईएमआई की जानकारी दें
+    - क्रेडिट कार्ड स्टेटमेंट और फीस का विवरण दें
+  ta:
+    templates:
+    - என் கிரெடிட் கார்டு பில் தொகை எவ்வளவு
+    - கிரெடிட் கார்டு பில் செலுத்த கடைசி தேதி எப்போது
+    - என் கிரெடிட் கார்டில் குறைந்தபட்ச செலுத்த வேண்டிய தொகை என்ன
+    - கிரெடிட் கார்டு வாங்குதலை இஎம்ஐ ஆக மாற்றுவது எப்படி
+    - என் கிரெடிட் கார்டில் பில் செய்யப்படாத பரிவர்த்தனைகளைப் பார்
+    - என் மீதமுள்ள கிரெடிட் வரம்பு எவ்வளவு
+    - கிரெடிட் கார்டு வரம்பை அதிகரிக்க விண்ணப்பிப்பது எப்படி
+    - கிரெடிட் கார்டு ரிவார்டு புள்ளிகளை எவ்வாறு மீட்டெடுப்பது
+    - கிரெடிட் கார்டு வருடாந்திர கட்டணத்தை தள்ளுபடி செய்ய கோரிக்கை
+    - முழு நிலுவைத் தொகையையும் மாதாந்திர தவணைகளாக மாற்றவும்
+    - கிரெடிட் கார்டு தாமதக் கட்டணங்கள் மற்றும் வட்டியை சரிபார்க்கவும்
+    - குடும்பத்திற்கு கூடுதல் கிரெடிட் கார்டுக்கு விண்ணப்பிப்பது எப்படி
+    - என் கிரெடிட் கார்டு பில்லிங் தேதி என்ன
+    - கார்டில் சேர்ந்த மொத்த ரிவார்டு புள்ளிகளைக் காட்டு
+    - பெரிய பரிவர்த்தனையை 6 மாத இஎம்ஐ ஆக மாற்றவும்
+    - கிரெடிட் கார்டு கட்டணங்களை விளக்குங்கள்
+    - சேமிப்புக் கணக்கிலிருந்து கிரெடிட் கார்டு பில் செலுத்துவது எப்படி
+    - கிரெடிட் வரம்பு உயர்வு தகுதியை சரிபார்க்கவும்
+    - கிரெடிட் கார்டில் பில் செய்யப்படாத இஎம்ஐ நிலுவைகள்
+    - கிரெடிட் கார்டு அறிக்கை மற்றும் கட்டண விவரங்கள்

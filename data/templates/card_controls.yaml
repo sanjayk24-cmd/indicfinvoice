@@ -1,0 +1,68 @@
+intent: card_controls
+languages:
+  en:
+    templates:
+    - how to enable international usage on my debit card
+    - turn off contactless nfc payments on my card
+    - set daily atm withdrawal limit for my debit card
+    - enable online ecommerce transactions on credit card
+    - temporarily lock my debit card
+    - how to change pos transaction limit on my card
+    - link my credit card to google pay wallet
+    - generate a disposable virtual card
+    - why was my card payment declined at merchant store
+    - turn on tap and pay for my credit card
+    - disable domestic atm cash withdrawal
+    - view active debit card limits
+    - activate my new virtual debit card
+    - how to set card spending cap for online shopping
+    - manage debit card usage settings in app
+    - enable card for international pos transactions
+    - toggle card controls for offline swipe transactions
+    - set transaction limit for tap to pay
+    - check why debit card transaction failed
+    - temporarily disable credit card online usage
+  hi:
+    templates:
+    - डेबिट कार्ड पर इंटरनेशनल ट्रांजैक्शन कैसे चालू करें
+    - कार्ड पर कॉन्टैक्टलेस एनएफसी पेमेंट बंद करें
+    - डेबिट कार्ड की दैनिक एटीएम निकासी सीमा सेट करें
+    - क्रेडिट कार्ड पर ऑनलाइन ई-कॉमर्स लेनदेन चालू करें
+    - मेरा डेबिट कार्ड अस्थायी रूप से लॉक करें
+    - कार्ड पर पीओएस ट्रांजैक्शन लिमिट कैसे बदलें
+    - क्रेडिट कार्ड को गूगल पे से लिंक करें
+    - वर्चुअल डेबिट कार्ड कैसे जनरेट करें
+    - दुकान पर मेरा कार्ड पेमेंट क्यों रिजेक्ट हो गया
+    - क्रेडिट कार्ड पर टैप एंड पे चालू करें
+    - घरेलू एटीएम निकासी बंद करें
+    - एक्टिव डेबिट कार्ड लिमिट्स दिखाएं
+    - नया वर्चुअल कार्ड एक्टिवेट करें
+    - ऑनलाइन शॉपिंग के लिए कार्ड की लिमिट कैसे तय करें
+    - ऐप में डेबिट कार्ड सेटिंग्स मैनेज करें
+    - अंतर्राष्ट्रीय स्वाइप के लिए कार्ड सक्षम करें
+    - ऑफलाइन स्वाइप लेनदेन के लिए कार्ड कंट्रोल बदलें
+    - टैप टू पे की लिमिट सेट करें
+    - चेक करें कि डेबिट कार्ड लेनदेन क्यों विफल हुआ
+    - क्रेडिट कार्ड ऑनलाइन उपयोग अस्थायी रूप से बंद करें
+  ta:
+    templates:
+    - டெபிட் கார்டில் சர்வதேச பயன்பாட்டை இயக்குவது எப்படி
+    - என் கார்டில் காண்டாக்ட்லெஸ் என்எஃப்சி பரிவர்த்தனைகளை முடக்கு
+    - டெபிட் கார்டுக்கான தினசரி ஏடிஎம் திரும்பப் பெறும் வரம்பை அமைக்கவும்
+    - கிரெடிட் கார்டில் ஆன்லைன் பரிவர்த்தனைகளை இயக்கு
+    - என் டெபிட் கார்டை தற்காலிகமாக பூட்டுங்கள்
+    - என் கார்டில் பிஓஎஸ் பரிவர்த்தனை வரம்பை மாற்றுவது எப்படி
+    - கிரெடிட் கார்டை கூகுள் பே வாலட்டுடன் இணைக்கவும்
+    - மெய்நிகர் விர்ச்சுவல் கார்டை உருவாக்குவது எப்படி
+    - வணிகர் கடையில் என் கார்டு கட்டணம் ஏன் நிராகரிக்கப்பட்டது
+    - கிரெடிட் கார்டுக்கு தட்டி செலுத்தும் வசதியை இயக்கு
+    - உள்நாட்டு ஏடிஎம் பணப் பரிவர்த்தனையை முடக்கு
+    - செயலில் உள்ள டெபிட் கார்டு வரம்புகளைக் காட்டு
+    - என் புதிய விர்ச்சுவல் டெபிட் கார்டை செயல்படுத்து
+    - ஆன்லைன் ஷாப்பிங்கிற்கான கார்டு வரம்பை அமைப்பது எப்படி
+    - செயலியில் டெபிட் கார்டு கட்டுப்பாடுகளை நிர்வகிக்கவும்
+    - சர்வதேச பிஓஎஸ் பயன்பாட்டிற்கு கார்டை இயக்கவும்
+    - கார்டு ஸ்வைப் பரிவர்த்தனைகளுக்கான அமைப்புகளை மாற்று
+    - டேப் டு பே வரம்பை அமைக்கவும்
+    - டெபிட் கார்டு பரிவர்த்தனை ஏன் தோல்வியடைந்தது என்று சரிபார்
+    - கிரெடிட் கார்டு ஆன்லைன் பயன்பாட்டை தற்காலிகமாக முடக்கு

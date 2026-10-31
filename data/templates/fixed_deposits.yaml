@@ -1,0 +1,68 @@
+intent: fixed_deposits
+languages:
+  en:
+    templates:
+    - how to open a new fixed deposit online
+    - what is the current interest rate for 1 year fd
+    - when is my fixed deposit maturity date
+    - how to close fixed deposit prematurely
+    - what is the penalty for premature fd withdrawal
+    - open a recurring deposit rd account
+    - download fixed deposit advice certificate
+    - calculate maturity amount for 5 year fd
+    - fd interest rates for senior citizens
+    - auto renew fixed deposit on maturity
+    - how to change fd maturity payout account
+    - check interest earned on recurring deposit
+    - break my fixed deposit and transfer funds to savings
+    - tax saver 5 year fixed deposit details
+    - download fd interest certificate for income tax
+    - view all active fixed and recurring deposits
+    - set monthly installment for recurring deposit
+    - what happens if i withdraw recurring deposit early
+    - add nominee to my fixed deposit account
+    - check maturity value and interest rate of deposit
+  hi:
+    templates:
+    - ऑनलाइन नई फिक्स्ड डिपॉजिट कैसे खोलें
+    - 1 साल की एफडी पर वर्तमान ब्याज दर क्या है
+    - मेरी फिक्स्ड डिपॉजिट की मैच्योरिटी डेट कब है
+    - समय से पहले एफडी कैसे बंद करें
+    - समय से पहले एफडी तोड़ने पर क्या पेनल्टी है
+    - आवर्ती जमा आरडी खाता कैसे खोलें
+    - फिक्स्ड डिपॉजिट रसीद सर्टिफिकेट डाउनलोड करें
+    - 5 साल की एफडी के मैच्योरिटी अमाउंट की गणना करें
+    - वरिष्ठ नागरिकों के लिए एफडी ब्याज दरें क्या हैं
+    - मैच्योरिटी पर एफडी को ऑटो रिन्यू करें
+    - एफडी मैच्योरिटी का बैंक खाता कैसे बदलें
+    - आरडी पर अर्जित ब्याज चेक करें
+    - मेरी एफडी तोड़कर पैसे बचत खाते में डालें
+    - टैक्स सेवर 5 साल की एफडी की जानकारी दें
+    - आयकर के लिए एफडी ब्याज प्रमाणपत्र डाउनलोड करें
+    - सभी एक्टिव एफडी और आरडी खाते दिखाओ
+    - आरडी के लिए मासिक किस्त तय करें
+    - समय से पहले आरडी बंद करने पर क्या होगा
+    - मेरी फिक्स्ड डिपॉजिट में नॉमिनी जोड़ें
+    - डिपॉजिट की मैच्योरिटी राशि और ब्याज दर देखें
+  ta:
+    templates:
+    - ஆன்லைனில் புதிய நிலையான வைப்பு நிதி தொடங்குவது எப்படி
+    - 1 ஆண்டு எஃப்டிக்கான தற்போதைய வட்டி விகிதம் என்ன
+    - என் நிலையான வைப்பு முதிர்வு தேதி எப்போது
+    - காலத்திற்கு முன்பே எஃப்டியை முடிப்பது எப்படி
+    - முன்கூட்டியே எஃப்டி திரும்பப் பெறுவதற்கான அபராதம் என்ன
+    - தொடர் வைப்பு ஆர்டி கணக்கைத் திறக்கவும்
+    - நிலையான வைப்பு ரசீது சான்றிதழைப் பதிவிறக்கவும்
+    - 5 ஆண்டு எஃப்டிக்கான முதிர்வுத் தொகையைக் கணக்கிடுங்கள்
+    - மூத்த குடிமக்களுக்கான எஃப்டி வட்டி விகிதங்கள் என்ன
+    - முதிர்வின் போது எஃப்டியை தானாக புதுப்பிக்கவும்
+    - எஃப்டி முதிர்வு தொகை வரவு கணக்கை மாற்றுவது எப்படி
+    - தொடர் வைப்பு நிதியில் கிடைத்த வட்டியை சரிபார்க்கவும்
+    - என் எஃப்டியை முடித்து பணத்தை சேமிப்புக் கணக்கிற்கு மாற்றவும்
+    - வரி சேமிப்பு 5 ஆண்டு எஃப்டி விவரங்கள்
+    - வருமான வரிக்கு எஃப்டி வட்டி சான்றிதழைப் பதிவிறக்கவும்
+    - செயலில் உள்ள அனைத்து எஃப்டி மற்றும் ஆர்டி கணக்குகளையும் காட்டு
+    - தொடர் வைப்பு கணக்கிற்கான மாதாந்திர தவணையை அமைக்கவும்
+    - ஆர்டி கணக்கை முன்கூட்டியே முடித்தால் என்ன நடக்கும்
+    - என் நிலையான வைப்பு கணக்கில் நாமினியைச் சேர்க்கவும்
+    - வைப்புத்தொகையின் முதிர்வு மதிப்பு மற்றும் வட்டியை சரிபார்க்கவும்

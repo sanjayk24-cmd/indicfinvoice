@@ -1,0 +1,68 @@
+intent: offline_branch_services
+languages:
+  en:
+    templates:
+    - where can i exchange mutilated torn currency notes
+    - how to exchange soiled and damaged currency notes
+    - apply for a bank safe deposit locker
+    - what are the annual charges for small branch locker
+    - i lost my physical bank locker key
+    - how to surrender bank safe deposit locker
+    - issue a physical demand draft dd from branch
+    - what are the charges for issuing a banker's cheque
+    - convert my single account into a joint account
+    - in person re kyc verification at physical branch
+    - update my physical wet signature in bank records
+    - how to settle deceased claim for bank account
+    - register power of attorney poa on bank account
+    - unfreeze inoperative dormant account at branch
+    - deposit bulk physical cash at branch counter
+    - request stamped bank solvency certificate
+    - cancel physical demand draft and get refund
+    - change account operating mode to either or survivor
+    - damaged notes exchange policy of rbi
+    - visit home branch for signature mismatch resolution
+  hi:
+    templates:
+    - कटे-फटे नोट कहां बदले जा सकते हैं
+    - गंदे और फटे पुराने नोट बैंक में कैसे बदलें
+    - बैंक सेफ डिपॉजिट लॉकर के लिए आवेदन कैसे करें
+    - छोटे लॉकर का वार्षिक किराया कितना है
+    - मेरे बैंक लॉकर की चाबी खो गई है
+    - बैंक लॉकर कैसे सरेंडर करें
+    - शाखा से डिमांड ड्राफ्ट डीडी कैसे बनवाएं
+    - बैंकर्स चेक बनवाने का चार्ज कितना है
+    - अपने सिंगल खाते को जॉइंट खाते में कैसे बदलें
+    - शाखा में जाकर री-केवाईसी कैसे करवाएं
+    - बैंक रिकॉर्ड में अपने हस्ताक्षर कैसे अपडेट करें
+    - खाताधारक की मृत्यु के बाद क्लेम कैसे सेटल करें
+    - खाते पर पावर ऑफ अटॉर्नी कैसे रजिस्टर करें
+    - निष्क्रिय खाते को शाखा में जाकर कैसे चालू कराएं
+    - शाखा के काउंटर पर भारी नकद जमा करें
+    - बैंक से मोहर लगा सॉल्वेंसी सर्टिफिकेट लें
+    - डिमांड ड्राफ्ट कैंसिल कराकर रिफंड कैसे पाएं
+    - खाते का संचालन नियम बदलकर आइदर और सर्वाइवर करें
+    - कटे फटे नोट बदलने के आरबीआई नियम
+    - हस्ताक्षर मेल न खाने पर शाखा में संपर्क करें
+  ta:
+    templates:
+    - கிழிந்த ரூபாய் நோட்டுகளை எங்கு மாற்றலாம்
+    - சேதமடைந்த பழைய நோட்டுகளை எவ்வாறு மாற்றுவது
+    - வங்கி லாக்கருக்கு விண்ணப்பிப்பது எப்படி
+    - சிறிய லாக்கரின் வருடாந்திர கட்டணம் என்ன
+    - என் வங்கி லாக்கர் சாவி தொலைந்துவிட்டது
+    - வங்கி லாக்கரை எவ்வாறு ஒப்படைப்பது
+    - வங்கி கிளையிலிருந்து டிமாண்ட் டிராப்ட் பெறுவது எப்படி
+    - பேங்கர்ஸ் காசோலை பெறுவதற்கான கட்டணம் என்ன
+    - தனி கணக்கை கூட்டு கணக்காக மாற்றுவது எப்படி
+    - கிளையில் நேரில் சென்று மறு-கேஒய்சி செய்வது எப்படி
+    - வங்கி பதிவுகளில் என் கையொப்பத்தை புதுப்பிக்கவும்
+    - உரிமையாளர் இறந்த பின் கணக்கு பணத்தை பெறுவது எப்படி
+    - வங்கிக் கணக்கில் பவர் ஆஃப் அட்டர்னியை பதிவு செய்
+    - செயலற்ற கணக்கை கிளையில் மீண்டும் தொடங்குவது எப்படி
+    - கிளை கவுண்டரில் ரொக்கப் பணத்தை டெபாசிட் செய்யுங்கள்
+    - முத்திரையிடப்பட்ட சால்வன்சி சான்றிதழைப் பெறுங்கள்
+    - டிமாண்ட் டிராப்டை ரத்து செய்து பணத்தை திரும்பப் பெறுங்கள்
+    - கணக்கு இயக்க விதியை கூட்டு கணக்காக மாற்றவும்
+    - சேதமடைந்த நோட்டுகள் மாற்றுவதற்கான விதிமுறைகள்
+    - கையொப்பம் பொருந்தாத சிக்கலை சரிசெய்ய கிளையை அணுகவும்

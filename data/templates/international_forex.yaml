@@ -1,0 +1,68 @@
+intent: international_forex
+languages:
+  en:
+    templates:
+    - how to register international travel notice on card
+    - check live foreign exchange rates for usd to inr
+    - how to reload multi currency forex travel card
+    - what are the atm cash withdrawal charges abroad
+    - how to send international wire remittance via swift
+    - cross currency markup fees on international debit card
+    - submit declaration form a2 for foreign remittance
+    - enable international transactions for overseas travel
+    - what is the conversion rate for euro and gbp
+    - reload forex card online using net banking
+    - set travel dates to prevent fraud blocks abroad
+    - check remaining balance on forex multi currency card
+    - inward foreign wire transfer charges and timeline
+    - how to transfer money abroad under lrs scheme
+    - card decline issue while traveling outside india
+    - view live exchange rate for singapore dollar
+    - block forex card due to emergency abroad
+    - download outward remittance form a2 certificate
+    - how to receive money from usa in my account
+    - foreign transaction fees and gst on currency exchange
+  hi:
+    templates:
+    - विदेश यात्रा के लिए कार्ड पर ट्रैवल नोटिस कैसे लगाएं
+    - डॉलर और रुपये का लाइव विदेशी मुद्रा विनिमय दर देखें
+    - मल्टी करेंसी फॉरेक्स कार्ड को कैसे रीलोड करें
+    - विदेश में एटीएम से पैसे निकालने पर क्या चार्ज लगता है
+    - स्विफ्ट के जरिए विदेश में पैसे कैसे भेजें
+    - इंटरनेशनल डेबिट कार्ड पर क्रॉस करेंसी मार्कअप क्या है
+    - विदेशी पैसे भेजने के लिए फॉर्म ए2 कैसे भरें
+    - विदेश यात्रा के लिए इंटरनेशनल ट्रांजैक्शन चालू करें
+    - यूरो और पाउंड का विनिमय दर क्या है
+    - नेट बैंकिंग से फॉरेक्स कार्ड रीलोड करें
+    - विदेश में कार्ड ब्लॉक न हो इसलिए यात्रा की तारीखें सेट करें
+    - फॉरेक्स कार्ड में बची हुई विदेशी मुद्रा चेक करें
+    - विदेश से पैसे आने में कितना समय और चार्ज लगता है
+    - एलआरएस स्कीम के तहत विदेश में पैसे कैसे भेजें
+    - विदेश में कार्ड पेमेंट अस्वीकृत होने की समस्या
+    - सिंगापुर डॉलर का आज का भाव क्या है
+    - विदेश में इमरजेंसी होने पर फॉरेक्स कार्ड ब्लॉक करें
+    - फॉरेन रेमिटेंस डिक्लेरेशन सर्टिफिकेट डाउनलोड करें
+    - अमेरिका से अपने खाते में पैसे कैसे मंगवाएं
+    - मुद्रा विनिमय पर लगने वाले विदेशी शुल्क और जीएसटी
+  ta:
+    templates:
+    - வெளிநாட்டு பயண அறிவிப்பை கார்டில் பதிவு செய்வது எப்படி
+    - டாலர் மற்றும் ரூபாய்க்கான நேரலை மாற்று விகிதத்தை சரிபார்க்கவும்
+    - ஃபாரெக்ஸ் பயணக் கார்டை எவ்வாறு ரீசார்ஜ் செய்வது
+    - வெளிநாட்டில் ஏடிஎம் பணப் பரிவர்த்தனை கட்டணம் என்ன
+    - ஸ்விஃப்ட் மூலம் சர்வதேச பணப் பரிமாற்றம் செய்வது எப்படி
+    - சர்வதேச கார்டுகளுக்கான மாற்று கட்டணம் என்ன
+    - வெளிநாட்டு பணப் பரிமாற்றத்திற்கான படிவம் A2 சமர்ப்பிக்கவும்
+    - வெளிநாட்டு பயணத்திற்கு சர்வதேச பயன்பாட்டை இயக்கவும்
+    - யூரோ மற்றும் பவுண்டின் மாற்று விகிதம் என்ன
+    - நெட் பேங்கிங் மூலம் ஃபாரெக்ஸ் கார்டை ரீலோட் செய்யவும்
+    - கார்டு முடக்கப்படாமல் இருக்க பயண தேதிகளை அமைக்கவும்
+    - ஃபாரெக்ஸ் கார்டில் மீதமுள்ள இருப்பைச் சரிபார்க்கவும்
+    - வெளிநாட்டிலிருந்து பணம் வரவு வைக்கப்படும் கட்டணம் என்ன
+    - வெளிநாட்டிற்கு பணம் அனுப்ப எல்ஆர்எஸ் திட்டம்
+    - வெளிநாட்டில் கார்டு நிராகரிக்கப்படும் பிரச்சனை
+    - சிங்கப்பூர் டாலரின் இன்றைய மாற்று விகிதம் என்ன
+    - வெளிநாட்டில் அவசரத்திற்கு ஃபாரெக்ஸ் கார்டை முடக்குங்கள்
+    - வெளிநாட்டு பரிமாற்ற சான்றிதழைப் பதிவிறக்கவும்
+    - அமெரிக்காவிலிருந்து என் கணக்கிற்கு பணம் பெறுவது எப்படி
+    - நாணய பரிமாற்றத்திற்கான ஜிஎஸ்டி மற்றும் கட்டணங்கள்
