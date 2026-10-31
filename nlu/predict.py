@@ -49,19 +49,6 @@ UNSUPPORTED_COMBOS = [
 ]
 
 INTENT_KEYWORDS = {
-    "crop_insurance_status": [
-        # English
-        "crop insurance", "insurance claim", "claim status", "crop claim", "insurance status",
-        "pmfby", "clm-", "claim", "insurance", "policy status",
-        # Hindi (Devanagari)
-        "फसल बीमा", "बीमा दावा", "दावा स्थिति", "बीमा का क्या हुआ", "बीमा स्टेटस", "फसल क्लेम", "बीमा", "दावा", "पॉलिसी",
-        # Hindi (Romanized / Hinglish)
-        "fasal bima", "fasal beema", "bima", "claim status", "bima status", "claim ka kya hua", "bima ka kya hua", "kisan bima",
-        # Tamil (Script)
-        "பயிர் காப்பீடு", "காப்பீட்டு", "கிளைம்", "காப்பீடு நிலை", "பயிர் கிளைம்", "காப்பீடு", "பயிர் காப்பீட்டு",
-        # Tamil (Latin)
-        "payir kaappeedu", "kaappeedu", "kaapeedu",
-    ],
     "transaction_dispute": [
         # English
         "dispute", "unauthorized", "unauthorised", "wrong transaction", "money deducted", "stole money",
@@ -284,6 +271,16 @@ def predict(text: str) -> Dict[str, Any]:
 
     # Disambiguation / Keyword Matching
     text_lower = cleaned_text.lower()
+
+    # Route insurance queries (excluded from this assistant) cleanly to out_of_scope
+    if any(kw in text_lower for kw in ("crop insurance", "fasal bima", "insurance", "bima", "காப்பீடு", "கிளைம்")):
+        if not any(loan_kw in text_lower for loan_kw in ("crop loan", "फसल ऋण", "फसल लोन", "பயிர் கடன்")):
+            return {
+                "intent": "out_of_scope",
+                "slots": {},
+                "confidence": 0.99,
+            }
+
     matched_intent = None
     for cand_intent, keywords in INTENT_KEYWORDS.items():
         if any(kw in text_lower for kw in keywords):
@@ -291,16 +288,8 @@ def predict(text: str) -> Dict[str, Any]:
             break
 
     # Resolve intent with multi-tier validation:
-    # 1. Direct slot evidence (e.g. claim_id is always crop_insurance, txn_ref is dispute)
-    if slots.get("claim_id"):
-        predicted_intent = "crop_insurance_status"
-        confidence = max(confidence, 0.95)
-    elif slots.get("transaction_ref") and matched_intent == "transaction_dispute":
+    if slots.get("transaction_ref") and matched_intent == "transaction_dispute":
         predicted_intent = "transaction_dispute"
-        confidence = max(confidence, 0.95)
-    elif matched_intent == "crop_insurance_status":
-        # Never allow crop insurance queries to be misclassified as loan_due_date
-        predicted_intent = "crop_insurance_status"
         confidence = max(confidence, 0.95)
     elif matched_intent == "transaction_dispute" and predicted_intent != "transaction_dispute":
         predicted_intent = "transaction_dispute"
@@ -324,10 +313,7 @@ def predict(text: str) -> Dict[str, Any]:
             confidence = max(confidence, 0.95)
 
     # Normalize slots and purge cross-intent noise
-    if predicted_intent == "crop_insurance_status":
-        slots.pop("loan_type", None)
-        slots.pop("account_type", None)
-    elif predicted_intent == "balance_check":
+    if predicted_intent == "balance_check":
         slots.pop("loan_type", None)
         slots.pop("claim_id", None)
         slots.pop("transaction_ref", None)
