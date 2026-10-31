@@ -40,6 +40,10 @@ UNSUPPORTED_BANKING_INTENTS = {
     "change_pin",
     "pending_transfer",
     "failed_transfer",
+    "cvv_inquiry",
+    "otp_inquiry",
+    "pin_reveal",
+    "credential_request",
 }
 
 
@@ -66,7 +70,7 @@ def next_action(
         return {
             "action": "refusal",
             "reason": "unsupported_banking",
-            "message": f"This request cannot be processed via automated assistant. Please call our 24x7 bank helpline at {HELPLINE_PHONE} immediately.",
+            "message": f"This request cannot be processed via automated assistant for security reasons. Please use secure in-app controls or call our 24x7 bank helpline at {HELPLINE_PHONE} immediately.",
             "helpline": HELPLINE_PHONE,
         }
 

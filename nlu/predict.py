@@ -48,19 +48,47 @@ UNSUPPORTED_COMBOS = [
     ),
 ]
 
+SENSITIVE_PATTERNS = [
+    # CVV / CVC
+    r"(?:^|\W)(?:cvv|cvc|सीवीवी|சிவிவி)(?:$|\W)",
+    # OTP / 2FA reveal/inquiry/scam
+    r"(?:what\s+is|show|tell|read|send|give|mera|kya|batao|dikhao|காட்டு|என்ன|बताओ|दिखाओ|मेरा).*(?:otp|2fa|ओटीपी|ஓடிபி)",
+    r"(?:otp|2fa|ओटीपी|ஓடிபி).*(?:kya\s+hai|batao|dikhao|show|tell|reveal|क्या\s+है|बताओ|காட்டு|என்ன)",
+    r"(?:shared|gave)\s+.*(?:otp|pin)",
+    r"(?:scam|scammer|fraudster).*(?:otp|2fa)",
+    # Passwords or PIN reveal/inquiry
+    r"(?:what\s+is|show|tell|view|reveal|mera|kya|batao|dikhao|காட்டு|என்ன|बताओ|दिखाओ|मेरा).*(?:pin|mpin|password|passcode|पिन|पासवर्ड|கடவுச்சொல்|பின்)",
+    r"(?:pin|mpin|password|passcode|पिन|पासवर्ड|கடவுச்சொல்|பின்).*(?:kya\s+hai|batao|dikhao|show|tell|reveal|what\s+is|क्या\s+है|बताओ|காட்டு|என்ன)",
+    # Full 16-digit card number inquiry
+    r"(?:full|complete|16\s*digit|unmasked|पूरा|முழு)\s*(?:card|debit\s*card|credit\s*card|कार्ड|கார்டு)",
+    # Statement PDF decryption password
+    r"(?:statement|pdf)\s*(?:password|पासवर्ड|பாஸ்வேர்ட்)",
+    # Unmasked government / tax IDs
+    r"(?:show|view|tell|what\s+is|mera|காட்டு|दिखाओ|बताओ).*(?:aadhaar|aadhar|pan\s*card|passport|आधार|பான்)",
+    # Lost / stolen phone or SIM swap lockout
+    r"(?:phone|mobile|sim|போன்|மொபைல்|சிம்|फोन|मोबाइल).*(?:lost|stolen|swap|swapped|chori|kho|चोरी|खो|திருடு)",
+    # Screen-sharing scam tools
+    r"(?:^|\W)(?:anydesk|teamviewer|quicksupport)(?:$|\W)",
+    # Raw 16-digit card number in text
+    r"\b\d{4}[ -]?\d{4}[ -]?\d{4}[ -]?\d{4}\b",
+]
+
 INTENT_KEYWORDS = {
     "transaction_dispute": [
         # English
         "dispute", "unauthorized", "unauthorised", "wrong transaction", "money deducted", "stole money",
         "stolen from account", "deducted without", "money cut", "fraudulent", "fraud", "txn-", "dispute transaction",
-        "charged twice", "wrong debit", "debited wrongly", "incorrect charge", "stole",
+        "charged twice", "wrong debit", "debited wrongly", "incorrect charge", "stole", "unrecognized", "not recognized",
+        "double debit", "atm cash not dispensed", "atm didn't give", "two times", "chargeback",
         # Hindi (Devanagari)
         "आपत्ति", "शिकायत", "गलत लेनदेन", "पैसे कट गए", "पैसे कट गए हैं", "बिना अनुमति", "धोखाधड़ी", "फ्रॉड", "गलत कटा",
+        "दो बार कट गए", "कैश नहीं निकला", "दो बार पैसे", "अनजान लेनदेन", "गलत डेबिट",
         # Hindi (Romanized / Hinglish)
         "paise kat gaye", "paise cut gaye", "galat transaction", "paise deduct", "kat gaye", "kat gaya", "paise cut",
-        "galat kata", "shikayat",
+        "galat kata", "shikayat", "do baar", "cash nahi nikla",
         # Tamil (Script)
         "சர்ச்சை", "புகார்", "தவறான பரிவர்த்தனை", "பணம் எடுக்கப்பட்டுள்ளது", "பணம் கழிப்பட்டது", "மோசடி", "தவறாக பிடித்தம்",
+        "இரண்டு முறை", "பணம் வரவில்லை", "அங்கீகரிக்கப்படாத", "இரண்டு முறை பிடித்தம்",
         # Tamil (Latin)
         "thavarana", "panam edukkappattullathu", "pukaar",
     ],
@@ -68,12 +96,16 @@ INTENT_KEYWORDS = {
         # English
         "loan", "due date", "emi", "due", "pay my debt", "debt", "repay", "repayment", "installment",
         "next payment", "repayment date", "loan payment", "loan status", "emi due", "when to pay", "pay loan", "when is my emi",
+        "upcoming emi", "cutoff date", "next installment", "schedule",
         # Hindi (Devanagari)
         "ऋण", "लोन", "किस्त", "ईएमआई", "ड्यू डेट", "कब भरना", "कब भरनी", "कब देना", "चुकाना", "तारीख", "देय तिथि", "भुगतान",
+        "किस्त कब कटेगी", "अगली किस्त", "आगामी ईएमआई",
         # Hindi (Romanized / Hinglish)
         "emi", "due date", "kab bharna", "kab bharni", "kab dena", "chukana", "kisht", "loan kab", "kcc loan", "home loan",
+        "agali kisht",
         # Tamil (Script)
         "கடன்", "தவணை", "ஈஎம்ஐ", "தேதி", "எப்போது கட்ட", "செலுத்த வேண்டும்", "கடைசி தேதி", "கடன் தவணை", "கடன் தேதி", "வீட்டுக் கடன்",
+        "அடுத்த இஎம்ஐ", "அடுத்த தவணை",
         # Tamil (Latin)
         "kadan", "thavanai", "eppothu katta", "thethi",
     ],
@@ -82,15 +114,18 @@ INTENT_KEYWORDS = {
         "balance", "how much money", "how much do i have", "money left", "account balance", "bank balance",
         "funds", "how much is in", "savings balance", "how much in my savings", "check balance", "current balance",
         "check my balance", "total balance", "remaining balance", "available balance", "money in my account", "how much in",
+        "ledger balance", "uncleared funds", "total funds", "all my accounts",
         # Hindi (Devanagari)
         "बैलेंस", "शेष", "कितना पैसा", "कितने पैसे", "पैसे कितने", "रुपये कितने", "राशि", "खाते में कितना",
         "बचा है", "खाता शेष", "पैसा कितना", "बैलेंस कितना", "रुपए कितने", "खाते का बैलेंस",
+        "उपलब्ध बैलेंस", "लेजर बैलेंस", "सभी खातों", "कुल बैलेंस",
         # Hindi (Romanized / Hinglish)
         "paisa kitna", "paise kitne", "kitna paisa", "kitne paise", "kitna bacha", "kitne rupaye", "kitna rupaya",
         "rupaye kitne", "paise hain", "khate me kitna", "account me kitna", "balance kitna", "kitna balance",
         # Tamil (Script)
         "இருப்பு", "மீதி", "பேலன்ஸ்", "எவ்வளவு பணம்", "பணம் எவ்வளவு", "பணம் இருக்கு", "கணக்கில் எவ்வளவு",
         "தொகை எவ்வளவு", "எவ்வளவு இருக்கு", "கணக்கு இருப்பு", "சேமிப்பு இருப்பு",
+        "லெட்ஜர் இருப்பு", "கிடைக்கும் இருப்பு", "மொத்த இருப்பு",
         # Tamil (Latin)
         "iruppu", "meethi", "panam evvalavu", "evvalavu panam", "panam irukku",
     ],
@@ -120,6 +155,9 @@ def check_unsupported_banking(text: str) -> bool:
     t = text.lower()
     for g1, g2 in UNSUPPORTED_COMBOS:
         if any(w in t for w in g1) and any(w in t for w in g2):
+            return True
+    for pat in SENSITIVE_PATTERNS:
+        if re.search(pat, t):
             return True
     return False
 

@@ -39,9 +39,9 @@
       "ta_verified": false
     },
     "help": {
-      "en": "I can help you check your account balance, loan due dates, crop insurance status, or register a transaction dispute.",
-      "hi": "मैं आपके खाते की शेष राशि, ऋण देय तिथि, फसल बीमा स्थिति देखने या लेनदेन विवाद दर्ज करने में सहायता कर सकता हूँ।",
-      "ta": "கணக்கு இருப்பு, கடன் தவணை தேதி, பயிர் காப்பீட்டு நிலை அல்லது பரிவர்த்தனை தகராறைப் பதிவு செய்ய நான் உதவ முடியும்.",
+      "en": "I can help you check your account balance, loan due dates, view recent transactions, or register a transaction dispute.",
+      "hi": "मैं आपके खाते की शेष राशि, ऋण देय तिथि, हालिया लेनदेन देखने या लेनदेन विवाद दर्ज करने में सहायता कर सकता हूँ।",
+      "ta": "கணக்கு இருப்பு, கடன் தவணை தேதி, சமீபத்திய பரிவர்த்தனைகளைப் பார்ப்பது அல்லது பரிவர்த்தனை தகராறைப் பதிவு செய்ய நான் உதவ முடியும்.",
       "ta_verified": false
     },
     "ask": {

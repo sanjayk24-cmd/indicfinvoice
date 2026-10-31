@@ -109,6 +109,21 @@ languages:
     - dispute fake payment {transaction_ref} on {date}
     - contest transaction {transaction_ref} of {amount} on {date}
     - report unapproved transaction {transaction_ref} amount {amount}
+    - i do not recognize this transaction on my card
+    - money was debited twice for the same purchase
+    - charged two times for single transaction
+    - atm did not dispense cash but money was cut
+    - atm cash not dispensed but account debited
+    - unauthorized direct debit from my account
+    - dispute fraudulent merchant charge
+    - unrecognized payment on my statement
+    - i want to dispute double debit
+    - wrong debit done at store
+    - money deducted twice without my consent
+    - atm did not give money but balance was reduced
+    - unauthorized payment charged to my account
+    - dispute unrecognized transaction on {date}
+    - money debited twice {amount} reference {transaction_ref}
   hi:
     templates:
     - '{date} को ट्रांजैक्शन {transaction_ref} से {amount} रुपये का गलत लेन-देन हुआ
@@ -218,6 +233,21 @@ languages:
     - गलत डेबिट हुआ है ट्रांजैक्शन {transaction_ref} में
     - बिना अनुमति के कटा पैसा ट्रांजैक्शन {transaction_ref}
     - ट्रांजैक्शन {transaction_ref} राशि {amount} वापस करें
+    - एक ही लेनदेन के दो बार पैसे कट गए
+    - एटीएम से पैसे नहीं निकले लेकिन खाते से कट गए
+    - एटीएम में कैश नहीं आया और पैसे कट गए
+    - इस अनजान लेनदेन की शिकायत दर्ज करो
+    - मेरे खाते से बिना अनुमति पैसे कट गए
+    - दुकानदार ने दो बार पैसे काट लिए
+    - गलत डेबिट की शिकायत करनी है
+    - यह चार्ज मुझे समझ नहीं आ रहा डिस्प्यूट करो
+    - एटीएम मशीन से कैश नहीं निकला पर पैसा कट गया
+    - दो बार पैसे कट गए एक ही खरीद के लिए
+    - बिना मेरी जानकारी के पैसे कट गए शिकायत करो
+    - गलत कटौती की शिकायत दर्ज करानी है
+    - अनधिकृत डायरेक्ट डेबिट की शिकायत
+    - इस गलत लेनदेन पर आपत्ति दर्ज करो
+    - खाते से दो बार कटी राशि की शिकायत
   ta:
     templates:
     - '{date} அன்று பரிவர்த்தனை {transaction_ref} மூலம் {amount} ரூபாய் தவறாக கழிக்கப்பட்டது'
@@ -325,6 +355,15 @@ languages:
     - பரிவர்த்தனை {transaction_ref} சர்ச்சை பதிவு
     - போலி பரிவர்த்தனை {transaction_ref} குறித்து புகார்
     - பரிவர்த்தனை {transaction_ref} தவறை உடனே சரிசெய்
+    - ஒரே பரிவர்த்தனைக்கு இரண்டு முறை பணம் எடுக்கப்பட்டது
+    - ஏடிஎம்மில் பணம் வரவில்லை ஆனால் கணக்கிலிருந்து கழித்துவிட்டனர்
+    - அங்கீகரிக்கப்படாத கட்டணம் குறித்து சர்ச்சை செய்ய வேண்டும்
+    - தெரியாத பரிவர்த்தனை மீது புகார் அளிக்க வேண்டும்
+    - தவறான பிடித்தம் மீது புகார் செய்ய வேண்டும்
+    - ஏடிஎம் இயந்திரத்தில் பணம் வராமல் பணம் கழிந்தது
+    - இரண்டு முறை பணம் பிடிக்கப்பட்டது புகார் செய்
+    - தெரியாத பரிவர்த்தனையை சர்ச்சை செய்ய வேண்டும்
+    - தவறுதலாக எடுக்கப்பட்ட தொகைக்கு புகார் அளி
 slots:
   transaction_ref:
     en:

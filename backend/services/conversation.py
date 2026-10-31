@@ -161,6 +161,31 @@ class ConversationService:
                 "hi": "इस डेमो में फिक्स्ड डिपॉजिट (FD) खाता समर्थित नहीं है। FD रसीद, परिपक्वता तिथि या ब्याज दरें देखने के लिए कृपया अपनी बैंक शाखा से संपर्क करें या नेट बैंकिंग का उपयोग करें।",
                 "ta": "இந்த டெமோவில் நிலையான வைப்பு (FD) கணக்குகள் ஆதரிக்கப்படவில்லை. உங்கள் FD ரசீது, முதிர்வு தேதி அல்லது வட்டி விகிதங்களை அறிய, உங்கள் வங்கி கிளையை அணுகவும் அல்லது இணைய வங்கியைப் பயன்படுத்தவும்.",
             },
+            "human_agent": {
+                "en": "Connecting to a live agent is not supported in this demo. For urgent support or grievances, please call our 24x7 customer helpline at [BANK_HELPLINE_NUMBER].",
+                "hi": "इस डेमो में लाइव एजेंट से संपर्क समर्थित नहीं है। तत्काल सहायता या शिकायतों के लिए कृपया हमारी 24x7 हेल्पलाइन [BANK_HELPLINE_NUMBER] पर संपर्क करें।",
+                "ta": "இந்த டெமோவில் நேரலை முகவர் இணைப்பு வசதி இல்லை. அவசர வங்கி உதவி அல்லது குறைகளுக்கு, எங்கள் 24x7 உதவி எண் [BANK_HELPLINE_NUMBER]-ஐ தொடர்பு கொள்ளவும்.",
+            },
+            "bot_capabilities": {
+                "en": "I am IndicFinVoice, your multilingual AI banking assistant. I can help you check account balances, track loan and EMI due dates, view recent transaction history, or register a transaction dispute in English, Hindi, and Tamil.",
+                "hi": "मैं IndicFinVoice हूँ, आपका बहुभाषी AI बैंकिंग सहायक। मैं आपको खाता शेष राशि की जाँच, ऋण और ईएमआई देय तिथियों की जानकारी, हालिया लेनदेन देखने, या लेनदेन विवाद दर्ज करने में मदद कर सकता हूँ।",
+                "ta": "நான் IndicFinVoice, உங்கள் AI வங்கி உதவியாளர். கணக்கு இருப்பு, கடன்/EMI தவணை தேதி, சமீபத்திய பரிவர்த்தனைகளைப் பார்ப்பது அல்லது பரிவர்த்தனை தகராறைப் பதிவு செய்ய என்னால் உதவ முடியும்.",
+            },
+            "clear_chat": {
+                "en": "Your active conversation history and session memory have been cleared.",
+                "hi": "आपका सक्रिय चैट इतिहास और सत्र मेमोरी साफ कर दी गई है।",
+                "ta": "உங்கள் அரட்டை வரலாறு மற்றும் அமர்வு நினைவகம் அழிக்கப்பட்டுவிட்டது.",
+            },
+            "kyc_status": {
+                "en": "In this demo environment, your customer profile (C001) is KYC-compliant. To link a new PAN, Aadhaar, or update registered nominees, please visit your home branch or log in to Internet Banking.",
+                "hi": "इस डेमो में आपका ग्राहक प्रोफ़ाइल (C001) पूर्ण केवाईसी सत्यापित है। नया पैन, आधार या नॉमिनी अपडेट करने के लिए कृपया अपनी बैंक शाखा या नेट बैंकिंग पर जाएं।",
+                "ta": "இந்த டெமோவில் உங்கள் வாடிக்கையாளர் சுயவிவரம் (C001) KYC சரிபார்க்கப்பட்டது. புதிய பான், ஆதார் அல்லது நாமினியைப் புதுப்பிக்க, உங்கள் வங்கிக் கிளை அல்லது இணைய வங்கியை அணுகவும்.",
+            },
+            "branch_services": {
+                "en": "Chequebook orders, safe deposit lockers, demand drafts, and physical cash/mutilated note exchanges require visiting a physical bank branch or submitting an in-app Service Request.",
+                "hi": "चेकबुक ऑर्डर, सेफ डिपॉजिट लॉकर, डिमांड ड्राफ्ट और कटे-फटे नोट बदलने के लिए कृपया बैंक शाखा में संपर्क करें या मोबाइल ऐप में सेवा अनुरोध दर्ज करें।",
+                "ta": "காசோலை புத்தகம், லாக்கர், டிடி மற்றும் கிழிந்த ரூபாய் நோட்டுகளை மாற்ற உங்கள் வங்கிக் கிளையை அணுகவும் அல்லது செயலி சேவை கோரிக்கையைப் பயன்படுத்தவும்.",
+            },
         }
         profile_intent = None
         if any(word in text for word in ("account number", "account no", "a/c no", "खाता नंबर", "खाता संख्या", "கணக்கு எண்")):
@@ -169,8 +194,21 @@ class ConversationService:
             profile_intent = "bank_name"
         elif re.search(r"\bfd\b", text) or any(word in text for word in ("fixed deposit", "एफडी", "फिक्स्ड डिपॉजिट", "நிலையான வைப்பு", "term deposit")):
             profile_intent = "fd_details"
+        elif re.search(r"\b(?:agent|human|customer\s*care|customer\s*service|representative|बात कराओ|कस्टमर केयर|வாடிக்கையாளர் சேவை)\b", text):
+            profile_intent = "human_agent"
+        elif re.search(r"\b(?:who are you|what can you do|capabilities|are you (?:an? )?(?:ai|robot|real person|human)|तुम कौन हो|आप क्या कर सकते हैं|நீ யார்|என்ன செய்ய முடியும்)\b", text):
+            profile_intent = "bot_capabilities"
+        elif re.search(r"\b(?:clear\s+(?:chat|conversation|history)|delete\s+(?:chat|history|conversation)|चैट डिलीट|வரலாற்றை அழி)\b", text):
+            profile_intent = "clear_chat"
+        elif re.search(r"\b(?:kyc|pan link|pan linked|nominee|tax status|केवाईसी|பான் இணைப்பு)\b", text) and not any(w in text for w in ("dispute", "deducted", "balance", "loan", "emi")):
+            profile_intent = "kyc_status"
+        elif re.search(r"\b(?:chequebook|cheque book|bank locker|safe deposit locker|mutilated note|mutilated notes|demand draft|चेक बुक|लॉकर|காசோலை புத்தகம்)\b", text):
+            profile_intent = "branch_services"
+
         if profile_intent:
             self.session_manager.save(sid, None)
+            if profile_intent == "clear_chat":
+                self.session_manager.clear(sid)
             reply = profile_replies[profile_intent][effective_lang]
             if profile_intent == 'bank_name':
                 bank = BANK_DB.get(customer_id, {}).get('profile', {}).get('bank_name')

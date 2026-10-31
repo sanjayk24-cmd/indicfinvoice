@@ -102,6 +102,31 @@ languages:
     - what is solar energy
     - who is your creator
     - are you a robot
+    - i want to order a new chequebook
+    - stop payment for cheque number 405
+    - why was my cheque bounced
+    - what is the dollar to rupee exchange rate today
+    - how to reload my international travel forex card
+    - i am traveling abroad next week
+    - recharge my fastag toll tag
+    - recharge my airtel mobile prepaid plan
+    - i want to invest in mutual fund sip
+    - what are my public provident fund contributions
+    - there is a cybercrime police lien on my account
+    - how do i file a complaint with the banking ombudsman
+    - dispute incorrect credit score bureau report
+    - where can i exchange mutilated torn currency notes
+    - how to apply for a bank safe deposit locker
+    - i lost my physical bank locker key
+    - i need a physical demand draft issued
+    - how to convert individual account into a joint account
+    - why did the bank deduct minimum balance penalty
+    - how to submit form 15g to avoid tds deduction
+    - i want to close my bank account permanently
+    - how do i permanently cancel my credit card
+    - why is google pay unable to link my bank account
+    - third party app linking problem
+    - how to update nominee details for minor account
   hi:
     templates:
     - नमस्ते शुभ प्रभात
@@ -213,6 +238,29 @@ languages:
     - तस्वीर कैसे खींचते हैं
     - दुनिया का सबसे बड़ा महासागर कौन सा है
     - कंप्यूटर की गति कैसे बढ़ाएं
+    - मुझे नई चेकबुक ऑर्डर करनी है
+    - चेक नंबर 405 का भुगतान रोक दो
+    - मेरा चेक बाउंस क्यों हो गया
+    - आज डॉलर का रुपया भाव क्या है
+    - फॉरेक्स ट्रैवल कार्ड कैसे रीलोड करें
+    - मेरा फास्टैग रिचार्ज कर दो
+    - मोबाइल प्रीपेड प्लान रिचार्ज करना है
+    - म्यूचुअल फंड सिप में निवेश कैसे करें
+    - पीपीएफ खाते में पैसे कैसे जमा करें
+    - खाते पर साइबर क्राइम का होल्ड लगा है
+    - बैंकिंग लोकपाल में शिकायत कैसे दर्ज करें
+    - सिबिल स्कोर की गलत रिपोर्ट को कैसे ठीक करें
+    - कटे फटे नोट कहां बदले जा सकते हैं
+    - बैंक लॉकर के लिए आवेदन कैसे करें
+    - मेरे लॉकर की चाबी खो गई है
+    - मुझे एक डिमांड ड्राफ्ट बनवाना है
+    - एकल खाते को संयुक्त खाते में कैसे बदलें
+    - मिनिमम बैलेंस पेनल्टी क्यों काटी गई
+    - टीडीएस से बचने के लिए फॉर्म 15जी कैसे भरें
+    - मुझे अपना बैंक खाता हमेशा के लिए बंद करना है
+    - क्रेडिट कार्ड को हमेशा के लिए बंद कैसे कराएं
+    - गूगल पे बैंक खाते से लिंक नहीं हो रहा है
+    - तीसरे पक्ष के ऐप को बैंक से जोड़ने में समस्या
   ta:
     templates:
     - வணக்கம் காலை வணக்கம்
@@ -316,4 +364,25 @@ languages:
     - விமான டிக்கெட் கட்டணம் எவ்வளவு
     - இன்றைய தங்கம் நிலவரம் என்ன
     - விளையாட்டு செய்தி என்ன
+    - எனக்கு புதிய காசோலை புத்தகம் வேண்டும்
+    - காசோலை எண் 405 க்கான கட்டணத்தை நிறுத்துங்கள்
+    - என் காசோலை ஏன் நிராகரிக்கப்பட்டது
+    - இன்றைய டாலர் மாற்று விகிதம் என்ன
+    - சர்வதேச ஃபாரெக்ஸ் கார்டை ரீசார்ஜ் செய்வது எப்படி
+    - ஃபாஸ்டேக் ரீசார்ஜ் செய்ய வேண்டும்
+    - ஏர்டெல் மொபைல் ரீசார்ஜ் செய்
+    - மியூச்சுவல் ஃபண்ட் முதலீடு செய்வது எப்படி
+    - பிபிஎஃப் கணக்கில் பணம் செலுத்துவது எப்படி
+    - கணக்கில் சைபர் கிரைம் பிடிபட்டுள்ளது
+    - வங்கி குறைதீர்ப்பாளரிடம் புகார் செய்வது எப்படி
+    - சிபில் மதிப்பெண் பிழையை சரிசெய்வது எப்படி
+    - கிழிந்த ரூபாய் நோட்டுகளை எங்கு மாற்றலாம்
+    - வங்கி லாக்கருக்கு விண்ணப்பிப்பது எப்படி
+    - வங்கி லாக்கர் சாவி தொலைந்துவிட்டது
+    - எனக்கு டிமாண்ட் டிராப்ட் எடுக்க வேண்டும்
+    - தனி கணக்கை கூட்டு கணக்காக மாற்றுவது எப்படி
+    - குறைந்தபட்ச இருப்பு அபராதம் ஏன் பிடித்தம் செய்யப்பட்டது
+    - படிவம் 15G சமர்ப்பிப்பது எப்படி
+    - என் வங்கிக் கணக்கை நிரந்தரமாக மூட வேண்டும்
+    - கிரெடிட் கார்டை ரத்து செய்வது எப்படி
 slots: {}
