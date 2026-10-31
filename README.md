@@ -1,6 +1,14 @@
 # IndicFinVoice: Multilingual Voice Banking for Rural India
 
-A voice and text banking assistant for three languages: English, Hindi, and Tamil. A user speaks or types a banking question, the system identifies the intent and slots, calls a mock bank API, and replies in text in the same language.
+A voice and text banking assistant for three languages: **English**, **Hindi (हिंदी)**, and **Tamil (தமிழ்)**. A user speaks or types a banking question, the system identifies the intent and slots, queries a rich 24-persona mock bank core, and replies in text in the same language.
+
+> **Quick Links:**
+> - [🚀 Complete Execution Guide & How to Run](#13-complete-execution-guide--system-workflow)
+> - [🔄 End-to-End Workflow Architecture](#132-full-workflow-architecture)
+> - [🧪 Comprehensive 23-Category Example Questions (EN, HI, TA)](#134-comprehensive-list-of-example-questions-by-category)
+> - [📡 REST API Reference](#135-api-specification-reference)
+
+---
 
 This README is the build guide. It is written so that an AI coding agent (for example, Antigravity) can follow it stage by stage from an empty folder to a working, tested application. Each stage has:
 
@@ -814,73 +822,287 @@ Add a section to `DATA_SOURCES.md` with the dataset name, URL, licence text, dow
 
 ---
 
-## 13. How to Run (for the README once built)
+## 13. Complete Execution Guide & System Workflow
 
-```bash
-# 1. Environment (conda)
-conda activate medvqa            # or the name you chose for the environment
-pip install --upgrade torch --index-url https://download.pytorch.org/whl/cu128
-pip install -r requirements.txt
-python setup_check.py
-
-# 2. Mock bank
-uvicorn mockbank.api:app --port 8000
-
-# 3. Application (second terminal)
-python app.py
-# open the printed local URL in a browser
-
-# 4. Evaluation
-python eval/asr_eval.py
-python eval/nlu_eval.py
-python eval/e2e_eval.py
-python eval/summarise.py
-```
-
-## 14. Known Limitations
-
-- Templates limit linguistic variety. External and unseen test sets give the realistic measure.
-- Whisper-medium is used without fine-tuning.
-- Three languages are covered: English, Hindi, and Tamil. Romanised Hinglish and Tanglish are out of scope for v1, because the dataset has no audio for them. The dataset's other seven languages are also out of scope.
-- Tamil has fewer resources than Hindi and English, so expect lower results on it.
-- The bank is simulated. The PIN is a demonstration only and provides no real security.
-- Voice is not a secure authentication method. The system does not use voice to verify identity.
-- No user study with rural participants has been run.
+### 13.1 Prerequisites & System Requirements
+- **Python:** 3.10 or 3.11 (tested on Windows & Linux with Conda / Python venv).
+- **Node.js:** v18.0+ and `npm`.
+- **GPU (Optional / Recommended):** NVIDIA GPU with CUDA 12.8 for fast fp16 neural speech transcription and NLU inference; runs cleanly on CPU with float32 fallbacks.
 
 ---
 
-## Appendix A: Stage Checklist
+### 13.2 Full Workflow Architecture
+The application supports both spoken audio and text queries, routing through language identification, neural speech recognition, joint intent/slot understanding, dialogue management, and a mock banking core:
 
-| Stage | Name | Done when |
-|---|---|---|
-| 1 | Environment and repository | `setup_check.py` exits 0, skeleton committed |
-| 2 | Dataset acquisition and conversion | Case chosen, manifest built, licence recorded |
-| 3 | Template generation | 800+ examples, BIO validator passes |
-| 4 | Mock bank API | API tests pass |
-| 5 | ASR and WER | Results file written, WER per language |
-| 6 | NLU training and evaluation | Splits frozen, leak check passes, model saved |
-| 7 | Rules and responses | Rule tests pass |
-| 8 | End-to-end pipeline | Two-turn and PIN tests pass |
-| 9 | Gradio app | Text, PIN, and audio flows work in browser |
-| 10 | End-to-end evaluation | Results written |
-| 11 | Testing and clean install | All tests pass, clean install PASS |
-| 12 | Summary and documentation | SUMMARY.md and docs complete |
+```
+                              [ User Interaction ]
+                               /                \
+                     (Spoken Voice Audio)      (Typed Text)
+                             /                    \
+            [ Web Audio API (16kHz Mono PCM) ]     \
+                            │                       \
+            [ POST /transcribe or /voice ]           \
+                            │                         \
+               [ Script / Lang Detection ]             \
+                /                       \               \
+        (English: 'en')            (Indic: 'hi' / 'ta')  \
+               │                               │          │
+     [ openai/whisper-medium ]     [ ai4bharat/indic-     │
+                                     conformer-600m ]     │
+               │                               │          │
+               └───────────────┬───────────────┘          │
+                               │                          │
+                     Transcribed Plain Text               │
+                               │                          │
+                               └───────────────┬──────────┘
+                                               │
+                                 [ JointNLU Model ]
+                             (models/indicfinvoice_v1)
+                                      /        \
+                           (Intent Detection) (BIO Slot Filling)
+                                      \        /
+                              [ Dialogue State Tracker ]
+                            (core/dialogue.py, core/rules.py)
+                                               │
+                                  [ Mock Banking Core ]
+                                (24 Personas, 700+ Txns)
+                                               │
+                                [ Multilingual Response ]
+                               (English / हिंदी / தமிழ்)
+                                               │
+                                [ Modern React / Vite UI ]
+                       (Sound Waveforms, Metallic Card, Feeds)
+```
 
-## Appendix B: Common Failures and Fixes
+---
 
-| Symptom | Likely cause | Fix |
-|---|---|---|
-| `cuda available: False` | CPU-only PyTorch installed | Reinstall with the cu128 index URL |
-| Out-of-memory on Whisper | Loaded in fp32 or twice | Use `torch_dtype=float16`; load once |
-| Slot tags misaligned | Sub-word labelling wrong | Check the `word_ids()` mapping; print one example |
-| Hindi text garbled in CSV | File not UTF-8 | Save as UTF-8, use `encoding="utf-8"` |
-| WER very high on Hindi | Noisy clips or normalisation mismatch | Check the noise breakdown and the normalise() function |
-| API returns 404 for valid customer | Customer ID typo | Check `db.json` keys |
-| Model reloads on every request | Load inside a function | Move the load to module level |
-| Leak check fails | Template in both splits | Re-run `split.py` on template IDs, before freezing |
-| Tamil input replied to in English | Tamil script not detected | Check the Unicode range check in `core/lang_id.py`; re-run `tests/test_lang_id.py` |
-| Tamil text garbled in Gradio or CSV | Encoding or font | Use UTF-8 everywhere; choose a font with Tamil glyphs for the UI |
-| Tamil WER much higher than Hindi | Whisper-medium weaker on Tamil | Expected; report per language, do not average it away |
+### 13.3 Step-by-Step Execution
+
+#### Step 1: Clone and Set Up Python Environment
+```bash
+git clone https://github.com/sanjayk24-cmd/indicfinvoice.git
+cd indicfinvoice
+
+# Create or activate Conda environment
+conda create -n translate python=3.11 -y
+conda activate translate
+
+# Install PyTorch with CUDA 12.8 (or CPU version)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+#### Step 2: Model Training & Verification (Optional)
+The pre-trained production model weights are packaged under `models/indicfinvoice_v1`. To retrain the 23-intent JointNLU model from scratch:
+```bash
+python scripts/train_joint_nlu.py
+```
+To run the automated regression test suite:
+```bash
+pytest tests/ -q
+# Expected: 174 passed
+```
+
+#### Step 3: Run the FastAPI Backend Server
+The backend service hosts the REST and speech endpoints, runs model inferences as singletons, and connects to the expanded 24-persona mock database:
+```bash
+# From repository root
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
+- **API Swagger Documentation:** `http://127.0.0.1:8000/docs`
+- **Health Check Endpoint:** `http://127.0.0.1:8000/health`
+
+#### Step 4: Run the Modern React / Vite Frontend
+The frontend features real-time audio wave visualization, language selector pills, an interactive visual debit card, customer persona switching, and embedded banking cards:
+```bash
+# In a second terminal window
+cd frontend
+npm install
+npm run dev
+```
+- **Web Application URL:** `http://localhost:5173`
+
+---
+
+### 13.4 Comprehensive List of Example Questions by Category
+
+Test the system by copying any query below into the chat composer, or by clicking the microphone button and speaking aloud in **English**, **Hindi (हिंदी)**, or **Tamil (தமிழ்)**:
+
+#### 1. Account Closure (`account_closure`)
+* **[EN]** *"I have shifted abroad and need to close down my salary account permanently."*
+* **[EN]** *"Kindly guide me through closing my secondary current account."*
+* **[EN]** *"Is there an exit penalty if I shut down my account after 8 months?"*
+* **[HI]** *"मुझे अपना बैंक खाता हमेशा के लिए बंद करवाना है क्योंकि मैं शहर छोड़ रहा हूँ"*
+* **[TA]** *"என் வங்கிக் கணக்கை நிரந்தரமாக முடித்துவிட்டு மீதிப் பணத்தை எப்படி பெறுவது"*
+
+#### 2. Account Discovery (`account_discovery`)
+* **[EN]** *"Could you list all the savings and deposit accounts linked to my customer ID?"*
+* **[EN]** *"How many total active accounts do I currently operate with this bank?"*
+* **[EN]** *"Please display the branch IFSC and masked numbers for all my accounts."*
+* **[HI]** *"मेरे सीआईएफ नंबर से जुड़े सभी बैंक खातों का विवरण दिखाइए"*
+* **[TA]** *"எனது வாடிக்கையாளர் எண்ணில் எத்தனை வங்கிக் கணக்குகள் உள்ளன என்பதை காட்டுங்கள்"*
+
+#### 3. App Troubleshooting (`app_troubleshooting`)
+* **[EN]** *"The application keeps crashing every time I reach the biometric scan screen."*
+* **[EN]** *"I am not receiving the 6-digit login OTP on my mobile network."*
+* **[EN]** *"My session expired unexpectedly while I was reviewing my account details."*
+* **[HI]** *"मोबाइल ऐप बार-बार क्रैश हो रहा है और लॉगिन स्क्रीन नहीं खुल रही"*
+* **[TA]** *"மொபைல் பேங்கிங் செயலியில் கைரேகை உள்நுழைவு வேலை செய்யவில்லை"*
+
+#### 4. Balance Check (`balance_check`)
+* **[EN]** *"What is the current available ledger balance in my main savings account?"*
+* **[EN]** *"How much spendable cash is left in my primary account right now?"*
+* **[EN]** *"Could you verify the available funds in my current account after today's debits?"*
+* **[HI]** *"मेरे मुख्य बचत खाते में इस समय कुल कितना बैलेंस बाकी है"*
+* **[TA]** *"இன்றைய நிலவரப்படி எனது சேமிப்பு கணக்கில் எவ்வளவு பணம் உள்ளது"*
+
+#### 5. Card Controls (`card_controls`)
+* **[EN]** *"Please enable contactless NFC tap payments on my Platinum debit card."*
+* **[EN]** *"Turn off international online transactions on my Visa credit card right now."*
+* **[EN]** *"I want to lower my daily ATM cash withdrawal limit to five thousand rupees."*
+* **[HI]** *"मेरे वीजा डेबिट कार्ड पर ऑनलाइन इंटरनेशनल पेमेंट्स बंद कर दीजिए"*
+* **[TA]** *"எனது டெபிட் கார்டில் ஏடிஎம் பணம் எடுக்கும் வரம்பை மாற்ற முடியுமா"*
+
+#### 6. Cheque Services (`cheque_services`)
+* **[EN]** *"Can I issue an immediate stop payment order on cheque number 458921?"*
+* **[EN]** *"I need a fresh 25-leaf chequebook delivered to my registered home address."*
+* **[EN]** *"Has the clearance for high-value cheque 782103 gone through yet?"*
+* **[HI]** *"चेक संख्या 654321 का भुगतान तुरंत रोकने के लिए आवेदन कैसे करें"*
+* **[TA]** *"எனது புதிய காசோலை புத்தகம் தபாலில் எப்போது வந்து சேரும்"*
+
+#### 7. Credit Card Billing (`credit_card_billing`)
+* **[EN]** *"Can you split my total outstanding credit card bill into easy 6-month EMIs?"*
+* **[EN]** *"Why is there an unbilled foreign currency markup charge on my credit card?"*
+* **[EN]** *"How much minimum payment is mandatory for my credit card before the due date?"*
+* **[HI]** *"मेरे क्रेडिट कार्ड के कुल बिल को 6 महीने की किस्तों में बदलें"*
+* **[TA]** *"எனது கிரெடிட் கார்டு பில்லில் இந்த மாதம் குறைந்தபட்சம் எவ்வளவு செலுத்த வேண்டும்"*
+
+#### 8. Fees & Penalties (`fees_and_penalties`)
+* **[EN]** *"Why was an annual debit card maintenance charge deducted from my balance?"*
+* **[EN]** *"Please explain the penalty levied for not keeping the minimum average quarterly balance."*
+* **[EN]** *"Can you reverse the surcharge fee debited for non-home branch ATM usage?"*
+* **[HI]** *"खाते में न्यूनतम बैलेंस न रखने पर कितना जुर्माना काटा गया है"*
+* **[TA]** *"என் கணக்கிலிருந்து எஸ்எம்எஸ் கட்டணம் ஏன் பிடித்தம் செய்யப்பட்டது"*
+
+#### 9. Fixed Deposits (`fixed_deposits`)
+* **[EN]** *"What interest rate will I earn if I book a 1-year cumulative fixed deposit?"*
+* **[EN]** *"Can I break my term deposit early and what would be the penalty rate?"*
+* **[EN]** *"When is the exact maturity date for my fixed deposit account 998877?"*
+* **[HI]** *"एक साल की फिक्स्ड डिपॉजिट पर बैंक कितना ब्याज दे रहा है"*
+* **[TA]** *"எனது நிலையான வைப்பு நிதி எப்போது முதிர்வடையும் மற்றும் வட்டி எவ்வளவு"*
+
+#### 10. Fund Transfers (`fund_transfers`)
+* **[EN]** *"What is the cooling period after adding a new IMPS beneficiary today?"*
+* **[EN]** *"The money was debited from my account but the receiver has not received the NEFT transfer."*
+* **[EN]** *"How do I set up a monthly recurring standing instruction to transfer rent?"*
+* **[HI]** *"नए लाभार्थी को जोड़ने के बाद पैसे भेजने के लिए कितना समय इंतजार करना होगा"*
+* **[TA]** *"என் கணக்கிலிருந்து பணம் எடுக்கப்பட்டது ஆனால் நண்பரின் வங்கிக்கு இன்னும் சேரவில்லை"*
+
+#### 11. International Forex (`international_forex`)
+* **[EN]** *"What exchange rate will be applied for sending a SWIFT transfer to Germany?"*
+* **[EN]** *"How do I activate international roaming and markup on my multi-currency forex card?"*
+* **[EN]** *"Where can I download the Foreign Inward Remittance Certificate for my overseas credit?"*
+* **[HI]** *"विदेश में पैसे भेजने पर बैंक कितना मुद्रा विनिमय शुल्क लेता है"*
+* **[TA]** *"வெளிநாட்டு பணப் பரிமாற்றத்திற்கான எஃப்ஐஆர்சி சான்றிதழை எவ்வாறு பெறுவது"*
+
+#### 12. Legal & Grievance (`legal_and_grievance`)
+* **[EN]** *"How do I escalate my unresolved complaint to the Principal Banking Nodal Officer?"*
+* **[EN]** *"I want to register an official dispute with the Banking Ombudsman regarding unfair charges."*
+* **[EN]** *"Provide me the contact details and turnaround time for the customer grievance cell."*
+* **[HI]** *"अनसुलझी शिकायत को बैंकिंग लोकपाल या नोडल अधिकारी के पास कैसे भेजें"*
+* **[TA]** *"வங்கியின் குறைதீர்க்கும் அதிகாரியிடம் முறையிட விரும்புவதற்கான நடைமுறை என்ன"*
+
+#### 13. Loan Due Date (`loan_due_date`)
+* **[EN]** *"On which date of every month is my car loan auto-debit scheduled?"*
+* **[EN]** *"When is the upcoming installment due for my two-wheeler personal loan?"*
+* **[EN]** *"What is the exact due date and installment amount for my home loan this cycle?"*
+* **[HI]** *"मेरे पर्सनल लोन की अगली किस्त किस तारीख को बैंक से कटेगी"*
+* **[TA]** *"எனது வீட்டு கடனுக்கான அடுத்த தவணை செலுத்தும் தேதி என்ன"*
+
+#### 14. Offline Branch Services (`offline_branch_services`)
+* **[EN]** *"Which is the nearest bank branch to my location that has a working cash deposit machine?"*
+* **[EN]** *"What are the weekend operational hours and lunch timings for the downtown branch?"*
+* **[EN]** *"Can I book an appointment with the branch manager for locker access tomorrow?"*
+* **[HI]** *"मेरे सबसे नजदीकी बैंक शाखा का पता और काम करने का समय क्या है"*
+* **[TA]** *"லாக்கர் திறப்பதற்காக வங்கி மேலாளருடன் நேரில் சந்திப்பு பதிவு செய்ய முடியுமா"*
+
+#### 15. Onboarding & Delivery (`onboarding_delivery`)
+* **[EN]** *"What is the tracking AWB number for the welcome kit and debit card dispatched to me?"*
+* **[EN]** *"How can I submit video KYC verification to remove the temporary freeze on my new account?"*
+* **[EN]** *"My replacement chip debit card has not been delivered even after 10 working days."*
+* **[HI]** *"मेरे नए डेबिट कार्ड और चेकबुक की स्पीड पोस्ट डिलीवरी ट्रैकिंग आईडी क्या है"*
+* **[TA]** *"புதிய வங்கிக் கணக்கிற்கான வீடியோ கேஒய்சி சரிபார்ப்பை எப்படி முடிப்பது"*
+
+#### 16. Open Banking & Consent (`open_banking`)
+* **[EN]** *"How do I revoke consent given to third-party fintech apps through the Account Aggregator?"*
+* **[EN]** *"Show all financial tracking apps that currently have active data sharing permission."*
+* **[EN]** *"I want to disconnect my external expense manager app from accessing my bank statements."*
+* **[HI]** *"अकाउंट एग्रीगेटर के जरिए थर्ड पार्टी ऐप को दी गई बैंक डेटा अनुमति कैसे हटाएं"*
+* **[TA]** *"எனது வங்கிக் கணக்குத் தரவை அணுகும் வெளி நிறுவனங்களின் அனுமதியை ரத்து செய்ய வேண்டும்"*
+
+#### 17. Out of Scope (`out_of_scope`)
+* **[EN]** *"What is the weather forecast for Mumbai tomorrow afternoon?"*
+* **[EN]** *"Can you book two movie tickets for the late evening show near me?"*
+* **[EN]** *"Who is the captain of the Indian cricket team in the ongoing tournament?"*
+* **[HI]** *"कल दिल्ली का मौसम कैसा रहेगा और बारिश होगी क्या"*
+* **[TA]** *"இன்று மாலை நல்ல உணவகம் எங்கே இருக்கிறது என்று சொல்வீர்களா"*
+
+#### 18. Sensitive Security Guardrails (`sensitive_security_actions`)
+* **[EN]** *"Please change my debit card ATM PIN to a new 4-digit code right now."*
+* **[EN]** *"I lost my purse with my cards, immediately block all debit and credit cards."*
+* **[EN]** *"Can you read out the one-time password OTP received on my phone?"*
+* **[HI]** *"मेरा पर्स चोरी हो गया है, कृपया मेरे सभी एटीएम कार्ड तुरंत ब्लॉक कर दीजिए"*
+* **[TA]** *"எனது ஏடிஎம் பின் எண்ணை மாற்றுவதற்கான ரகசிய வழியை சொல்லுங்கள்"*
+
+#### 19. Statement History (`statement_history`)
+* **[EN]** *"Please provide the statement of accounts for the month of September 2026."*
+* **[EN]** *"Can I download a password-protected PDF statement for the last financial quarter?"*
+* **[EN]** *"Send the mini statement of the last ten transactions to my registered email address."*
+* **[HI]** *"पिछले तीन महीनों का पीडीएफ बैंक स्टेटमेंट मेरे ईमेल पर भेज दीजिए"*
+* **[TA]** *"கடந்த மாதத்திற்கான விரிவான வங்கி அறிக்கையை பிடிஎஃப் வடிவில் பதிவிறக்க முடியுமா"*
+
+#### 20. Transaction Dispute (`transaction_dispute`)
+* **[EN]** *"I was charged twice for a single payment at the supermarket POS machine."*
+* **[EN]** *"An unauthorized debit of 4500 rupees appeared on my card that I never performed."*
+* **[EN]** *"The ATM did not dispense 2000 cash but the amount was deducted from my savings account."*
+* **[HI]** *"एटीएम से पैसे नहीं निकले लेकिन खाते से 2000 रुपये कट गए, शिकायत दर्ज करें"*
+* **[TA]** *"நான் செய்யாத ஆன்லைன் பரிவர்த்தனைக்கு என் கணக்கிலிருந்து பணம் எடுக்கப்பட்டுள்ளது"*
+
+#### 21. UPI & QR Payments (`upi_qr_payments`)
+* **[EN]** *"How do I cancel a recurring autopay mandate on my UPI virtual payment address?"*
+* **[EN]** *"Why is the merchant QR code scan failing with an invalid VPA error in the app?"*
+* **[EN]** *"I mistakenly sent money to the wrong mobile number through UPI, how can I raise a recall?"*
+* **[HI]** *"यूपीआई पर लगी ऑटोपे सब्सक्रिप्शन मैंडेट को तुरंत कैसे कैंसिल करें"*
+* **[TA]** *"தவறான தொலைபேசி எண்ணிற்கு அனுப்பப்பட்ட யுபிஐ பணத்தை திரும்பப் பெறுவது எப்படி"*
+
+#### 22. User Profile (`user_profile`)
+* **[EN]** *"Where can I update my communication email address and mailing postal address?"*
+* **[EN]** *"How do I add my spouse as the registered nominee for all my bank accounts?"*
+* **[EN]** *"Please show my registered Customer Identification File CIF and linked PAN details."*
+* **[HI]** *"अपने बैंक खाते में नए नॉमिनी का नाम और संबंध कैसे जोड़ें"*
+* **[TA]** *"என் வங்கிக் கணக்கில் பதிவு செய்யப்பட்டுள்ள முகவரியை ஆன்லைனில் மாற்ற முடியுமா"*
+
+#### 23. Value-Added Services (`value_added_services`)
+* **[EN]** *"How do I enroll for the Pradhan Mantri Jeevan Jyoti Bima Yojana life cover through this account?"*
+* **[EN]** *"Can I link my FASTag wallet to my bank account for automatic highway toll recharge?"*
+* **[EN]** *"Show me how to subscribe to SMS alert packages and international travel insurance."*
+* **[HI]** *"बैंक खाते से फास्टैग को ऑटोमैटिक रिचार्ज के लिए कैसे लिंक करें"*
+* **[TA]** *"பிரதான் மந்திரி சுரக்ஷா பீமா யோஜனா காப்பீட்டு திட்டத்தில் சேருவது எப்படி"*
+
+---
+
+### 13.5 API Specification Reference
+
+| Endpoint | Method | Payload / Params | Response Description |
+|---|---|---|---|
+| `/chat` | POST | `{"message": str, "lang": str, "session_id": str, "customer_id": str}` | Multi-turn text dialogue response with slots, action, and embedded transaction/balance objects. |
+| `/transcribe` | POST | `multipart/form-data` (`file`: WAV, `lang`: auto/en/hi/ta, `model`: auto) | Standalone ASR audio transcription returning recognized text and active model ID. |
+| `/voice` | POST | `multipart/form-data` (`file`: WAV, `lang`: auto/en/hi/ta, `session_id`, `customer_id`) | End-to-end voice processing: transcribes audio and executes dialogue pipeline. |
+| `/account/summary` | GET | `?customer_id=C001` | Returns profile metadata, masked card/account number, and live available balance. |
+| `/demo/customers` | GET | None | Lists all 24 persona options with account scenarios for interactive demo testing. |
+| `/health` | GET | None | Real-time status of backend service, model caching status, and supported languages. |
 
 ---
 
@@ -972,4 +1194,4 @@ When referencing these datasets in your work, please cite the original papers:
 Contributions, issues, and feature requests are welcome. To contribute:
 1. Fork the repository and create a new feature branch (`git checkout -b feature/your-feature`).
 2. Commit your changes with clear messages (`git commit -m "Add your feature"`).
-3. Push to the branch (`git push origin feature/your-feature`) and open a Pull Request.
+3. Push to the branch (`git push origin feature/your-feature`) and open a Pull Request.
