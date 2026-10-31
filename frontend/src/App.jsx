@@ -14,6 +14,15 @@ import {
   getAccountSummary,
   checkHealth,
 } from './api/client';
+import {
+  RotateCcw,
+  Sparkles,
+  CreditCard,
+  Clock,
+  Shield,
+  Calendar,
+  User,
+} from 'lucide-react';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState('auto');
@@ -30,12 +39,15 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [customerId, setCustomerId] = useState('C001');
   const [customers, setCustomers] = useState([]);
+
   useEffect(() => {
     fetch((import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000') + '/demo/customers')
-      .then((r) => r.json()).then(setCustomers).catch(() => {});
+      .then((r) => r.json())
+      .then(setCustomers)
+      .catch(() => {});
   }, []);
 
-  // Load live account summary on startup
+  // Load live account summary on startup or customer switch
   useEffect(() => {
     checkHealth();
     getAccountSummary(customerId).then((res) => {
@@ -113,7 +125,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      // Default STT architecture: AI4Bharat IndicConformer
+      // Default STT architecture: AI4Bharat IndicConformer or Whisper
       const res = await sendVoiceMessage(audioBlob, 'auto', sessionId, customerId);
       if (!res.transcript?.trim()) {
         throw new Error(res.reply || 'No speech recognized. Check the microphone and selected language, then try again.');
@@ -198,6 +210,35 @@ export default function App() {
     }
   };
 
+  const handleResetChat = () => {
+    setMessages([]);
+    setError(null);
+    setSessionId('sess-' + Math.random().toString(36).substring(2, 9));
+  };
+
+  const sampleWelcomeCards = [
+    {
+      title: 'Check Balances',
+      query: 'What is my savings account balance?',
+      icon: CreditCard,
+    },
+    {
+      title: 'Recent Activity',
+      query: 'Show my recent transactions',
+      icon: Clock,
+    },
+    {
+      title: 'Loan EMI Dates',
+      query: 'When is my loan EMI due?',
+      icon: Calendar,
+    },
+    {
+      title: 'Card Security',
+      query: 'I want to block my card',
+      icon: Shield,
+    },
+  ];
+
   return (
     <>
       <Header
@@ -215,20 +256,106 @@ export default function App() {
 
         {/* Central Chat Area */}
         <section className="chat-center">
+          {/* Top Workspace Toolbar */}
           <div className="workspace-toolbar">
-            <div><strong>Your banking workspace</strong><small>English · हिंदी · தமிழ் — detected automatically</small></div>
-            <select aria-label="Demo customer" value={customerId} disabled={isLoading} onChange={(e) => {
-              setCustomerId(e.target.value); setMessages([]); setSessionId('sess-' + crypto.randomUUID());
-            }}>
-              {customers.map((c) => <option key={c.id} value={c.id}>{c.id} · {c.name} · {c.scenario}</option>)}
-            </select>
+            <div className="workspace-info">
+              <span className="workspace-title">
+                Banking Workspace
+              </span>
+              <span className="workspace-subtitle">
+                Multilingual AI · English · हिंदी · தமிழ் (Auto-Detected)
+              </span>
+            </div>
+
+            <div className="workspace-controls">
+              {/* Customer Selector Dropdown */}
+              <div className="customer-select-wrapper">
+                <User size={14} style={{ color: '#2563EB' }} />
+                <span className="customer-select-label">Profile:</span>
+                <select
+                  aria-label="Demo customer profile"
+                  value={customerId}
+                  disabled={isLoading}
+                  onChange={(e) => {
+                    setCustomerId(e.target.value);
+                    setMessages([]);
+                    setSessionId('sess-' + Math.random().toString(36).substring(2, 9));
+                  }}
+                  className="customer-dropdown"
+                >
+                  {customers.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.id} · {c.name} ({c.scenario})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Reset Conversation Button */}
+              {messages.length > 0 && (
+                <button
+                  type="button"
+                  className="new-chat-btn"
+                  onClick={handleResetChat}
+                  title="Clear conversation and start a new session"
+                >
+                  <RotateCcw size={13} />
+                  <span>New Chat</span>
+                </button>
+              )}
+            </div>
           </div>
-          {!messages.length && <div className="welcome-panel"><span className="eyebrow">INDICFINVOICE / DEMO BANK</span><h1>Banking, in your own words.</h1><p>Ask about your balance, recent payments, loan due dates or insurance claims. Type or speak in English, Hindi or Tamil.</p><div className="welcome-chips">{['What is my savings account balance?', 'Show my recent transactions', 'When is my crop loan due?'].map((q) => <button key={q} onClick={() => handleSendMessage(q)}>{q} ↗</button>)}</div></div>}
+
+          {/* Hero Welcome Screen (when no messages yet) */}
+          {!messages.length && (
+            <div className="welcome-panel">
+              <div className="welcome-badge-pill">
+                <Sparkles size={13} />
+                <span>MULTILINGUAL VOICE BANKING ASSISTANT</span>
+              </div>
+
+              <h1 className="welcome-heading">
+                Banking, in your own words.
+              </h1>
+
+              <p className="welcome-description">
+                Inquire about your live balances, mini statements, loan due dates, or card controls.
+                Speak or type naturally in <strong>English</strong>, <strong>हिंदी</strong>, or <strong>தமிழ்</strong>.
+              </p>
+
+              <div className="welcome-chips-grid">
+                {sampleWelcomeCards.map((card, idx) => {
+                  const Icon = card.icon;
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      className="welcome-chip-card"
+                      onClick={() => handleSendMessage(card.query)}
+                      title={`Click to ask: "${card.query}"`}
+                    >
+                      <div className="chip-icon-box">
+                        <Icon size={18} />
+                      </div>
+                      <div className="chip-content">
+                        <span className="chip-title">{card.title}</span>
+                        <span className="chip-query">"{card.query}"</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Chat Messages */}
           <ChatWindow
             messages={messages}
             isLoading={isLoading}
             error={error}
           />
+
+          {/* Audio & Text Composer */}
           <MessageInput
             onSendMessage={handleSendMessage}
             onSendVoice={handleSendVoice}

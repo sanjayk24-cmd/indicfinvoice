@@ -1,9 +1,9 @@
 /**
- * src/components/MessageInput.jsx - Message Composer with Audio Recording
+ * src/components/MessageInput.jsx - Message Composer with Real-Time Audio Recording
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Mic, Send, Square, Loader2, CheckCircle2 } from 'lucide-react';
+import { Mic, Send, Square, Loader2, CheckCircle2, Volume2, Globe } from 'lucide-react';
 import { transcribeAudio } from '../api/client';
 import { AudioRecorder } from '../utils/audioRecorder';
 
@@ -37,7 +37,7 @@ export default function MessageInput({
         const all = await navigator.mediaDevices?.enumerateDevices();
         setDevices((all || []).filter((d) => d.kind === 'audioinput'));
       } catch {
-        /* Permission guidance is shown when recording starts. */
+        /* Device enumeration fallback */
       }
     };
     refresh();
@@ -62,7 +62,7 @@ export default function MessageInput({
 
   useEffect(() => {
     if (!isRecording) return;
-    const meter = setInterval(() => setLevel(recorderRef.current?.level || 0), 100);
+    const meter = setInterval(() => setLevel(recorderRef.current?.level || 0), 60);
     return () => clearInterval(meter);
   }, [isRecording]);
 
@@ -140,7 +140,7 @@ export default function MessageInput({
         setTranscriptionSuccess(text);
         setAudioError('');
 
-        // Focus the input box for immediate Enter/Send
+        // Focus the input composer for immediate review / Send
         setTimeout(() => inputRef.current?.focus(), 80);
       }
     } catch (err) {
@@ -167,105 +167,126 @@ export default function MessageInput({
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <label style={{ padding: '6px 16px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-        Microphone:
-        <select
-          aria-label="Select microphone"
-          value={deviceId}
-          disabled={isRecording || isStarting || isProcessingAudio}
-          onChange={(e) => setDeviceId(e.target.value)}
-          style={{ padding: '2px 8px', borderRadius: '4px', border: '1px solid #CBD5E1' }}
-        >
-          <option value="">System default</option>
-          {devices
-            .filter((d) => d.deviceId && d.deviceId !== 'default')
-            .map((d, i) => (
-              <option key={d.deviceId} value={d.deviceId}>
-                {d.label || `Microphone ${i + 1}`}
-              </option>
-            ))}
-        </select>
-        <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: '#64748B' }}>
-          Language: <strong>{currentLang.toUpperCase()}</strong>
-        </span>
-      </label>
+    <div className="composer-outer-box">
+      {/* Mini Controls Toolbar */}
+      <div className="composer-toolbar">
+        <div className="mic-device-selector">
+          <Volume2 size={13} style={{ color: '#64748B' }} />
+          <select
+            aria-label="Select input microphone"
+            value={deviceId}
+            disabled={isRecording || isStarting || isProcessingAudio}
+            onChange={(e) => setDeviceId(e.target.value)}
+            className="mic-device-select"
+          >
+            <option value="">System Default Mic</option>
+            {devices
+              .filter((d) => d.deviceId && d.deviceId !== 'default')
+              .map((d, i) => (
+                <option key={d.deviceId} value={d.deviceId}>
+                  {d.label || `Microphone ${i + 1}`}
+                </option>
+              ))}
+          </select>
+        </div>
 
+        <div className="composer-lang-badge">
+          <Globe size={13} style={{ color: '#2563EB' }} />
+          <span>Language:</span>
+          <span className="composer-lang-tag">{currentLang.toUpperCase()}</span>
+        </div>
+      </div>
+
+      {/* Audio Playback Preview (if audio was recorded) */}
       {previewUrl && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '2px 16px' }}>
-          <audio aria-label="Play last microphone recording" controls src={previewUrl} style={{ height: 28, flex: 1 }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 24px', background: '#F8FAFC', borderBottom: '1px solid #F1F5F9' }}>
+          <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 600 }}>Audio Preview:</span>
+          <audio aria-label="Play last microphone recording" controls src={previewUrl} style={{ height: 26, flex: 1, maxWidth: '280px' }} />
         </div>
       )}
 
-      {/* Error alert bar */}
+      {/* Error Alert Bar */}
       {audioError && (
-        <div
-          role="alert"
-          className="recording-badge-bar"
-          style={{ backgroundColor: '#FEF2F2', color: '#B91C1C', borderColor: '#FECACA' }}
-        >
-          ⚠️ {audioError}
+        <div role="alert" className="recording-badge-bar error">
+          <span>⚠️ {audioError}</span>
         </div>
       )}
 
-      {/* Success transcript notification */}
+      {/* Success Notification Bar */}
       {transcriptionSuccess && !audioError && (
-        <div
-          role="status"
-          className="recording-badge-bar"
-          style={{ backgroundColor: '#F0FDF4', color: '#15803D', borderColor: '#BBF7D0', display: 'flex', alignItems: 'center', gap: '6px' }}
-        >
-          <CheckCircle2 size={16} />
-          <span>
-            Transcribed: <strong>"{transcriptionSuccess}"</strong> — press <strong>Send ↗</strong> or Enter to submit.
+        <div role="status" className="recording-badge-bar success">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <CheckCircle2 size={15} />
+            <span>
+              Transcribed: <strong>"{transcriptionSuccess}"</strong> — press <strong>Send ↗</strong> or Enter.
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* Waiting for Permission Bar */}
+      {isStarting && (
+        <div role="status" className="recording-badge-bar processing">
+          <span>Requesting microphone access...</span>
+        </div>
+      )}
+
+      {/* Active Recording Waveform Bar */}
+      {isRecording && (
+        <div className="recording-badge-bar active-recording">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#DC2626', animation: 'pulse-dot 1s infinite' }} />
+            <span>Listening ({formatTimer(recordingSeconds)})</span>
+
+            {/* Dynamic Sound Wave Bars */}
+            <div className="sound-wave-visualizer">
+              {[0.4, 0.8, 1.2, 0.6, 1.0, 1.4, 0.7, 1.1, 0.5, 0.9, 1.3, 0.6].map((multiplier, i) => {
+                const dynamicHeight = Math.max(4, Math.min(22, level * 200 * multiplier + 4));
+                return (
+                  <span
+                    key={i}
+                    className="sound-wave-bar"
+                    style={{ height: `${dynamicHeight}px` }}
+                  />
+                );
+              })}
+            </div>
+
+            <span style={{ fontSize: '0.775rem', opacity: 0.85 }}>
+              {level < 0.001 ? 'Speak into microphone...' : 'Receiving clear speech'}
+            </span>
+          </div>
+          <span style={{ fontSize: '0.75rem', opacity: 0.9, fontWeight: 700 }}>
+            Click (■) to finish
           </span>
         </div>
       )}
 
-      {isStarting && (
-        <div role="status" className="recording-badge-bar">
-          Waiting for microphone permission...
-        </div>
-      )}
-
-      {/* Recording status banner */}
-      {isRecording && (
-        <div className="recording-badge-bar">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#DC2626', animation: 'pulse 1s infinite' }} />
-            <span>Listening... ({formatTimer(recordingSeconds)})</span>
-            <meter min="0" max="0.15" value={level} aria-label="Microphone input level" style={{ width: '80px' }} />
-            <span>{level < 0.001 ? 'Speak into your microphone...' : 'Receiving audio'}</span>
-          </div>
-          <span style={{ fontSize: '0.8rem', opacity: 0.85 }}>Click mic icon (■) to stop</span>
-        </div>
-      )}
-
-      {/* Processing audio banner */}
+      {/* Processing Audio Bar */}
       {isProcessingAudio && (
-        <div className="recording-badge-bar" style={{ backgroundColor: '#EFF6FF', color: '#1D4ED8' }}>
+        <div className="recording-badge-bar processing">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Loader2 size={16} className="animate-spin" />
-            <span>Transcribing speech ({currentLang.toUpperCase()})...</span>
+            <Loader2 size={15} style={{ animation: 'spin 1s linear infinite' }} />
+            <span>Transcribing speech with AI model ({currentLang.toUpperCase()})...</span>
           </div>
         </div>
       )}
 
-      {/* Main composer bar */}
+      {/* Main Composer Bar */}
       <div className="chat-composer-container">
-        {/* Microphone Button */}
+        {/* Tactile Microphone Button */}
         <button
           type="button"
           className={`composer-mic-btn ${isRecording ? 'recording' : ''}`}
           onClick={toggleRecording}
           disabled={isLoading || isProcessingAudio || isStarting}
-          title={isRecording ? 'Stop recording (click to transcribe)' : 'Click to speak with microphone'}
+          title={isRecording ? 'Stop recording (click to transcribe)' : 'Click to speak via microphone'}
           aria-label="Microphone"
         >
           {isRecording ? <Square size={18} /> : <Mic size={20} />}
         </button>
 
-        {/* Text Input */}
+        {/* Text Input Composer */}
         <div className="composer-input-wrapper">
           <input
             ref={inputRef}
@@ -274,7 +295,7 @@ export default function MessageInput({
             placeholder={
               isRecording
                 ? 'Recording in progress... speak now'
-                : 'Type your message or click the mic to speak...'
+                : 'Type a message or click the mic to speak in English, हिंदी, or தமிழ்...'
             }
             value={inputText}
             onChange={(e) => {

@@ -1,22 +1,27 @@
 /**
- * src/components/AccountPanel.jsx - Right Sidebar with Account Summary, Quick Actions & Languages
+ * src/components/AccountPanel.jsx - Right Sidebar with Visual Card, Quick Actions & Languages
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Landmark,
   CreditCard,
   Clock,
   Lock,
   Headphones,
+  Eye,
+  EyeOff,
+  Wifi,
+  Sparkles,
 } from 'lucide-react';
 
 export default function AccountPanel({
   accountData,
-  currentLang,
+  currentLang = 'auto',
   onSelectLang,
   onQuickAction,
 }) {
+  const [showBalance, setShowBalance] = useState(true);
+
   const formatCurrency = (val) => {
     return new Intl.NumberFormat('en-IN', {
       minimumFractionDigits: 2,
@@ -25,40 +30,60 @@ export default function AccountPanel({
   };
 
   const quickActions = [
-    { id: 'balance', label: 'View Balance', icon: CreditCard },
+    { id: 'balance', label: 'Check Balance', icon: CreditCard },
     { id: 'transactions', label: 'Recent Transactions', icon: Clock },
-    { id: 'block_card', label: 'Block Card', icon: Lock },
-    { id: 'support', label: 'Open Support Ticket', icon: Headphones },
+    { id: 'block_card', label: 'Card Controls & Block', icon: Lock },
+    { id: 'support', label: 'Support & Helpline', icon: Headphones },
   ];
 
   const languages = [
-    { code: 'auto', label: 'Auto Detect (auto)', flag: '🌐' },
-    { code: 'en', label: 'English (en)', flag: '🇺🇸' },
-    { code: 'hi', label: 'हिंदी (hi)', flag: '🇮🇳' },
-    { code: 'ta', label: 'தமிழ் (ta)', flag: '🇮🇳' },
+    { code: 'auto', label: 'Auto Detect', native: 'Automatic', flag: '🌐' },
+    { code: 'en', label: 'English', native: 'English', flag: '🇺🇸' },
+    { code: 'hi', label: 'Hindi', native: 'हिंदी', flag: '🇮🇳' },
+    { code: 'ta', label: 'Tamil', native: 'தமிழ்', flag: '🇮🇳' },
   ];
 
   return (
     <aside className="right-sidebar">
-      {/* Account Summary */}
-      <div className="account-summary-section">
-        <h3 className="account-summary-title">Account Summary</h3>
-        <div className="account-summary-card">
-          <div className="account-summary-top">
-            <div className="summary-bank-icon">
-              <Landmark size={22} />
-            </div>
-            <div>
-              <div className="summary-name">
-                {accountData?.account_type || 'Savings Account'}
-              </div>
-              <div className="summary-mask">
-                {accountData?.masked_account || 'XXXX 1234'}
-              </div>
+      {/* Visual Debit Card */}
+      <div className="visual-debit-card">
+        <div className="card-gloss-overlay" />
+        
+        <div className="card-top-row">
+          <span className="card-bank-brand">INDICFIN BANK</span>
+          <span className="card-network-badge">PLATINUM</span>
+        </div>
+
+        <div className="card-chip-container">
+          <div className="card-emv-chip" />
+          <Wifi size={16} className="card-contactless-icon" style={{ transform: 'rotate(90deg)' }} />
+        </div>
+
+        <div className="card-number-masked">
+          •••• •••• •••• {accountData?.masked_account?.replace(/[^0-9]/g, '') || '1234'}
+        </div>
+
+        <div className="card-bottom-row">
+          <div>
+            <div className="card-holder-name">
+              {accountData?.account_type || 'PRIMARY SAVINGS'}
             </div>
           </div>
-          <div className="summary-balance-number">
-            ₹ {formatCurrency(accountData?.balance)}
+          <div className="card-balance-display">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <span className="card-balance-label">AVAILABLE</span>
+              <button
+                type="button"
+                onClick={() => setShowBalance(!showBalance)}
+                style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', padding: 0 }}
+                title={showBalance ? 'Hide balance' : 'Show balance'}
+              >
+                {showBalance ? <EyeOff size={12} /> : <Eye size={12} />}
+              </button>
+            </div>
+            <div className="card-balance-val">
+              {showBalance ? `₹ ${formatCurrency(accountData?.balance)}` : '••••••••'}
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +112,10 @@ export default function AccountPanel({
 
       {/* Language Selection & Automatic Detection */}
       <div className="supported-languages-section">
-        <h4 className="section-label">Speech & Chat Language</h4>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <h4 className="section-label">Speech & Chat Language</h4>
+          <Sparkles size={13} style={{ color: '#059669' }} />
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {languages.map((l) => {
             const isSelected = currentLang === l.code;
@@ -97,12 +125,19 @@ export default function AccountPanel({
                 type="button"
                 className={`language-item-badge ${isSelected ? 'selected' : ''}`}
                 onClick={() => onSelectLang && onSelectLang(l.code)}
-                style={{ cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '8px' }}
-                title={`Click to set speech and chat language to ${l.label}`}
+                style={{ cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '10px' }}
+                title={`Set speech and chat language to ${l.label} (${l.native})`}
               >
                 <span className="flag-icon">{l.flag}</span>
-                <span style={{ fontWeight: isSelected ? '600' : 'normal' }}>{l.label}</span>
-                {isSelected && <span style={{ marginLeft: 'auto', fontSize: '0.8rem', color: '#16A34A' }}>● Active</span>}
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontWeight: isSelected ? '700' : '600', fontSize: '0.86rem' }}>{l.label}</span>
+                  <span style={{ fontSize: '0.72rem', color: isSelected ? '#065F46' : '#64748B' }}>{l.native}</span>
+                </div>
+                {isSelected && (
+                  <span style={{ marginLeft: 'auto', fontSize: '0.75rem', color: '#059669', fontWeight: '700' }}>
+                    ● Active
+                  </span>
+                )}
               </button>
             );
           })}

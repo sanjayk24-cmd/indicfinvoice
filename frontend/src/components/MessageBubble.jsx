@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { Bot, User, Landmark } from 'lucide-react';
+import { Bot, User, Landmark, Mic } from 'lucide-react';
 
 export default function MessageBubble({ message }) {
   const isUser = message.sender === 'user';
@@ -19,7 +19,7 @@ export default function MessageBubble({ message }) {
     <div className={`message-row ${isUser ? 'user-row' : 'assistant-row'}`}>
       {/* Avatar */}
       <div className={`avatar-circle ${isUser ? 'avatar-user' : 'avatar-assistant'}`}>
-        {isUser ? <User size={20} /> : <Bot size={22} />}
+        {isUser ? <User size={18} /> : <Bot size={20} />}
       </div>
 
       {/* Bubble and Timestamp */}
@@ -30,12 +30,12 @@ export default function MessageBubble({ message }) {
             <div style={{ whiteSpace: 'pre-line' }}>{message.text}</div>
           )}
 
-          {/* Embedded Balance Card (matching reference mockup) */}
+          {/* Embedded Balance Card */}
           {message.account_data && (
             <div className="embedded-balance-card">
               <div className="balance-card-left">
                 <div className="bank-badge-icon">
-                  <Landmark size={22} />
+                  <Landmark size={20} />
                 </div>
                 <div className="balance-card-details">
                   <span className="balance-card-type">
@@ -52,7 +52,7 @@ export default function MessageBubble({ message }) {
             </div>
           )}
 
-          {/* Embedded Transaction Table (matching reference mockup) */}
+          {/* Embedded Transaction Table */}
           {message.transactions && message.transactions.length > 0 && (
             <div className="embedded-txns-table-container">
               <table className="txns-table">
@@ -68,8 +68,15 @@ export default function MessageBubble({ message }) {
                     const isCredit = txn.type === 'credit';
                     return (
                       <tr key={idx}>
-                        <td>{txn.date}</td>
-                        <td style={{ fontWeight: 500 }}>{txn.description}<small style={{ display: 'block', color: '#64748b', fontWeight: 400 }}>{txn.reference} · {txn.status || 'completed'}</small></td>
+                        <td style={{ color: '#64748B', whiteSpace: 'nowrap' }}>{txn.date}</td>
+                        <td>
+                          <div style={{ fontWeight: 600, color: '#0F172A' }}>{txn.description}</div>
+                          {txn.reference && (
+                            <small style={{ display: 'block', color: '#64748B', fontSize: '0.725rem', marginTop: '1px' }}>
+                              Ref: {txn.reference} · {txn.status || 'completed'}
+                            </small>
+                          )}
+                        </td>
                         <td className={isCredit ? 'txn-amount-credit' : 'txn-amount-debit'}>
                           {isCredit ? '+ ' : '- '}₹ {formatCurrency(Math.abs(txn.amount))}
                         </td>
@@ -83,7 +90,7 @@ export default function MessageBubble({ message }) {
 
           {/* Follow-up text if specified */}
           {message.follow_up && (
-            <div style={{ marginTop: '8px', color: '#475569' }}>
+            <div style={{ marginTop: '10px', color: '#475569', fontSize: '0.875rem' }}>
               {message.follow_up}
             </div>
           )}
@@ -91,7 +98,10 @@ export default function MessageBubble({ message }) {
           {/* ASR Model Tag if message was processed via voice */}
           {message.asr_model && (
             <div className="msg-asr-badge">
-              🎙️ ASR: {message.asr_model.includes('whisper') ? 'OpenAI Whisper (Medium)' : 'AI4Bharat IndicConformer (600M)'}
+              <Mic size={12} />
+              <span>
+                ASR: {message.asr_model.includes('whisper') ? 'OpenAI Whisper-Medium' : 'AI4Bharat IndicConformer-600M'}
+              </span>
             </div>
           )}
         </div>
