@@ -2,39 +2,318 @@ intent: out_of_scope
 languages:
   en:
     templates:
-      - "hello good morning"
-      - "how are you doing today"
-      - "what is the weather like today"
-      - "is it going to rain tomorrow"
-      - "who won the cricket match yesterday"
-      - "what is the cricket score"
-      - "i want to book a train ticket"
-      - "can you order food for me"
-      - "tell me a funny joke"
-      - "what is the gold price today"
+    - hello good morning
+    - how are you doing today
+    - what is the weather like today
+    - is it going to rain tomorrow
+    - who won the cricket match yesterday
+    - what is the cricket score
+    - i want to book a train ticket
+    - can you order food for me
+    - tell me a funny joke
+    - what is the gold price today
+    - who is the prime minister of india
+    - how far is the moon from earth
+    - play some relaxing music
+    - what is the time right now
+    - set an alarm for 6 am
+    - what is the recipe for biryani
+    - translate hello into french
+    - who wrote hamlet
+    - recommend a good movie to watch
+    - what are the top news headlines today
+    - tell me a story
+    - how to learn python programming
+    - what is the capital of australia
+    - can you book a flight ticket to mumbai
+    - order groceries online
+    - what is today's petrol price
+    - when does diwali fall this year
+    - what is the speed of light
+    - tell me something interesting
+    - how do i fix a flat tire
+    - good night sweet dreams
+    - can you turn on the lights
+    - what is quantum computing
+    - sing a song for me
+    - how to lose weight quickly
+    - tell me about artificial intelligence
+    - who won the world cup in 2011
+    - how to make coffee at home
+    - what is the highest mountain in the world
+    - what is the meaning of life
+    - where is taj mahal located
+    - how old is the universe
+    - give me workout tips
+    - what is the latest smartphone
+    - tell me about solar eclipses
+    - how to grow tomatoes in garden
+    - book an uber cab for me
+    - what is the traffic like to airport
+    - can you write a poem about nature
+    - who invented the telephone
+    - how to make tea
+    - tell me about dinosaurs
+    - what is the tallest building in the world
+    - where is the nearest hospital
+    - can you book a bus ticket
+    - who is the president of USA
+    - what is gravity
+    - how to bake a cake
+    - recommend a good book
+    - what is the distance between Delhi and Mumbai
+    - tell me a riddle
+    - what is the currency of Japan
+    - what is the national animal of India
+    - how does a car engine work
+    - can you tell me a bedtime story
+    - what is the temperature today
+    - how to improve memory
+    - play cricket highlights
+    - tell me a motivational quote
+    - what is photosynthesis
+    - who painted the mona lisa
+    - how do planes fly
+    - can you solve this math problem
+    - what is blockchain technology
+    - where can i buy shoes
+    - how to take care of plants
+    - recommend a tourist destination
+    - what is the best programming language
+    - who won the oscar this year
+    - how to cure common cold
+    - how to do yoga
+    - what is the speed of sound
+    - who discovered gravity
+    - tell me about black holes
+    - how to learn guitar
+    - what is the deepest ocean
+    - what is the meaning of serendipity
+    - can you recommend a smartphone
+    - how to sleep better at night
+    - tell me about ancient history
+    - how to speak english fluently
+    - what is the boiling point of water
+    - who is the richest person in the world
+    - how many states in India
+    - what is healthy diet
+    - can you teach me chess
+    - how to start a business
+    - what is solar energy
+    - who is your creator
+    - are you a robot
   hi:
     templates:
-      - "नमस्ते शुभ प्रभात"
-      - "आप कैसे हैं"
-      - "आज का मौसम कैसा रहेगा"
-      - "क्या कल बारिश होने वाली है"
-      - "कल का क्रिकेट मैच कौन जीता"
-      - "क्रिकेट का स्कोर क्या हुआ"
-      - "मुझे ट्रेन की टिकट बुक करनी है"
-      - "क्या आप मेरे लिए खाना ऑर्डर कर सकते हैं"
-      - "मुझे एक मजेदार चुटकुला सुनाओ"
-      - "आज सोने का भाव क्या है"
+    - नमस्ते शुभ प्रभात
+    - आप कैसे हैं
+    - आज का मौसम कैसा रहेगा
+    - क्या कल बारिश होने वाली है
+    - कल का क्रिकेट मैच कौन जीता
+    - क्रिकेट का स्कोर क्या हुआ
+    - मुझे ट्रेन की टिकट बुक करनी है
+    - क्या आप मेरे लिए खाना ऑर्डर कर सकते हैं
+    - मुझे एक मजेदार चुटकुला सुनाओ
+    - आज सोने का भाव क्या है
+    - भारत के प्रधानमंत्री कौन हैं
+    - चांद पृथ्वी से कितनी दूर है
+    - कोई अच्छा गाना सुनाओ
+    - अभी समय क्या हुआ है
+    - सुबह 6 बजे का अलार्म लगाओ
+    - बिरयानी कैसे बनाई जाती है
+    - नमस्ते का अंग्रेजी में अनुवाद करो
+    - कोई अच्छी फिल्म बताओ
+    - आज की ताजा खबरें क्या हैं
+    - मुझे एक कहानी सुनाओ
+    - पायथन प्रोग्रामिंग कैसे सीखें
+    - ऑस्ट्रेलिया की राजधानी क्या है
+    - मुंबई के लिए फ्लाइट टिकट बुक करो
+    - आज पेट्रोल का रेट क्या है
+    - दिवाली कब है
+    - प्रकाश की गति क्या है
+    - कुछ नया और रोचक बताओ
+    - कार का टायर कैसे बदलें
+    - शुभ रात्रि
+    - कमरे की लाइट जला दो
+    - आर्टिफिशियल इंटेलिजेंस क्या है
+    - 2011 का वर्ल्ड कप कौन जीता
+    - कॉफी कैसे बनाएं
+    - दुनिया का सबसे ऊंचा पर्वत कौन सा है
+    - ताजमहल कहाँ स्थित है
+    - वजन कैसे कम करें
+    - कैब बुक करो मेरे लिए
+    - ट्रैफिक कैसा है रास्ते में
+    - एक कविता सुनाओ
+    - टेलीफोन का आविष्कार किसने किया
+    - चाय कैसे बनाते हैं
+    - कल मौसम कैसा होगा
+    - भारत का राष्ट्रीय खेल क्या है
+    - सूर्य ग्रहण कब है
+    - मुझे एक पहेली सुनाओ
+    - अंग्रेजी कैसे सीखें
+    - मोबाइल का कैमरा कैसे साफ करें
+    - कोई प्रेरक विचार बताओ
+    - पृथ्वी की आयु कितनी है
+    - योग कैसे करें
+    - पौधों की देखभाल कैसे करें
+    - दुनिया का सबसे बड़ा देश कौन सा है
+    - किताबें पढ़ने के फायदे
+    - कंप्यूटर कैसे काम करता है
+    - पानी का क्वथनांक क्या है
+    - kya haal chaal hai
+    - aaj mausam kaisa hai
+    - ek joke sunao
+    - train ticket book karni hai
+    - cricket score kya hua
+    - khane me kya banaye
+    - koi achhi movie recommend karo
+    - namaste kaise ho
+    - aaj ka petrol price kya hai
+    - gaana bajao
+    - kya chal raha hai
+    - weather kaisa hai aaj
+    - time kya hua hai
+    - alarm laga do
+    - biryani ki recipe batao
+    - aaj ki taaza khabar kya hai
+    - cricket match kon jeeta
+    - ek kahani sunao
+    - flight ticket book karo
+    - petrol ka daam kya hai
+    - kuch accha batao
+    - good night
+    - coffee kaise banaye
+    - taj mahal kahan hai
+    - movie ticket book karna hai
+    - gaana sunao koi
+    - joke batao na
+    - mausam kaisa rahega kal
+    - cricket ka update do
+    - kya kal baarish hogi
+    - chai banana sikhao
+    - kya kar rahe ho
+    - tumhara naam kya hai
+    - tum kon ho
+    - mujhe bhookh lagi hai
+    - gaadi kaise chalayein
+    - gym workout tips do
+    - aaj ka rashifal batao
+    - news batao
+    - english kaise bole
+    - mobile recharge karna hai
+    - subah jaldi kaise uthe
+    - cricket match kab shuru hoga
+    - aaj ka din kaisa rahega
+    - फिल्म का टिकट बुक करो
+    - मुझे घूमने की अच्छी जगह बताओ
+    - अंग्रेजी सीखने का आसान तरीका
+    - मुझे एक अच्छी किताब बताओ
+    - क्रिकेट के नियम क्या हैं
+    - गाड़ी की सर्विस कब करानी चाहिए
+    - कैलकुलेटर खोलो
+    - तस्वीर कैसे खींचते हैं
+    - दुनिया का सबसे बड़ा महासागर कौन सा है
+    - कंप्यूटर की गति कैसे बढ़ाएं
   ta:
-    verified: false
     templates:
-      - "வணக்கம் காலை வணக்கம்"
-      - "நீங்கள் எப்படி இருக்கிறீர்கள்"
-      - "இன்று வானிலை எப்படி இருக்கிறது"
-      - "நாளை மழை பெய்யுமா"
-      - "நேற்று கிரிக்கெட் போட்டியில் யார் வென்றது"
-      - "கிரிக்கெட் ஸ்கோர் என்ன"
-      - "எனக்கு ரயில் டிக்கெட் பதிவு செய்ய வேண்டும்"
-      - "எனக்கு உணவு ஆர்டர் செய்ய முடியுமா"
-      - "எனக்கு ஒரு நகைச்சுவை சொல்லுங்கள்"
-      - "இன்று தங்கம் விலை என்ன"
+    - வணக்கம் காலை வணக்கம்
+    - நீங்கள் எப்படி இருக்கிறீர்கள்
+    - இன்று வானிலை எப்படி இருக்கிறது
+    - நாளை மழை பெய்யுமா
+    - நேற்று கிரிக்கெட் போட்டியில் யார் வென்றது
+    - கிரிக்கெட் ஸ்கோர் என்ன
+    - எனக்கு ரயில் டிக்கெட் பதிவு செய்ய வேண்டும்
+    - எனக்கு உணவு ஆர்டர் செய்ய முடியுமா
+    - எனக்கு ஒரு நகைச்சுவை சொல்லுங்கள்
+    - இன்று தங்கம் விலை என்ன
+    - இந்தியாவின் பிரதமர் யார்
+    - நிலவு எவ்வளவு தூரத்தில் உள்ளது
+    - ஒரு நல்ல பாடல் போடுங்கள்
+    - இப்போது மணி என்ன
+    - காலை 6 மணிக்கு அலாரம் வைக்கவும்
+    - பிரியாணி செய்வது எப்படி
+    - ஒரு நல்ல திரைப்படம் பரிந்துரைக்கவும்
+    - இன்றைய முக்கிய செய்திகள் என்ன
+    - எனக்கு ஒரு கதை சொல்லுங்கள்
+    - பைதான் நிரலாக்கத்தை எவ்வாறு கற்றுக்கொள்வது
+    - ஆஸ்திரேலியாவின் தலைநகரம் எது
+    - சென்னைக்கு விமான டிக்கெட் பதிவு செய்
+    - இன்று பெட்ரோல் விலை என்ன
+    - தீபாவளி எப்போது வருகிறது
+    - ஒளியின் வேகம் என்ன
+    - இரவு வணக்கம்
+    - விளக்கை எரிய விடுங்கள்
+    - செயற்கை நுண்ணறிவு என்றால் என்ன
+    - 2011 உலகக் கோப்பையை வென்றது யார்
+    - காபி தயாரிப்பது எப்படி
+    - உலகின் மிக உயரமான மலை எது
+    - தாஜ்மஹால் எங்கே உள்ளது
+    - எடை குறைப்பது எப்படி
+    - எனக்கு ஒரு கவிதை சொல்லுங்கள்
+    - தொலைபேசியை கண்டுபிடித்தது யார்
+    - தேநீர் தயாரிப்பது எப்படி
+    - வானிலை முன்னறிவிப்பு என்ன
+    - சூரிய கிரகணம் எப்போது
+    - ஒரு விடுகதை சொல்லுங்கள்
+    - ஆங்கிலம் பேசுவது எப்படி
+    - உடற்பயிற்சி குறிப்புகள் கொடுங்கள்
+    - யோகா செய்வது எப்படி
+    - பூமி எவ்வளவு பழமையானது
+    - உலகின் பெரிய நாடு எது
+    - நல்ல புத்தகங்கள் பரிந்துரைக்கவும்
+    - இன்றைய ராசி பலன் என்ன
+    - சென்னையில் போக்குவரத்து எப்படி உள்ளது
+    - ஒரு உத்வேகமான மேற்கோள் சொல்லுங்கள்
+    - நகைச்சுவை துணுக்கு சொல்லுங்க
+    - நீ யார்
+    - vanakkam eppadi irukkeenga
+    - innikku weather eppadi irukku
+    - oru joke sollunga
+    - train ticket book pannanum
+    - cricket score enna
+    - oru nalla paattu podunga
+    - innikku gold rate enna
+    - ippo mani enna
+    - cinema recommendation venum
+    - good morning bro
+    - eppadi irukkeenga
+    - naalaikku mazhai varuma
+    - cricket match yaar jeichathu
+    - food order panna mudiyuma
+    - oru kavidhai sollunga
+    - petrol price enna
+    - good night
+    - coffee poduvathu eppadi
+    - oru kadhai sollunga
+    - innikku news enna
+    - tea eppadi podanum
+    - flight ticket book pannunga
+    - movie recommend pannunga
+    - ennoda friend aaguriya
+    - weather report enna
+    - cricket update sollunga
+    - alarm vainga
+    - innikku time enna
+    - kadhai sollunga
+    - vanakkam bro
+    - எனக்கு பிடித்த பாடல் போடு
+    - தமிழ்நாடு தலைநகரம் எது
+    - சென்னை வானிலை எப்படி உள்ளது
+    - ஒரு பழமொழி சொல்லுங்கள்
+    - புதிய திரைப்படம் எது நல்லது
+    - நகைச்சுவை நிகழ்ச்சி பார்க்க வேண்டும்
+    - விமானம் எத்தனை மணிக்கு புறப்படும்
+    - எனக்கு ஒரு கதை சொல்லுங்க
+    - பிரியாணி எப்படி சமைக்க வேண்டும்
+    - நல்ல உணவகம் எங்கே உள்ளது
+    - இன்றைய நாள் எப்படி இருக்கும்
+    - உலகில் எத்தனை நாடுகள் உள்ளன
+    - சூரியன் எப்போது உதயமாகும்
+    - மழை எப்போது நிற்கும்
+    - பூமி உருண்டையா தட்டையா
+    - ஒரு நல்ல பாடல் பரிந்துரைக்கவும்
+    - எனக்கு பாடம் கற்றுக்கொடுங்கள்
+    - சினிமா விமர்சனம் சொல்லுங்கள்
+    - விமான டிக்கெட் கட்டணம் எவ்வளவு
+    - இன்றைய தங்கம் நிலவரம் என்ன
+    - விளையாட்டு செய்தி என்ன
 slots: {}

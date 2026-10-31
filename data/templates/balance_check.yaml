@@ -2,43 +2,467 @@ intent: balance_check
 languages:
   en:
     templates:
-      - "what is the balance in my {account_type} account"
-      - "check balance for {account_type} account"
-      - "how much money is in my {account_type} account"
-      - "show me the balance of my {account_type} account"
-      - "can you tell me my {account_type} account balance"
-      - "balance of {account_type} account please"
-      - "tell me the available amount in my {account_type} account"
-      - "check my {account_type} balance"
-      - "i want to know my {account_type} balance"
-      - "what is my current {account_type} account balance"
+    - what is the balance in my {account_type} account
+    - check balance for {account_type} account
+    - how much money is in my {account_type} account
+    - show me the balance of my {account_type} account
+    - can you tell me my {account_type} account balance
+    - balance of {account_type} account please
+    - tell me the available amount in my {account_type} account
+    - check my {account_type} balance
+    - i want to know my {account_type} balance
+    - what is my current {account_type} account balance
+    - how much funds are left in my {account_type} account
+    - please display the balance for my {account_type} account
+    - check the amount in my {account_type} account
+    - how much cash do i have in my {account_type} account
+    - show balance in my {account_type}
+    - what is the remaining balance in my {account_type} account
+    - can i see how much is in my {account_type} account
+    - tell me how much money remains in {account_type} account
+    - inquire balance for {account_type} account
+    - fetch the balance of my {account_type} account
+    - give me the balance of my {account_type} account
+    - what funds do i have in {account_type}
+    - how much is available in my {account_type} a/c
+    - balance inquiry for {account_type} account
+    - what is available to spend in my {account_type} account
+    - how much credit or balance is in my {account_type} account
+    - check total in {account_type} account
+    - look up balance for my {account_type} account
+    - i need to check my {account_type} account balance
+    - can you look up my {account_type} balance
+    - how much money have i got in my {account_type} account
+    - is there any balance left in my {account_type} account
+    - how much balance left in {account_type}
+    - balance of my {account_type}
+    - my {account_type} balance please
+    - check {account_type} a/c balance
+    - what is the available balance for {account_type}
+    - show me {account_type} funds
+    - what is in my {account_type} right now
+    - could you tell me what is in my {account_type} account
+    - kindly check the balance in my {account_type} account
+    - want to see my {account_type} balance
+    - what amount do i have in {account_type}
+    - available balance in my {account_type} please
+    - how much money is remaining in my {account_type} account
+    - check balance of {account_type}
+    - can you show my {account_type} balance
+    - tell me the total in {account_type}
+    - how much in my {account_type}
+    - how much do i have in {account_type}
+    - what is left in my {account_type} account
+    - what is my account balance
+    - how much money do i have left
+    - what is my bank balance
+    - can you check my balance
+    - tell me my current balance
+    - how much money is in my account
+    - how much do i have in the bank
+    - check my balance please
+    - how much funds do i have
+    - i want to see my balance
+    - what is my available balance
+    - show my bank balance
+    - how much cash is left
+    - tell me how much money i have
+    - can you show me my balance
+    - balance inquiry please
+    - give me my balance
+    - check account funds
+    - what is my total balance
+    - how much money is left in my bank
+    - i need my account balance
+    - display my balance
+    - what is my total available money
+    - how much can i withdraw right now
+    - how much is in my savings
+    - how much do i have in savings
+    - savings account balance please
+    - what is in my savings account
+    - tell me my savings balance
+    - check savings balance
+    - kcc account balance please
+    - what is my kcc balance
+    - check my kcc account balance
+    - tell me my kcc balance
+    - show kcc account balance
+    - what is my current account balance
+    - check my current account balance
+    - current a/c balance
+    - how much money in my bank account
+    - how much is remaining in my account
+    - what amount is left in my account
+    - please tell my balance
+    - quick balance check
+    - balance check please
+    - view account balance
+    - my balance status
+    - how much money is left with me
+    - how much do i have in my bank
+    - can i know my balance
+    - show me my account balance
+    - check how much money i have
+    - what is my balance right now
+    - let me see my balance
+    - want to know my balance
+    - money in account
+    - total balance check
+    - bank account balance check
+    - available balance check
+    - how much funds remaining
+    - how much balance is there
+    - check my account please
+    - account balance please
+    - tell me the amount in my account
+    - how many rupees do i have in my account
+    - how much money is left in my savings
+    - check my account balance now
+    - can you check my available balance
+    - my account money status
+    - tell me my funds in bank
+    - i want to check bank money
+    - how much money is there in my bank
+    - what is my bank account total
+    - show me money left in my account
+    - inquire account balance
+    - how much cash balance do i have
+    - what is my account standing
+    - tell me the cash in my account
+    - look up my balance
+    - i want to see how much money i have
+    - balance summary please
+    - check account summary
+    - get my balance
+    - check my savings
+    - what do i have left in savings
+    - check money in savings account
+    - how much balance do i have right now
+    - how much is left in my kcc
+    - kcc money balance
+    - tell me my remaining balance
+    - what is my bank balance today
+    - tell me my balance right now
+    - how much rupees in my account
+    - account balance view
+    - show total account balance
+    - check my funds please
+    - check remaining money
+    - i need to view my balance
+    - fetch my account balance
+    - check balance details
+    - see my balance
+    - can i see my bank balance
+    - please show my balance
+    - what is my exact balance
+    - check available amount in bank
+    - check the balance in my bank
+    - how much cash remains in my bank account
+    - look up how much money i have in account
+    - what is my balance figure
+    - balance details for my account
   hi:
     templates:
-      - "मेरे {account_type} खाते का बैलेंस बताइए"
-      - "{account_type} खाते में कितने पैसे हैं"
-      - "मुझे {account_type} खाते का बैलेंस देखना है"
-      - "मेरे {account_type} खाते में कुल कितना पैसा है"
-      - "{account_type} खाते की शेष राशि क्या है"
-      - "{account_type} खाते का बैलेंस चेक करें"
-      - "कृपया मेरे {account_type} खाते का बैलेंस बताएं"
-      - "क्या आप मेरे {account_type} खाते का बैलेंस बता सकते हैं"
-      - "{account_type} खाते का पैसा बताओ"
-      - "मेरे {account_type} खाते की बकाया राशि कितनी है"
+    - मेरे {account_type} खाते का बैलेंस बताइए
+    - '{account_type} खाते में कितने पैसे हैं'
+    - मुझे {account_type} खाते का बैलेंस देखना है
+    - मेरे {account_type} खाते में कुल कितना पैसा है
+    - '{account_type} खाते की शेष राशि क्या है'
+    - '{account_type} खाते का बैलेंस चेक करें'
+    - कृपया मेरे {account_type} खाते का बैलेंस बताएं
+    - क्या आप मेरे {account_type} खाते का बैलेंस बता सकते हैं
+    - '{account_type} खाते का पैसा बताओ'
+    - मेरे {account_type} खाते की बकाया राशि कितनी है
+    - '{account_type} खाते में कितना बैलेंस बचा है'
+    - मेरे {account_type} खाते में कितना रुपया है
+    - '{account_type} अकाउंट का बैलेंस क्या है'
+    - '{account_type} खाते की उपलब्ध राशि बताइए'
+    - मेरे {account_type} खाते में कितना धन शेष है
+    - कृपया {account_type} खाते की शेष राशि दिखाएं
+    - '{account_type} खाते का स्टेटमेंट या बैलेंस बताओ'
+    - मेरे {account_type} अकाउंट में कितने रुपए पड़े हैं
+    - मुझे अपने {account_type} खाते का बैलेंस जानना है
+    - '{account_type} खाते में कुल जमा राशि कितनी है'
+    - '{account_type} अकाउंट में कितना पैसा बाकी है'
+    - मेरे {account_type} खाते की रकम बताइए
+    - चेक करो मेरे {account_type} खाते में कितने पैसे हैं
+    - '{account_type} खाते का बैलेंस कितना है बताइए'
+    - मेरे {account_type} खाते का हिसाब बताओ
+    - अपने {account_type} खाते का बैलेंस देखना चाहता हूँ
+    - क्या मेरे {account_type} खाते में कुछ बैलेंस है
+    - '{account_type} खाते में जमा धन बताओ'
+    - मेरे {account_type} खाते की स्थिति दिखाओ
+    - '{account_type} खाते की कुल राशि कितनी है'
+    - कृपया {account_type} खाते का बैलेंस जांचें
+    - '{account_type} खाते में मौजूद रकम क्या है'
+    - मेरे {account_type} खाते का कुल पैसा दिखाएं
+    - '{account_type} खाते में कितने रुपये शेष हैं'
+    - क्या आप {account_type} खाते का बैलेंस बता सकते हो
+    - mere {account_type} account ka balance batao
+    - '{account_type} account me kitna paisa hai'
+    - mujhe {account_type} account ka balance check karna hai
+    - mere {account_type} khate me kitne rupaye hain
+    - '{account_type} account ka balance kitna bacha hai'
+    - '{account_type} khata balance check karo'
+    - kripya mere {account_type} account ka balance batayein
+    - mere {account_type} account me kitna balance hai
+    - '{account_type} account me kitne paise bache hain'
+    - mere {account_type} account ka paisa bataiye
+    - '{account_type} account ka balance dekhna hai'
+    - mere {account_type} account me kitna rupaya hai
+    - '{account_type} khate ka balance batao please'
+    - '{account_type} account ka available balance batao'
+    - mere {account_type} account me kitna balance baki hai
+    - check karo {account_type} balance
+    - mere {account_type} account ka hisab batao
+    - '{account_type} account me kitna amount hai'
+    - '{account_type} khate ki baki rashi batao'
+    - mujhe {account_type} khate ka balance janna hai
+    - मेरे खाते का बैलेंस बताइए
+    - मेरे खाते में कितने पैसे हैं
+    - मेरा बैलेंस कितना है
+    - खाते में कितना पैसा बचा है
+    - मेरा पैसा कितना है
+    - खाता शेष राशि बताइए
+    - बैंक खाते में कितना पैसा है
+    - मुझे अपना बैलेंस चेक करना है
+    - कृपया मेरा बैलेंस बताएं
+    - मेरे अकाउंट में कितने रुपए हैं
+    - बैंक बैलेंस बताओ
+    - मेरा बैलेंस चेक करो
+    - खाते में कुल कितना रुपया है
+    - कितने पैसे बाकी हैं
+    - बैलेंस कितना है
+    - अकाउंट में कितना पैसा पड़ा है
+    - मेरा बैलेंस दिखाओ
+    - खाता बैलेंस चेक करना है
+    - मेरे बैंक में कितना पैसा है
+    - रुपए कितने हैं मेरे खाते में
+    - बचत खाते का बैलेंस बताइए
+    - मेरे बचत खाते में कितने पैसे हैं
+    - बचत खाता बैलेंस चेक करें
+    - केसीसी खाते का बैलेंस बताओ
+    - केसीसी खाते में कितना पैसा है
+    - चालू खाते का बैलेंस बताइए
+    - चालू खाते में कितने पैसे हैं
+    - मेरे खाते की स्थिति क्या है
+    - उपलब्ध बैलेंस कितना है
+    - कुल शेष राशि कितनी है
+    - खाते में कितना धन है
+    - बैंक में मेरा कितना पैसा है
+    - मेरा अकाउंट बैलेंस क्या है
+    - मुझे अपने पैसे देखने हैं
+    - खाते का बैलेंस क्या है बताइए
+    - मेरे खाते में शेष रकम क्या है
+    - खाते का पैसा चेक करना है
+    - कृपया खाते की शेष राशि बताइए
+    - खाते में क्या बैलेंस है
+    - बैंक में जमा राशि कितनी है
+    - मेरा बैंक बैलेंस चेक कीजिए
+    - अकाउंट में कितना रुपया बाकी है
+    - कितना पैसा है मेरे खाते में
+    - मेरे बचत खाते का बैलेंस दिखाओ
+    - खाता बैलेंस जानना चाहता हूँ
+    - mera paisa kitna hai
+    - mere account me kitna balance bacha hai
+    - mera balance kitna hai batao
+    - account me kitne paise hain
+    - bank balance check karna hai
+    - mere bank me kitna paisa hai
+    - kitna paisa bacha hai
+    - mera balance batao
+    - account balance check karo
+    - khate me kitna paisa pada hai
+    - mere kitne rupaye bache hain
+    - balance check kar do
+    - mera total balance kitna hai
+    - paisa kitna hai mere account me
+    - bank me kitna balance hai
+    - mujhe apna balance dekhna hai
+    - savings account me kitna paisa hai
+    - mere savings account ka balance batao
+    - savings account ka balance check karo
+    - kcc account ka balance kitna hai
+    - kcc khata balance bataiye
+    - khata balance kitna hai
+    - mere paise kitne hain
+    - account ka balance chahiye
+    - available balance kitna hai
+    - balance kitna hai bhai
+    - mere account ka hisab batao
+    - paisa kitna bacha hai mere account me
+    - mere account me kitne rupaye bache hain
+    - check karo mera balance
+    - balance kitna hai abhi
+    - kitna rupaya hai khate me
+    - kitna balance baki hai
+    - mere account ka balance dikhao
+    - quick balance check karo
+    - mera bank me kitna balance hai
+    - apna balance check karna hai
+    - account ka paisa check karo
+    - paisa kitna hai
+    - kitna rupaya bacha hai
+    - mera khata balance batao
+    - account me balance dekhna hai
+    - bank balance kitna bacha hai
+    - paisa check karna hai
+    - account me kitne rupaye hain abhi
+    - kitna paisa hai mere bank me
+    - balance dekhna chahta hoon
+    - mere khate me kitna rupaya hai
+    - total kitna balance bacha hai
+    - account balance batayein
+    - balance kitna hai please
+    - mere bank account ka balance batao
   ta:
-    verified: false
     templates:
-      - "என் {account_type} கணக்கின் இருப்பு என்ன"
-      - "{account_type} கணக்கில் எவ்வளவு பணம் உள்ளது"
-      - "என் {account_type} கணக்கு இருப்பை சரிபார்க்கவும்"
-      - "{account_type} கணக்கில் உள்ள மீதி தொகையை சொல்லுங்கள்"
-      - "தயவுசெய்து என் {account_type} கணக்கு இருப்பைக் காட்டுங்கள்"
-      - "{account_type} கணக்கு இருப்பு விவரம் வேண்டும்"
-      - "என் {account_type} கணக்கில் பணம் எவ்வளவு இருக்கிறது"
-      - "{account_type} கணக்கின் நிலுவை தொகை என்ன"
-      - "என் {account_type} கணக்கின் பேலன்ஸ் தெரிந்து கொள்ள வேண்டும்"
-      - "{account_type} கணக்கு இருப்பை எனக்கு சொல்லவும்"
+    - என் {account_type} கணக்கின் இருப்பு என்ன
+    - '{account_type} கணக்கில் எவ்வளவு பணம் உள்ளது'
+    - என் {account_type} கணக்கு இருப்பை சரிபார்க்கவும்
+    - '{account_type} கணக்கில் உள்ள மீதி தொகையை சொல்லுங்கள்'
+    - தயவுசெய்து என் {account_type} கணக்கு இருப்பைக் காட்டுங்கள்
+    - '{account_type} கணக்கு இருப்பு விவரம் வேண்டும்'
+    - என் {account_type} கணக்கில் பணம் எவ்வளவு இருக்கிறது
+    - '{account_type} கணக்கின் நிலுவை தொகை என்ன'
+    - என் {account_type} கணக்கின் பேலன்ஸ் தெரிந்து கொள்ள வேண்டும்
+    - '{account_type} கணக்கு இருப்பை எனக்கு சொல்லவும்'
+    - என் {account_type} கணக்கில் எவ்வளவு தொகை மீதம் உள்ளது
+    - '{account_type} கணக்கின் இருப்பு தொகை எவ்வளவு'
+    - என் {account_type} வங்கிக் கணக்கில் எவ்வளவு பணம் உள்ளது
+    - '{account_type} கணக்கில் மீதமுள்ள பணம் எவ்வளவு'
+    - '{account_type} கணக்கு இருப்பை உடனே காட்டுங்கள்'
+    - என் {account_type} கணக்கின் தற்போதைய இருப்பு என்ன
+    - '{account_type} கணக்கில் எவ்வளவு ரூபாய் உள்ளது'
+    - என் {account_type} அக்கவுண்ட் பேலன்ஸ் சொல்லுங்க
+    - '{account_type} கணக்கில் இருப்பு விவரம் தெரிந்துகொள்ள வேண்டும்'
+    - தயவுசெய்து என் {account_type} கணக்கு மீதியை சொல்லுங்கள்
+    - என் {account_type} கணக்கில் எவ்வளவு தொகை இருக்கிறது
+    - '{account_type} கணக்கின் பேலன்ஸ் என்ன'
+    - என் {account_type} கணக்கின் பண விவரம் காட்டு
+    - '{account_type} கணக்கின் மொத்த இருப்பு எவ்வளவு'
+    - என் {account_type} கணக்கில் மீதி எவ்வளவு
+    - '{account_type} கணக்கில் இருப்பு எவ்வளவு உள்ளது'
+    - என் {account_type} கணக்கின் சேமிப்பு இருப்பு என்ன
+    - தயவுசெய்து {account_type} கணக்கின் இருப்பை சொல்லுங்கள்
+    - '{account_type} கணக்கின் இருப்பு பார்க்க வேண்டும்'
+    - என் {account_type} கணக்கில் பணம் எஞ்சியுள்ளதா
+    - en {account_type} account balance enna
+    - '{account_type} account-il evvalavu panam irukku'
+    - en {account_type} account balance check pannunga
+    - '{account_type} account balance sollunga'
+    - '{account_type} account-il meethi panam evvalavu'
+    - en {account_type} balance theriyavendum
+    - '{account_type} account-la evvalavu panam irukku'
+    - en {account_type} account balance paarkkanum
+    - '{account_type} account meethi தொகை evvalavu'
+    - en {account_type} account status enna
+    - '{account_type} account balance paakka mudiyuma'
+    - en {account_type} account-la ethana rubai irukku
+    - '{account_type} balance enna sollunga'
+    - en {account_type} account balance paarkanum
+    - '{account_type} account iruppu evvalavu'
+    - என் கணக்கில் எவ்வளவு பணம் உள்ளது
+    - என் கணக்கில் எவ்வளவு பணம் இருக்கு
+    - என் பேலன்ஸ் எவ்வளவு
+    - என் கணக்கு இருப்பை சரிபார்க்கவும்
+    - கணக்கில் மீதி பணம் எவ்வளவு
+    - என் வங்கி கணக்கில் எவ்வளவு பணம் இருக்கிறது
+    - என் பேலன்ஸ் என்ன என்று சொல்லுங்கள்
+    - கணக்கில் உள்ள தொகையை காட்டுங்கள்
+    - என் இருப்பை பார்க்க வேண்டும்
+    - கணக்கில் எவ்வளவு இருப்பு உள்ளது
+    - என் வங்கிக் கணக்கில் எவ்வளவு மீதி இருக்கிறது
+    - பேலன்ஸ் எவ்வளவு சொல்லுங்க
+    - என் அக்கவுண்டில் பணம் எவ்வளவு இருக்கு
+    - கணக்கு இருப்பு பார்க்க வேண்டும்
+    - தயவுசெய்து என் பேலன்ஸ் சொல்லுங்கள்
+    - வங்கி இருப்பை சரிபார்க்கவும்
+    - கணக்கில் தொகை எவ்வளவு இருக்கு
+    - என் மொத்த இருப்பு என்ன
+    - எவ்வளவு பணம் எடுக்க முடியும்
+    - என் கணக்கில் ரூபாய் எவ்வளவு இருக்கு
+    - சேமிப்பு கணக்கில் எவ்வளவு பணம் உள்ளது
+    - என் சேமிப்பு கணக்கு இருப்பு என்ன
+    - சேமிப்பு கணக்கு பேலன்ஸ் சொல்லுங்க
+    - கேசிசி கணக்கு இருப்பு என்ன
+    - என் கேசிசி கணக்கில் எவ்வளவு பணம் உள்ளது
+    - நடப்பு கணக்கு இருப்பு விவரம் வேண்டும்
+    - நடப்பு கணக்கில் எவ்வளவு தொகை உள்ளது
+    - கணக்கு நிலுவை தொகை எவ்வளவு
+    - என் பணம் எவ்வளவு இருக்கிறது
+    - பேலன்ஸ் செக் செய்ய வேண்டும்
+    - என் வங்கியில் எவ்வளவு பணம் உள்ளது
+    - கணக்கில் உள்ள மீதி தொகை என்ன
+    - வங்கி கணக்கு பேலன்ஸ் சொல்லுங்க
+    - என் கணக்கில் தொகை பார்க்க வேண்டும்
+    - என்னிடம் எவ்வளவு பணம் உள்ளது
+    - கணக்கில் உள்ள தொகை விவரம்
+    - வங்கி இருப்பை எனக்கு சொல்லவும்
+    - என் கணக்கின் இருப்பு என்ன சொல்லுங்க
+    - வங்கி கணக்கில் மீதி தொகை எவ்வளவு
+    - கணக்கில் பணம் எவ்வளவு எஞ்சியுள்ளது
+    - என் கணக்கு இருப்பு நிலை என்ன
+    - பேலன்ஸ் தொகை பார்க்க வேண்டும்
+    - என் கணக்கில் உள்ள தொகையை தெரிந்து கொள்ள வேண்டும்
+    - கணக்கின் தற்போதைய இருப்பு என்ன
+    - என் வங்கி இருப்பு விவரம் காட்டு
+    - en account-la evvalavu panam irukku
+    - en balance enna sollunga
+    - account balance check pannunga
+    - panam evvalavu irukku en account-la
+    - en bank balance enna
+    - balance evvalavu irukku
+    - en account balance sollunga
+    - savings account balance enna
+    - en savings account-la evvalavu panam irukku
+    - kcc account balance check pannunga
+    - bank-la evvalavu panam irukku
+    - balance check panna mudiyuma
+    - meethi panam evvalavu irukku
+    - account balance theriyanum
+    - en balance paarka vendum
+    - evvalavu panam baki irukku
+    - panam evvalavu
+    - en account-il ulla iruppu
+    - balance enna bro
+    - en bank account balance sollunga
+    - iruppu thogai evvalavu
+    - en account meethi panam
+    - account-la evvalavu kaasu irukku
+    - kaasu evvalavu irukku
+    - en kaasu evvalavu irukku bank-la
+    - account balance enna sollunga
+    - en balance theriyanum
+    - bank balance check pannu
+    - en savings balance enna
+    - evvalavu balance irukku
+    - meethi தொகை enna
+    - en account-la kaasu ethana irukku
+    - balance kattu
+    - account balance paakka mudiyuma
+    - panam evvalavu irukku
+    - en account-la panam evvalavu baki irukku
+    - bank-la ethana rubai irukku
+    - balance evvalavu sollunga
+    - en account details paarkanum
+    - account-la evvalavu balance irukku
 slots:
   account_type:
-    en: ["savings", "current", "KCC"]
-    hi: ["बचत", "चालू", "केसीसी"]
-    ta: ["சேமிப்பு", "நடப்பு", "கேசிசி"]
+    en:
+    - savings
+    - current
+    - KCC
+    - kisan credit card
+    - saving
+    hi:
+    - बचत
+    - चालू
+    - केसीसी
+    - किसान क्रेडिट कार्ड
+    ta:
+    - சேமிப்பு
+    - நடப்பு
+    - கேசிசி
+    - கிசான் கிரெடிட் கார்டு

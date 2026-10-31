@@ -2,51 +2,393 @@ intent: transaction_dispute
 languages:
   en:
     templates:
-      - "i want to dispute transaction {transaction_ref} of {amount} on {date}"
-      - "wrong deduction of {amount} on {date} with reference {transaction_ref}"
-      - "dispute transaction {transaction_ref} for {amount} rupees dated {date}"
-      - "unauthorized charge of {amount} on {date} reference {transaction_ref}"
-      - "there is an error in transaction {transaction_ref} of {amount} on {date}"
-      - "i did not do this transaction {transaction_ref} of {amount} on {date}"
-      - "raise a dispute for transaction {transaction_ref} on {date} for {amount}"
-      - "complaint about transaction {transaction_ref} of amount {amount} on {date}"
-      - "money deducted twice for {transaction_ref} amount {amount} on {date}"
-      - "fraudulent transaction {transaction_ref} of {amount} occurred on {date}"
+    - i want to dispute transaction {transaction_ref} of {amount} on {date}
+    - wrong deduction of {amount} on {date} with reference {transaction_ref}
+    - dispute transaction {transaction_ref} for {amount} rupees dated {date}
+    - unauthorized charge of {amount} on {date} reference {transaction_ref}
+    - there is an error in transaction {transaction_ref} of {amount} on {date}
+    - i did not do this transaction {transaction_ref} of {amount} on {date}
+    - raise a dispute for transaction {transaction_ref} on {date} for {amount}
+    - complaint about transaction {transaction_ref} of amount {amount} on {date}
+    - money deducted twice for {transaction_ref} amount {amount} on {date}
+    - fraudulent transaction {transaction_ref} of {amount} occurred on {date}
+    - report fraud on transaction {transaction_ref} for {amount} on {date}
+    - incorrect debit of {amount} on {date} reference {transaction_ref}
+    - dispute payment of {amount} on {date} transaction {transaction_ref}
+    - i was wrongly charged {amount} on {date} for {transaction_ref}
+    - unrecognized transaction {transaction_ref} of {amount} done on {date}
+    - lodge complaint for transaction {transaction_ref} amount {amount} date {date}
+    - fake charge of {amount} on {date} reference number {transaction_ref}
+    - debit of {amount} on {date} for {transaction_ref} was not made by me
+    - dispute the {amount} rupees deducted on {date} under {transaction_ref}
+    - unauthorized payment {transaction_ref} of {amount} debited on {date}
+    - cancel wrong transaction {transaction_ref} of {amount} on {date}
+    - dispute duplicate debit {transaction_ref} of {amount} on {date}
+    - illegal transaction {transaction_ref} for {amount} happened on {date}
+    - i challenge transaction {transaction_ref} of {amount} on {date}
+    - reverse transaction {transaction_ref} of {amount} debited on {date}
+    - i want to dispute a transaction
+    - someone stole money from my account
+    - money was deducted from my account without permission
+    - wrong transaction dispute please
+    - i did not make this transaction
+    - money was charged twice
+    - there is a fraudulent charge on my account
+    - unauthorized money deduction
+    - i want to complain about a wrong transaction
+    - dispute an unauthorized charge
+    - report a fraudulent debit
+    - someone hacked my account and deducted money
+    - wrong amount deducted from my bank
+    - dispute transaction {transaction_ref} please
+    - complaint regarding transaction {transaction_ref}
+    - dispute transaction {transaction_ref} of {amount}
+    - fraudulent transaction {transaction_ref}
+    - i want to dispute charge {transaction_ref}
+    - wrong deduction of {amount} rupees
+    - money deducted without otp
+    - unrecognized debit on my account
+    - unauthorized payment on my card
+    - dispute payment please
+    - wrong debit dispute
+    - file a transaction dispute
+    - money stolen from my account
+    - unauthorized withdrawal from my bank
+    - i have an issue with a transaction
+    - dispute this payment
+    - raise complaint for wrong debit
+    - money deducted but transaction failed
+    - debited twice for same transaction
+    - report an unauthorized transaction
+    - wrong charge on my statement
+    - fraud dispute registration
+    - money taken from my account without my knowledge
+    - i want my money back for a failed transaction
+    - incorrect debit on my bank account
+    - report an unauthorized debit on my account
+    - unknown transaction on my account
+    - money cut without permission
+    - fraud complaint registration
+    - dispute an incorrect transaction
+    - reverse an unauthorized transaction
+    - why was money deducted from my account
+    - someone debited money from my account
+    - dispute false transaction
+    - i did not authorize this payment
+    - unauthorized transfer complaint
+    - raise ticket for transaction dispute
+    - complaint for wrong debit in account
+    - my money got deducted wrongfully
+    - fraudulent debit on my savings
+    - dispute unknown transaction
+    - unrecognized payment dispute
+    - i challenge transaction {transaction_ref} dated {date}
+    - dispute fraudulent debit {transaction_ref} on {date}
+    - money stolen from bank transaction {transaction_ref} of {amount}
+    - unauthorized transaction {transaction_ref} on {date}
+    - reverse fraudulent debit {transaction_ref} of {amount}
+    - complaint about wrong debit {transaction_ref} on {date}
+    - i did not authorize transaction {transaction_ref} for {amount}
+    - dispute illegal charge {transaction_ref} on {date}
+    - failed payment but money deducted {transaction_ref} amount {amount}
+    - fraudulent charge {transaction_ref} on {date} for {amount}
+    - dispute erroneous transaction {transaction_ref} of {amount} on {date}
+    - wrongful deduction {transaction_ref} of {amount} dated {date}
+    - unrecognized charge {transaction_ref} of {amount} rupees
+    - file dispute for transaction {transaction_ref} on {date}
+    - dispute this false transaction {transaction_ref} of {amount}
+    - chargeback request for transaction {transaction_ref} of {amount}
+    - cancel unauthorized transaction {transaction_ref} on {date}
+    - my money was deducted twice transaction {transaction_ref}
+    - complaint regarding wrong charge {transaction_ref} amount {amount}
+    - dispute incorrect amount deducted {transaction_ref} on {date}
+    - unauthorized debit inquiry {transaction_ref}
+    - i want refund for transaction {transaction_ref} on {date}
+    - fraud debit complaint for transaction {transaction_ref}
+    - dispute suspicious transaction {transaction_ref} of {amount}
+    - dispute fake payment {transaction_ref} on {date}
+    - contest transaction {transaction_ref} of {amount} on {date}
+    - report unapproved transaction {transaction_ref} amount {amount}
   hi:
     templates:
-      - "{date} को ट्रांजैक्शन {transaction_ref} से {amount} रुपये का गलत लेन-देन हुआ है"
-      - "मेरे खाते से {date} को {transaction_ref} के लिए {amount} रुपये कट गए"
-      - "ट्रांजैक्शन {transaction_ref} की शिकायत करनी है {amount} रुपये {date} को कटे थे"
-      - "{date} को {transaction_ref} पर {amount} रुपये की गलत कटौती हुई है"
-      - "मैंने यह ट्रांजैक्शन {transaction_ref} नहीं किया {amount} रुपये {date} को कट गए"
-      - "ट्रांजैक्शन {transaction_ref} के लिए {amount} रुपये का विवाद दर्ज करें {date}"
-      - "{date} को हुए लेन-देन {transaction_ref} में {amount} रुपये का फ्रॉड हुआ है"
-      - "बिना मेरी अनुमति के {date} को {transaction_ref} से {amount} कट गए"
-      - "{date} की ट्रांजैक्शन {transaction_ref} जिसमें {amount} रुपये कटे उसकी शिकायत दर्ज करें"
-      - "गलत लेन-देन {transaction_ref} पर {amount} रुपये कटने की शिकायत {date} को हुई"
+    - '{date} को ट्रांजैक्शन {transaction_ref} से {amount} रुपये का गलत लेन-देन हुआ
+      है'
+    - मेरे खाते से {date} को {transaction_ref} के लिए {amount} रुपये कट गए
+    - ट्रांजैक्शन {transaction_ref} की शिकायत करनी है {amount} रुपये {date} को कटे
+      थे
+    - '{date} को {transaction_ref} पर {amount} रुपये की गलत कटौती हुई है'
+    - मैंने यह ट्रांजैक्शन {transaction_ref} नहीं किया {amount} रुपये {date} को कट
+      गए
+    - ट्रांजैक्शन {transaction_ref} के लिए {amount} रुपये का विवाद दर्ज करें {date}
+    - '{date} को हुए लेन-देन {transaction_ref} में {amount} रुपये का फ्रॉड हुआ है'
+    - बिना मेरी अनुमति के {date} को {transaction_ref} से {amount} कट गए
+    - '{date} की ट्रांजैक्शन {transaction_ref} जिसमें {amount} रुपये कटे उसकी शिकायत
+      दर्ज करें'
+    - गलत लेन-देन {transaction_ref} पर {amount} रुपये कटने की शिकायत {date} को हुई
+    - ट्रांजैक्शन {transaction_ref} में {amount} रुपये {date} को दो बार कट गए
+    - मेरे खाते से {date} को {amount} रुपये कट गए ट्रांजैक्शन {transaction_ref}
+    - फर्जी लेन-देन {transaction_ref} की शिकायत {amount} रुपये {date}
+    - अनधिकृत लेन-देन {transaction_ref} राशि {amount} तारीख {date}
+    - '{date} को गलत कटौती {transaction_ref} राशि {amount} की शिकायत'
+    - mere account se {date} ko {transaction_ref} ke liye {amount} rupaye kat gaye
+    - '{date} ko transaction {transaction_ref} me {amount} rupaye ka fraud hua hai'
+    - transaction {transaction_ref} amount {amount} date {date} dispute karna hai
+    - galat transaction {transaction_ref} amount {amount} date {date} ki complaint
+      karo
+    - bina meri permission ke {date} ko {amount} rupaye kat gaye transaction {transaction_ref}
+    - mere account se {amount} kat gaye {date} ko transaction {transaction_ref}
+    - dispute transaction {transaction_ref} amount {amount} on {date}
+    - मेरे खाते से पैसे कट गए
+    - मेरे अकाउंट से गलत पैसे कट गए हैं
+    - गलत लेन-देन की शिकायत करनी है
+    - किसी ने मेरे खाते से पैसे निकाल लिए
+    - बिना अनुमति के पैसे कटे हैं
+    - मेरे खाते में फ्रॉड हुआ है
+    - पैसे दो बार कट गए
+    - ट्रांजैक्शन डिस्प्यूट दर्ज करें
+    - अनधिकृत कटौती की शिकायत
+    - गलत ट्रांजैक्शन पर आपत्ति दर्ज करें
+    - मेरे पैसे कट गए लेकिन पेमेंट फेल हो गया
+    - मेरे बैंक से फर्जी पैसे कटे हैं
+    - अकाउंट से बिना ओटीपी पैसे कट गए
+    - लेन-देन की शिकायत दर्ज करें
+    - गलत पैसे कटने का विवाद दर्ज करें
+    - मेरे पैसे वापस चाहिए गलत कटे हैं
+    - बिना जानकारी के खाते से पैसे कट गए
+    - गलत डेबिट की शिकायत लिखवाएं
+    - अकाउंट से फर्जी ट्रांजैक्शन हुआ है
+    - खाते से अवैध कटौती हुई है
+    - मेरे पैसे कट गए पर सामान नहीं मिला
+    - खाते में गलत डेबिट हुआ है
+    - पैसे कटने की आपत्ति दर्ज करें
+    - बैंक से फ्रॉड लेन-देन की शिकायत
+    - अनधिकृत ट्रांजैक्शन की रिपोर्ट करें
+    - mere account se paise kat gaye
+    - galat transaction dispute karna hai
+    - mere paise cut ho gaye hain
+    - bina permission paise kat gaye
+    - account me fraud hua hai
+    - paise kat gaye par samaan nahi mila
+    - do baar paise kat gaye
+    - transaction dispute lodge karna hai
+    - wrong debit hua hai mere account me
+    - paise gayab ho gaye account se
+    - unauthorized transaction complaint
+    - galat kata hai paisa account se
+    - kisi ne mere account se paise chori kar liye
+    - paise katne ki shikayat karni hai
+    - fraud transaction report karna hai
+    - mere account me fake transaction hua hai
+    - bina otp ke paise cut gaye
+    - galat kat gaya paisa
+    - account se chori ho gaye paise
+    - transaction dispute register karo
+    - fraud hua hai mere account me
+    - mere account se paise kisne nikale
+    - galat payment dispute karna hai
+    - paise kat gaye par transaction fail hua
+    - unauthorized debit report karo
+    - ट्रांजैक्शन {transaction_ref} में {amount} रुपये की गलत कटौती {date} को हुई
+    - मेरे खाते से {transaction_ref} के लिए गलत पैसे कटे हैं
+    - अनधिकृत लेन-देन {transaction_ref} दिनांक {date} की शिकायत
+    - फर्जी निकासी {transaction_ref} राशि {amount} तारीख {date}
+    - ट्रांजैक्शन {transaction_ref} में फ्रॉड हुआ है {date} को
+    - बिना ओटीपी के {transaction_ref} से {amount} रुपये कट गए
+    - विवाद दर्ज करें ट्रांजैक्शन {transaction_ref} राशि {amount}
+    - '{date} को हुए लेन-देन {transaction_ref} को रद्द करें'
+    - गलत डेबिट {transaction_ref} राशि {amount} रुपये की शिकायत
+    - ट्रांजैक्शन {transaction_ref} पर फ्रॉड क्लेम दर्ज करें
+    - मेरे पैसे कट गए पर लेन-देन असफल रहा {transaction_ref}
+    - '{date} को कटे {amount} रुपये ट्रांजैक्शन {transaction_ref} वापस करें'
+    - फर्जी लेन-देन {transaction_ref} दिनांक {date} राशि {amount}
+    - गलत पेमेंट {transaction_ref} की शिकायत दर्ज करें
+    - लेन-देन {transaction_ref} में {amount} रुपये का विवाद है {date}
+    - ट्रांजैक्शन {transaction_ref} का पैसा वापस चाहिए
+    - गलत कटा हुआ पैसा {transaction_ref} राशि {amount}
+    - अवैध लेन-देन {transaction_ref} दिनांक {date}
+    - ट्रांजैक्शन {transaction_ref} की जांच कराएं {date}
+    - पैसे दो बार कटे ट्रांजैक्शन {transaction_ref} राशि {amount}
+    - '{date} को गलत कटौती हुई ट्रांजैक्शन {transaction_ref}'
+    - धोखाधड़ी वाला लेन-देन {transaction_ref} तारीख {date}
+    - अनधिकृत निकासी {transaction_ref} राशि {amount}
+    - गलत ट्रांजैक्शन {transaction_ref} का विवाद सुलझाएं
+    - मेरे खाते से गलत कटा {amount} रुपये {transaction_ref}
+    - ट्रांजैक्शन {transaction_ref} की शिकायत तुरंत दर्ज करें
+    - फर्जी लेन-देन {transaction_ref} के खिलाफ शिकायत
+    - गलत डेबिट हुआ है ट्रांजैक्शन {transaction_ref} में
+    - बिना अनुमति के कटा पैसा ट्रांजैक्शन {transaction_ref}
+    - ट्रांजैक्शन {transaction_ref} राशि {amount} वापस करें
   ta:
-    verified: false
     templates:
-      - "{date} அன்று பரிவர்த்தனை {transaction_ref} மூலம் {amount} ரூபாய் தவறாக கழிக்கப்பட்டது"
-      - "என் கணக்கிலிருந்து {date} அன்று {transaction_ref} க்கு {amount} ரூபாய் எடுக்கப்பட்டது"
-      - "பரிவர்த்தனை {transaction_ref} மீது புகார் அளிக்க வேண்டும் {date} அன்று {amount} ரூபாய் பிடித்தம் செய்யப்பட்டது"
-      - "{date} தேதியில் {transaction_ref} வழியாக {amount} ரூபாய் தவறுதலாக எடுக்கப்பட்டுள்ளது"
-      - "நான் இந்த பரிவர்த்தனை {transaction_ref} செய்யவில்லை {date} அன்று {amount} ரூபாய் காணவில்லை"
-      - "பரிவர்த்தனை {transaction_ref} தொகை {amount} மீது {date} தேதிக்கான புகார் பதிவு செய்க"
-      - "{date} அன்று நடந்த பரிவர்த்தனை {transaction_ref} தொகை {amount} மோசடி சார்ந்தது"
-      - "என் அனுமதியின்றி {date} அன்று {transaction_ref} மூலம் {amount} ரூபாய் கழிக்கப்பட்டது"
-      - "பரிவர்த்தனை {transaction_ref} க்கான {amount} ரூபாய் தவறை எதிர்க்கிறேன் தேதி {date}"
-      - "{date} அன்று {transaction_ref} பரிவர்த்தனையில் {amount} ரூபாய் இருமுறை கழிக்கப்பட்டுள்ளது"
+    - '{date} அன்று பரிவர்த்தனை {transaction_ref} மூலம் {amount} ரூபாய் தவறாக கழிக்கப்பட்டது'
+    - என் கணக்கிலிருந்து {date} அன்று {transaction_ref} க்கு {amount} ரூபாய் எடுக்கப்பட்டது
+    - பரிவர்த்தனை {transaction_ref} மீது புகார் அளிக்க வேண்டும் {date} அன்று {amount}
+      ரூபாய் பிடித்தம் செய்யப்பட்டது
+    - '{date} தேதியில் {transaction_ref} வழியாக {amount} ரூபாய் தவறுதலாக எடுக்கப்பட்டுள்ளது'
+    - நான் இந்த பரிவர்த்தனை {transaction_ref} செய்யவில்லை {date} அன்று {amount} ரூபாய்
+      காணவில்லை
+    - பரிவர்த்தனை {transaction_ref} தொகை {amount} மீது {date} தேதிக்கான புகார் பதிவு
+      செய்க
+    - '{date} அன்று நடந்த பரிவர்த்தனை {transaction_ref} தொகை {amount} மோசடி சார்ந்தது'
+    - என் அனுமதியின்றி {date} அன்று {transaction_ref} மூலம் {amount} ரூபாய் கழிக்கப்பட்டது
+    - பரிவர்த்தனை {transaction_ref} க்கான {amount} ரூபாய் தவறை எதிர்க்கிறேன் தேதி
+      {date}
+    - '{date} அன்று {transaction_ref} பரிவர்த்தனையில் {amount} ரூபாய் இருமுறை கழிக்கப்பட்டுள்ளது'
+    - தவறான பரிவர்த்தனை {transaction_ref} தொகை {amount} தேதி {date}
+    - என் கணக்கில் {date} அன்று {transaction_ref} மூலம் {amount} ரூபாய் திருடப்பட்டது
+    - '{date} anru transaction {transaction_ref} moolam {amount} rubai thavaraga edukkapattathu'
+    - en account-la irunthu {date} anru {transaction_ref} {amount} rubai poiduchu
+    - transaction {transaction_ref} amount {amount} date {date} dispute pannanum
+    - '{date} la {transaction_ref} {amount} rubai fraud aaiduchu'
+    - என் கணக்கில் இருந்து பணம் எடுக்கப்பட்டுள்ளது
+    - என் கணக்கில் தவறான பரிவர்த்தனை நடந்துள்ளது
+    - யாரோ என் கணக்கிலிருந்து பணம் எடுத்துவிட்டார்கள்
+    - என் அனுமதியின்றி பணம் கழிக்கப்பட்டுள்ளது
+    - பரிவர்த்தனை மீது புகார் அளிக்க வேண்டும்
+    - பணம் இருமுறை கழிக்கப்பட்டுள்ளது
+    - என் கணக்கில் மோசடி நடந்துள்ளது
+    - தவறாக பணம் பிடித்தம் செய்யப்பட்டுள்ளது
+    - பரிவர்த்தனை தவறை எதிர்க்கிறேன்
+    - பணம் பிடித்தம் புகார் பதிவு செய்யவும்
+    - என் பணம் திருடப்பட்டுள்ளது
+    - கணக்கில் தவறான பிடித்தம்
+    - அனுமதியின்றி பணம் எடுக்கப்பட்டுள்ளது
+    - பரிவர்த்தனை தோல்வி ஆனால் பணம் போனது
+    - மோசடி பரிவர்த்தனை புகார்
+    - என் கணக்கில் தவறான டெபிட் நடந்துள்ளது
+    - பணம் பிடிக்கப்பட்டதற்கு புகார் செய்ய வேண்டும்
+    - என் கணக்கில் இருந்து பணம் மாயமானது
+    - தவறான பரிவர்த்தனை புகார் அளிக்கவும்
+    - பரிவர்த்தனை பிழை புகார்
+    - en account-la irunthu panam edukkappattullathu
+    - thavarana transaction complaint pannanum
+    - en account-la fraud nadanthurukku
+    - rendu thadava panam poiduchu
+    - unauthorized transaction dispute pannunga
+    - panam thavaraga kazhikka pattathu
+    - en permission illama panam edukkapattathu
+    - fraud transaction complaint
+    - wrong debit dispute pannanum
+    - en kaasu thirudappattathu
+    - panam cut aaiduchu aana transaction fail
+    - en account-la thavarana debit aaiduchu
+    - panam poiduchu en account-la irunthu
+    - unauthorized debit complaint
+    - fraud report pannanum en account-la
+    - பரிவர்த்தனை {transaction_ref} தொகை {amount} மீது {date} தேதிக்கான புகார்
+    - என் கணக்கில் {date} அன்று {transaction_ref} மூலம் தவறான பிடித்தம்
+    - மோசடி பரிவர்த்தனை {transaction_ref} தொகை {amount} தேதி {date}
+    - பரிவர்த்தனை {transaction_ref} வழியாக {amount} ரூபாய் திருடப்பட்டது
+    - என் அனுமதியின்றி நடந்த பரிவர்த்தனை {transaction_ref} தேதி {date}
+    - தவறான பிடித்தம் {transaction_ref} தொகை {amount} புகார் செய்க
+    - பரிவர்த்தனை {transaction_ref} தொகை {amount} திரும்ப வேண்டும் {date}
+    - போலி பரிவர்த்தனை {transaction_ref} தொகை {amount} தேதி {date}
+    - என் கணக்கிலிருந்து {transaction_ref} மூலம் {amount} ரூபாய் மாயமானது
+    - பரிவர்த்தனை {transaction_ref} ரத்து செய்ய வேண்டும் தேதி {date}
+    - தவறாக எடுக்கப்பட்ட தொகை {amount} பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} மீது உடனே புகார் பதிவு செய்யவும்
+    - மோசடியாக எடுக்கப்பட்ட {amount} ரூபாய் பரிவர்த்தனை {transaction_ref}
+    - '{date} அன்று பரிவர்த்தனை {transaction_ref} தோல்வியடைந்தது ஆனால் பணம் போனது'
+    - என் கணக்கில் நடந்த போலி பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} தொகை {amount} திரும்பப்பெற வேண்டும்
+    - அனுமதியற்ற பரிவர்த்தனை {transaction_ref} தேதி {date}
+    - என் பணம் தவறாக கழிக்கப்பட்டது பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} மீது நடவடிக்கை எடுக்கவும் {date}
+    - கணக்கில் நடந்த மோசடி {transaction_ref} தொகை {amount}
+    - பரிவர்த்தனை {transaction_ref} இரண்டு முறை கழிக்கப்பட்டது {amount}
+    - '{date} அன்று {transaction_ref} மூலம் தவறான டெபிட்'
+    - மோசடி புகார் பதிவு செய்க பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} பணத்தை திருப்பித் தரவும்
+    - என் அனுமதியின்றி கழிக்கப்பட்ட {amount} ரூபாய் {transaction_ref}
+    - தவறான பரிவர்த்தனை {transaction_ref} சர்ச்சை பதிவு செய்
+    - பரிவர்த்தனை {transaction_ref} தேதி {date} புகார்
+    - கணக்கில் பணம் எடுக்கப்பட்ட பரிவர்த்தனை {transaction_ref} தவறு
+    - மோசடி பிடித்தம் {transaction_ref} தொகை {amount}
+    - என் வங்கிக் கணக்கில் நடந்த தவறான பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} மீது தவறான பிடித்த புகார்
+    - பணம் திருட்டு போனது பரிவர்த்தனை {transaction_ref} தேதி {date}
+    - '{date} அன்று நடந்த பரிவர்த்தனை {transaction_ref} நான் செய்யவில்லை'
+    - போலி டெபிட் {transaction_ref} தொகை {amount} ரூபாய்
+    - பரிவர்த்தனை {transaction_ref} எதிர்த்து புகார் பதிவு செய்க
+    - என் கணக்கில் இருந்து பணம் கழிக்கப்பட்ட பரிவர்த்தனை {transaction_ref}
+    - தவறான பரிவர்த்தனை {transaction_ref} மேல்முறையீடு
+    - பரிவர்த்தனை {transaction_ref} பணம் உடனடியாக வரவு வைக்கப்பட வேண்டும்
+    - மோசடி பரிவர்த்தனை {transaction_ref} பற்றி புகார்
+    - என் அனுமதியில்லாத பரிவர்த்தனை {transaction_ref} தொகை {amount}
+    - பரிவர்த்தனை {transaction_ref} பிழை சரிசெய்யவும் {date}
+    - தவறுதலான பரிவர்த்தனை {transaction_ref} பணம் திரும்ப வேண்டும்
+    - பரிவர்த்தனை {transaction_ref} தேதி {date} தவறானது
+    - மோசடி பிடித்தம் {transaction_ref} ரத்து செய்
+    - கணக்கில் இருந்து எடுக்கப்பட்ட {amount} ரூபாய் பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} மேல் புகார் பதிவு செய்
+    - என் பணம் தவறாக போனது பரிவர்த்தனை {transaction_ref}
+    - பரிவர்த்தனை {transaction_ref} சர்ச்சை பதிவு
+    - போலி பரிவர்த்தனை {transaction_ref} குறித்து புகார்
+    - பரிவர்த்தனை {transaction_ref} தவறை உடனே சரிசெய்
 slots:
   transaction_ref:
-    en: ["TXN-9001", "TXN-9002"]
-    hi: ["TXN-9001", "TXN-9002"]
-    ta: ["TXN-9001", "TXN-9002"]
+    en:
+    - TXN-9001
+    - TXN-9002
+    - TXN-1044
+    - TXN-3050
+    - TXN-7781
+    hi:
+    - TXN-9001
+    - TXN-9002
+    - TXN-1044
+    - TXN-3050
+    - TXN-7781
+    ta:
+    - TXN-9001
+    - TXN-9002
+    - TXN-1044
+    - TXN-3050
+    - TXN-7781
   amount:
-    en: ["500", "1500", "22000", "75000"]
-    hi: ["500", "1500", "22000", "75000"]
-    ta: ["500", "1500", "22000", "75000"]
+    en:
+    - '500'
+    - '1500'
+    - '22000'
+    - '75000'
+    - '250'
+    - '3000'
+    - '10000'
+    hi:
+    - '500'
+    - '1500'
+    - '22000'
+    - '75000'
+    - '250'
+    - '3000'
+    - '10000'
+    ta:
+    - '500'
+    - '1500'
+    - '22000'
+    - '75000'
+    - '250'
+    - '3000'
+    - '10000'
   date:
-    en: ["today", "yesterday", "12 October", "5 November"]
-    hi: ["आज", "कल", "12 अक्टूबर", "5 नवंबर"]
-    ta: ["இன்று", "நேற்று", "12 அக்டோபர்", "5 நவம்பர்"]
+    en:
+    - today
+    - yesterday
+    - 12 October
+    - 5 November
+    - last week
+    - Monday
+    hi:
+    - आज
+    - कल
+    - 12 अक्टूबर
+    - 5 नवंबर
+    - पिछले हफ्ते
+    - सोमवार
+    ta:
+    - இன்று
+    - நேற்று
+    - 12 அக்டோபர்
+    - 5 நவம்பர்
+    - கடந்த வாரம்
+    - திங்கள்

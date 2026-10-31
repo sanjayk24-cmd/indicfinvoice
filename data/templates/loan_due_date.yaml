@@ -2,43 +2,364 @@ intent: loan_due_date
 languages:
   en:
     templates:
-      - "when is my {loan_type} loan due"
-      - "what is the due date for my {loan_type} loan"
-      - "tell me the last date to pay my {loan_type} loan"
-      - "check payment due date for {loan_type} loan"
-      - "when do i need to pay my {loan_type} loan installment"
-      - "what is the deadline for my {loan_type} loan"
-      - "how many days left for my {loan_type} loan payment"
-      - "can you tell me the {loan_type} loan repayment date"
-      - "next EMI date for my {loan_type} loan"
-      - "when is the next installment of my {loan_type} loan"
+    - when is my {loan_type} loan due
+    - what is the due date for my {loan_type} loan
+    - tell me the last date to pay my {loan_type} loan
+    - check payment due date for {loan_type} loan
+    - when do i need to pay my {loan_type} loan installment
+    - what is the deadline for my {loan_type} loan
+    - how many days left for my {loan_type} loan payment
+    - can you tell me the {loan_type} loan repayment date
+    - next EMI date for my {loan_type} loan
+    - when is the next installment of my {loan_type} loan
+    - tell me the due date of my {loan_type} loan
+    - when does my {loan_type} loan payment expire
+    - what is the last day to pay my {loan_type} loan
+    - repayment date for {loan_type} loan please
+    - when should i pay my {loan_type} loan EMI
+    - what date is my {loan_type} loan due
+    - is my {loan_type} loan due this month
+    - how much time do i have to pay {loan_type} loan
+    - show due date for {loan_type} loan
+    - give me the next payment date for {loan_type} loan
+    - when is the repayment due for my {loan_type} loan
+    - can you check when my {loan_type} loan is due
+    - check {loan_type} loan due date
+    - when is {loan_type} loan installment payable
+    - what is the EMI schedule for {loan_type} loan
+    - tell me when my {loan_type} loan is due
+    - when to pay {loan_type} loan
+    - due date for my {loan_type} loan payment
+    - what is the date for my next {loan_type} loan payment
+    - how many days before my {loan_type} loan is due
+    - last day for {loan_type} loan repayment
+    - when is {loan_type} loan EMI due
+    - my {loan_type} loan payment deadline
+    - check {loan_type} loan repayment schedule
+    - when do i pay {loan_type} loan installment
+    - look up due date for {loan_type} loan
+    - what is my {loan_type} loan repayment date
+    - due date of my {loan_type} loan
+    - when do i have to pay my {loan_type} loan
+    - when is my {loan_type} loan installment due
+    - check my {loan_type} loan repayment status
+    - what is the cut off date for my {loan_type} loan
+    - when is my {loan_type} loan payable
+    - show the installment due date for {loan_type} loan
+    - when will my {loan_type} loan EMI be debited
+    - how long before my {loan_type} loan payment is due
+    - tell me {loan_type} loan due date
+    - repayment deadline for {loan_type} loan
+    - next payment deadline for {loan_type} loan
+    - date of next payment for {loan_type} loan
+    - when do i need to pay my debt
+    - when is my next EMI due
+    - when is my loan payment date
+    - help me with a loan query
+    - when is my loan due
+    - what is my loan due date
+    - when do i have to pay my loan
+    - tell me my next EMI date
+    - when is my installment due
+    - check my loan payment date
+    - what is the last date to pay my loan
+    - how many days left to pay my EMI
+    - when is the next loan payment due
+    - i want to check my loan due date
+    - loan payment deadline please
+    - when should i repay my loan
+    - when is my debt due
+    - tell me my loan deadline
+    - can you check my loan EMI date
+    - how much time left to pay my loan
+    - when does my EMI get deducted
+    - what is my repayment date
+    - when is my next installment payable
+    - loan EMI due date check
+    - when to pay my loan
+    - what is the loan due date
+    - check my loan due date please
+    - tell me when my loan is due
+    - loan repayment date check
+    - when is my crop loan due
+    - when do i pay my crop loan
+    - crop loan due date please
+    - what is the due date for my crop loan
+    - when is my home loan due
+    - home loan EMI due date
+    - what is the due date for my home loan
+    - when is personal loan due
+    - personal loan EMI payment date
+    - kcc loan due date please
+    - when is my kcc loan payment due
+    - when do i pay my kcc loan installment
+    - check kcc loan due date
+    - repay my loan date
+    - when is my loan repayment
+    - loan installment payment deadline
+    - when do i have to pay the loan money
+    - next installment date please
+    - when is my debt payment due
+    - due date for loan payment
+    - give me my loan payment date
+    - how many days left for loan repayment
+    - when is the loan EMI due date
+    - check loan repayment date
+    - when do i pay bank loan
+    - loan due date please
+    - inquire loan due date
+    - view my loan schedule
+    - when to repay loan
+    - what date do i pay my loan
+    - next EMI due date
+    - when will my EMI be deducted
+    - what is the last date for my EMI
+    - check next loan payment
+    - look up my loan schedule
+    - when is my loan payment deadline
+    - loan installment date inquiry
+    - tell me the due date of my loan
+    - when is the repayment due
+    - when do i need to pay my installment
+    - what is the final date to pay loan
+    - loan due date inquiry
+    - when is my loan repayment due date
+    - check my loan due date
+    - give me my loan due date
+    - when should i pay my debt
   hi:
     templates:
-      - "मेरे {loan_type} लोन की आखिरी तारीख क्या है"
-      - "{loan_type} लोन की अगली किस्त कब भरनी है"
-      - "{loan_type} लोन का भुगतान कब तक करना है"
-      - "मेरे {loan_type} ऋण की देय तिथि बताइए"
-      - "{loan_type} लोन की अंतिम तिथि क्या है"
-      - "{loan_type} लोन की ईएमआई कब कटेगी"
-      - "कृपया {loan_type} लोन की देय तारीख बताएं"
-      - "मुझे {loan_type} लोन कब तक चुकाना है"
-      - "{loan_type} ऋण की अगली भुगतान तिथि क्या है"
-      - "मेरे {loan_type} लोन का पेमेंट कब भरना है"
+    - मेरे {loan_type} लोन की आखिरी तारीख क्या है
+    - '{loan_type} लोन की अगली किस्त कब भरनी है'
+    - '{loan_type} लोन का भुगतान कब तक करना है'
+    - मेरे {loan_type} ऋण की देय तिथि बताइए
+    - '{loan_type} लोन की अंतिम तिथि क्या है'
+    - '{loan_type} लोन की ईएमआई कब कटेगी'
+    - कृपया {loan_type} लोन की देय तारीख बताएं
+    - मुझे {loan_type} लोन कब तक चुकाना है
+    - '{loan_type} ऋण की अगली भुगतान तिथि क्या है'
+    - मेरे {loan_type} लोन का पेमेंट कब भरना है
+    - '{loan_type} लोन की किस्त कब देनी है'
+    - मेरे {loan_type} लोन की ड्यू डेट क्या है
+    - '{loan_type} ऋण की देय तारीख क्या है'
+    - कब तक मुझे {loan_type} लोन चुकाना होगा
+    - '{loan_type} लोन की अगली तारीख बताइए'
+    - मेरे {loan_type} लोन की ईएमआई किस दिन कटेगी
+    - '{loan_type} लोन के भुगतान की अंतिम तिथि बताएं'
+    - '{loan_type} लोन की किस्त भरने का अंतिम दिन क्या है'
+    - कृपया मेरे {loan_type} ऋण की देय तिथि बताएं
+    - '{loan_type} लोन की रीपेमेंट डेट क्या है'
+    - '{loan_type} लोन का पैसा कब जमा करना है'
+    - मेरे {loan_type} लोन का अंतिम दिन कब है
+    - '{loan_type} ऋण कब तक भरना होगा'
+    - क्या आप {loan_type} लोन की देय तिथि बता सकते हैं
+    - '{loan_type} लोन की किस्त किस तारीख को है'
+    - mere {loan_type} loan ki due date kya hai
+    - '{loan_type} loan kab bharna hai'
+    - mere {loan_type} loan ki agli kist kab bharni hai
+    - '{loan_type} loan ki last date kya hai'
+    - mere {loan_type} loan ki EMI kab kategi
+    - '{loan_type} loan ka payment kab karna hai'
+    - mujhe {loan_type} loan kab tak chukana hai
+    - mere {loan_type} loan ki repayment date batao
+    - '{loan_type} loan ki due date check karo'
+    - '{loan_type} loan ki next installment kab hai'
+    - '{loan_type} loan kab dena padega'
+    - mere {loan_type} loan ka last day kab hai
+    - '{loan_type} loan ki EMI date bataiye'
+    - '{loan_type} loan kab chukana hai'
+    - mere {loan_type} loan ka paisa kab dena hai
+    - लोन की अगली किस्त कब भरनी है
+    - लोन का भुगतान कब तक करना है
+    - मेरे ऋण की देय तिथि क्या है
+    - लोन की अंतिम तारीख बताइए
+    - ईएमआई कब कटेगी
+    - लोन की किस्त कब देनी है
+    - लोन कब भरना है
+    - लोन का पेमेंट कब करना है
+    - मुझे लोन कब तक चुकाना है
+    - लोन की देय तिथि बताइए
+    - ऋण की अगली भुगतान तिथि क्या है
+    - ईएमआई की आखिरी तारीख क्या है
+    - लोन की किस्त भरने की अंतिम तिथि बताओ
+    - लोन कब तक भरना होगा
+    - बैंक लोन का भुगतान कब करना है
+    - फसल लोन की अगली किस्त कब भरनी है
+    - मेरे फसल लोन की ड्यू डेट क्या है
+    - फसल ऋण कब चुकाना है
+    - होम लोन की अगली किस्त कब कटेगी
+    - होम लोन की देय तिथि बताइए
+    - पर्सनल लोन की किस्त कब भरनी है
+    - केसीसी लोन कब भरना है
+    - केसीसी लोन का भुगतान कब करना है
+    - केसीसी लोन की ड्यू डेट क्या है
+    - लोन की जानकारी चाहिए
+    - ईएमआई भरने की तारीख बताओ
+    - लोन रीपेमेंट डेट चेक करें
+    - ऋण भुगतान की तारीख क्या है
+    - लोन की किस्त किस तारीख को है
+    - कब तक ऋण चुकाना है
+    - बैंक ऋण कब तक चुकाना है
+    - लोन की अंतिम तिथि क्या है
+    - लोन का पैसा कब जमा करना है
+    - अगली ईएमआई कब आएगी
+    - लोन का रीपेमेंट कब है
+    - EMI kab bharni hai
+    - mera loan kab bharna hai
+    - loan ki due date kya hai
+    - mere loan ki last date batao
+    - loan ki agli kist kab bharni hai
+    - EMI kab kategi
+    - loan ka payment kab karna hai
+    - loan kab tak chukana hai
+    - loan ki next installment kab hai
+    - mere loan ki due date check karo
+    - loan payment ki last date kya hai
+    - loan kab bharna padega
+    - agli kist kab deni hai
+    - loan repayment date batao
+    - kist kab bharni hai
+    - mera kcc loan kab bharna hai
+    - kcc loan ki due date kya hai
+    - home loan ki due date batao
+    - home loan ki EMI kab bharni hai
+    - personal loan ki kist kab hai
+    - crop loan kab bharna hai
+    - crop loan ki due date batao
+    - loan due date check karo please
+    - EMI date kya hai
+    - loan ka paisa kab dena hai
+    - bank loan kab tak bharna hai
+    - loan ki date batao
+    - next EMI date check karo
+    - loan payment deadline kya hai
+    - loan chukana kab hai
+    - mere loan ka hisab batao
+    - loan kab due hai
+    - next loan installment kab hai
+    - loan date check kar do
+    - loan ki akhiri tarikh batao
+    - loan kab bharein
+    - loan ki payment kab tak karni hai
+    - kist ka payment kab hai
+    - loan ki aakhri date kya hai
+    - EMI kis date ko kategi
   ta:
-    verified: false
     templates:
-      - "என் {loan_type} கடனின் கடைசி தேதி என்ன"
-      - "{loan_type} கடன் தவணை எப்போது செலுத்த வேண்டும்"
-      - "என் {loan_type} கடன் செலுத்த வேண்டிய இறுதி நாள் எப்போது"
-      - "{loan_type} கடனின் அடுத்த தவணை தேதி என்ன"
-      - "என் {loan_type} கடன் நிலுவை தேதி விவரம் சொல்லுங்கள்"
-      - "{loan_type} கடனுக்கான தவணை எப்போது முடிவடைகிறது"
-      - "தயவுசெய்து {loan_type} கடன் செலுத்தும் தேதியை சொல்லவும்"
-      - "என் {loan_type} கடனை எப்போது திருப்பிச் செலுத்த வேண்டும்"
-      - "{loan_type} கடனின் அடுத்த EMI தேதி என்ன"
-      - "{loan_type} கடன் நிலுவை தேதியை சரிபார்க்கவும்"
+    - என் {loan_type} கடனின் கடைசி தேதி என்ன
+    - '{loan_type} கடன் தவணை எப்போது செலுத்த வேண்டும்'
+    - என் {loan_type} கடன் செலுத்த வேண்டிய இறுதி நாள் எப்போது
+    - '{loan_type} கடனின் அடுத்த தவணை தேதி என்ன'
+    - என் {loan_type} கடன் நிலுவை தேதி விவரம் சொல்லுங்கள்
+    - '{loan_type} கடனுக்கான தவணை எப்போது முடிவடைகிறது'
+    - தயவுசெய்து {loan_type} கடன் செலுத்தும் தேதியை சொல்லவும்
+    - என் {loan_type} கடனை எப்போது திருப்பிச் செலுத்த வேண்டும்
+    - '{loan_type} கடனின் அடுத்த EMI தேதி என்ன'
+    - '{loan_type} கடன் நிலுவை தேதியை சரிபார்க்கவும்'
+    - என் {loan_type} கடன் தவணை எப்போது கட்ட வேண்டும்
+    - '{loan_type} கடனை எந்த தேதிக்குள் கட்ட வேண்டும்'
+    - என் {loan_type} கடனின் அடுத்த கட்டணம் எப்போது
+    - '{loan_type} கடன் தவணை தேதி விவரம் வேண்டும்'
+    - என் {loan_type} கடனுக்கான கடைசி நாள் என்ன
+    - '{loan_type} கடனை திருப்பிக்கட்ட கடைசி தேதி சொல்லுங்க'
+    - என் {loan_type} கடனின் ரீபேமெண்ட் தேதி என்ன
+    - '{loan_type} கடன் நிலுவை தொகை எப்போது செலுத்த வேண்டும்'
+    - தயவுசெய்து {loan_type} கடன் தவணை விவரம் காட்டுங்கள்
+    - '{loan_type} கடன் தவணை தேதி எப்போது'
+    - என் {loan_type} கடனை எந்த நாளுக்குள் கட்ட வேண்டும்
+    - '{loan_type} கடன் திருப்பி செலுத்தும் நாள் என்ன'
+    - என் {loan_type} கடன் அடுத்த தவணை எப்போது
+    - '{loan_type} கடன் கட்ட வேண்டிய தேதி என்ன'
+    - தயவுசெய்து {loan_type} கடன் நிலுவை தேதி சொல்லவும்
+    - en {loan_type} kadan due date enna
+    - '{loan_type} loan eppothu katta vendum'
+    - en {loan_type} loan next EMI date enna
+    - '{loan_type} kadan last date sollunga'
+    - en {loan_type} loan repayment date enna
+    - '{loan_type} loan thavanai eppothu'
+    - en {loan_type} loan due date sollunga
+    - '{loan_type} kadan eppothu kattanum'
+    - en {loan_type} loan installment date enna
+    - '{loan_type} loan last date eppothu'
+    - கடன் எப்போது கட்ட வேண்டும்
+    - எனது கடன் தவணை தேதி எப்போது
+    - கடனின் அடுத்த தவணை தேதி என்ன
+    - கடன் செலுத்த வேண்டிய கடைசி நாள் என்ன
+    - என் EMI எப்போது பிடிக்கப்படும்
+    - கடன் தவணை எப்போது செலுத்த வேண்டும்
+    - கடனை திருப்பிக் கொடுக்க கடைசி தேதி என்ன
+    - என் கடன் நிலுவை தேதி சொல்லுங்கள்
+    - அடுத்த கடன் தவணை எப்போது
+    - கடன் எப்போது அடைக்க வேண்டும்
+    - கடன் கட்ட கடைசி நாள் எப்போது
+    - என் கடன் தவணை தேதி சரிபார்க்கவும்
+    - வீட்டுக் கடன் தவணை தேதி எப்போது
+    - எனது வீட்டுக் கடன் தவணை தேதி எப்போது
+    - பயிர் கடன் எப்போது கட்ட வேண்டும்
+    - என் பயிர் கடன் கடைசி தேதி என்ன
+    - தனிநபர் கடன் தவணை எப்போது
+    - கேசிசி கடன் எப்போது கட்ட வேண்டும்
+    - கேசிசி கடன் தவணை தேதி என்ன
+    - கடன் திருப்பிச் செலுத்தும் தேதி என்ன
+    - கடன் கட்ட வேண்டிய தேதி சொல்லுங்க
+    - என் கடன் நிலவரம் என்ன
+    - கடன் தவணை எப்போது வரும்
+    - அடுத்த தவணை தேதி சொல்லுங்கள்
+    - கடன் பணம் எப்போது செலுத்த வேண்டும்
+    - கடன் அடைக்க வேண்டிய நாள் என்ன
+    - வங்கி கடன் தவணை எப்போது
+    - கடன் திருப்பி கட்ட கடைசி தேதி என்ன
+    - என் கடன் செலுத்த வேண்டிய இறுதி நாள் என்ன
+    - கடன் தவணை விவரம் சொல்லுங்கள்
+    - கடன் நிலுவை எப்போது கட்ட வேண்டும்
+    - கடன் கடைசி நாள் சொல்லுங்க
+    - கடன் கட்டும் தேதி என்ன
+    - கடன் திருப்பிச் செலுத்துதல் எப்போது
+    - கடன் தவணை நாள் எப்போது
+    - kadan eppothu katta vendum
+    - en loan due date enna
+    - next EMI eppothu katta vendum
+    - loan thavanai thethi enna
+    - en loan last date sollunga
+    - kadan eppothu katta vendum sollunga
+    - loan EMI date enna
+    - en veettu kadan eppothu katta vendum
+    - payir kadan due date enna
+    - kcc loan eppothu katta vendum
+    - loan thavanai eppothu mudiyum
+    - next installment date enna
+    - loan repayment date sollunga
+    - kadan adaikka thethi enna
+    - loan date check pannunga
+    - kadan eppothu mudiyum
+    - kadan thavanai thethi eppothu
+    - en kadan thethi enna
+    - loan EMI kab kategi
+    - kadan thethi sollunga
+    - loan due date check panna mudiyuma
+    - eppothu loan katta vendum
+    - en loan schedule paarkkanum
+    - loan thavanai thethi check pannu
+    - kadan eppothu kattanum
+    - loan date enna sollunga
+    - kadan eppothu adakkanum
+    - en EMI date enna
+    - loan last date enna
+    - kadan thavanai eppothu katta vendum
 slots:
   loan_type:
-    en: ["home", "crop", "personal"]
-    hi: ["होम", "फसल", "पर्सनल"]
-    ta: ["வீடு", "பயிர்", "தனிநபர்"]
+    en:
+    - home
+    - crop
+    - personal
+    - kcc
+    hi:
+    - होम
+    - फसल
+    - पर्सनल
+    - केसीसी
+    ta:
+    - வீடு
+    - பயிர்
+    - தனிநபர்
+    - கேசிசி

@@ -2,6 +2,7 @@ venv/
 data/raw/
 data/wav16k/
 models/
+*_baseline/
 logs/
 __pycache__/
 *.wav
