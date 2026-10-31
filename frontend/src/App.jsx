@@ -232,6 +232,7 @@ export default function App() {
           <MessageInput
             onSendMessage={handleSendMessage}
             onSendVoice={handleSendVoice}
+            currentLang={currentLang}
             isLoading={isLoading}
           />
         </section>

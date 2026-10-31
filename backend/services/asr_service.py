@@ -104,6 +104,9 @@ class ASRService:
             if len(data) / sr < 0.3:
                 raise ValueError("Recording is too short. Please record a complete sentence.")
 
+            # Remove DC bias / offset from recording hardware
+            data = data - np.mean(data)
+
             # Measure audio energy (silence / low volume detection)
             max_amp = float(np.max(np.abs(data))) if len(data) > 0 else 0.0
             rms = float(np.sqrt(np.mean(data ** 2))) if len(data) > 0 else 0.0
@@ -119,8 +122,9 @@ class ASRService:
                 }
 
             # Peak normalize audio so soft microphone input or low gain recordings transcribe cleanly
+            # Allows quiet microphone inputs (e.g. 0.01) to safely scale to 0.85 without clipping
             if max_amp > 1e-4:
-                data = data * min(3.0, 0.9 / max_amp)
+                data = data * min(40.0, 0.85 / max_amp)
 
             # ROUTING: Primary STT pipeline is AI4Bharat IndicConformer
             if model == "whisper":

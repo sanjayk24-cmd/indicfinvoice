@@ -32,6 +32,7 @@ export default function AccountPanel({
   ];
 
   const languages = [
+    { code: 'auto', label: 'Auto Detect (auto)', flag: '🌐' },
     { code: 'en', label: 'English (en)', flag: '🇺🇸' },
     { code: 'hi', label: 'हिंदी (hi)', flag: '🇮🇳' },
     { code: 'ta', label: 'தமிழ் (ta)', flag: '🇮🇳' },
@@ -84,20 +85,24 @@ export default function AccountPanel({
         </div>
       </div>
 
-      {/* Automatic language detection */}
+      {/* Language Selection & Automatic Detection */}
       <div className="supported-languages-section">
-        <h4 className="section-label">Automatic language detection</h4>
+        <h4 className="section-label">Speech & Chat Language</h4>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {languages.map((l) => {
             const isSelected = currentLang === l.code;
             return (
               <button
                 key={l.code}
+                type="button"
                 className={`language-item-badge ${isSelected ? 'selected' : ''}`}
-                title="Language is detected automatically from your message"
+                onClick={() => onSelectLang && onSelectLang(l.code)}
+                style={{ cursor: 'pointer', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '8px' }}
+                title={`Click to set speech and chat language to ${l.label}`}
               >
                 <span className="flag-icon">{l.flag}</span>
-                <span>{l.label}</span>
+                <span style={{ fontWeight: isSelected ? '600' : 'normal' }}>{l.label}</span>
+                {isSelected && <span style={{ marginLeft: 'auto', fontSize: '0.8rem', color: '#16A34A' }}>● Active</span>}
               </button>
             );
           })}

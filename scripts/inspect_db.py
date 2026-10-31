@@ -12,3 +12,4 @@ for k, v in db.items():
     claims = list(v.get("claims", {}).keys())
     txns = len(v.get("transactions", {}))
     print(f"{k}: {prof.get('name')} | scenario: {prof.get('scenario')} | accts: {accts} | loans: {loans} | claims: {claims} | txns: {txns}")
+

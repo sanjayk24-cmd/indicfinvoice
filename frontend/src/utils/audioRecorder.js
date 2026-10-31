@@ -1,7 +1,7 @@
 /**
- * src/utils/audioRecorder.js - High-Fidelity 16kHz Mono PCM WAV Audio Recorder
- * Uses Web Audio API directly (no lossy MediaRecorder/WebM container issues)
- * Captures clean PCM samples straight from the microphone.
+ * src/utils/audioRecorder.js - High-Fidelity Mono PCM WAV Audio Recorder
+ * Uses Web Audio API directly with AudioWorklet and ScriptProcessor fallback.
+ * Produces clean, un-aliased PCM WAV audio optimized for speech recognition.
  */
 
 export class AudioRecorder {
@@ -26,41 +26,78 @@ export class AudioRecorder {
       this.peakVolume = 0;
       this.level = 0;
 
-      // 1. Request microphone stream
+      // 1. Request microphone stream with voice-enhancement constraints
       this.mediaStream = await navigator.mediaDevices.getUserMedia({
         audio: {
           channelCount: 1,
           ...(deviceId ? { deviceId: { exact: deviceId } } : {}),
           echoCancellation: true,
-          noiseSuppression: false,
+          noiseSuppression: true,
           autoGainControl: true,
         },
       });
 
-      // 2. Initialize AudioContext
+      // 2. Initialize AudioContext (prefer 16kHz for ASR if supported natively by browser)
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      this.audioContext = new AudioContextClass();
+      try {
+        this.audioContext = new AudioContextClass({ sampleRate: 16000 });
+      } catch {
+        this.audioContext = new AudioContextClass();
+      }
 
       if (this.audioContext.state === 'suspended') {
         await this.audioContext.resume();
       }
 
       this.source = this.audioContext.createMediaStreamSource(this.mediaStream);
-      await this.audioContext.audioWorklet.addModule(new URL('./capture-worklet.js', import.meta.url));
-      this.processor = new AudioWorkletNode(this.audioContext, 'pcm-capture');
-      this.processor.port.onmessage = ({ data: samples }) => {
-        if (!this.isRecording) return;
-        let energy = 0;
-        for (const sample of samples) {
-          energy += sample * sample;
-          this.peakVolume = Math.max(this.peakVolume, Math.abs(sample));
-        }
-        this.level = Math.sqrt(energy / samples.length);
-        this.audioChunks.push(samples);
-      };
 
-      this.source.connect(this.processor);
-      this.processor.connect(this.audioContext.destination);
+      // 3. AudioWorklet with ScriptProcessor fallback
+      let workletLoaded = false;
+      if (this.audioContext.audioWorklet?.addModule) {
+        try {
+          await this.audioContext.audioWorklet.addModule(new URL('./capture-worklet.js', import.meta.url));
+          this.processor = new AudioWorkletNode(this.audioContext, 'pcm-capture');
+          this.processor.port.onmessage = ({ data: samples }) => {
+            if (!this.isRecording) return;
+            let energy = 0;
+            for (let i = 0; i < samples.length; i++) {
+              const val = samples[i];
+              energy += val * val;
+              const abs = Math.abs(val);
+              if (abs > this.peakVolume) this.peakVolume = abs;
+            }
+            this.level = Math.sqrt(energy / samples.length);
+            this.audioChunks.push(new Float32Array(samples));
+          };
+          this.source.connect(this.processor);
+          this.processor.connect(this.audioContext.destination);
+          workletLoaded = true;
+        } catch (e) {
+          console.warn('[AudioRecorder] AudioWorklet not available, falling back to ScriptProcessor:', e);
+        }
+      }
+
+      if (!workletLoaded) {
+        // Fallback: ScriptProcessorNode
+        const bufferSize = 4096;
+        this.processor = this.audioContext.createScriptProcessor(bufferSize, 1, 1);
+        this.processor.onaudioprocess = (e) => {
+          if (!this.isRecording) return;
+          const input = e.inputBuffer.getChannelData(0);
+          let energy = 0;
+          for (let i = 0; i < input.length; i++) {
+            const val = input[i];
+            energy += val * val;
+            const abs = Math.abs(val);
+            if (abs > this.peakVolume) this.peakVolume = abs;
+          }
+          this.level = Math.sqrt(energy / input.length);
+          this.audioChunks.push(new Float32Array(input));
+        };
+        this.source.connect(this.processor);
+        this.processor.connect(this.audioContext.destination);
+      }
+
       this.isRecording = true;
     } catch (error) {
       await this.dispose();
@@ -71,17 +108,26 @@ export class AudioRecorder {
   async dispose() {
     this.isRecording = false;
     if (this.processor) {
+      if (this.processor.port) {
+        this.processor.port.onmessage = null;
+      }
       this.processor.onaudioprocess = null;
-      this.processor.disconnect();
+      try { this.processor.disconnect(); } catch {}
       this.processor = null;
     }
-    this.source?.disconnect();
-    this.source = null;
-    this.mediaStream?.getTracks().forEach((track) => track.stop());
-    this.mediaStream = null;
+    if (this.source) {
+      try { this.source.disconnect(); } catch {}
+      this.source = null;
+    }
+    if (this.mediaStream) {
+      this.mediaStream.getTracks().forEach((track) => track.stop());
+      this.mediaStream = null;
+    }
     const context = this.audioContext;
     this.audioContext = null;
-    if (context && context.state !== 'closed') await context.close();
+    if (context && context.state !== 'closed') {
+      try { await context.close(); } catch {}
+    }
   }
 
   async stop() {
@@ -93,11 +139,13 @@ export class AudioRecorder {
 
     // Disconnect audio nodes
     if (this.processor) {
-      this.processor.disconnect();
+      if (this.processor.port) this.processor.port.onmessage = null;
+      this.processor.onaudioprocess = null;
+      try { this.processor.disconnect(); } catch {}
       this.processor = null;
     }
     if (this.source) {
-      this.source.disconnect();
+      try { this.source.disconnect(); } catch {}
       this.source = null;
     }
     if (this.mediaStream) {
@@ -105,10 +153,10 @@ export class AudioRecorder {
       this.mediaStream = null;
     }
 
-    const recordedSampleRate = this.audioContext ? this.audioContext.sampleRate : 44100;
+    const recordedSampleRate = this.audioContext ? this.audioContext.sampleRate : 16000;
 
     if (this.audioContext && this.audioContext.state !== 'closed') {
-      await this.audioContext.close();
+      try { await this.audioContext.close(); } catch {}
       this.audioContext = null;
     }
 
@@ -122,10 +170,10 @@ export class AudioRecorder {
       throw new Error('No audio captured. Please speak into the microphone.');
     }
     if (totalSamples / recordedSampleRate < 0.3) {
-      throw new Error('Recording is too short. Speak a complete sentence before stopping.');
+      throw new Error('Recording is too short. Speak a complete phrase before stopping.');
     }
     if (this.peakVolume < 0.00003) {
-      throw new Error('The microphone captured no usable sound. Check your selected input device and microphone volume.');
+      throw new Error('The microphone captured no sound. Check your microphone volume or permissions.');
     }
 
     const merged = new Float32Array(totalSamples);
@@ -140,30 +188,10 @@ export class AudioRecorder {
       `[AudioRecorder] Captured ${totalSamples} samples at ${recordedSampleRate} Hz. Peak volume: ${this.peakVolume.toFixed(4)}`
     );
 
-    // Resample down to 16,000 Hz if recorded at 44.1k or 48k
-    const targetSampleRate = 16000;
-    const resampled = this._resample(merged, recordedSampleRate, targetSampleRate);
-
-    // Encode to 16-bit Mono PCM WAV
-    const wavBuffer = this._encodeWav(resampled, targetSampleRate);
+    // Encode directly to 16-bit Mono PCM WAV at the recorded rate.
+    // The backend's librosa cleanly resamples to 16000Hz with high-order anti-aliasing sinc filter.
+    const wavBuffer = this._encodeWav(merged, recordedSampleRate);
     return new Blob([wavBuffer], { type: 'audio/wav' });
-  }
-
-  _resample(samples, fromRate, toRate) {
-    if (fromRate === toRate) return samples;
-    const ratio = fromRate / toRate;
-    const newLength = Math.round(samples.length / ratio);
-    const result = new Float32Array(newLength);
-
-    for (let i = 0; i < newLength; i++) {
-      const originIndex = i * ratio;
-      const index = Math.floor(originIndex);
-      const decimal = originIndex - index;
-      const nextIndex = Math.min(index + 1, samples.length - 1);
-      result[i] = samples[index] * (1 - decimal) + samples[nextIndex] * decimal;
-    }
-
-    return result;
   }
 
   _encodeWav(samples, sampleRate) {
@@ -186,7 +214,7 @@ export class AudioRecorder {
     view.setUint32(16, 16, true); // Subchunk1Size (16 for PCM)
     view.setUint16(20, 1, true); // AudioFormat (1 for PCM)
     view.setUint16(22, 1, true); // NumChannels (1 = Mono)
-    view.setUint32(24, sampleRate, true); // SampleRate (16000)
+    view.setUint32(24, sampleRate, true); // SampleRate
     view.setUint32(28, sampleRate * 2, true); // ByteRate (SampleRate * NumChannels * BitsPerSample/8)
     view.setUint16(32, 2, true); // BlockAlign (NumChannels * BitsPerSample/8)
     view.setUint16(34, 16, true); // BitsPerSample (16 bits)
