@@ -43,6 +43,12 @@ def normalise_account_type(raw_val: Any) -> Optional[str]:
     if not text:
         return None
 
+    # De-conflict temporal adjective "current" (e.g. "current balance", "current status", "current emi", "current due", "current date")
+    # In these phrases, "current" means "now", NOT the business checking account type.
+    if re.search(r"\bcurrent\s+(?:balance|status|amount|emi|due|rate|date|month|year|situation)\b", text):
+        if not re.search(r"\bcurrent\s+(?:account|acct|a/c)\s+balance\b", text):
+            text = re.sub(r"\bcurrent\s+(?=(?:balance|status|amount|emi|due|rate|date|month|year|situation)\b)", "", text).strip()
+
     # Strip common suffixes
     text = re.sub(r"\b(account|acct|खाता|கணக்கு)\b", "", text).strip()
 
@@ -64,6 +70,12 @@ def normalise_loan_type(raw_val: Any) -> Optional[str]:
     text = _clean_str(raw_val).lower()
     if not text:
         return None
+
+    # De-conflict "crop" in context of crop insurance / claim
+    # If the text is talking about crop insurance/claim rather than a loan:
+    if re.search(r"\b(?:crop\s+insurance|crop\s+claim|insurance|claim|fasal\s+bima|fasal\s+beema|bima|காப்பீடு|கிளைம்)\b", text):
+        if not re.search(r"\b(?:crop\s+loan|फसल\s+(?:ऋण|लोन)|பயிர்\s+கடன்)\b", text):
+            return None
 
     text = re.sub(r"\b(loan|ऋण|लोन|கடன்)\b", "", text).strip()
 

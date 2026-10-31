@@ -156,12 +156,19 @@ class ConversationService:
                 "hi": "आप IndicFinVoice का उपयोग कर रहे हैं, जो MockBank से जुड़ा डेमो सहायक है। आपके वास्तविक बैंक का नाम इस प्रोजेक्ट में दर्ज नहीं है।",
                 "ta": "நீங்கள் MockBank உடன் இணைந்த IndicFinVoice டெமோ உதவியாளரைப் பயன்படுத்துகிறீர்கள். உங்கள் உண்மையான வங்கியின் பெயர் இந்த திட்டத்தில் இல்லை.",
             },
+            "fd_details": {
+                "en": "Fixed Deposit (FD) accounts are not available in this demo. For FD interest rates, opening a new term deposit, or checking maturity certificates, please visit your bank branch or log in to Internet Banking.",
+                "hi": "इस डेमो में फिक्स्ड डिपॉजिट (FD) खाता समर्थित नहीं है। FD रसीद, परिपक्वता तिथि या ब्याज दरें देखने के लिए कृपया अपनी बैंक शाखा से संपर्क करें या नेट बैंकिंग का उपयोग करें।",
+                "ta": "இந்த டெமோவில் நிலையான வைப்பு (FD) கணக்குகள் ஆதரிக்கப்படவில்லை. உங்கள் FD ரசீது, முதிர்வு தேதி அல்லது வட்டி விகிதங்களை அறிய, உங்கள் வங்கி கிளையை அணுகவும் அல்லது இணைய வங்கியைப் பயன்படுத்தவும்.",
+            },
         }
         profile_intent = None
         if any(word in text for word in ("account number", "account no", "a/c no", "खाता नंबर", "खाता संख्या", "கணக்கு எண்")):
             profile_intent = "account_number"
         elif any(word in text for word in ("bank name", "name of my bank", "which bank", "बैंक का नाम", "வங்கியின் பெயர்", "வங்கி பெயர்")):
             profile_intent = "bank_name"
+        elif re.search(r"\bfd\b", text) or any(word in text for word in ("fixed deposit", "एफडी", "फिक्स्ड डिपॉजिट", "நிலையான வைப்பு", "term deposit")):
+            profile_intent = "fd_details"
         if profile_intent:
             self.session_manager.save(sid, None)
             reply = profile_replies[profile_intent][effective_lang]
